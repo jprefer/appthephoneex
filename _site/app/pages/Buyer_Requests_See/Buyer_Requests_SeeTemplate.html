@@ -1,0 +1,44 @@
+<div show-header="true" show-footer="true" show-top-tabs="true" show-tabs="true"
+ng-controller="Buyer_Requests_See" ng-cloak ng-init="init()" active-screen="My Active Requests"
+class="aio-empty-screen padding overflow-scroll">
+    <div class="button-bar">
+        <button class="button button-calm button-block button-small icon-left ion-alert"
+        ng-click="gotoBuyerRequestSee()">
+            My Requests
+        </button>
+        <button class="button button-calm button-block button-small icon-left ion-wrench"
+        ng-click="gotoBuyerInProcess()">
+            In Process
+        </button>
+        <button class="button button-calm button-block button-small icon-left ion-checkmark-round"
+        ng-click="gotoBuyerComplete()">
+            Completed
+        </button>
+    </div>
+    <button class="button button-calm button-block button-large icon-left ion-iphone"
+    ng-click="gotoBuyerMakeRequest()">
+        Make a Request
+    </button>
+    <div>
+        <font size="4">
+            <center>
+                <b>
+                    All Active Requests
+                </b>
+            </center>
+        </font>
+    </div>
+    <div>
+        <div class="row">
+            <div class="col">
+                <div class="list">
+                    <a href="javascript:void(0)" class="item-divider item" ng-repeat="item in list">
+                    <h4>{{item. manufacturer}} {{item. Product}} / {{item.Carrier}}</h4>
+                    <p>{{item.Memory}}/{{item.Color}}/Ship: {{item.Shipping}} / {{item.Kitted}}</p>
+                    Quan:{{item.Quantity}} Grade: {{item.Condition}}  Request ID: {{item._id.substring(20)}}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

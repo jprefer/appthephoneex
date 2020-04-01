@@ -1,0 +1,48 @@
+<div show-header="true" show-footer="true" show-top-tabs="true" show-tabs="true"
+ng-controller="Seller_Complete_Detail" ng-cloak ng-init="init()" active-screen="Shipping"
+class="aio-empty-screen padding overflow-scroll">
+    <button class="button button-energized button-block button-small">
+        ORDER ID: {{_id1.substring(20)}}
+    </button>
+    <button class="button button-energized button-block" ng-click="GoBack()">
+        Go Back
+    </button>
+    <div>
+        <b>
+            <center>
+                <font size="4">
+                    Quantity: {{item.Quan}}
+                </font>
+        </b>
+        </center>
+        <br>
+        <b>
+            <center>
+                {{Manu1}} - {{Prod1}} - {{ChoiceCarrier1}}
+        </b>
+        </center>
+        <br>
+        Memory: {{Mem1}} / Color: {{Colour1}} / {{Kit1}}
+        <br>
+        Grade: {{Cond1}}
+        <br>
+        Notes: (From Buyer) - {{BuyerNote1}}
+        <br>
+        (From You) - {{SellerNote1}}
+        <br>
+        (From Buyer) - {{BuyerNote2a}}
+        <br>
+        You (will) Receive(d) {{SellingPrice1|currency}} for this transaction. This includes
+        a Seller Fee of {{Price1 - SellingPrice1|currency}}
+        <br>
+        Your Money Has been Sent: {{SellerPaid1}}
+    </div>
+    <div>
+        Ship Date: {{ShipDate1}}
+        <br>
+        Receive Date: {{RxDate1}}
+        <br>
+        Closed Date: {{CloseDate1}}
+        <br>
+    </div>
+</div>

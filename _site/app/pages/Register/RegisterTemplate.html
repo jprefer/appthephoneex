@@ -1,0 +1,52 @@
+<div show-header="true" show-footer="true" show-top-tabs="true" show-tabs="true"
+ng-controller="Register" ng-cloak ng-init="init()" active-screen="Register" class="aio-empty-screen padding overflow-scroll">
+    <div class="card">
+        <div class="item">
+            <div class="item item-input">
+                <input type="text" placeholder="Username" value="" ng-model="user.username">
+            </div>
+            <div class="item item-input">
+                <input type="password" placeholder="Password" value="" ng-model="user.password">
+            </div>
+            <div class="item item-input">
+                <input type="email" placeholder="Email" value="" ng-model="user.email">
+            </div>
+            <div class="item item-input">
+                <input type="text" placeholder="Company Name" value="" ng-model="user.Company">
+            </div>
+            <div class="item item-input">
+                <input type="text" placeholder="First Name" value="" ng-model="user.FirstName">
+            </div>
+            <div class="item item-input">
+                <input type="text" placeholder="Last Name" value="" ng-model="user.LastName">
+            </div>
+            <div class="item item-input">
+                <input type="tel" placeholder="Mobile Phone" value="" ng-model="user.MobilePhone">
+            </div>
+            <div class="item item-input">
+                <input type="tel" placeholder="Business Phone" value="" ng-model="user.BusinessPhone">
+            </div>
+            <div class="item item-input">
+                <input type="text" placeholder="Address" value="" ng-model="user.ShippingAddress1">
+            </div>
+            <div class="item item-input">
+                <input type="text" placeholder="Unit / Suite" value="" ng-model="user.ShippingAddress2">
+            </div>
+            <div class="item item-input">
+                <input type="text" placeholder="City" value="" ng-model="user.City">
+            </div>
+            <div class="item item-input">
+                <input type="text" placeholder="State" value="" ng-model="user.State">
+            </div>
+            <div class="item item-input">
+                <input type="text" placeholder="Zip Code" value="" ng-model="user.Zip">
+            </div>
+            <div class="item item-input">
+                <input type="text" placeholder="State Resale Number" value="" ng-model="user.ResaleNumber">
+            </div>
+            <button class="button button-positive button-block" ng-click="register()">
+                Register
+            </button>
+        </div>
+    </div>
+</div>
