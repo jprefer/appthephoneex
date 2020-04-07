@@ -38,6 +38,9 @@ define(['require', 'app'],
             $scope.ChoiceCarrier1 = Apperyio.EntityAPI('String');
             $scope.Kit1 = Apperyio.EntityAPI('String');
             $scope.RequestID4 = Apperyio.EntityAPI('String');
+            $scope.Buyer1 = Apperyio.EntityAPI('String');
+            $scope.B_Req1A = Apperyio.EntityAPI('String');
+            $scope.token = Apperyio.EntityAPI('String');
             /**
              * User controller functions
              */
@@ -56,6 +59,13 @@ define(['require', 'app'],
                 RequestID3 = $scope.RequestID2.Gl_Vars.request_id;
                 console.log("RequestID3= ", RequestID3);
                 var miniID = "";
+                //Get User
+                var userData = Apperyio.get("dataStorage");
+                var AllData = userData.current;
+                var username = AllData.username;
+                var Buyer_username = AllData.username;
+                var token = AllData.session;
+                //Get User  
                 // Get Data from Request
                 var requestData = {};
                 requestData = (function mapping5190($scope) {
@@ -63,6 +73,10 @@ define(['require', 'app'],
                     requestData.params = {};
                     var RequestID3_scope = $scope.RequestID3;
                     requestData.params.CurrentRequestID = RequestID3;
+                    requestData.headers = {};
+                    var token_scope = $scope.token;
+                    requestData.headers['X-Appery-Session-Token'] = token;
+                    console.log("token", token);
                     return requestData;
                     /*|button_mapping|onbeforesend|F952B444-3CF8-14F2-4B7E-90AEB380A4EA||5190|*/
                 })($scope);
@@ -94,6 +108,8 @@ define(['require', 'app'],
                             var ShipZip1_scope = $scope.ShipZip1;
                             var ShipAddress1a_scope = $scope.ShipAddress1a;
                             var ShipAddress2a_scope = $scope.ShipAddress2a;
+                            var Buyer1_scope = $scope.Buyer1;
+                            var B_Req1A_scope = $scope.B_Req1A;
                             BuyerNote1_scope = success.data[0].BuyerNote;
                             Colour1_scope = success.data[0].Colour;
                             Prod1_scope = success.data[0].Prod;
@@ -117,6 +133,8 @@ define(['require', 'app'],
                             ShipZip1_scope = success.data[0].ShipZip;
                             ShipAddress1a_scope = success.data[0].ShipAddress1;
                             ShipAddress2a_scope = success.data[0].ShipAddress2;
+                            Buyer1_scope = success.data[0].Buyer;
+                            B_Req1A_scope = success.data[0].B_Req1;
                             $scope.BuyerNote1 = BuyerNote1_scope;
                             $scope.Colour1 = Colour1_scope;
                             $scope.Prod1 = Prod1_scope;
@@ -140,10 +158,13 @@ define(['require', 'app'],
                             $scope.ShipZip1 = ShipZip1_scope;
                             $scope.ShipAddress1a = ShipAddress1a_scope;
                             $scope.ShipAddress2a = ShipAddress2a_scope;
+                            $scope.Buyer1 = Buyer1_scope;
+                            $scope.B_Req1A = B_Req1A_scope;
                             /*|button_mapping|onsuccess|F952B444-3CF8-14F2-4B7E-90AEB380A4EA||1982|*/
                         })(success, $scope);
                     },
                     function(error) { // callback to handle request error
+                        Apperyio.navigateTo("Login", {});
                     },
                     function(notify) { // notify callback, can fire few times
                     });
@@ -154,6 +175,18 @@ define(['require', 'app'],
             $scope.MarkShipped = function() {
                 var ShippedBy1 = ($scope.ShippedBy1);
                 var Tracking1 = ($scope.Tracking1);
+                var Buyer1 = ($scope.Buyer1);
+                var B_Req1A = ($scope.B_Req1A);
+                var Quan1 = ($scope.Quan1);
+                var Manu1 = ($scope.Manu1);
+                var Prod1 = ($scope.Prod1);
+                //Get User
+                var userData = Apperyio.get("dataStorage");
+                var AllData = userData.current;
+                var username = AllData.username;
+                var Buyer_username = AllData.username;
+                var token = AllData.session;
+                //Get User  
                 var requestData = {};
                 requestData = (function mapping8267($scope) {
                     var requestData = {};
@@ -162,6 +195,15 @@ define(['require', 'app'],
                     requestData.params.Order_id = _id1_scope;
                     requestData.params.ShippedBy = ShippedBy1;
                     requestData.params.Tracking = Tracking1;
+                    requestData.params.Buyer = Buyer1;
+                    requestData.params.B_Req1 = B_Req1A;
+                    requestData.params.Quan = Quan1;
+                    requestData.params.Manu = Manu1;
+                    requestData.params.Prod = Prod1;
+                    requestData.headers = {};
+                    var token_scope = $scope.token;
+                    requestData.headers['X-Appery-Session-Token'] = token;
+                    console.log("token", token);
                     return requestData;
                     /*|button_mapping|onbeforesend|C5292A6D-40A0-15FB-1B23-1D09BE8635D1||8267|*/
                 })($scope);
@@ -172,6 +214,7 @@ define(['require', 'app'],
                         /*|button_mapping|onsuccess|C5292A6D-40A0-15FB-1B23-1D09BE8635D1||5392|*/
                     },
                     function(error) { // callback to handle request error
+                        Apperyio.navigateTo("Login", {});
                     },
                     function(notify) { // notify callback, can fire few times
                     });

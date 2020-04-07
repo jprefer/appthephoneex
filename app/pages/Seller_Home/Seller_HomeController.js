@@ -11,12 +11,13 @@ define(['require', 'app'],
              * user controller variables
              */
             $scope.list = Apperyio.EntityAPI('List');
-            $scope.Buyer_username = Apperyio.EntityAPI('String');
+            $scope.Seller_username = Apperyio.EntityAPI('String');
             $scope.user = Apperyio.EntityAPI('User');
             $scope.username = Apperyio.EntityAPI('String');
             $scope.item = Apperyio.EntityAPI('String');
             $scope.Product_Temp = Apperyio.EntityAPI('String');
             $scope.RequestID1 = Apperyio.EntityAPI('DataStorage');
+            $scope.token = Apperyio.EntityAPI('String');
             /**
              * User controller functions
              */
@@ -25,9 +26,27 @@ define(['require', 'app'],
              */
             $scope.init = function() {
                 //On load screen logic
+                var userData = Apperyio.get("dataStorage");
+                var AllData = userData.current;
+                var username = AllData.username;
+                var Seller_username = AllData.username;
+                var token = AllData.session;
+                //Get User  
+                console.log("SellerUser:", Seller_username);
                 var item = "";
                 var requestData = {};
-                /*|button_mapping|onbeforesend|18190B81-E92A-513F-EB9A-826B12BB512A||6269|*/
+                requestData = (function mapping6269($scope) {
+                    var requestData = {};
+                    requestData.params = {};
+                    var Seller_username_scope = $scope.Seller_username;
+                    requestData.params.username = Seller_username;
+                    requestData.headers = {};
+                    var token_scope = $scope.token;
+                    requestData.headers['X-Appery-Session-Token'] = token;
+                    console.log("token", token);
+                    return requestData;
+                    /*|button_mapping|onbeforesend|18190B81-E92A-513F-EB9A-826B12BB512A||6269|*/
+                })($scope);
                 // read more about using rest services: https://links.appery.io/ve-snippet-rest
                 Apperyio.get("Requests_Seller_service")(requestData).then(
                     /*|service_bookmark|bookmark|18190B81-E92A-513F-EB9A-826B12BB512A||9756|*/
@@ -40,6 +59,7 @@ define(['require', 'app'],
                         })(success, $scope);
                     },
                     function(error) { // callback to handle request error
+                        Apperyio.navigateTo("Login", {});
                     },
                     function(notify) { // notify callback, can fire few times
                     });

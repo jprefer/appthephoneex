@@ -42,6 +42,7 @@ define(['require', 'app'],
             $scope.S_Offers3A = Apperyio.EntityAPI('String');
             $scope.S_Offers4A = Apperyio.EntityAPI('String');
             $scope.S_Offers5A = Apperyio.EntityAPI('String');
+            $scope.token = Apperyio.EntityAPI('String');
             /**
              * User controller functions
              */
@@ -50,7 +51,7 @@ define(['require', 'app'],
              */
             $scope.init = function() {
                 //On load screen logic
-                var RequestID3 = ""
+                var RequestID3 = "";
                 // inject the 'dataStorage' service
                 var data = Apperyio.get("dataStorage");
                 // user1 is a variable in the page1 scope 
@@ -60,6 +61,16 @@ define(['require', 'app'],
                 RequestID3 = $scope.RequestID2.Gl_Vars.request_id;
                 console.log("RequestID3= ", RequestID3);
                 var miniID = "";
+                //Get User  
+                var userData = Apperyio.get("dataStorage");
+                var AllData = userData.current;
+                var username = AllData.username;
+                var Buyer_username = AllData.username;
+                var token = AllData.session;
+                //Get User  
+                console.log(username);
+                console.log(AllData);
+                console.log(token);
                 // Get Data from Request
                 var requestData = {};
                 requestData = (function mapping5835($scope) {
@@ -67,6 +78,10 @@ define(['require', 'app'],
                     requestData.params = {};
                     var RequestID3_scope = $scope.RequestID3;
                     requestData.params.CurrentRequestID = RequestID3;
+                    requestData.headers = {};
+                    var token_scope = $scope.token;
+                    requestData.headers['X-Appery-Session-Token'] = token;
+                    console.log("token", token);
                     return requestData;
                     /*|button_mapping|onbeforesend|F72C58AD-0CB1-F18F-161F-44E1632C9FEA||5835|*/
                 })($scope);
@@ -148,6 +163,7 @@ define(['require', 'app'],
                         })(success, $scope);
                     },
                     function(error) { // callback to handle request error
+                        Apperyio.navigateTo("Login", {});
                     },
                     function(notify) { // notify callback, can fire few times
                     });
@@ -253,12 +269,23 @@ define(['require', 'app'],
              * @function RejectOffer
              */
             $scope.RejectOffer = function() {
+                //Get User
+                var userData = Apperyio.get("dataStorage");
+                var AllData = userData.current;
+                var username = AllData.username;
+                var Buyer_username = AllData.username;
+                var token = AllData.session;
+                //Get User  
                 var requestData = {};
                 requestData = (function mapping6941($scope) {
                     var requestData = {};
                     requestData.params = {};
                     var RequestID2_scope = $scope.RequestID2;
                     requestData.params.CurrentRequestID = RequestID2_scope.Gl_Vars.request_id;
+                    requestData.headers = {};
+                    var token_scope = $scope.token;
+                    requestData.headers['X-Appery-Session-Token'] = token;
+                    console.log("token", token);
                     return requestData;
                     /*|button_mapping|onbeforesend|411E9C43-4BDD-FED0-6DF8-95B0552070DE||6941|*/
                 })($scope);
@@ -286,6 +313,7 @@ define(['require', 'app'],
                             });
                     },
                     function(error) { // callback to handle request error
+                        Apperyio.navigateTo("Login", {});
                     },
                     function(notify) { // notify callback, can fire few times
                     });
@@ -313,12 +341,18 @@ define(['require', 'app'],
                 var Country = AllData.country;
                 var ShipPhone = AllData.BusinessPhone;
                 var ResaleNumber = AllData.ResaleNumber;
+                var token = AllData.session;
                 RequestNotes2 = ($scope.BuyNotes2);
                 console.log(Buyer, CompanyName, ShipFirstName, ResaleNumber);
                 console.log("Color: ", $scope.Color1, "Memory:", $scope.Memory1);
                 var requestData = {};
                 requestData = (function mapping6990($scope) {
                     var requestData = {};
+                    requestData.headers = {};
+                    var token_scope = $scope.token;
+                    requestData.headers['X-Appery-Session-Token'] = token;
+                    console.log("token", token);
+                    //below orig
                     requestData.params = {};
                     requestData.params.Buyer = Buyer;
                     requestData.params.CompanyName = CompanyName;

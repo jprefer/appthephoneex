@@ -1,5 +1,5 @@
 <div show-header="true" show-footer="true" show-top-tabs="true" show-tabs="true"
-ng-controller="Seller_Complete_Detail" ng-cloak ng-init="init()" active-screen="Complete Detail"
+ng-controller="Seller_Offers_Detail" ng-cloak ng-init="init()" active-screen="My Current Offers - Detail"
 class="aio-empty-screen padding overflow-scroll">
     <button class="button button-energized button-block button-small">
         ORDER ID: {{_id1.substring(20)}}
@@ -11,7 +11,7 @@ class="aio-empty-screen padding overflow-scroll">
         <b>
             <center>
                 <font size="4">
-                    Quantity: {{item.Quan}}
+                    Quantity: {{Quan1}}
                 </font>
         </b>
         </center>
@@ -32,17 +32,7 @@ class="aio-empty-screen padding overflow-scroll">
         <br>
         (From Buyer) - {{BuyerNote2a}}
         <br>
-        You (will) Receive(d) {{SellingPrice1|currency}} for this transaction. This includes
+        You would Receive {{SellingPrice1|currency}} for this transaction. This includes
         a Seller Fee of {{Price1 - SellingPrice1|currency}}
-        <br>
-        Your Money Has been Sent: {{SellerPaid1}}
-    </div>
-    <div>
-        Ship Date: {{ShipDate1}}
-        <br>
-        Receive Date: {{RxDate1}}
-        <br>
-        Closed Date: {{CloseDate1}}
-        <br>
     </div>
 </div>

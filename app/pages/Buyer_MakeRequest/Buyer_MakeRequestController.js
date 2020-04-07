@@ -31,6 +31,7 @@ define(['require', 'app'],
             $scope.RequestShipping = Apperyio.EntityAPI('String');
             $scope.selected3 = Apperyio.EntityAPI('Wrapper3');
             $scope.list3 = Apperyio.EntityAPI('List3');
+            $scope.token = Apperyio.EntityAPI('String');
             /**
              * User controller functions
              */
@@ -143,6 +144,7 @@ define(['require', 'app'],
                 var session = AllData.session
                 var bMail = AllData.email
                 var bCell = AllData.MobilePhone
+                var token = AllData.session;
                 //Get User     
                 //Debug    
                 console.log(RequestManu, $scope.selected.item.Manu);
@@ -189,6 +191,10 @@ define(['require', 'app'],
                     requestData.params.Carrier = RequestCarrier;
                     requestData.params.B_Requests1 = bMail;
                     requestData.params.B_Requests2 = bCell;
+                    requestData.headers = {};
+                    var token_scope = $scope.token;
+                    requestData.headers['X-Appery-Session-Token'] = token;
+                    console.log("token", token);
                     return requestData;
                     /*|button_mapping|onbeforesend|1A38ED9E-9DCE-6838-29D0-683E5615E260||8363|*/
                 })($scope);
@@ -242,6 +248,7 @@ define(['require', 'app'],
                             });
                     },
                     function(error) { // callback to handle request error
+                        Apperyio.navigateTo("Login", {});
                     },
                     function(notify) { // notify callback, can fire few times
                     });

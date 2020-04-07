@@ -116,6 +116,14 @@ define(['require'], function(require) {
      * @property {string} when["/Screen1.html"].c  - Controller for /Screen1.html URL
      * @property {string} when["/Screen1.html"].t  - Template for /Screen1.html URL
      * @property {string[]} when["/Screen1.html"].d  - Dependencies for /Screen1.html URL
+     * @property {object} when["/Screen2.html"]    - Routing configuration for /Screen2.html URL
+     * @property {string} when["/Screen2.html"].c  - Controller for /Screen2.html URL
+     * @property {string} when["/Screen2.html"].t  - Template for /Screen2.html URL
+     * @property {string[]} when["/Screen2.html"].d  - Dependencies for /Screen2.html URL
+     * @property {object} when["/Seller_Offers_Detail.html"]    - Routing configuration for /Seller_Offers_Detail.html URL
+     * @property {string} when["/Seller_Offers_Detail.html"].c  - Controller for /Seller_Offers_Detail.html URL
+     * @property {string} when["/Seller_Offers_Detail.html"].t  - Template for /Seller_Offers_Detail.html URL
+     * @property {string[]} when["/Seller_Offers_Detail.html"].d  - Dependencies for /Seller_Offers_Detail.html URL
      
      * @property {object} otherwise                             - Routing configuration for another URL
      * @property {object} otherwise.redirectTo                  - Redirect to default routing URL
@@ -145,6 +153,8 @@ define(['require'], function(require) {
      * @property {string} route_names.["Seller_Complete_Detail"]  - "Seller_Complete_Detail" is an alias for "/Seller_Complete_Detail.html" routing
      * @property {string} route_names.["Buyer_Complete_Detail"]  - "Buyer_Complete_Detail" is an alias for "/Buyer_Complete_Detail.html" routing
      * @property {string} route_names.["Screen1"]  - "Screen1" is an alias for "/Screen1.html" routing
+     * @property {string} route_names.["Screen2"]  - "Screen2" is an alias for "/Screen2.html" routing
+     * @property {string} route_names.["Seller_Offers_Detail"]  - "Seller_Offers_Detail" is an alias for "/Seller_Offers_Detail.html" routing
      
      */
     return {
@@ -271,9 +281,9 @@ define(['require'], function(require) {
                 t: '$Buyer_Complete_Detail/Buyer_Complete_DetailTemplate.html',
                 d: []
             },
-            '/Screen1.html': {
-                c: '$Screen1/Screen1Controller',
-                t: '$Screen1/Screen1Template.html',
+            '/Seller_Offers_Detail.html': {
+                c: '$Seller_Offers_Detail/Seller_Offers_DetailController',
+                t: '$Seller_Offers_Detail/Seller_Offers_DetailTemplate.html',
                 d: []
             }
         },
@@ -303,7 +313,9 @@ define(['require'], function(require) {
             'Buyer_InProcess_Detail': '/Buyer_InProcess_Detail.html',
             'Seller_Complete_Detail': '/Seller_Complete_Detail.html',
             'Buyer_Complete_Detail': '/Buyer_Complete_Detail.html',
-            'Screen1': '/Screen1.html'
+            'Screen1': '/Screen1.html',
+            'Screen2': '/Screen2.html',
+            'Seller_Offers_Detail': '/Seller_Offers_Detail.html'
         }
     };
 });

@@ -517,6 +517,9 @@ define(['require'], function(require) {
                                 "Content-Type": {
                                     "type": "string",
                                     "default": "text/plain"
+                                },
+                                "X-Appery-Session-Token": {
+                                    "type": "string"
                                 }
                             }
                         }
@@ -575,7 +578,8 @@ define(['require'], function(require) {
                             "type": "object",
                             "properties": {
                                 "username": {
-                                    "type": "string"
+                                    "type": "string",
+                                    "default": "johnp"
                                 }
                             }
                         },
@@ -585,6 +589,9 @@ define(['require'], function(require) {
                                 "Content-Type": {
                                     "type": "string",
                                     "default": "text/plain"
+                                },
+                                "X-Appery-Session-Token": {
+                                    "type": "string"
                                 }
                             }
                         }
@@ -719,6 +726,9 @@ define(['require'], function(require) {
                                 "Content-Type": {
                                     "type": "string",
                                     "default": "text/plain"
+                                },
+                                "X-Appery-Session-Token": {
+                                    "type": "string"
                                 }
                             }
                         }
@@ -886,6 +896,9 @@ define(['require'], function(require) {
                                 "Content-Type": {
                                     "type": "string",
                                     "default": "text/plain"
+                                },
+                                "X-Appery-Session-Token": {
+                                    "type": "string"
                                 }
                             }
                         }
@@ -955,6 +968,9 @@ define(['require'], function(require) {
                                 "Content-Type": {
                                     "type": "string",
                                     "default": "text/plain"
+                                },
+                                "X-Appery-Session-Token": {
+                                    "type": "string"
                                 }
                             }
                         }
@@ -1062,7 +1078,12 @@ define(['require'], function(require) {
                         },
                         "query": {
                             "type": "object",
-                            "properties": {}
+                            "properties": {
+                                "username": {
+                                    "type": "string",
+                                    "default": "jhn"
+                                }
+                            }
                         },
                         "headers": {
                             "type": "object",
@@ -1070,6 +1091,9 @@ define(['require'], function(require) {
                                 "Content-Type": {
                                     "type": "string",
                                     "default": "text/plain"
+                                },
+                                "X-Appery-Session-Token": {
+                                    "type": "string"
                                 }
                             }
                         }
@@ -1139,6 +1163,9 @@ define(['require'], function(require) {
                                 "Content-Type": {
                                     "type": "string",
                                     "default": "text/plain"
+                                },
+                                "X-Appery-Session-Token": {
+                                    "type": "string"
                                 }
                             }
                         }
@@ -1198,7 +1225,7 @@ define(['require'], function(require) {
                             "properties": {
                                 "CurrentRequestID": {
                                     "type": "string",
-                                    "default": "5e67cd334042cd1059848839"
+                                    "default": "5e598eac3147710a1f63dff8"
                                 }
                             }
                         },
@@ -1208,6 +1235,9 @@ define(['require'], function(require) {
                                 "Content-Type": {
                                     "type": "string",
                                     "default": "text/plain"
+                                },
+                                "X-Appery-Session-Token": {
+                                    "type": "string"
                                 }
                             }
                         }
@@ -1417,6 +1447,9 @@ define(['require'], function(require) {
                                 "Content-Type": {
                                     "type": "string",
                                     "default": "text/plain"
+                                },
+                                "X-Appery-Session-Token": {
+                                    "type": "string"
                                 }
                             }
                         }
@@ -1577,6 +1610,9 @@ define(['require'], function(require) {
                                 "Content-Type": {
                                     "type": "string",
                                     "default": "text/plain"
+                                },
+                                "X-Appery-Session-Token": {
+                                    "type": "string"
                                 }
                             }
                         }
@@ -1643,6 +1679,9 @@ define(['require'], function(require) {
                         "headers": {
                             "type": "object",
                             "properties": {
+                                "X-Appery-Session-Token": {
+                                    "type": "string"
+                                },
                                 "Content-Type": {
                                     "type": "string",
                                     "default": "text/plain"
@@ -1703,8 +1742,9 @@ define(['require'], function(require) {
                         "query": {
                             "type": "object",
                             "properties": {
-                                "CurrentOrderID": {
-                                    "type": "string"
+                                "CurrentRequestID": {
+                                    "type": "string",
+                                    "default": "5e5adb7f3147710a1f63e6c0"
                                 }
                             }
                         },
@@ -1714,6 +1754,9 @@ define(['require'], function(require) {
                                 "Content-Type": {
                                     "type": "string",
                                     "default": "text/plain"
+                                },
+                                "X-Appery-Session-Token": {
+                                    "type": "string"
                                 }
                             }
                         }
@@ -1784,6 +1827,9 @@ define(['require'], function(require) {
                         "headers": {
                             "type": "object",
                             "properties": {
+                                "X-Appery-Session-Token": {
+                                    "type": "string"
+                                },
                                 "Content-Type": {
                                     "type": "string",
                                     "default": "text/plain"
@@ -1930,6 +1976,158 @@ define(['require'], function(require) {
                 }
             }
         },
+        "phoneapp_BuyerRequests_update_service": {
+            "type": "object",
+            "properties": {
+                "url": {
+                    "type": "string",
+                    "default": "https://api.appery.io/rest/1/db/collections/BuyerRequests/{_id}"
+                },
+                "method": {
+                    "type": "string",
+                    "default": "put"
+                },
+                "request": {
+                    "type": "object",
+                    "properties": {
+                        "body": {
+                            "type": "object",
+                            "properties": {
+                                "Dead": {
+                                    "type": "boolean",
+                                    "default": null
+                                },
+                                "manufacturer": {
+                                    "type": "string"
+                                },
+                                "Shipping": {
+                                    "type": "string"
+                                },
+                                "B_Requests3": {
+                                    "type": "string"
+                                },
+                                "RNotes": {
+                                    "type": "string"
+                                },
+                                "Buyer_username": {
+                                    "type": "string"
+                                },
+                                "B_Requests5": {
+                                    "type": "string"
+                                },
+                                "Product": {
+                                    "type": "string"
+                                },
+                                "Color": {
+                                    "type": "string"
+                                },
+                                "Alive": {
+                                    "type": "boolean",
+                                    "default": null
+                                },
+                                "Quantity": {
+                                    "type": "number",
+                                    "default": null
+                                },
+                                "B_Requests2": {
+                                    "type": "string"
+                                },
+                                "B_Requests4": {
+                                    "type": "string"
+                                },
+                                "Expiration": {
+                                    "type": "number",
+                                    "default": null
+                                },
+                                "Kitted": {
+                                    "type": "string"
+                                },
+                                "offers": {
+                                    "type": "array",
+                                    "items": [{
+                                        "type": "null"
+                                    }]
+                                },
+                                "acl": {
+                                    "type": "object",
+                                    "properties": {
+                                        "*": {
+                                            "type": "object",
+                                            "properties": {
+                                                "read": {
+                                                    "type": "boolean",
+                                                    "default": true
+                                                },
+                                                "write": {
+                                                    "type": "boolean",
+                                                    "default": true
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "ExpirationDate": {
+                                    "type": "string"
+                                },
+                                "B_Requests1": {
+                                    "type": "string"
+                                },
+                                "Carrier": {
+                                    "type": "string"
+                                },
+                                "Condition": {
+                                    "type": "string"
+                                },
+                                "Memory": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "query": {
+                            "type": "object",
+                            "properties": {
+                                "_id": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "headers": {
+                            "type": "object",
+                            "properties": {
+                                "X-Appery-Session-Token": {
+                                    "type": "string"
+                                },
+                                "X-Appery-Database-Id": {
+                                    "type": "string",
+                                    "default": "{phoneapp_settings.database_id}"
+                                },
+                                "Content-Type": {
+                                    "type": "string",
+                                    "default": "application/json"
+                                }
+                            }
+                        }
+                    }
+                },
+                "response": {
+                    "type": "object",
+                    "properties": {
+                        "body": {
+                            "type": "object",
+                            "properties": {
+                                "_updatedAt": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "headers": {
+                            "type": "object",
+                            "properties": {}
+                        }
+                    }
+                }
+            }
+        },
         "Buyer_Complete_service": {
             "type": "object",
             "properties": {
@@ -1967,6 +2165,9 @@ define(['require'], function(require) {
                                 "Content-Type": {
                                     "type": "string",
                                     "default": "text/plain"
+                                },
+                                "X-Appery-Session-Token": {
+                                    "type": "string"
                                 }
                             }
                         }
@@ -2192,13 +2393,83 @@ define(['require'], function(require) {
                             "properties": {
                                 "CurrentRequestID": {
                                     "type": "string",
-                                    "default": "5e5ada8e80c1b20a2aa8f63a"
+                                    "default": "5e55ca7280c1b20a2aa88c80"
                                 }
                             }
                         },
                         "headers": {
                             "type": "object",
                             "properties": {
+                                "Content-Type": {
+                                    "type": "string",
+                                    "default": "text/plain"
+                                },
+                                "X-Appery-Session-Token": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                },
+                "response": {
+                    "type": "object",
+                    "properties": {
+                        "body": {
+                            "type": "object",
+                            "properties": {
+                                "$": {
+                                    "type": "object",
+                                    "properties": {
+                                        "requestBody": {
+                                            "type": "string"
+                                        },
+                                        "requestParams": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "headers": {
+                            "type": "object",
+                            "properties": {}
+                        }
+                    }
+                }
+            }
+        },
+        "test_Security_service": {
+            "type": "object",
+            "properties": {
+                "url": {
+                    "type": "string",
+                    "default": "https://api.appery.io/rest/1/code/00ff30a6-ae0a-4d8d-ad8a-6986a312477d/exec"
+                },
+                "method": {
+                    "type": "string",
+                    "default": "post"
+                },
+                "request": {
+                    "type": "object",
+                    "properties": {
+                        "body": {
+                            "type": "object",
+                            "properties": {
+                                "data": {
+                                    "type": "data"
+                                }
+                            }
+                        },
+                        "query": {
+                            "type": "object",
+                            "properties": {}
+                        },
+                        "headers": {
+                            "type": "object",
+                            "properties": {
+                                "X-Appery-Session-Token": {
+                                    "type": "string"
+                                },
                                 "Content-Type": {
                                     "type": "string",
                                     "default": "text/plain"
@@ -2214,108 +2485,15 @@ define(['require'], function(require) {
                             "type": "object",
                             "properties": {
                                 "$": {
-                                    "type": "array",
-                                    "items": [{
-                                        "type": "object",
-                                        "properties": {
-                                            "B_Requests3": {
-                                                "type": "string"
-                                            },
-                                            "_id": {
-                                                "type": "string",
-                                                "default": "5e3cecf826c8a77f7a63e5e8"
-                                            },
-                                            "Memory": {
-                                                "type": "string",
-                                                "default": "32 GB"
-                                            },
-                                            "Expiration": {
-                                                "type": "string",
-                                                "default": "2"
-                                            },
-                                            "_updatedAt": {
-                                                "type": "object",
-                                                "properties": {
-                                                    "$date": {
-                                                        "type": "string",
-                                                        "default": "2020-02-07T04:52:08.697Z"
-                                                    }
-                                                }
-                                            },
-                                            "ExpirationDate": {
-                                                "type": "object",
-                                                "properties": {
-                                                    "$date": {
-                                                        "type": "string",
-                                                        "default": "2020-01-01T00:00:00.000Z"
-                                                    }
-                                                }
-                                            },
-                                            "Quantity": {
-                                                "type": "number",
-                                                "default": 4
-                                            },
-                                            "RNotes": {
-                                                "type": "string",
-                                                "default": "Second Try"
-                                            },
-                                            "Alive": {
-                                                "type": "boolean",
-                                                "default": false
-                                            },
-                                            "B_Requests4": {
-                                                "type": "string"
-                                            },
-                                            "Dead": {
-                                                "type": "boolean",
-                                                "default": false
-                                            },
-                                            "Condition": {
-                                                "type": "string",
-                                                "default": "C"
-                                            },
-                                            "Kitted": {
-                                                "type": "string"
-                                            },
-                                            "Buyer_username": {
-                                                "type": "string",
-                                                "default": "john"
-                                            },
-                                            "Color": {
-                                                "type": "string",
-                                                "default": "Gold"
-                                            },
-                                            "B_Requests5": {
-                                                "type": "string"
-                                            },
-                                            "_createdAt": {
-                                                "type": "object",
-                                                "properties": {
-                                                    "$date": {
-                                                        "type": "string",
-                                                        "default": "2020-02-07T04:52:08.697Z"
-                                                    }
-                                                }
-                                            },
-                                            "B_Requests1": {
-                                                "type": "string"
-                                            },
-                                            "B_Requests2": {
-                                                "type": "string"
-                                            },
-                                            "Carrier": {
-                                                "type": "string"
-                                            },
-                                            "Product": {
-                                                "type": "string",
-                                                "default": "iPhone 6S Plus"
-                                            },
-                                            "manufacturer": {
-                                                "type": "string",
-                                                "default": "Apple"
-                                            }
+                                    "type": "object",
+                                    "properties": {
+                                        "requestParams": {
+                                            "type": "string"
+                                        },
+                                        "requestBody": {
+                                            "type": "string"
                                         }
-                                    }]
+                                    }
                                 }
                             }
                         },
@@ -2387,6 +2565,9 @@ define(['require'], function(require) {
                         "headers": {
                             "type": "object",
                             "properties": {
+                                "X-Appery-Session-Token": {
+                                    "type": "string"
+                                },
                                 "Content-Type": {
                                     "type": "string",
                                     "default": "text/plain"
@@ -2705,6 +2886,9 @@ define(['require'], function(require) {
                         "headers": {
                             "type": "object",
                             "properties": {
+                                "X-Appery-Session-Token": {
+                                    "type": "string"
+                                },
                                 "Content-Type": {
                                     "type": "string",
                                     "default": "text/plain"
@@ -2890,6 +3074,9 @@ define(['require'], function(require) {
                         "headers": {
                             "type": "object",
                             "properties": {
+                                "X-Appery-Session-Token": {
+                                    "type": "string"
+                                },
                                 "Content-Type": {
                                     "type": "string",
                                     "default": "text/plain"
@@ -2911,6 +3098,78 @@ define(['require'], function(require) {
                                             "type": "string"
                                         },
                                         "requestParams": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "headers": {
+                            "type": "object",
+                            "properties": {}
+                        }
+                    }
+                }
+            }
+        },
+        "ReturnOffersToSeller_Detail_service": {
+            "type": "object",
+            "properties": {
+                "url": {
+                    "type": "string",
+                    "default": "https://api.appery.io/rest/1/code/0650ba31-7acf-46f8-af53-b4b95b2fa089/exec"
+                },
+                "method": {
+                    "type": "string",
+                    "default": "post"
+                },
+                "request": {
+                    "type": "object",
+                    "properties": {
+                        "body": {
+                            "type": "object",
+                            "properties": {
+                                "data": {
+                                    "type": "data"
+                                }
+                            }
+                        },
+                        "query": {
+                            "type": "object",
+                            "properties": {
+                                "CurrentRequestID": {
+                                    "type": "string",
+                                    "default": "5e8c9bf87b1efc1056e93428"
+                                }
+                            }
+                        },
+                        "headers": {
+                            "type": "object",
+                            "properties": {
+                                "X-Appery-Session-Token": {
+                                    "type": "string"
+                                },
+                                "Content-Type": {
+                                    "type": "string",
+                                    "default": "text/plain"
+                                }
+                            }
+                        }
+                    }
+                },
+                "response": {
+                    "type": "object",
+                    "properties": {
+                        "body": {
+                            "type": "object",
+                            "properties": {
+                                "$": {
+                                    "type": "object",
+                                    "properties": {
+                                        "requestParams": {
+                                            "type": "string"
+                                        },
+                                        "requestBody": {
                                             "type": "string"
                                         }
                                     }
@@ -3226,6 +3485,9 @@ define(['require'], function(require) {
                         "headers": {
                             "type": "object",
                             "properties": {
+                                "X-Appery-Session-Token": {
+                                    "type": "string"
+                                },
                                 "Content-Type": {
                                     "type": "string",
                                     "default": "text/plain"
@@ -3493,6 +3755,9 @@ define(['require'], function(require) {
                                 "Content-Type": {
                                     "type": "string",
                                     "default": "text/plain"
+                                },
+                                "X-Appery-Session-Token": {
+                                    "type": "string"
                                 }
                             }
                         }

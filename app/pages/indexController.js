@@ -97,6 +97,12 @@ define(['require'],
             $scope.gotoSellerOffers = function() {
                 Apperyio.navigateTo("Seller_Offers", {});
             };
+            /**
+             * @function gotoLogin
+             */
+            $scope.gotoLogin = function() {
+                Apperyio.navigateTo("Login", {});
+            };
         }
         return ['$scope', 'Apperyio', controller];
     });

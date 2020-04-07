@@ -15,6 +15,7 @@ define(['require', 'app'],
             $scope.RequestID1 = Apperyio.EntityAPI('DataStorage');
             $scope.username = Apperyio.EntityAPI('String');
             $scope.item = Apperyio.EntityAPI('String');
+            $scope.token = Apperyio.EntityAPI('String');
             /**
              * User controller functions
              */
@@ -29,6 +30,7 @@ define(['require', 'app'],
                 var AllData = userData.current;
                 var username = AllData.username;
                 var Buyer_username = AllData.username;
+                var token = AllData.session;
                 //Get User  
                 console.log(username);
                 var requestData = {};
@@ -41,6 +43,10 @@ define(['require', 'app'],
                     requestData.params = {};
                     var username_scope = $scope.username;
                     requestData.params.username = username;
+                    requestData.headers = {};
+                    var token_scope = $scope.token;
+                    requestData.headers['X-Appery-Session-Token'] = token;
+                    console.log("token", token);
                     return requestData;
                     /*|button_mapping|onbeforesend|1FFF3864-D79D-CBE9-50BA-C37E5B785742||3663|*/
                 })($scope);
@@ -57,6 +63,7 @@ define(['require', 'app'],
                         })(success, $scope);
                     },
                     function(error) { // callback to handle request error
+                        Apperyio.navigateTo("Login", {});
                     },
                     function(notify) { // notify callback, can fire few times
                     });

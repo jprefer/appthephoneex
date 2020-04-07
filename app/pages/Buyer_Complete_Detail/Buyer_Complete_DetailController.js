@@ -41,6 +41,7 @@ define(['require', 'app'],
             $scope.ShippedBy1 = Apperyio.EntityAPI('String');
             $scope.Tracking1 = Apperyio.EntityAPI('String');
             $scope.ShipDate1 = Apperyio.EntityAPI('String');
+            $scope.token = Apperyio.EntityAPI('String');
             /**
              * User controller functions
              */
@@ -59,6 +60,15 @@ define(['require', 'app'],
                 RequestID3 = $scope.RequestID2.Gl_Vars.request_id;
                 console.log("RequestID3= ", RequestID3);
                 var miniID = "";
+                var userData = Apperyio.get("dataStorage");
+                var AllData = userData.current;
+                var username = AllData.username;
+                var Buyer_username = AllData.username;
+                var token = AllData.session;
+                //Get User  
+                console.log(username);
+                console.log(AllData);
+                console.log(token);
                 // Get Data from Request
                 var requestData = {};
                 requestData = (function mapping5190($scope) {
@@ -66,6 +76,10 @@ define(['require', 'app'],
                     requestData.params = {};
                     var RequestID3_scope = $scope.RequestID3;
                     requestData.params.CurrentRequestID = RequestID3;
+                    requestData.headers = {};
+                    var token_scope = $scope.token;
+                    requestData.headers['X-Appery-Session-Token'] = token;
+                    console.log("token", token);
                     return requestData;
                     /*|button_mapping|onbeforesend|F952B444-3CF8-14F2-4B7E-90AEB380A4EA||5190|*/
                 })($scope);
@@ -165,6 +179,7 @@ define(['require', 'app'],
                         })(success, $scope);
                     },
                     function(error) { // callback to handle request error
+                        Apperyio.navigateTo("Login", {});
                     },
                     function(notify) { // notify callback, can fire few times
                     });

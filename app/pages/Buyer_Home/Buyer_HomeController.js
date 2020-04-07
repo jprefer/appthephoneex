@@ -15,6 +15,7 @@ define(['require', 'app'],
             $scope.username = Apperyio.EntityAPI('String');
             $scope.list = Apperyio.EntityAPI('List');
             $scope.RequestID1 = Apperyio.EntityAPI('DataStorage');
+            $scope.token = Apperyio.EntityAPI('String');
             /**
              * User controller functions
              */
@@ -30,14 +31,21 @@ define(['require', 'app'],
                 var AllData = userData.current;
                 var username = AllData.username;
                 var Buyer_username = AllData.username;
+                var token = AllData.session;
                 //Get User  
                 console.log(username);
+                console.log(AllData);
+                console.log(token);
                 var requestData = {};
                 requestData = (function mapping2289($scope) {
                     var requestData = {};
                     requestData.params = {};
                     var username_scope = $scope.username;
                     requestData.params.username = username;
+                    requestData.headers = {};
+                    var token_scope = $scope.token;
+                    requestData.headers['X-Appery-Session-Token'] = token;
+                    console.log("token", token);
                     return requestData;
                     /*|button_mapping|onbeforesend|214D4B44-2CB9-E04C-0C76-E5BF1F8E43B9||2289|*/
                 })($scope);
@@ -54,6 +62,7 @@ define(['require', 'app'],
                         })(success, $scope);
                     },
                     function(error) { // callback to handle request error
+                        Apperyio.navigateTo("Login", {});
                     },
                     function(notify) { // notify callback, can fire few times
                     });
@@ -72,12 +81,6 @@ define(['require', 'app'],
                 console.log(_id);
                 console.log($scope.RequestID1.Gl_Vars.request_id);
                 Apperyio.navigateTo("Buyer_Accept_Offer");
-            };
-            /**
-             * @function gotoScreen1
-             */
-            $scope.gotoScreen1 = function() {
-                Apperyio.navigateTo("Screen1", {});
             };
         }
     });

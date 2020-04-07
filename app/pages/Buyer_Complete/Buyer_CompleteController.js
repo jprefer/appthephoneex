@@ -29,6 +29,7 @@ define(['require', 'app'],
                 var AllData = userData.current;
                 var username = AllData.username;
                 var Buyer_username = AllData.username;
+                var token = AllData.session;
                 //Get User  
                 console.log(username);
                 var requestData = {};
@@ -41,6 +42,10 @@ define(['require', 'app'],
                     requestData.params = {};
                     var username_scope = $scope.username;
                     requestData.params.username = username;
+                    requestData.headers = {};
+                    var token_scope = $scope.token;
+                    requestData.headers['X-Appery-Session-Token'] = token;
+                    console.log("token", token);
                     return requestData;
                     /*|button_mapping|onbeforesend|500F4F94-5976-620A-52FD-12F444E4CFEA||4743|*/
                 })($scope);
@@ -57,6 +62,7 @@ define(['require', 'app'],
                         })(success, $scope);
                     },
                     function(error) { // callback to handle request error
+                        Apperyio.navigateTo("Login", {});
                     },
                     function(notify) { // notify callback, can fire few times
                     });

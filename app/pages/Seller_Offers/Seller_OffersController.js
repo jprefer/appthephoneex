@@ -15,6 +15,7 @@ define(['require', 'app'],
             $scope.username1 = Apperyio.EntityAPI('String');
             $scope.list = Apperyio.EntityAPI('List');
             $scope.RequestID1 = Apperyio.EntityAPI('DataStorage');
+            $scope.token = Apperyio.EntityAPI('String');
             /**
              * User controller functions
              */
@@ -30,6 +31,7 @@ define(['require', 'app'],
                 var AllData = userData.current;
                 var username = AllData.username;
                 var username1 = AllData.username;
+                var token = AllData.session;
                 //Get User  
                 console.log("UserName:", username1);
                 var requestData = {};
@@ -39,6 +41,10 @@ define(['require', 'app'],
                     var username1_scope = username1;
                     requestData.params.username = username1_scope;
                     console.log(username1_scope);
+                    requestData.headers = {};
+                    var token_scope = $scope.token;
+                    requestData.headers['X-Appery-Session-Token'] = token;
+                    console.log("token", token);
                     return requestData;
                     /*|button_mapping|onbeforesend|AC0255D2-AA14-57BC-1A9E-35623C94024F||4817|*/
                 })($scope);
@@ -54,6 +60,7 @@ define(['require', 'app'],
                         })(success, $scope);
                     },
                     function(error) { // callback to handle request error
+                        Apperyio.navigateTo("Login", {});
                     },
                     function(notify) { // notify callback, can fire few times
                     });
@@ -68,10 +75,10 @@ define(['require', 'app'],
                 // user1 is a variable in the page1 scope 
                 // set it to reference the 'dataStorage' service
                 $scope.RequestID1.Gl_Vars = data;
-                $scope.RequestID1.Gl_Vars.request_id = _id
+                $scope.RequestID1.Gl_Vars.request_id = _id;
                 console.log(_id);
                 console.log($scope.RequestID1.Gl_Vars.request_id);
-                Apperyio.navigateTo("Seller_Home");
+                Apperyio.navigateTo("Seller_Offers_Detail");
             };
         }
     });

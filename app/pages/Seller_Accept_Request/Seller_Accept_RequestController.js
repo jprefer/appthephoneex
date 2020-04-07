@@ -32,6 +32,7 @@ define(['require', 'app'],
             $scope.Shipping1 = Apperyio.EntityAPI('String');
             $scope.Carrier1 = Apperyio.EntityAPI('String');
             $scope.Kitted1 = Apperyio.EntityAPI('String');
+            $scope.token = Apperyio.EntityAPI('String');
             /**
              * User controller functions
              */
@@ -49,7 +50,14 @@ define(['require', 'app'],
                 console.log($scope.RequestID2.Gl_Vars.request_id);
                 RequestID3 = $scope.RequestID2.Gl_Vars.request_id;
                 console.log("RequestID3= ", RequestID3);
-                var miniID = "";
+                var miniID
+                //Get User
+                var userData = Apperyio.get("dataStorage");
+                var AllData = userData.current;
+                var username = AllData.username;
+                var Buyer_username = AllData.username;
+                var token = AllData.session;
+                //Get User  
                 // Get Data from Request
                 var requestData = {};
                 requestData = (function mapping6403($scope) {
@@ -57,6 +65,10 @@ define(['require', 'app'],
                     requestData.params = {};
                     var RequestID3_scope = $scope.RequestID3;
                     requestData.params.CurrentRequestID = RequestID3;
+                    requestData.headers = {};
+                    var token_scope = $scope.token;
+                    requestData.headers['X-Appery-Session-Token'] = token;
+                    console.log("token", token);
                     return requestData;
                     /*|button_mapping|onbeforesend|40707D72-9839-CE41-614A-E5ECC1D8F358||6403|*/
                 })($scope);
@@ -121,6 +133,7 @@ define(['require', 'app'],
                         })(success, $scope);
                     },
                     function(error) { // callback to handle request error
+                        Apperyio.navigateTo("Login", {});
                     },
                     function(notify) { // notify callback, can fire few times
                     });
@@ -145,6 +158,7 @@ define(['require', 'app'],
                 var session = AllData.session
                 var sMail = AllData.email
                 var sCell = AllData.MobilePhone
+                var token = AllData.session;
                 //Get User  
                 console.log(username);
                 var requestData = {};
@@ -194,6 +208,10 @@ define(['require', 'app'],
                     requestData.params.Kitted = Kitted1_scope;
                     requestData.params.S_Offers1 = sMail;
                     requestData.params.S_Offers2 = sCell;
+                    requestData.headers = {};
+                    var token_scope = $scope.token;
+                    requestData.headers['X-Appery-Session-Token'] = token;
+                    console.log("token", token);
                     return requestData;
                     /*|button_mapping|onbeforesend|061FD875-61E6-1D52-3B68-23238C2E995D||3480|*/
                 })($scope);
@@ -229,6 +247,7 @@ define(['require', 'app'],
                             });
                     },
                     function(error) { // callback to handle request error
+                        Apperyio.navigateTo("Login", {});
                     },
                     function(notify) { // notify callback, can fire few times
                     });
