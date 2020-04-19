@@ -4,7 +4,7 @@ class="aio-empty-screen padding overflow-scroll">
     <div class="button-bar">
         <button class="button button-calm button-block button-small icon-left ion-alert"
         ng-click="gotoBuyerRequestSee()">
-            All My Offers
+            My Requests
         </button>
         <button class="button button-calm button-block button-small icon-left ion-wrench"
         ng-click="gotoBuyerInProcess()">
@@ -49,7 +49,7 @@ class="aio-empty-screen padding overflow-scroll">
         <a href="javascript:void(0)" class="item" ng-click="showDetail(item._id)" ng-repeat="item in list">
         <h2>Order: {{item.BuyingPrice|currency}} --&gt; {{item. Manu}} {{item. Prod}} </h2>
         <p>{{item.Mem}} / {{item.Colour}} / {{item. ChoiceCarrier}} /  Order ID: {{item._id.substring(20)}}</p>
-        Quan:{{item.Quan}} / Grade: {{item.Cond}}  / Offer ID: {{item. Offer_id.substring(20)}}
+        Quan:{{item.Quan}} / Grade: {{item.Cond}}  / Shipped: {{item. ShipDate.$date.substring(0,10)}}
         </a>
     </div>
 </div>

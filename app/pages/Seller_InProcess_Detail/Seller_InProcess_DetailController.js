@@ -165,6 +165,9 @@ define(['require', 'app'],
                             $scope.Tracking = Tracking1_scope;
                             var MasterDate = ShipDate1_scope.$date;
                             $scope.ShipDate1 = MasterDate;
+                            $scope.ShipDate1 = new Date(ShipDate1_scope.$date);
+                            var ChangetoString3 = String($scope.ShipDate1);
+                            $scope.ShipDate1 = ChangetoString3
                             /*|button_mapping|onsuccess|F952B444-3CF8-14F2-4B7E-90AEB380A4EA||1982|*/
                         })(success, $scope);
                     },

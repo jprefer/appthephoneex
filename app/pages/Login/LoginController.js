@@ -59,7 +59,7 @@ define(['require', 'app'],
                         var turn = AllData.UserType;
                         //Thenext line was added to get user
                         var dev_user = AllData.username;
-                        $scope.main.username1 = AllData.username
+                        $scope.main.username1 = AllData.username;
                         //The next lines are added to get the deviceid and register push notifications
                         //Thenext line was added to get user
                         $scope.timeZone = "GMT-04:00";

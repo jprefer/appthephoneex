@@ -144,7 +144,7 @@ define(['require', 'app'],
                             Tracking1_scope = success.data[0].Tracking;
                             ShipDate1_scope = success.data[0].ShipDate.$date;
                             RxDate1_scope = success.data[0].RxDate.$date;
-                            CloseDate1_scope = success.data[0].CloseDate.$date;
+                            CloseDate1_scope = success.data[0].AcceptDate.$date;
                             SellerPaid1_scope = success.data[0].SellerPaid;
                             $scope.BuyerNote1 = BuyerNote1_scope;
                             $scope.Colour1 = Colour1_scope;
@@ -171,9 +171,15 @@ define(['require', 'app'],
                             $scope.ShipAddress2a = ShipAddress2a_scope;
                             $scope.ShippedBy = ShippedBy1_scope;
                             $scope.Tracking = Tracking1_scope;
-                            $scope.ShipDate1 = ShipDate1_scope;
-                            $scope.RxDate1 = RxDate1_scope;
-                            $scope.CloseDate1 = CloseDate1_scope;
+                            $scope.ShipDate1 = new Date(ShipDate1_scope);
+                            var ChangetoString3 = String($scope.ShipDate1);
+                            $scope.ShipDate1 = ChangetoString3
+                            $scope.RxDate1 = new Date(RxDate1_scope);
+                            var ChangetoString2 = String($scope.RxDate1);
+                            $scope.RxDate1 = ChangetoString2
+                            $scope.CloseDate1 = new Date(CloseDate1_scope);
+                            var ChangetoString1 = String($scope.CloseDate1);
+                            $scope.CloseDate1 = ChangetoString1
                             $scope.SellerPaid1 = SellerPaid1_scope;
                             /*|button_mapping|onsuccess|F952B444-3CF8-14F2-4B7E-90AEB380A4EA||1982|*/
                         })(success, $scope);

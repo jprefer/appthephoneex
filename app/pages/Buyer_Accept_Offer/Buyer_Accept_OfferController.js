@@ -149,7 +149,9 @@ define(['require', 'app'],
                             $scope.Shipping1 = Shipping1_scope;
                             $scope.OfferNotes1 = OfferNotes1_scope;
                             $scope.BuyerPrice1 = BuyerPrice1_scope;
-                            $scope.offerExpires1 = offerExpires1_scope;
+                            $scope.offerExpires1 = new Date(offerExpires1_scope);
+                            var ChangetoString = String($scope.offerExpires1);
+                            $scope.offerExpires1 = ChangetoString;
                             $scope.Seller1 = Seller1_scope;
                             $scope.OfferPrice1 = OfferPrice1_scope;
                             $scope.SellerPrice1 = SellerPrice1_scope;

@@ -1,16 +1,16 @@
 /**
- * Module initializes rest service PizzaDatabase_Ingredients_list_service
+ * Module initializes rest service menu_Main_Type_service
  */
 define(['require'], function(require) {
     return [{
         type: 'service',
-        name: 'PizzaDatabase_Ingredients_list_service',
-        deps: ['Apperyio', 'REST', PizzaDatabase_Ingredients_list_serviceImpl]
+        name: 'menu_Main_Type_service',
+        deps: ['Apperyio', 'REST', menu_Main_Type_serviceImpl]
     }];
     /**
-     * @function PizzaDatabase_Ingredients_list_serviceImpl
+     * @function menu_Main_Type_serviceImpl
      */
-    function PizzaDatabase_Ingredients_list_serviceImpl(Apperyio, REST) {
+    function menu_Main_Type_serviceImpl(Apperyio, REST) {
         var REST = new REST();
         /**
          * REST options. Initial values of "headers", "params", "data" and "echo" store are stored in models.js.
@@ -29,14 +29,15 @@ define(['require'], function(require) {
          * @property {string} serviceName                     - Service name
          */
         this.config = {
-            url: "https://api.appery.io/rest/1/db/collections/Ingredients",
-            method: "get",
-            headers: Apperyio.EntityAPI("PizzaDatabase_Ingredients_list_service.request.headers"),
-            params: Apperyio.EntityAPI("PizzaDatabase_Ingredients_list_service.request.query"),
+            url: "https://api.appery.io/rest/1/code/80a55545-85ea-4010-a631-f6bccf6fe04c/exec",
+            method: "post",
+            headers: Apperyio.EntityAPI("menu_Main_Type_service.request.headers"),
+            params: Apperyio.EntityAPI("menu_Main_Type_service.request.query"),
+            data: Apperyio.EntityAPI("menu_Main_Type_service.request.body", undefined, true, true) || "",
             aio_config: {
-                requestType: "",
+                requestType: "data",
                 responseType: "json",
-                serviceName: "PizzaDatabase_Ingredients_list_service"
+                serviceName: "menu_Main_Type_service"
             }
         };
         this.inst = REST.setDefaults(this.config);

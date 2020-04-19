@@ -10,6 +10,7 @@ define(['require'],
              */
             $scope.activeScreen = Apperyio.EntityAPI('ActiveScreen');
             $scope.User = Apperyio.EntityAPI('User');
+            $scope.pass = Apperyio.EntityAPI('Pass');
             /**
              * User controller functions
              */
@@ -21,6 +22,7 @@ define(['require'],
                 $scope.RequestID = {
                     current: 0
                 };
+                var pass = {};
             };
             /**
              * @function gotoPage
@@ -32,9 +34,13 @@ define(['require'],
                 var AllData = userData.current;
                 var turn = AllData.UserType
                 if (turn == "B") {
-                    Apperyio.navigateTo("Buyer_Home", {});
+                    Apperyio.navigateTo("Buyer_Home", {
+                        'reloadPage': true
+                    });
                 } else {
-                    Apperyio.navigateTo("Seller_Home", {});
+                    Apperyio.navigateTo("Seller_Home", {
+                        'reloadPage': true
+                    });
                 }
             };
             /**
@@ -59,7 +65,9 @@ define(['require'],
              * @function gotoBuyerHome
              */
             $scope.gotoBuyerHome = function() {
-                Apperyio.navigateTo("Buyer_Home", {});
+                Apperyio.navigateTo("Buyer_Home", {
+                    'reloadPage': true
+                });
             };
             /**
              * @function gotoBuyerRequestSee

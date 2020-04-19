@@ -1,16 +1,16 @@
 /**
- * Module initializes rest service PizzaDatabase_CustomPizza_create_service
+ * Module initializes rest service menu_Main_Company_service
  */
 define(['require'], function(require) {
     return [{
         type: 'service',
-        name: 'PizzaDatabase_CustomPizza_create_service',
-        deps: ['Apperyio', 'REST', PizzaDatabase_CustomPizza_create_serviceImpl]
+        name: 'menu_Main_Company_service',
+        deps: ['Apperyio', 'REST', menu_Main_Company_serviceImpl]
     }];
     /**
-     * @function PizzaDatabase_CustomPizza_create_serviceImpl
+     * @function menu_Main_Company_serviceImpl
      */
-    function PizzaDatabase_CustomPizza_create_serviceImpl(Apperyio, REST) {
+    function menu_Main_Company_serviceImpl(Apperyio, REST) {
         var REST = new REST();
         /**
          * REST options. Initial values of "headers", "params", "data" and "echo" store are stored in models.js.
@@ -29,15 +29,15 @@ define(['require'], function(require) {
          * @property {string} serviceName                     - Service name
          */
         this.config = {
-            url: "https://api.appery.io/rest/1/db/collections/CustomPizza",
+            url: "https://api.appery.io/rest/1/code/65ab4986-3746-4078-afef-5ce4bca58e42/exec",
             method: "post",
-            headers: Apperyio.EntityAPI("PizzaDatabase_CustomPizza_create_service.request.headers"),
-            params: Apperyio.EntityAPI("PizzaDatabase_CustomPizza_create_service.request.query"),
-            data: Apperyio.EntityAPI("PizzaDatabase_CustomPizza_create_service.request.body", undefined, true, true) || "",
+            headers: Apperyio.EntityAPI("menu_Main_Company_service.request.headers"),
+            params: Apperyio.EntityAPI("menu_Main_Company_service.request.query"),
+            data: Apperyio.EntityAPI("menu_Main_Company_service.request.body", undefined, true, true) || "",
             aio_config: {
-                requestType: "json",
+                requestType: "data",
                 responseType: "json",
-                serviceName: "PizzaDatabase_CustomPizza_create_service"
+                serviceName: "menu_Main_Company_service"
             }
         };
         this.inst = REST.setDefaults(this.config);

@@ -57,7 +57,9 @@ define(['require', 'app'],
                             var list_scope = $scope.list;
                             list_scope = success.data;
                             $scope.list = list_scope;
-                            console.log($scope.list)
+                            console.log($scope.list);
+                            //var  ChangetoString = new Date(item.CloseDate.$date);
+                            //item.CloseDate.$date = ChangetoString;
                             /*|button_mapping|onsuccess|500F4F94-5976-620A-52FD-12F444E4CFEA||8005|*/
                         })(success, $scope);
                     },

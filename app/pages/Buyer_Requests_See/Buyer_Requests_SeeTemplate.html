@@ -33,9 +33,9 @@ class="aio-empty-screen padding overflow-scroll">
             <div class="col">
                 <div class="list">
                     <a href="javascript:void(0)" class="item-divider item" ng-repeat="item in list">
-                    <h4>{{item. manufacturer}} {{item. Product}} / {{item.Carrier}}</h4>
-                    <p>{{item.Memory}}/{{item.Color}}/Ship: {{item.Shipping}} / {{item.Kitted}}</p>
-                    Quan:{{item.Quantity}} Grade: {{item.Condition}}  Request ID: {{item._id.substring(20)}}
+                    <h4>{{item. manufacturer}} {{item. Product}} / {{item.Carrier}} - Quan:{{item.Quantity}}  </h4>
+                    <p>{{item.Memory}}/{{item.Color}}/Ship: {{item.Shipping}} / Kit: {{item.Kitted}}</p>
+                    Requested: {{item._createdAt.$date.substring(0, 10)}}  Request ID: {{item._id.substring(20)}}
                     </a>
                 </div>
             </div>

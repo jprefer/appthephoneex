@@ -221,7 +221,7 @@ define(['require', 'app'],
              * @function GoBack
              */
             $scope.GoBack = function() {
-                Apperyio.navigateTo("Seller_Accepted", {});
+                Apperyio.navigateTo("Buyer_InProcess", {});
             };
         }
     });

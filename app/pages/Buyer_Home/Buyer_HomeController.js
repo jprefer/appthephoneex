@@ -82,5 +82,24 @@ define(['require', 'app'],
                 console.log($scope.RequestID1.Gl_Vars.request_id);
                 Apperyio.navigateTo("Buyer_Accept_Offer");
             };
+            /**
+             * @function gotoBuyer_Test
+             */
+            $scope.gotoBuyer_Test = function() {
+                Apperyio.navigateTo("Screen1", {});
+            };
+            /**
+             * @function reload
+             */
+            $scope.reload = function() {
+                // inject the 'dataStorage' service
+                var data = Apperyio.get("dataStorage");
+                // user1 is a variable in the page1 scope 
+                // set it to reference the 'dataStorage' service
+                $scope.RequestID1.Gl_Vars = data;
+                $scope.RequestID1.Gl_Vars.request_id = "Buyer_Home";
+                //console.log(_id);
+                Apperyio.navigateTo("PassThru", {});
+            };
         }
     });

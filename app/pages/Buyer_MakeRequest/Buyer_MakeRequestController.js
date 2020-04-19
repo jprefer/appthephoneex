@@ -10,28 +10,18 @@ define(['require', 'app'],
             /**
              * user controller variables
              */
-            $scope.user = Apperyio.EntityAPI('User');
+            $scope.token = Apperyio.EntityAPI('String');
+            $scope.RequestManu = Apperyio.EntityAPI('String');
+            $scope.RequestType = Apperyio.EntityAPI('String');
             $scope.RequestModel = Apperyio.EntityAPI('String');
             $scope.RequestMem = Apperyio.EntityAPI('String');
             $scope.RequestColor = Apperyio.EntityAPI('String');
+            $scope.user = Apperyio.EntityAPI('User');
+            $scope.RequestCarrier = Apperyio.EntityAPI('String');
+            $scope.RequestKitted = Apperyio.EntityAPI('String');
             $scope.RequestQuan = Apperyio.EntityAPI('String');
-            $scope.customList = Apperyio.EntityAPI('Array');
-            $scope.selected = Apperyio.EntityAPI('Wrapper');
-            $scope.list = Apperyio.EntityAPI('List');
-            $scope.selected1 = Apperyio.EntityAPI('Wrapper1');
-            $scope.list1 = Apperyio.EntityAPI('List1');
-            $scope.selected2 = Apperyio.EntityAPI('Wrapper2');
-            $scope.list2 = Apperyio.EntityAPI('List2');
-            $scope.RequestManu = Apperyio.EntityAPI('String');
             $scope.RequestExpiration = Apperyio.EntityAPI('String');
-            $scope.buyer = Apperyio.EntityAPI('String');
-            $scope.RequestCondition = Apperyio.EntityAPI('String');
-            $scope.testinput = Apperyio.EntityAPI('String');
-            $scope.RequestNotes = Apperyio.EntityAPI('String');
             $scope.RequestShipping = Apperyio.EntityAPI('String');
-            $scope.selected3 = Apperyio.EntityAPI('Wrapper3');
-            $scope.list3 = Apperyio.EntityAPI('List3');
-            $scope.token = Apperyio.EntityAPI('String');
             /**
              * User controller functions
              */
@@ -40,103 +30,2928 @@ define(['require', 'app'],
              */
             $scope.init = function() {
                 //On load screen logic
-                var requestData = {};
-                /*|button_mapping|onbeforesend|6A71953F-CA43-34BC-C5E5-604C42CE6608||6767|*/
-                // Get Hardware Select from database
-                Apperyio.get("phoneapp_Merchandise_list_service")(requestData).then(
-                    /*|service_bookmark|bookmark|6A71953F-CA43-34BC-C5E5-604C42CE6608||4946|*/
-                    function(success) { // success callback
-                        (function mapping3905(success, $scope) {
-                            var list_scope = $scope.list;
-                            var selected_scope = $scope.selected;
-                            list_scope = success.data;
-                            _.set(selected_scope, 'item', success.data[0]);
-                            $scope.list = list_scope;
-                            $scope.selected = selected_scope;
-                            /*|button_mapping|onsuccess|6A71953F-CA43-34BC-C5E5-604C42CE6608||3905|*/
-                        })(success, $scope);
+                var pass = {};
+                $scope.company = {};
+                $scope.type = {};
+                $scope.model = {};
+                $scope.storage = {};
+                $scope.finish = {};
+                var allCompanies = [{
+                        "Id": 1,
+                        "CompanyName": "Apple"
                     },
-                    function(error) { // callback to handle request error
+                    {
+                        "Id": 2,
+                        "CompanyName": "Samsung"
                     },
-                    function(notify) { // notify callback, can fire few times
+                    {
+                        "Id": 3,
+                        "CompanyName": "LG"
+                    }
+                ];
+                var allTypes = [{
+                        "Id": 1,
+                        "TypeName": "iPhone",
+                        "CompanyId": 1
+                    },
+                    {
+                        "Id": 2,
+                        "TypeName": "iPad - WiFi",
+                        "CompanyId": 1
+                    },
+                    {
+                        "Id": 3,
+                        "TypeName": "iPad - WiFi/Cellular",
+                        "CompanyId": 1
+                    },
+                    {
+                        "Id": 4,
+                        "TypeName": "Phone",
+                        "CompanyId": 2
+                    },
+                    {
+                        "Id": 5,
+                        "TypeName": "Tablet",
+                        "CompanyId": 2
+                    },
+                    {
+                        "Id": 6,
+                        "TypeName": "Phone",
+                        "CompanyId": 3
+                    },
+                    {
+                        "Id": 7,
+                        "TypeName": "Tablet",
+                        "CompanyId": 3
+                    }
+                ];
+                var allModels = [{
+                        "Id": 1,
+                        "ModelName": "iPhone 6",
+                        "TypeId": 1
+                    },
+                    {
+                        "Id": 2,
+                        "ModelName": "iPhone 6 Plus",
+                        "TypeId": 1
+                    },
+                    {
+                        "Id": 3,
+                        "ModelName": "iPhone 6S",
+                        "TypeId": 1
+                    },
+                    {
+                        "Id": 4,
+                        "ModelName": "iPhone 6S Plus",
+                        "TypeId": 1
+                    },
+                    {
+                        "Id": 5,
+                        "ModelName": "iPhone SE",
+                        "TypeId": 1
+                    },
+                    {
+                        "Id": 6,
+                        "ModelName": "iPhone 7",
+                        "TypeId": 1
+                    },
+                    {
+                        "Id": 7,
+                        "ModelName": "iPhone 7 Plus",
+                        "TypeId": 1
+                    },
+                    {
+                        "Id": 8,
+                        "ModelName": "iPhone 8",
+                        "TypeId": 1
+                    },
+                    {
+                        "Id": 9,
+                        "ModelName": "iPhone 8 Plus",
+                        "TypeId": 1
+                    },
+                    {
+                        "Id": 10,
+                        "ModelName": "iPhone X",
+                        "TypeId": 1
+                    },
+                    {
+                        "Id": 11,
+                        "ModelName": "iPhone XS",
+                        "TypeId": 1
+                    },
+                    {
+                        "Id": 12,
+                        "ModelName": "iPhone XS Max",
+                        "TypeId": 1
+                    },
+                    {
+                        "Id": 13,
+                        "ModelName": "iPhone XR",
+                        "TypeId": 1
+                    },
+                    {
+                        "Id": 14,
+                        "ModelName": "iPhone 11",
+                        "TypeId": 1
+                    },
+                    {
+                        "Id": 15,
+                        "ModelName": "iPhone 11 Pro",
+                        "TypeId": 1
+                    },
+                    {
+                        "Id": 16,
+                        "ModelName": "iPhone 11 Pro Max",
+                        "TypeId": 1
+                    },
+                    {
+                        "Id": 17,
+                        "ModelName": "iPad (4 Gen)",
+                        "TypeId": 2
+                    },
+                    {
+                        "Id": 18,
+                        "ModelName": "iPad (5 Gen)",
+                        "TypeId": 2
+                    },
+                    {
+                        "Id": 19,
+                        "ModelName": "iPad (6 Gen)",
+                        "TypeId": 2
+                    },
+                    {
+                        "Id": 20,
+                        "ModelName": "iPad (7 Gen)",
+                        "TypeId": 2
+                    },
+                    {
+                        "Id": 21,
+                        "ModelName": "iPad Air",
+                        "TypeId": 2
+                    },
+                    {
+                        "Id": 22,
+                        "ModelName": "iPad Air 2",
+                        "TypeId": 2
+                    },
+                    {
+                        "Id": 23,
+                        "ModelName": "iPad Air (3 Gen)",
+                        "TypeId": 2
+                    },
+                    {
+                        "Id": 24,
+                        "ModelName": "iPad Mini",
+                        "TypeId": 2
+                    },
+                    {
+                        "Id": 25,
+                        "ModelName": "iPad Mini 2",
+                        "TypeId": 2
+                    },
+                    {
+                        "Id": 26,
+                        "ModelName": "iPad Mini 3",
+                        "TypeId": 2
+                    },
+                    {
+                        "Id": 27,
+                        "ModelName": "iPad Mini 4",
+                        "TypeId": 2
+                    },
+                    {
+                        "Id": 28,
+                        "ModelName": "iPad Mini (5 Gen)",
+                        "TypeId": 2
+                    },
+                    {
+                        "Id": 29,
+                        "ModelName": "iPad Pro 12.9 in (1 Gen)",
+                        "TypeId": 2
+                    },
+                    {
+                        "Id": 30,
+                        "ModelName": "iPad Pro 9.7 in",
+                        "TypeId": 2
+                    },
+                    {
+                        "Id": 31,
+                        "ModelName": "iPad Pro 12.9 in (2 Gen)",
+                        "TypeId": 2
+                    },
+                    {
+                        "Id": 32,
+                        "ModelName": "iPad Pro 10.5 in",
+                        "TypeId": 2
+                    },
+                    {
+                        "Id": 33,
+                        "ModelName": "iPad Pro 12.9 in (3rd Gen)",
+                        "TypeId": 2
+                    },
+                    {
+                        "Id": 34,
+                        "ModelName": "iPad Pro 11 in (1 Gen)",
+                        "TypeId": 2
+                    },
+                    {
+                        "Id": 35,
+                        "ModelName": "iPad Pro 12.9 in (4th Gen)",
+                        "TypeId": 2
+                    },
+                    {
+                        "Id": 36,
+                        "ModelName": "iPad Pro 11 in (2 Gen)",
+                        "TypeId": 2
+                    },
+                    {
+                        "Id": 17,
+                        "ModelName": "iPad (4 Gen)",
+                        "TypeId": 3
+                    },
+                    {
+                        "Id": 18,
+                        "ModelName": "iPad (5 Gen)",
+                        "TypeId": 3
+                    },
+                    {
+                        "Id": 19,
+                        "ModelName": "iPad (6 Gen)",
+                        "TypeId": 3
+                    },
+                    {
+                        "Id": 20,
+                        "ModelName": "iPad (7 Gen)",
+                        "TypeId": 3
+                    },
+                    {
+                        "Id": 21,
+                        "ModelName": "iPad Air",
+                        "TypeId": 3
+                    },
+                    {
+                        "Id": 22,
+                        "ModelName": "iPad Air 2",
+                        "TypeId": 3
+                    },
+                    {
+                        "Id": 23,
+                        "ModelName": "iPad Air (3 Gen)",
+                        "TypeId": 3
+                    },
+                    {
+                        "Id": 24,
+                        "ModelName": "iPad Mini",
+                        "TypeId": 3
+                    },
+                    {
+                        "Id": 25,
+                        "ModelName": "iPad Mini 2",
+                        "TypeId": 3
+                    },
+                    {
+                        "Id": 26,
+                        "ModelName": "iPad Mini 3",
+                        "TypeId": 3
+                    },
+                    {
+                        "Id": 27,
+                        "ModelName": "iPad Mini 4",
+                        "TypeId": 3
+                    },
+                    {
+                        "Id": 28,
+                        "ModelName": "iPad Mini (5 Gen)",
+                        "TypeId": 3
+                    },
+                    {
+                        "Id": 29,
+                        "ModelName": "iPad Pro 12.9 in (1 Gen)",
+                        "TypeId": 3
+                    },
+                    {
+                        "Id": 30,
+                        "ModelName": "iPad Pro 9.7 in",
+                        "TypeId": 3
+                    },
+                    {
+                        "Id": 31,
+                        "ModelName": "iPad Pro 12.9 in (2 Gen)",
+                        "TypeId": 3
+                    },
+                    {
+                        "Id": 32,
+                        "ModelName": "iPad Pro 10.5 in",
+                        "TypeId": 3
+                    },
+                    {
+                        "Id": 33,
+                        "ModelName": "iPad Pro 12.9 in (3rd Gen)",
+                        "TypeId": 3
+                    },
+                    {
+                        "Id": 34,
+                        "ModelName": "iPad Pro 11 in (1 Gen)",
+                        "TypeId": 3
+                    },
+                    {
+                        "Id": 35,
+                        "ModelName": "iPad Pro 12.9 in (4th Gen)",
+                        "TypeId": 3
+                    },
+                    {
+                        "Id": 36,
+                        "ModelName": "iPad Pro 11 in (2 Gen)",
+                        "TypeId": 3
+                    },
+                    {
+                        "Id": 57,
+                        "ModelName": "iPhone SE (Gen 2)",
+                        "TypeId": 1
+                    }
+                ];
+                //new
+                var allStorages = [{
+                        "Id": 1,
+                        "StorageName": "16 GB",
+                        "ModelId": 1
+                    },
+                    {
+                        "Id": 2,
+                        "StorageName": "32 GB",
+                        "ModelId": 1
+                    },
+                    {
+                        "Id": 3,
+                        "StorageName": "64 GB",
+                        "ModelId": 1
+                    },
+                    {
+                        "Id": 4,
+                        "StorageName": "128 GB",
+                        "ModelId": 1
+                    },
+                    {
+                        "Id": 5,
+                        "StorageName": "16 GB",
+                        "ModelId": 2
+                    },
+                    {
+                        "Id": 6,
+                        "StorageName": "32 GB",
+                        "ModelId": 2
+                    },
+                    {
+                        "Id": 7,
+                        "StorageName": "64 GB",
+                        "ModelId": 2
+                    },
+                    {
+                        "Id": 8,
+                        "StorageName": "128 GB",
+                        "ModelId": 2
+                    },
+                    {
+                        "Id": 9,
+                        "StorageName": "16 GB",
+                        "ModelId": 3
+                    },
+                    {
+                        "Id": 10,
+                        "StorageName": "32 GB",
+                        "ModelId": 3
+                    },
+                    {
+                        "Id": 11,
+                        "StorageName": "64 GB",
+                        "ModelId": 3
+                    },
+                    {
+                        "Id": 12,
+                        "StorageName": "128 GB",
+                        "ModelId": 3
+                    },
+                    {
+                        "Id": 13,
+                        "StorageName": "16 GB",
+                        "ModelId": 4
+                    },
+                    {
+                        "Id": 14,
+                        "StorageName": "32 GB",
+                        "ModelId": 4
+                    },
+                    {
+                        "Id": 15,
+                        "StorageName": "64 GB",
+                        "ModelId": 4
+                    },
+                    {
+                        "Id": 16,
+                        "StorageName": "128 GB",
+                        "ModelId": 4
+                    },
+                    {
+                        "Id": 17,
+                        "StorageName": "16 GB",
+                        "ModelId": 5
+                    },
+                    {
+                        "Id": 18,
+                        "StorageName": "32 GB",
+                        "ModelId": 5
+                    },
+                    {
+                        "Id": 19,
+                        "StorageName": "64 GB",
+                        "ModelId": 5
+                    },
+                    {
+                        "Id": 20,
+                        "StorageName": "128 GB",
+                        "ModelId": 5
+                    },
+                    {
+                        "Id": 21,
+                        "StorageName": "32 GB",
+                        "ModelId": 6
+                    },
+                    {
+                        "Id": 22,
+                        "StorageName": "128 GB",
+                        "ModelId": 6
+                    },
+                    {
+                        "Id": 23,
+                        "StorageName": "256 GB",
+                        "ModelId": 6
+                    },
+                    {
+                        "Id": 24,
+                        "StorageName": "32 GB",
+                        "ModelId": 7
+                    },
+                    {
+                        "Id": 25,
+                        "StorageName": "128 GB",
+                        "ModelId": 7
+                    },
+                    {
+                        "Id": 26,
+                        "StorageName": "256 GB",
+                        "ModelId": 7
+                    },
+                    {
+                        "Id": 27,
+                        "StorageName": "64 GB",
+                        "ModelId": 8
+                    },
+                    {
+                        "Id": 28,
+                        "StorageName": "128 GB",
+                        "ModelId": 8
+                    },
+                    {
+                        "Id": 29,
+                        "StorageName": "256 GB",
+                        "ModelId": 8
+                    },
+                    {
+                        "Id": 30,
+                        "StorageName": "64 GB",
+                        "ModelId": 9
+                    },
+                    {
+                        "Id": 31,
+                        "StorageName": "128 GB",
+                        "ModelId": 9
+                    },
+                    {
+                        "Id": 32,
+                        "StorageName": "256 GB",
+                        "ModelId": 9
+                    },
+                    {
+                        "Id": 33,
+                        "StorageName": "64 GB",
+                        "ModelId": 10
+                    },
+                    {
+                        "Id": 34,
+                        "StorageName": "256 GB",
+                        "ModelId": 10
+                    },
+                    {
+                        "Id": 35,
+                        "StorageName": "64 Gb",
+                        "ModelId": 11
+                    },
+                    {
+                        "Id": 36,
+                        "StorageName": "256 GB",
+                        "ModelId": 11
+                    },
+                    {
+                        "Id": 37,
+                        "StorageName": "512 Gb",
+                        "ModelId": 11
+                    },
+                    {
+                        "Id": 38,
+                        "StorageName": "64 Gb",
+                        "ModelId": 12
+                    },
+                    {
+                        "Id": 39,
+                        "StorageName": "256 GB",
+                        "ModelId": 12
+                    },
+                    {
+                        "Id": 40,
+                        "StorageName": "512 Gb",
+                        "ModelId": 12
+                    },
+                    {
+                        "Id": 41,
+                        "StorageName": "64 GB",
+                        "ModelId": 13
+                    },
+                    {
+                        "Id": 42,
+                        "StorageName": "128 GB",
+                        "ModelId": 13
+                    },
+                    {
+                        "Id": 43,
+                        "StorageName": "256 GB",
+                        "ModelId": 13
+                    },
+                    {
+                        "Id": 44,
+                        "StorageName": "64 GB",
+                        "ModelId": 14
+                    },
+                    {
+                        "Id": 45,
+                        "StorageName": "128 GB",
+                        "ModelId": 14
+                    },
+                    {
+                        "Id": 46,
+                        "StorageName": "256 GB",
+                        "ModelId": 14
+                    },
+                    {
+                        "Id": 47,
+                        "StorageName": "64 GB",
+                        "ModelId": 15
+                    },
+                    {
+                        "Id": 48,
+                        "StorageName": "256 GB",
+                        "ModelId": 15
+                    },
+                    {
+                        "Id": 49,
+                        "StorageName": "512 GB",
+                        "ModelId": 15
+                    },
+                    {
+                        "Id": 50,
+                        "StorageName": "64 GB",
+                        "ModelId": 16
+                    },
+                    {
+                        "Id": 51,
+                        "StorageName": "256 GB",
+                        "ModelId": 16
+                    },
+                    {
+                        "Id": 52,
+                        "StorageName": "512 GB",
+                        "ModelId": 16
+                    },
+                    {
+                        "Id": 53,
+                        "StorageName": "16 GB",
+                        "ModelId": 17
+                    },
+                    {
+                        "Id": 54,
+                        "StorageName": "32 GB",
+                        "ModelId": 17
+                    },
+                    {
+                        "Id": 55,
+                        "StorageName": "64 GB",
+                        "ModelId": 17
+                    },
+                    {
+                        "Id": 56,
+                        "StorageName": "128 GB",
+                        "ModelId": 17
+                    },
+                    {
+                        "Id": 57,
+                        "StorageName": "32 GB",
+                        "ModelId": 18
+                    },
+                    {
+                        "Id": 58,
+                        "StorageName": "128 GB",
+                        "ModelId": 18
+                    },
+                    {
+                        "Id": 59,
+                        "StorageName": "32 GB",
+                        "ModelId": 19
+                    },
+                    {
+                        "Id": 60,
+                        "StorageName": "128 GB",
+                        "ModelId": 19
+                    },
+                    {
+                        "Id": 61,
+                        "StorageName": "32 GB",
+                        "ModelId": 20
+                    },
+                    {
+                        "Id": 62,
+                        "StorageName": "128 GB",
+                        "ModelId": 20
+                    },
+                    {
+                        "Id": 63,
+                        "StorageName": "16 GB",
+                        "ModelId": 21
+                    },
+                    {
+                        "Id": 64,
+                        "StorageName": "32 GB",
+                        "ModelId": 21
+                    },
+                    {
+                        "Id": 65,
+                        "StorageName": "64 GB",
+                        "ModelId": 21
+                    },
+                    {
+                        "Id": 66,
+                        "StorageName": "128 GB",
+                        "ModelId": 21
+                    },
+                    {
+                        "Id": 67,
+                        "StorageName": "16 GB",
+                        "ModelId": 22
+                    },
+                    {
+                        "Id": 68,
+                        "StorageName": "32 GB",
+                        "ModelId": 22
+                    },
+                    {
+                        "Id": 69,
+                        "StorageName": "64 GB",
+                        "ModelId": 22
+                    },
+                    {
+                        "Id": 70,
+                        "StorageName": "128 GB",
+                        "ModelId": 22
+                    },
+                    {
+                        "Id": 71,
+                        "StorageName": "64 GB",
+                        "ModelId": 23
+                    },
+                    {
+                        "Id": 72,
+                        "StorageName": "256 GB",
+                        "ModelId": 23
+                    },
+                    {
+                        "Id": 73,
+                        "StorageName": "16 GB",
+                        "ModelId": 24
+                    },
+                    {
+                        "Id": 74,
+                        "StorageName": "32 GB",
+                        "ModelId": 24
+                    },
+                    {
+                        "Id": 75,
+                        "StorageName": "64 GB",
+                        "ModelId": 24
+                    },
+                    {
+                        "Id": 76,
+                        "StorageName": "16 GB",
+                        "ModelId": 25
+                    },
+                    {
+                        "Id": 77,
+                        "StorageName": "32 GB",
+                        "ModelId": 25
+                    },
+                    {
+                        "Id": 78,
+                        "StorageName": "64 GB",
+                        "ModelId": 25
+                    },
+                    {
+                        "Id": 79,
+                        "StorageName": "128 GB",
+                        "ModelId": 25
+                    },
+                    {
+                        "Id": 80,
+                        "StorageName": "16 GB",
+                        "ModelId": 26
+                    },
+                    {
+                        "Id": 81,
+                        "StorageName": "64 GB",
+                        "ModelId": 26
+                    },
+                    {
+                        "Id": 82,
+                        "StorageName": "128 GB",
+                        "ModelId": 26
+                    },
+                    {
+                        "Id": 83,
+                        "StorageName": "16 GB",
+                        "ModelId": 27
+                    },
+                    {
+                        "Id": 84,
+                        "StorageName": "32 GB",
+                        "ModelId": 27
+                    },
+                    {
+                        "Id": 85,
+                        "StorageName": "64 GB",
+                        "ModelId": 27
+                    },
+                    {
+                        "Id": 86,
+                        "StorageName": "128 GB",
+                        "ModelId": 27
+                    },
+                    {
+                        "Id": 87,
+                        "StorageName": "64 GB",
+                        "ModelId": 28
+                    },
+                    {
+                        "Id": 88,
+                        "StorageName": "256 GB",
+                        "ModelId": 28
+                    },
+                    {
+                        "Id": 89,
+                        "StorageName": "64 GB",
+                        "ModelId": 57
+                    },
+                    {
+                        "Id": 90,
+                        "StorageName": "128 GB",
+                        "ModelId": 57
+                    },
+                    {
+                        "Id": 91,
+                        "StorageName": "256 GB",
+                        "ModelId": 57
+                    },
+                    {
+                        "Id": 92,
+                        "StorageName": "32 GB",
+                        "ModelId": 29
+                    },
+                    {
+                        "Id": 93,
+                        "StorageName": "128 GB",
+                        "ModelId": 29
+                    },
+                    {
+                        "Id": 94,
+                        "StorageName": "256 GB",
+                        "ModelId": 29
+                    },
+                    {
+                        "Id": 95,
+                        "StorageName": "32 GB",
+                        "ModelId": 30
+                    },
+                    {
+                        "Id": 96,
+                        "StorageName": "128 GB",
+                        "ModelId": 30
+                    },
+                    {
+                        "Id": 97,
+                        "StorageName": "256 GB",
+                        "ModelId": 30
+                    },
+                    {
+                        "Id": 98,
+                        "StorageName": "64 GB",
+                        "ModelId": 31
+                    },
+                    {
+                        "Id": 99,
+                        "StorageName": "256 GB",
+                        "ModelId": 31
+                    },
+                    {
+                        "Id": 100,
+                        "StorageName": "512 Gb",
+                        "ModelId": 31
+                    },
+                    {
+                        "Id": 101,
+                        "StorageName": "64 GB",
+                        "ModelId": 32
+                    },
+                    {
+                        "Id": 102,
+                        "StorageName": "256 GB",
+                        "ModelId": 32
+                    },
+                    {
+                        "Id": 103,
+                        "StorageName": "512 Gb",
+                        "ModelId": 32
+                    },
+                    {
+                        "Id": 104,
+                        "StorageName": "64 GB",
+                        "ModelId": 33
+                    },
+                    {
+                        "Id": 105,
+                        "StorageName": "256 GB",
+                        "ModelId": 33
+                    },
+                    {
+                        "Id": 106,
+                        "StorageName": "512 Gb",
+                        "ModelId": 33
+                    },
+                    {
+                        "Id": 107,
+                        "StorageName": "1 TB",
+                        "ModelId": 33
+                    },
+                    {
+                        "Id": 108,
+                        "StorageName": "64 GB",
+                        "ModelId": 34
+                    },
+                    {
+                        "Id": 109,
+                        "StorageName": "256 GB",
+                        "ModelId": 34
+                    },
+                    {
+                        "Id": 110,
+                        "StorageName": "512 Gb",
+                        "ModelId": 34
+                    },
+                    {
+                        "Id": 111,
+                        "StorageName": "1 TB",
+                        "ModelId": 34
+                    },
+                    {
+                        "Id": 112,
+                        "StorageName": "128 GB",
+                        "ModelId": 35
+                    },
+                    {
+                        "Id": 113,
+                        "StorageName": "256 GB",
+                        "ModelId": 35
+                    },
+                    {
+                        "Id": 114,
+                        "StorageName": "512 Gb",
+                        "ModelId": 35
+                    },
+                    {
+                        "Id": 115,
+                        "StorageName": "1 TB",
+                        "ModelId": 35
+                    },
+                    {
+                        "Id": 116,
+                        "StorageName": "128 GB",
+                        "ModelId": 36
+                    },
+                    {
+                        "Id": 117,
+                        "StorageName": "256 GB",
+                        "ModelId": 36
+                    },
+                    {
+                        "Id": 118,
+                        "StorageName": "512 Gb",
+                        "ModelId": 36
+                    },
+                    {
+                        "Id": 119,
+                        "StorageName": "1 TB",
+                        "ModelId": 36
+                    }
+                ];
+                //new new
+                var allFinishes = [{
+                        "Id": 1,
+                        "FinishName": "Space Gray",
+                        "StorageId": 1
+                    },
+                    {
+                        "Id": 2,
+                        "FinishName": "Silver",
+                        "StorageId": 1
+                    },
+                    {
+                        "Id": 3,
+                        "FinishName": "Gold",
+                        "StorageId": 1
+                    },
+                    {
+                        "Id": 4,
+                        "FinishName": "Space Gray",
+                        "StorageId": 2
+                    },
+                    {
+                        "Id": 5,
+                        "FinishName": "Silver",
+                        "StorageId": 2
+                    },
+                    {
+                        "Id": 6,
+                        "FinishName": "Gold",
+                        "StorageId": 2
+                    },
+                    {
+                        "Id": 7,
+                        "FinishName": "Space Gray",
+                        "StorageId": 3
+                    },
+                    {
+                        "Id": 8,
+                        "FinishName": "Silver",
+                        "StorageId": 3
+                    },
+                    {
+                        "Id": 9,
+                        "FinishName": "Gold",
+                        "StorageId": 3
+                    },
+                    {
+                        "Id": 10,
+                        "FinishName": "Space Gray",
+                        "StorageId": 4
+                    },
+                    {
+                        "Id": 11,
+                        "FinishName": "Silver",
+                        "StorageId": 4
+                    },
+                    {
+                        "Id": 12,
+                        "FinishName": "Gold",
+                        "StorageId": 4
+                    },
+                    {
+                        "Id": 13,
+                        "FinishName": "Space Gray",
+                        "StorageId": 5
+                    },
+                    {
+                        "Id": 14,
+                        "FinishName": "Silver",
+                        "StorageId": 5
+                    },
+                    {
+                        "Id": 15,
+                        "FinishName": "Gold",
+                        "StorageId": 5
+                    },
+                    {
+                        "Id": 16,
+                        "FinishName": "Space Gray",
+                        "StorageId": 6
+                    },
+                    {
+                        "Id": 17,
+                        "FinishName": "Silver",
+                        "StorageId": 6
+                    },
+                    {
+                        "Id": 18,
+                        "FinishName": "Gold",
+                        "StorageId": 6
+                    },
+                    {
+                        "Id": 19,
+                        "FinishName": "Space Gray",
+                        "StorageId": 7
+                    },
+                    {
+                        "Id": 20,
+                        "FinishName": "Silver",
+                        "StorageId": 7
+                    },
+                    {
+                        "Id": 21,
+                        "FinishName": "Gold",
+                        "StorageId": 7
+                    },
+                    {
+                        "Id": 22,
+                        "FinishName": "Space Gray",
+                        "StorageId": 8
+                    },
+                    {
+                        "Id": 23,
+                        "FinishName": "Silver",
+                        "StorageId": 8
+                    },
+                    {
+                        "Id": 24,
+                        "FinishName": "Gold",
+                        "StorageId": 8
+                    },
+                    {
+                        "Id": 25,
+                        "FinishName": "Space Gray",
+                        "StorageId": 9
+                    },
+                    {
+                        "Id": 26,
+                        "FinishName": "Silver",
+                        "StorageId": 9
+                    },
+                    {
+                        "Id": 27,
+                        "FinishName": "Gold",
+                        "StorageId": 9
+                    },
+                    {
+                        "Id": 28,
+                        "FinishName": "Rose Gold",
+                        "StorageId": 9
+                    },
+                    {
+                        "Id": 29,
+                        "FinishName": "Space Gray",
+                        "StorageId": 10
+                    },
+                    {
+                        "Id": 30,
+                        "FinishName": "Silver",
+                        "StorageId": 10
+                    },
+                    {
+                        "Id": 31,
+                        "FinishName": "Gold",
+                        "StorageId": 10
+                    },
+                    {
+                        "Id": 32,
+                        "FinishName": "Rose Gold",
+                        "StorageId": 10
+                    },
+                    {
+                        "Id": 33,
+                        "FinishName": "Space Gray",
+                        "StorageId": 11
+                    },
+                    {
+                        "Id": 34,
+                        "FinishName": "Silver",
+                        "StorageId": 11
+                    },
+                    {
+                        "Id": 35,
+                        "FinishName": "Gold",
+                        "StorageId": 11
+                    },
+                    {
+                        "Id": 36,
+                        "FinishName": "Rose Gold",
+                        "StorageId": 11
+                    },
+                    {
+                        "Id": 37,
+                        "FinishName": "Space Gray",
+                        "StorageId": 12
+                    },
+                    {
+                        "Id": 38,
+                        "FinishName": "Silver",
+                        "StorageId": 12
+                    },
+                    {
+                        "Id": 39,
+                        "FinishName": "Gold",
+                        "StorageId": 12
+                    },
+                    {
+                        "Id": 40,
+                        "FinishName": "Rose Gold",
+                        "StorageId": 12
+                    },
+                    {
+                        "Id": 41,
+                        "FinishName": "Space Gray",
+                        "StorageId": 13
+                    },
+                    {
+                        "Id": 42,
+                        "FinishName": "Silver",
+                        "StorageId": 13
+                    },
+                    {
+                        "Id": 43,
+                        "FinishName": "Gold",
+                        "StorageId": 13
+                    },
+                    {
+                        "Id": 44,
+                        "FinishName": "Rose Gold",
+                        "StorageId": 13
+                    },
+                    {
+                        "Id": 45,
+                        "FinishName": "Space Gray",
+                        "StorageId": 14
+                    },
+                    {
+                        "Id": 46,
+                        "FinishName": "Silver",
+                        "StorageId": 14
+                    },
+                    {
+                        "Id": 47,
+                        "FinishName": "Gold",
+                        "StorageId": 14
+                    },
+                    {
+                        "Id": 48,
+                        "FinishName": "Rose Gold",
+                        "StorageId": 14
+                    },
+                    {
+                        "Id": 49,
+                        "FinishName": "Space Gray",
+                        "StorageId": 15
+                    },
+                    {
+                        "Id": 50,
+                        "FinishName": "Silver",
+                        "StorageId": 15
+                    },
+                    {
+                        "Id": 51,
+                        "FinishName": "Gold",
+                        "StorageId": 15
+                    },
+                    {
+                        "Id": 52,
+                        "FinishName": "Rose Gold",
+                        "StorageId": 15
+                    },
+                    {
+                        "Id": 53,
+                        "FinishName": "Space Gray",
+                        "StorageId": 16
+                    },
+                    {
+                        "Id": 54,
+                        "FinishName": "Silver",
+                        "StorageId": 16
+                    },
+                    {
+                        "Id": 55,
+                        "FinishName": "Gold",
+                        "StorageId": 16
+                    },
+                    {
+                        "Id": 56,
+                        "FinishName": "Rose Gold",
+                        "StorageId": 16
+                    },
+                    {
+                        "Id": 57,
+                        "FinishName": "Space Gray",
+                        "StorageId": 17
+                    },
+                    {
+                        "Id": 58,
+                        "FinishName": "Silver",
+                        "StorageId": 17
+                    },
+                    {
+                        "Id": 59,
+                        "FinishName": "Gold",
+                        "StorageId": 17
+                    },
+                    {
+                        "Id": 60,
+                        "FinishName": "Rose Gold",
+                        "StorageId": 17
+                    },
+                    {
+                        "Id": 61,
+                        "FinishName": "Space Gray",
+                        "StorageId": 18
+                    },
+                    {
+                        "Id": 62,
+                        "FinishName": "Silver",
+                        "StorageId": 18
+                    },
+                    {
+                        "Id": 63,
+                        "FinishName": "Gold",
+                        "StorageId": 18
+                    },
+                    {
+                        "Id": 64,
+                        "FinishName": "Rose Gold",
+                        "StorageId": 18
+                    },
+                    {
+                        "Id": 65,
+                        "FinishName": "Space Gray",
+                        "StorageId": 19
+                    },
+                    {
+                        "Id": 66,
+                        "FinishName": "Silver",
+                        "StorageId": 19
+                    },
+                    {
+                        "Id": 67,
+                        "FinishName": "Gold",
+                        "StorageId": 19
+                    },
+                    {
+                        "Id": 68,
+                        "FinishName": "Rose Gold",
+                        "StorageId": 19
+                    },
+                    {
+                        "Id": 69,
+                        "FinishName": "Space Gray",
+                        "StorageId": 20
+                    },
+                    {
+                        "Id": 70,
+                        "FinishName": "Silver",
+                        "StorageId": 20
+                    },
+                    {
+                        "Id": 71,
+                        "FinishName": "Gold",
+                        "StorageId": 20
+                    },
+                    {
+                        "Id": 72,
+                        "FinishName": "Rose Gold",
+                        "StorageId": 20
+                    },
+                    {
+                        "Id": 73,
+                        "FinishName": "Black",
+                        "StorageId": 21
+                    },
+                    {
+                        "Id": 74,
+                        "FinishName": "Silver",
+                        "StorageId": 21
+                    },
+                    {
+                        "Id": 75,
+                        "FinishName": "Gold",
+                        "StorageId": 21
+                    },
+                    {
+                        "Id": 76,
+                        "FinishName": "Rose Gold",
+                        "StorageId": 21
+                    },
+                    {
+                        "Id": 77,
+                        "FinishName": "Jet Black",
+                        "StorageId": 21
+                    },
+                    {
+                        "Id": 78,
+                        "FinishName": "Black",
+                        "StorageId": 22
+                    },
+                    {
+                        "Id": 79,
+                        "FinishName": "Silver",
+                        "StorageId": 22
+                    },
+                    {
+                        "Id": 80,
+                        "FinishName": "Gold",
+                        "StorageId": 22
+                    },
+                    {
+                        "Id": 81,
+                        "FinishName": "Rose Gold",
+                        "StorageId": 22
+                    },
+                    {
+                        "Id": 82,
+                        "FinishName": "Jet Black",
+                        "StorageId": 22
+                    },
+                    {
+                        "Id": 83,
+                        "FinishName": "(Product) RED",
+                        "StorageId": 22
+                    },
+                    {
+                        "Id": 84,
+                        "FinishName": "Black",
+                        "StorageId": 23
+                    },
+                    {
+                        "Id": 85,
+                        "FinishName": "Silver",
+                        "StorageId": 23
+                    },
+                    {
+                        "Id": 86,
+                        "FinishName": "Gold",
+                        "StorageId": 23
+                    },
+                    {
+                        "Id": 87,
+                        "FinishName": "Rose Gold",
+                        "StorageId": 23
+                    },
+                    {
+                        "Id": 88,
+                        "FinishName": "Jet Black",
+                        "StorageId": 23
+                    },
+                    {
+                        "Id": 89,
+                        "FinishName": "(Product) RED",
+                        "StorageId": 23
+                    },
+                    {
+                        "Id": 90,
+                        "FinishName": "Black",
+                        "StorageId": 24
+                    },
+                    {
+                        "Id": 91,
+                        "FinishName": "Silver",
+                        "StorageId": 24
+                    },
+                    {
+                        "Id": 92,
+                        "FinishName": "Gold",
+                        "StorageId": 24
+                    },
+                    {
+                        "Id": 93,
+                        "FinishName": "Rose Gold",
+                        "StorageId": 24
+                    },
+                    {
+                        "Id": 94,
+                        "FinishName": "Jet Black",
+                        "StorageId": 24
+                    },
+                    {
+                        "Id": 95,
+                        "FinishName": "Black",
+                        "StorageId": 25
+                    },
+                    {
+                        "Id": 96,
+                        "FinishName": "Silver",
+                        "StorageId": 25
+                    },
+                    {
+                        "Id": 97,
+                        "FinishName": "Gold",
+                        "StorageId": 25
+                    },
+                    {
+                        "Id": 98,
+                        "FinishName": "Rose Gold",
+                        "StorageId": 25
+                    },
+                    {
+                        "Id": 99,
+                        "FinishName": "Jet Black",
+                        "StorageId": 25
+                    },
+                    {
+                        "Id": 100,
+                        "FinishName": "(Product) RED",
+                        "StorageId": 25
+                    },
+                    {
+                        "Id": 101,
+                        "FinishName": "Black",
+                        "StorageId": 26
+                    },
+                    {
+                        "Id": 102,
+                        "FinishName": "Silver",
+                        "StorageId": 26
+                    },
+                    {
+                        "Id": 103,
+                        "FinishName": "Gold",
+                        "StorageId": 26
+                    },
+                    {
+                        "Id": 104,
+                        "FinishName": "Rose Gold",
+                        "StorageId": 26
+                    },
+                    {
+                        "Id": 105,
+                        "FinishName": "Jet Black",
+                        "StorageId": 26
+                    },
+                    {
+                        "Id": 106,
+                        "FinishName": "(Product) RED",
+                        "StorageId": 26
+                    },
+                    {
+                        "Id": 107,
+                        "FinishName": "Space Gray",
+                        "StorageId": 27
+                    },
+                    {
+                        "Id": 108,
+                        "FinishName": "Silver",
+                        "StorageId": 27
+                    },
+                    {
+                        "Id": 109,
+                        "FinishName": "Gold",
+                        "StorageId": 27
+                    },
+                    {
+                        "Id": 110,
+                        "FinishName": "(Product) RED",
+                        "StorageId": 27
+                    },
+                    {
+                        "Id": 111,
+                        "FinishName": "Space Gray",
+                        "StorageId": 28
+                    },
+                    {
+                        "Id": 112,
+                        "FinishName": "Silver",
+                        "StorageId": 28
+                    },
+                    {
+                        "Id": 113,
+                        "FinishName": "Gold",
+                        "StorageId": 28
+                    },
+                    {
+                        "Id": 114,
+                        "FinishName": "(Product) RED",
+                        "StorageId": 28
+                    },
+                    {
+                        "Id": 115,
+                        "FinishName": "Space Gray",
+                        "StorageId": 29
+                    },
+                    {
+                        "Id": 116,
+                        "FinishName": "Silver",
+                        "StorageId": 29
+                    },
+                    {
+                        "Id": 117,
+                        "FinishName": "Gold",
+                        "StorageId": 29
+                    },
+                    {
+                        "Id": 118,
+                        "FinishName": "(Product) RED",
+                        "StorageId": 29
+                    },
+                    {
+                        "Id": 119,
+                        "FinishName": "Space Gray",
+                        "StorageId": 30
+                    },
+                    {
+                        "Id": 120,
+                        "FinishName": "Silver",
+                        "StorageId": 30
+                    },
+                    {
+                        "Id": 121,
+                        "FinishName": "Gold",
+                        "StorageId": 30
+                    },
+                    {
+                        "Id": 122,
+                        "FinishName": "(Product) RED",
+                        "StorageId": 30
+                    },
+                    {
+                        "Id": 123,
+                        "FinishName": "Space Gray",
+                        "StorageId": 31
+                    },
+                    {
+                        "Id": 124,
+                        "FinishName": "Silver",
+                        "StorageId": 31
+                    },
+                    {
+                        "Id": 125,
+                        "FinishName": "Gold",
+                        "StorageId": 31
+                    },
+                    {
+                        "Id": 126,
+                        "FinishName": "(Product) RED",
+                        "StorageId": 31
+                    },
+                    {
+                        "Id": 127,
+                        "FinishName": "Space Gray",
+                        "StorageId": 32
+                    },
+                    {
+                        "Id": 128,
+                        "FinishName": "Silver",
+                        "StorageId": 32
+                    },
+                    {
+                        "Id": 129,
+                        "FinishName": "Gold",
+                        "StorageId": 32
+                    },
+                    {
+                        "Id": 130,
+                        "FinishName": "(Product) RED",
+                        "StorageId": 32
+                    },
+                    {
+                        "Id": 131,
+                        "FinishName": "Space Gray",
+                        "StorageId": 33
+                    },
+                    {
+                        "Id": 132,
+                        "FinishName": "Silver",
+                        "StorageId": 33
+                    },
+                    {
+                        "Id": 133,
+                        "FinishName": "Space Gray",
+                        "StorageId": 34
+                    },
+                    {
+                        "Id": 134,
+                        "FinishName": "Silver",
+                        "StorageId": 34
+                    },
+                    {
+                        "Id": 135,
+                        "FinishName": "Space Gray",
+                        "StorageId": 35
+                    },
+                    {
+                        "Id": 136,
+                        "FinishName": "Silver",
+                        "StorageId": 35
+                    },
+                    {
+                        "Id": 137,
+                        "FinishName": "Gold",
+                        "StorageId": 35
+                    },
+                    {
+                        "Id": 138,
+                        "FinishName": "Space Gray",
+                        "StorageId": 36
+                    },
+                    {
+                        "Id": 139,
+                        "FinishName": "Silver",
+                        "StorageId": 36
+                    },
+                    {
+                        "Id": 140,
+                        "FinishName": "Gold",
+                        "StorageId": 36
+                    },
+                    {
+                        "Id": 141,
+                        "FinishName": "Space Gray",
+                        "StorageId": 37
+                    },
+                    {
+                        "Id": 142,
+                        "FinishName": "Silver",
+                        "StorageId": 37
+                    },
+                    {
+                        "Id": 143,
+                        "FinishName": "Gold",
+                        "StorageId": 37
+                    },
+                    {
+                        "Id": 144,
+                        "FinishName": "Space Gray",
+                        "StorageId": 38
+                    },
+                    {
+                        "Id": 145,
+                        "FinishName": "Silver",
+                        "StorageId": 38
+                    },
+                    {
+                        "Id": 146,
+                        "FinishName": "Gold",
+                        "StorageId": 38
+                    },
+                    {
+                        "Id": 147,
+                        "FinishName": "Space Gray",
+                        "StorageId": 39
+                    },
+                    {
+                        "Id": 148,
+                        "FinishName": "Silver",
+                        "StorageId": 39
+                    },
+                    {
+                        "Id": 149,
+                        "FinishName": "Gold",
+                        "StorageId": 39
+                    },
+                    {
+                        "Id": 150,
+                        "FinishName": "Space Gray",
+                        "StorageId": 40
+                    },
+                    {
+                        "Id": 151,
+                        "FinishName": "Silver",
+                        "StorageId": 40
+                    },
+                    {
+                        "Id": 152,
+                        "FinishName": "Gold",
+                        "StorageId": 40
+                    },
+                    {
+                        "Id": 153,
+                        "FinishName": "Black",
+                        "StorageId": 41
+                    },
+                    {
+                        "Id": 154,
+                        "FinishName": "White",
+                        "StorageId": 41
+                    },
+                    {
+                        "Id": 155,
+                        "FinishName": "Blue",
+                        "StorageId": 41
+                    },
+                    {
+                        "Id": 156,
+                        "FinishName": "Yellow",
+                        "StorageId": 41
+                    },
+                    {
+                        "Id": 157,
+                        "FinishName": "Coral",
+                        "StorageId": 41
+                    },
+                    {
+                        "Id": 158,
+                        "FinishName": "(Product) RED",
+                        "StorageId": 41
+                    },
+                    {
+                        "Id": 159,
+                        "FinishName": "Black",
+                        "StorageId": 42
+                    },
+                    {
+                        "Id": 160,
+                        "FinishName": "White",
+                        "StorageId": 42
+                    },
+                    {
+                        "Id": 161,
+                        "FinishName": "Blue",
+                        "StorageId": 42
+                    },
+                    {
+                        "Id": 162,
+                        "FinishName": "Yellow",
+                        "StorageId": 42
+                    },
+                    {
+                        "Id": 163,
+                        "FinishName": "Coral",
+                        "StorageId": 42
+                    },
+                    {
+                        "Id": 164,
+                        "FinishName": "(Product) RED",
+                        "StorageId": 42
+                    },
+                    {
+                        "Id": 165,
+                        "FinishName": "Black",
+                        "StorageId": 43
+                    },
+                    {
+                        "Id": 166,
+                        "FinishName": "White",
+                        "StorageId": 43
+                    },
+                    {
+                        "Id": 167,
+                        "FinishName": "Blue",
+                        "StorageId": 43
+                    },
+                    {
+                        "Id": 168,
+                        "FinishName": "Yellow",
+                        "StorageId": 43
+                    },
+                    {
+                        "Id": 169,
+                        "FinishName": "Coral",
+                        "StorageId": 43
+                    },
+                    {
+                        "Id": 170,
+                        "FinishName": "(Product) RED",
+                        "StorageId": 43
+                    },
+                    {
+                        "Id": 171,
+                        "FinishName": "Black",
+                        "StorageId": 44
+                    },
+                    {
+                        "Id": 172,
+                        "FinishName": "White",
+                        "StorageId": 44
+                    },
+                    {
+                        "Id": 173,
+                        "FinishName": "Purple",
+                        "StorageId": 44
+                    },
+                    {
+                        "Id": 174,
+                        "FinishName": "Yellow",
+                        "StorageId": 44
+                    },
+                    {
+                        "Id": 175,
+                        "FinishName": "Green",
+                        "StorageId": 44
+                    },
+                    {
+                        "Id": 176,
+                        "FinishName": "(Product) RED",
+                        "StorageId": 44
+                    },
+                    {
+                        "Id": 177,
+                        "FinishName": "Black",
+                        "StorageId": 45
+                    },
+                    {
+                        "Id": 178,
+                        "FinishName": "White",
+                        "StorageId": 45
+                    },
+                    {
+                        "Id": 179,
+                        "FinishName": "Purple",
+                        "StorageId": 45
+                    },
+                    {
+                        "Id": 180,
+                        "FinishName": "Yellow",
+                        "StorageId": 45
+                    },
+                    {
+                        "Id": 181,
+                        "FinishName": "Green",
+                        "StorageId": 45
+                    },
+                    {
+                        "Id": 182,
+                        "FinishName": "(Product) RED",
+                        "StorageId": 45
+                    },
+                    {
+                        "Id": 183,
+                        "FinishName": "Black",
+                        "StorageId": 46
+                    },
+                    {
+                        "Id": 184,
+                        "FinishName": "White",
+                        "StorageId": 46
+                    },
+                    {
+                        "Id": 185,
+                        "FinishName": "Purple",
+                        "StorageId": 46
+                    },
+                    {
+                        "Id": 186,
+                        "FinishName": "Yellow",
+                        "StorageId": 46
+                    },
+                    {
+                        "Id": 187,
+                        "FinishName": "Green",
+                        "StorageId": 46
+                    },
+                    {
+                        "Id": 188,
+                        "FinishName": "(Product) RED",
+                        "StorageId": 46
+                    },
+                    {
+                        "Id": 189,
+                        "FinishName": "Space Gray",
+                        "StorageId": 47
+                    },
+                    {
+                        "Id": 190,
+                        "FinishName": "Silver",
+                        "StorageId": 47
+                    },
+                    {
+                        "Id": 191,
+                        "FinishName": "Gold",
+                        "StorageId": 47
+                    },
+                    {
+                        "Id": 192,
+                        "FinishName": "Midnight Green",
+                        "StorageId": 47
+                    },
+                    {
+                        "Id": 193,
+                        "FinishName": "Space Gray",
+                        "StorageId": 48
+                    },
+                    {
+                        "Id": 194,
+                        "FinishName": "Silver",
+                        "StorageId": 48
+                    },
+                    {
+                        "Id": 195,
+                        "FinishName": "Gold",
+                        "StorageId": 48
+                    },
+                    {
+                        "Id": 196,
+                        "FinishName": "Midnight Green",
+                        "StorageId": 48
+                    },
+                    {
+                        "Id": 197,
+                        "FinishName": "Space Gray",
+                        "StorageId": 49
+                    },
+                    {
+                        "Id": 198,
+                        "FinishName": "Silver",
+                        "StorageId": 49
+                    },
+                    {
+                        "Id": 199,
+                        "FinishName": "Gold",
+                        "StorageId": 49
+                    },
+                    {
+                        "Id": 200,
+                        "FinishName": "Midnight Green",
+                        "StorageId": 49
+                    },
+                    {
+                        "Id": 201,
+                        "FinishName": "Space Gray",
+                        "StorageId": 50
+                    },
+                    {
+                        "Id": 202,
+                        "FinishName": "Silver",
+                        "StorageId": 50
+                    },
+                    {
+                        "Id": 203,
+                        "FinishName": "Gold",
+                        "StorageId": 50
+                    },
+                    {
+                        "Id": 204,
+                        "FinishName": "Midnight Green",
+                        "StorageId": 50
+                    },
+                    {
+                        "Id": 205,
+                        "FinishName": "Space Gray",
+                        "StorageId": 51
+                    },
+                    {
+                        "Id": 206,
+                        "FinishName": "Silver",
+                        "StorageId": 51
+                    },
+                    {
+                        "Id": 207,
+                        "FinishName": "Gold",
+                        "StorageId": 51
+                    },
+                    {
+                        "Id": 208,
+                        "FinishName": "Midnight Green",
+                        "StorageId": 51
+                    },
+                    {
+                        "Id": 209,
+                        "FinishName": "Space Gray",
+                        "StorageId": 52
+                    },
+                    {
+                        "Id": 210,
+                        "FinishName": "Silver",
+                        "StorageId": 52
+                    },
+                    {
+                        "Id": 211,
+                        "FinishName": "Gold",
+                        "StorageId": 52
+                    },
+                    {
+                        "Id": 212,
+                        "FinishName": "Midnight Green",
+                        "StorageId": 52
+                    },
+                    {
+                        "Id": 213,
+                        "FinishName": "Black",
+                        "StorageId": 53
+                    },
+                    {
+                        "Id": 214,
+                        "FinishName": "White",
+                        "StorageId": 53
+                    },
+                    {
+                        "Id": 215,
+                        "FinishName": "Black",
+                        "StorageId": 54
+                    },
+                    {
+                        "Id": 216,
+                        "FinishName": "White",
+                        "StorageId": 54
+                    },
+                    {
+                        "Id": 217,
+                        "FinishName": "Black",
+                        "StorageId": 55
+                    },
+                    {
+                        "Id": 218,
+                        "FinishName": "White",
+                        "StorageId": 55
+                    },
+                    {
+                        "Id": 219,
+                        "FinishName": "Black",
+                        "StorageId": 56
+                    },
+                    {
+                        "Id": 220,
+                        "FinishName": "White",
+                        "StorageId": 56
+                    },
+                    {
+                        "Id": 221,
+                        "FinishName": "Space Gray",
+                        "StorageId": 57
+                    },
+                    {
+                        "Id": 222,
+                        "FinishName": "Silver",
+                        "StorageId": 57
+                    },
+                    {
+                        "Id": 223,
+                        "FinishName": "Gold",
+                        "StorageId": 57
+                    },
+                    {
+                        "Id": 224,
+                        "FinishName": "Space Gray",
+                        "StorageId": 58
+                    },
+                    {
+                        "Id": 225,
+                        "FinishName": "Silver",
+                        "StorageId": 58
+                    },
+                    {
+                        "Id": 226,
+                        "FinishName": "Gold",
+                        "StorageId": 58
+                    },
+                    {
+                        "Id": 227,
+                        "FinishName": "Space Gray",
+                        "StorageId": 59
+                    },
+                    {
+                        "Id": 228,
+                        "FinishName": "Silver",
+                        "StorageId": 59
+                    },
+                    {
+                        "Id": 229,
+                        "FinishName": "Gold",
+                        "StorageId": 59
+                    },
+                    {
+                        "Id": 230,
+                        "FinishName": "Space Gray",
+                        "StorageId": 60
+                    },
+                    {
+                        "Id": 231,
+                        "FinishName": "Silver",
+                        "StorageId": 60
+                    },
+                    {
+                        "Id": 232,
+                        "FinishName": "Gold",
+                        "StorageId": 60
+                    },
+                    {
+                        "Id": 233,
+                        "FinishName": "Space Gray",
+                        "StorageId": 61
+                    },
+                    {
+                        "Id": 234,
+                        "FinishName": "Silver",
+                        "StorageId": 61
+                    },
+                    {
+                        "Id": 235,
+                        "FinishName": "Gold",
+                        "StorageId": 61
+                    },
+                    {
+                        "Id": 236,
+                        "FinishName": "Space Gray",
+                        "StorageId": 62
+                    },
+                    {
+                        "Id": 237,
+                        "FinishName": "Silver",
+                        "StorageId": 62
+                    },
+                    {
+                        "Id": 238,
+                        "FinishName": "Gold",
+                        "StorageId": 62
+                    },
+                    {
+                        "Id": 239,
+                        "FinishName": "Space Gray",
+                        "StorageId": 63
+                    },
+                    {
+                        "Id": 240,
+                        "FinishName": "Silver",
+                        "StorageId": 63
+                    },
+                    {
+                        "Id": 241,
+                        "FinishName": "Space Gray",
+                        "StorageId": 64
+                    },
+                    {
+                        "Id": 242,
+                        "FinishName": "Silver",
+                        "StorageId": 64
+                    },
+                    {
+                        "Id": 243,
+                        "FinishName": "Space Gray",
+                        "StorageId": 65
+                    },
+                    {
+                        "Id": 244,
+                        "FinishName": "Silver",
+                        "StorageId": 65
+                    },
+                    {
+                        "Id": 245,
+                        "FinishName": "Space Gray",
+                        "StorageId": 66
+                    },
+                    {
+                        "Id": 246,
+                        "FinishName": "Silver",
+                        "StorageId": 66
+                    },
+                    {
+                        "Id": 247,
+                        "FinishName": "Space Gray",
+                        "StorageId": 67
+                    },
+                    {
+                        "Id": 248,
+                        "FinishName": "Silver",
+                        "StorageId": 67
+                    },
+                    {
+                        "Id": 249,
+                        "FinishName": "Gold",
+                        "StorageId": 67
+                    },
+                    {
+                        "Id": 250,
+                        "FinishName": "Space Gray",
+                        "StorageId": 68
+                    },
+                    {
+                        "Id": 251,
+                        "FinishName": "Silver",
+                        "StorageId": 68
+                    },
+                    {
+                        "Id": 252,
+                        "FinishName": "Gold",
+                        "StorageId": 68
+                    },
+                    {
+                        "Id": 253,
+                        "FinishName": "Space Gray",
+                        "StorageId": 69
+                    },
+                    {
+                        "Id": 254,
+                        "FinishName": "Silver",
+                        "StorageId": 69
+                    },
+                    {
+                        "Id": 255,
+                        "FinishName": "Gold",
+                        "StorageId": 69
+                    },
+                    {
+                        "Id": 256,
+                        "FinishName": "Space Gray",
+                        "StorageId": 70
+                    },
+                    {
+                        "Id": 257,
+                        "FinishName": "Silver",
+                        "StorageId": 70
+                    },
+                    {
+                        "Id": 258,
+                        "FinishName": "Gold",
+                        "StorageId": 70
+                    },
+                    {
+                        "Id": 259,
+                        "FinishName": "Space Gray",
+                        "StorageId": 71
+                    },
+                    {
+                        "Id": 260,
+                        "FinishName": "Silver",
+                        "StorageId": 71
+                    },
+                    {
+                        "Id": 261,
+                        "FinishName": "Gold",
+                        "StorageId": 71
+                    },
+                    {
+                        "Id": 262,
+                        "FinishName": "Space Gray",
+                        "StorageId": 72
+                    },
+                    {
+                        "Id": 263,
+                        "FinishName": "Silver",
+                        "StorageId": 72
+                    },
+                    {
+                        "Id": 264,
+                        "FinishName": "Gold",
+                        "StorageId": 72
+                    },
+                    {
+                        "Id": 265,
+                        "FinishName": "Slate",
+                        "StorageId": 73
+                    },
+                    {
+                        "Id": 266,
+                        "FinishName": "Silver",
+                        "StorageId": 73
+                    },
+                    {
+                        "Id": 267,
+                        "FinishName": "Slate",
+                        "StorageId": 74
+                    },
+                    {
+                        "Id": 268,
+                        "FinishName": "Silver",
+                        "StorageId": 74
+                    },
+                    {
+                        "Id": 269,
+                        "FinishName": "Slate",
+                        "StorageId": 75
+                    },
+                    {
+                        "Id": 270,
+                        "FinishName": "Silver",
+                        "StorageId": 75
+                    },
+                    {
+                        "Id": 271,
+                        "FinishName": "Space Gray",
+                        "StorageId": 76
+                    },
+                    {
+                        "Id": 272,
+                        "FinishName": "Silver",
+                        "StorageId": 76
+                    },
+                    {
+                        "Id": 273,
+                        "FinishName": "Space Gray",
+                        "StorageId": 77
+                    },
+                    {
+                        "Id": 274,
+                        "FinishName": "Silver",
+                        "StorageId": 77
+                    },
+                    {
+                        "Id": 275,
+                        "FinishName": "Space Gray",
+                        "StorageId": 78
+                    },
+                    {
+                        "Id": 276,
+                        "FinishName": "Silver",
+                        "StorageId": 78
+                    },
+                    {
+                        "Id": 277,
+                        "FinishName": "Space Gray",
+                        "StorageId": 79
+                    },
+                    {
+                        "Id": 278,
+                        "FinishName": "Silver",
+                        "StorageId": 79
+                    },
+                    {
+                        "Id": 279,
+                        "FinishName": "Space Gray",
+                        "StorageId": 80
+                    },
+                    {
+                        "Id": 280,
+                        "FinishName": "Silver",
+                        "StorageId": 80
+                    },
+                    {
+                        "Id": 281,
+                        "FinishName": "Gold",
+                        "StorageId": 80
+                    },
+                    {
+                        "Id": 282,
+                        "FinishName": "Space Gray",
+                        "StorageId": 81
+                    },
+                    {
+                        "Id": 283,
+                        "FinishName": "Silver",
+                        "StorageId": 81
+                    },
+                    {
+                        "Id": 284,
+                        "FinishName": "Gold",
+                        "StorageId": 81
+                    },
+                    {
+                        "Id": 285,
+                        "FinishName": "Space Gray",
+                        "StorageId": 82
+                    },
+                    {
+                        "Id": 286,
+                        "FinishName": "Silver",
+                        "StorageId": 82
+                    },
+                    {
+                        "Id": 287,
+                        "FinishName": "Gold",
+                        "StorageId": 82
+                    },
+                    {
+                        "Id": 288,
+                        "FinishName": "Space Gray",
+                        "StorageId": 83
+                    },
+                    {
+                        "Id": 289,
+                        "FinishName": "Silver",
+                        "StorageId": 83
+                    },
+                    {
+                        "Id": 290,
+                        "FinishName": "Gold",
+                        "StorageId": 83
+                    },
+                    {
+                        "Id": 291,
+                        "FinishName": "Space Gray",
+                        "StorageId": 84
+                    },
+                    {
+                        "Id": 292,
+                        "FinishName": "Silver",
+                        "StorageId": 84
+                    },
+                    {
+                        "Id": 293,
+                        "FinishName": "Gold",
+                        "StorageId": 84
+                    },
+                    {
+                        "Id": 294,
+                        "FinishName": "Space Gray",
+                        "StorageId": 85
+                    },
+                    {
+                        "Id": 295,
+                        "FinishName": "Silver",
+                        "StorageId": 85
+                    },
+                    {
+                        "Id": 296,
+                        "FinishName": "Gold",
+                        "StorageId": 85
+                    },
+                    {
+                        "Id": 297,
+                        "FinishName": "Space Gray",
+                        "StorageId": 86
+                    },
+                    {
+                        "Id": 298,
+                        "FinishName": "Silver",
+                        "StorageId": 86
+                    },
+                    {
+                        "Id": 299,
+                        "FinishName": "Gold",
+                        "StorageId": 86
+                    },
+                    {
+                        "Id": 300,
+                        "FinishName": "Space Gray",
+                        "StorageId": 87
+                    },
+                    {
+                        "Id": 301,
+                        "FinishName": "Silver",
+                        "StorageId": 87
+                    },
+                    {
+                        "Id": 302,
+                        "FinishName": "Gold",
+                        "StorageId": 87
+                    },
+                    {
+                        "Id": 303,
+                        "FinishName": "Space Gray",
+                        "StorageId": 88
+                    },
+                    {
+                        "Id": 304,
+                        "FinishName": "Silver",
+                        "StorageId": 88
+                    },
+                    {
+                        "Id": 305,
+                        "FinishName": "Gold",
+                        "StorageId": 88
+                    },
+                    {
+                        "Id": 306,
+                        "FinishName": "Black",
+                        "StorageId": 89
+                    },
+                    {
+                        "Id": 307,
+                        "FinishName": "White",
+                        "StorageId": 89
+                    },
+                    {
+                        "Id": 308,
+                        "FinishName": "(Product) RED",
+                        "StorageId": 89
+                    },
+                    {
+                        "Id": 309,
+                        "FinishName": "Black",
+                        "StorageId": 90
+                    },
+                    {
+                        "Id": 310,
+                        "FinishName": "White",
+                        "StorageId": 90
+                    },
+                    {
+                        "Id": 311,
+                        "FinishName": "(Product) RED",
+                        "StorageId": 90
+                    },
+                    {
+                        "Id": 312,
+                        "FinishName": "Black",
+                        "StorageId": 91
+                    },
+                    {
+                        "Id": 313,
+                        "FinishName": "White",
+                        "StorageId": 91
+                    },
+                    {
+                        "Id": 314,
+                        "FinishName": "(Product) RED",
+                        "StorageId": 91
+                    },
+                    {
+                        "Id": 315,
+                        "FinishName": "Space Gray",
+                        "StorageId": 92
+                    },
+                    {
+                        "Id": 316,
+                        "FinishName": "Silver",
+                        "StorageId": 92
+                    },
+                    {
+                        "Id": 317,
+                        "FinishName": "Gold",
+                        "StorageId": 92
+                    },
+                    {
+                        "Id": 318,
+                        "FinishName": "Space Gray",
+                        "StorageId": 93
+                    },
+                    {
+                        "Id": 319,
+                        "FinishName": "Silver",
+                        "StorageId": 93
+                    },
+                    {
+                        "Id": 320,
+                        "FinishName": "Gold",
+                        "StorageId": 93
+                    },
+                    {
+                        "Id": 321,
+                        "FinishName": "Space Gray",
+                        "StorageId": 94
+                    },
+                    {
+                        "Id": 322,
+                        "FinishName": "Silver",
+                        "StorageId": 94
+                    },
+                    {
+                        "Id": 323,
+                        "FinishName": "Gold",
+                        "StorageId": 94
+                    },
+                    {
+                        "Id": 324,
+                        "FinishName": "Space Gray",
+                        "StorageId": 95
+                    },
+                    {
+                        "Id": 325,
+                        "FinishName": "Silver",
+                        "StorageId": 95
+                    },
+                    {
+                        "Id": 326,
+                        "FinishName": "Gold",
+                        "StorageId": 95
+                    },
+                    {
+                        "Id": 327,
+                        "FinishName": "Rose Gold",
+                        "StorageId": 95
+                    },
+                    {
+                        "Id": 328,
+                        "FinishName": "Space Gray",
+                        "StorageId": 96
+                    },
+                    {
+                        "Id": 329,
+                        "FinishName": "Silver",
+                        "StorageId": 96
+                    },
+                    {
+                        "Id": 330,
+                        "FinishName": "Gold",
+                        "StorageId": 96
+                    },
+                    {
+                        "Id": 331,
+                        "FinishName": "Rose Gold",
+                        "StorageId": 96
+                    },
+                    {
+                        "Id": 332,
+                        "FinishName": "Space Gray",
+                        "StorageId": 97
+                    },
+                    {
+                        "Id": 333,
+                        "FinishName": "Silver",
+                        "StorageId": 97
+                    },
+                    {
+                        "Id": 334,
+                        "FinishName": "Gold",
+                        "StorageId": 97
+                    },
+                    {
+                        "Id": 335,
+                        "FinishName": "Rose Gold",
+                        "StorageId": 97
+                    },
+                    {
+                        "Id": 336,
+                        "FinishName": "Space Gray",
+                        "StorageId": 98
+                    },
+                    {
+                        "Id": 337,
+                        "FinishName": "Silver",
+                        "StorageId": 98
+                    },
+                    {
+                        "Id": 338,
+                        "FinishName": "Gold",
+                        "StorageId": 98
+                    },
+                    {
+                        "Id": 339,
+                        "FinishName": "Space Gray",
+                        "StorageId": 99
+                    },
+                    {
+                        "Id": 340,
+                        "FinishName": "Silver",
+                        "StorageId": 99
+                    },
+                    {
+                        "Id": 341,
+                        "FinishName": "Gold",
+                        "StorageId": 99
+                    },
+                    {
+                        "Id": 342,
+                        "FinishName": "Space Gray",
+                        "StorageId": 100
+                    },
+                    {
+                        "Id": 343,
+                        "FinishName": "Silver",
+                        "StorageId": 100
+                    },
+                    {
+                        "Id": 344,
+                        "FinishName": "Gold",
+                        "StorageId": 100
+                    },
+                    {
+                        "Id": 345,
+                        "FinishName": "Space Gray",
+                        "StorageId": 101
+                    },
+                    {
+                        "Id": 346,
+                        "FinishName": "Silver",
+                        "StorageId": 101
+                    },
+                    {
+                        "Id": 347,
+                        "FinishName": "Gold",
+                        "StorageId": 101
+                    },
+                    {
+                        "Id": 348,
+                        "FinishName": "Rose Gold",
+                        "StorageId": 101
+                    },
+                    {
+                        "Id": 349,
+                        "FinishName": "Space Gray",
+                        "StorageId": 102
+                    },
+                    {
+                        "Id": 350,
+                        "FinishName": "Silver",
+                        "StorageId": 102
+                    },
+                    {
+                        "Id": 351,
+                        "FinishName": "Gold",
+                        "StorageId": 102
+                    },
+                    {
+                        "Id": 352,
+                        "FinishName": "Rose Gold",
+                        "StorageId": 102
+                    },
+                    {
+                        "Id": 353,
+                        "FinishName": "Space Gray",
+                        "StorageId": 103
+                    },
+                    {
+                        "Id": 354,
+                        "FinishName": "Silver",
+                        "StorageId": 103
+                    },
+                    {
+                        "Id": 355,
+                        "FinishName": "Gold",
+                        "StorageId": 103
+                    },
+                    {
+                        "Id": 356,
+                        "FinishName": "Rose Gold",
+                        "StorageId": 103
+                    },
+                    {
+                        "Id": 357,
+                        "FinishName": "Space Gray",
+                        "StorageId": 104
+                    },
+                    {
+                        "Id": 358,
+                        "FinishName": "Silver",
+                        "StorageId": 104
+                    },
+                    {
+                        "Id": 359,
+                        "FinishName": "Space Gray",
+                        "StorageId": 105
+                    },
+                    {
+                        "Id": 360,
+                        "FinishName": "Silver",
+                        "StorageId": 105
+                    },
+                    {
+                        "Id": 361,
+                        "FinishName": "Space Gray",
+                        "StorageId": 106
+                    },
+                    {
+                        "Id": 362,
+                        "FinishName": "Silver",
+                        "StorageId": 106
+                    },
+                    {
+                        "Id": 363,
+                        "FinishName": "Space Gray",
+                        "StorageId": 107
+                    },
+                    {
+                        "Id": 364,
+                        "FinishName": "Silver",
+                        "StorageId": 107
+                    },
+                    {
+                        "Id": 365,
+                        "FinishName": "Space Gray",
+                        "StorageId": 108
+                    },
+                    {
+                        "Id": 366,
+                        "FinishName": "Silver",
+                        "StorageId": 108
+                    },
+                    {
+                        "Id": 367,
+                        "FinishName": "Space Gray",
+                        "StorageId": 109
+                    },
+                    {
+                        "Id": 368,
+                        "FinishName": "Silver",
+                        "StorageId": 109
+                    },
+                    {
+                        "Id": 369,
+                        "FinishName": "Space Gray",
+                        "StorageId": 110
+                    },
+                    {
+                        "Id": 370,
+                        "FinishName": "Silver",
+                        "StorageId": 110
+                    },
+                    {
+                        "Id": 371,
+                        "FinishName": "Space Gray",
+                        "StorageId": 111
+                    },
+                    {
+                        "Id": 372,
+                        "FinishName": "Silver",
+                        "StorageId": 111
+                    },
+                    {
+                        "Id": 373,
+                        "FinishName": "Space Gray",
+                        "StorageId": 112
+                    },
+                    {
+                        "Id": 374,
+                        "FinishName": "Silver",
+                        "StorageId": 112
+                    },
+                    {
+                        "Id": 375,
+                        "FinishName": "Space Gray",
+                        "StorageId": 113
+                    },
+                    {
+                        "Id": 376,
+                        "FinishName": "Silver",
+                        "StorageId": 113
+                    },
+                    {
+                        "Id": 377,
+                        "FinishName": "Space Gray",
+                        "StorageId": 114
+                    },
+                    {
+                        "Id": 378,
+                        "FinishName": "Silver",
+                        "StorageId": 114
+                    },
+                    {
+                        "Id": 379,
+                        "FinishName": "Space Gray",
+                        "StorageId": 115
+                    },
+                    {
+                        "Id": 380,
+                        "FinishName": "Silver",
+                        "StorageId": 115
+                    },
+                    {
+                        "Id": 381,
+                        "FinishName": "Space Gray",
+                        "StorageId": 116
+                    },
+                    {
+                        "Id": 382,
+                        "FinishName": "Silver",
+                        "StorageId": 116
+                    },
+                    {
+                        "Id": 383,
+                        "FinishName": "Space Gray",
+                        "StorageId": 117
+                    },
+                    {
+                        "Id": 384,
+                        "FinishName": "Silver",
+                        "StorageId": 117
+                    },
+                    {
+                        "Id": 385,
+                        "FinishName": "Space Gray",
+                        "StorageId": 118
+                    },
+                    {
+                        "Id": 386,
+                        "FinishName": "Silver",
+                        "StorageId": 118
+                    },
+                    {
+                        "Id": 387,
+                        "FinishName": "Space Gray",
+                        "StorageId": 119
+                    },
+                    {
+                        "Id": 388,
+                        "FinishName": "Silver",
+                        "StorageId": 119
+                    }
+                ];
+                $scope.companies = allCompanies;
+                $scope.$watch('company', function() {
+                    $scope.types = allTypes.filter(function(s) {
+                        return s.CompanyId == $scope.company.Id;
                     });
-                var requestData = {};
-                /*|button_mapping|onbeforesend|F7BFF7DE-7446-7D33-0660-2867C785A50D||4836|*/
-                // Get Memory Select from database
-                Apperyio.get("phoneapp_Memory_list_service")(requestData).then(
-                    /*|service_bookmark|bookmark|F7BFF7DE-7446-7D33-0660-2867C785A50D||7376|*/
-                    function(success) { // success callback
-                        (function mapping5771(success, $scope) {
-                            var list1_scope = $scope.list1;
-                            var selected1_scope = $scope.selected1;
-                            list1_scope = success.data;
-                            _.set(selected1_scope, 'item1', success.data[0]);
-                            $scope.list1 = list1_scope;
-                            $scope.selected1 = selected1_scope;
-                            /*|button_mapping|onsuccess|F7BFF7DE-7446-7D33-0660-2867C785A50D||5771|*/
-                        })(success, $scope);
-                    },
-                    function(error) { // callback to handle request error
-                    },
-                    function(notify) { // notify callback, can fire few times
+                    //$scope.city = {};
+                    $scope.type = {};
+                    $scope.models = [];
+                    $scope.storages = [];
+                    $scope.finishes = [];
+                });
+                $scope.$watch('type', function() {
+                    $scope.models = allModels.filter(function(c) {
+                        return c.TypeId == $scope.type.Id;
                     });
-                var requestData = {};
-                /*|button_mapping|onbeforesend|6C22ABF9-C1B5-B8D8-58B0-0AF9B1B015C3||8458|*/
-                // Get Color Select from database
-                Apperyio.get("phoneapp_Color_list_service")(requestData).then(
-                    /*|service_bookmark|bookmark|6C22ABF9-C1B5-B8D8-58B0-0AF9B1B015C3||5835|*/
-                    function(success) { // success callback
-                        (function mapping2854(success, $scope) {
-                            var list2_scope = $scope.list2;
-                            var selected2_scope = $scope.selected2;
-                            list2_scope = success.data;
-                            _.set(selected2_scope, 'item2', success.data[0]);
-                            $scope.list2 = list2_scope;
-                            $scope.selected2 = selected2_scope;
-                            /*|button_mapping|onsuccess|6C22ABF9-C1B5-B8D8-58B0-0AF9B1B015C3||2854|*/
-                        })(success, $scope);
-                    },
-                    function(error) { // callback to handle request error
-                    },
-                    function(notify) { // notify callback, can fire few times
+                    $scope.city = {};
+                });
+                $scope.$watch('model', function() {
+                    $scope.storages = allStorages.filter(function(c) {
+                        return c.ModelId == $scope.model.Id;
                     });
-                var requestData = {};
-                /*|button_mapping|onbeforesend|4164BE69-8420-13B6-6D43-76BC0496424F||3768|*/
-                // read more about using rest services: https://links.appery.io/ve-snippet-rest
-                Apperyio.get("phoneapp_ShippingMethod_list_service")(requestData).then(
-                    /*|service_bookmark|bookmark|4164BE69-8420-13B6-6D43-76BC0496424F||8483|*/
-                    function(success) { // success callback
-                        (function mapping7797(success, $scope) {
-                            var list3_scope = $scope.list3;
-                            var selected3_scope = $scope.selected3;
-                            list3_scope = success.data;
-                            _.set(selected3_scope, 'item3', success.data[0]);
-                            $scope.list3 = list3_scope;
-                            $scope.selected3 = selected3_scope;
-                            /*|button_mapping|onsuccess|4164BE69-8420-13B6-6D43-76BC0496424F||7797|*/
-                        })(success, $scope);
-                    },
-                    function(error) { // callback to handle request error
-                    },
-                    function(notify) { // notify callback, can fire few times
+                    // Check to see if its a Cellular ipad
+                    if ($scope.type.TypeName == "iPad - WiFi/Cellular") {
+                        $scope.model.ModelName = $scope.model.ModelName + " - Cellular";
+                    } else {
+                        $scope.model.ModelName = $scope.model.ModelName;
+                    }
+                    console.log("modelnameNew", $scope.model.ModelName);
+                    $scope.storage = {};
+                });
+                //new
+                $scope.$watch('storage', function() {
+                    $scope.finishes = allFinishes.filter(function(c) {
+                        return c.StorageId == $scope.storage.Id;
                     });
+                    $scope.finish = {};
+                });
             };
             /**
-             * @function addItem
+             * @function MakeData
              */
-            $scope.addItem = function() {
-                RequestModel = ($scope.selected.item);
-                RequestMem = ($scope.selected1.item1.mem);
-                RequestColor = ($scope.selected2.item2.Color);
-                RequestShipping = ($scope.selected3.item3.ShippingType);
-                RequestCondition = ($scope.condition);
-                RequestQuan = ($scope.quantity);
-                RequestExpiration = ($scope.expiration);
-                RequestManu = ($scope.selected.item.Manu);
-                RequestModel = ($scope.selected.item.name);
-                RequestNotes = ($scope.notes);
-                RequestKitted = ($scope.Kitted);
-                RequestCarrier = ($scope.Carrier);
+            $scope.MakeData = function() {
                 //Get User
                 var userData = Apperyio.get("dataStorage");
                 var AllData = userData.current;
@@ -146,113 +2961,117 @@ define(['require', 'app'],
                 var bCell = AllData.MobilePhone
                 var token = AllData.session;
                 //Get User     
-                //Debug    
-                console.log(RequestManu, $scope.selected.item.Manu);
-                console.log(RequestModel, $scope.selected.item.name);
-                console.log(RequestMem, $scope.selected1.item1.mem);
-                console.log(RequestColor);
-                console.log(RequestCondition);
-                console.log(RequestQuan);
-                console.log(RequestExpiration);
-                console.log(buyer);
-                console.log($scope.selected.item.Manu);
-                console.log($scope.selected.item.name);
-                console.log($scope.selected1.item1.mem);
-                console.log($scope.selected3.item3.ShippingType);
-                console.log(RequestCarrier);
-                console.log(bMail);
-                console.log(bCell);
-                var requestData = {};
-                requestData = (function mapping8363($scope) {
+                console.log(token);
+                RequestManu = ($scope.company.CompanyName);
+                RequestType = ($scope.type.TypeName);
+                RequestModel = ($scope.model.ModelName);
+                RequestMem = ($scope.storage.StorageName);
+                RequestColor = ($scope.finish.FinishName);
+                RequestCarrier = ($scope.Carrier);
+                RequestKitted = ($scope.Kitted);
+                RequestQuan = ($scope.Quantity);
+                RequestExpiration = ($scope.Expiration);
+                RequestShipping = ($scope.Shipping);
+                RequestNotes = ($scope.Notes);
+                console.log($scope.finish.FinishName);
+                if ($scope.finish.FinishName === undefined) {
+                    alert('Please Choose a Color');
+                    Apperyio.navigateTo("Buyer_MakeRequest", {});
+                } else {
+                    // Button Press
                     var requestData = {};
-                    requestData.params = {};
-                    var buyer_scope = $scope.buyer;
-                    var bMail_scope = $scope.bMail;
-                    var bCell_scope = $scope.bCell;
-                    var RequestMem_scope = $scope.RequestMem;
-                    var RequestModel_scope = $scope.RequestModel;
-                    var RequestColor_scope = $scope.RequestColor;
-                    var RequestCondition_scope = $scope.RequestCondition;
-                    var RequestQuan_scope = $scope.RequestQuan;
-                    var RequestExpiration_scope = $scope.RequestExpiration;
-                    var RequestManu_scope = $scope.RequestManu;
-                    var RequestShip_scope = $scope.RequestShipping;
-                    requestData.params.Buyer_username = buyer;
-                    requestData.params.Memory = RequestMem;
-                    requestData.params.Product = RequestModel;
-                    requestData.params.Color = RequestColor;
-                    requestData.params.Condition = RequestCondition;
-                    requestData.params.Quantity = RequestQuan;
-                    requestData.params.Expiration = RequestExpiration;
-                    requestData.params.manufacturer = RequestManu;
-                    requestData.params.RNotes = RequestNotes;
-                    requestData.params.Shipping = RequestShipping;
-                    requestData.params.Kitted = RequestKitted;
-                    requestData.params.Carrier = RequestCarrier;
-                    requestData.params.B_Requests1 = bMail;
-                    requestData.params.B_Requests2 = bCell;
-                    requestData.headers = {};
-                    var token_scope = $scope.token;
-                    requestData.headers['X-Appery-Session-Token'] = token;
-                    console.log("token", token);
-                    return requestData;
-                    /*|button_mapping|onbeforesend|1A38ED9E-9DCE-6838-29D0-683E5615E260||8363|*/
-                })($scope);
-                // read more about using rest services: https://links.appery.io/ve-snippet-rest
-                Apperyio.get("InsertRequest_service")(requestData).then(
-                    /*|service_bookmark|bookmark|1A38ED9E-9DCE-6838-29D0-683E5615E260||3932|*/
-                    function(success) { // success callback
-                        /*|button_mapping|onsuccess|1A38ED9E-9DCE-6838-29D0-683E5615E260||1983|*/
-                        var modalOptions = { // About Ionic Modal: https://links.appery.io/ve-snippet-modal-ionic
-                            animation: 'slide-in-up', // The animation to show & hide with
-                            focusFirstInput: false, // Whether to autofocus the first input of the modal when shown
-                            backdropClickToClose: true, // Whether to close the modal on clicking the backdrop
-                            hardwareBackButtonClose: true // Whether the modal can be closed using the hardware back button on Android and similar devices
-                        };
-                        Apperyio.get('Modals').loadModal("Modal_Buyer_Request").then(
-                            function(modalInstance) {
-                                modalInstance.open(modalOptions).then(function(modal) {
-                                    modal.scope.modal = modal;
-                                    modal.scope.result = "You have requested the following:";
-                                    modal.scope.result1 = RequestManu;
-                                    modal.scope.result2 = RequestModel;
-                                    modal.scope.result3 = RequestMem;
-                                    modal.scope.result4 = RequestColor;
-                                    modal.scope.result5 = RequestKitted;
-                                    modal.scope.result6 = RequestQuan;
-                                    modal.scope.result7 = RequestExpiration;
-                                    modal.scope.result8 = RequestShipping;
-                                    modal.scope.result9 = RequestCarrier;
-                                    modal.show();
-                                });
-                            },
-                            function(error) {
-                                var modalOptions = { // About Ionic Modal: https://links.appery.io/ve-snippet-modal-ionic
-                                    animation: 'slide-in-up', // The animation to show & hide with
-                                    focusFirstInput: false, // Whether to autofocus the first input of the modal when shown
-                                    backdropClickToClose: true, // Whether to close the modal on clicking the backdrop
-                                    hardwareBackButtonClose: true // Whether the modal can be closed using the hardware back button on Android and similar devices
-                                };
-                                Apperyio.get('Modals').loadModal("Info").then(
-                                    function(modalInstance) {
-                                        modalInstance.open(modalOptions).then(function(modal) {
-                                            modal.scope.modal = modal;
-                                            modal.scope.result = "Please Try Again. There was an error";
-                                            modal.show();
-                                        });
-                                    },
-                                    function(error) {
-                                        console.log(error);
+                    requestData = (function mapping4338($scope) {
+                        var requestData = {};
+                        requestData.params = {};
+                        var buyer_scope = buyer;
+                        var RequestManu_scope = RequestManu;
+                        var RequestModel_scope = RequestModel;
+                        var RequestMem_scope = RequestMem;
+                        var RequestColor_scope = RequestColor;
+                        var bMail_scope = $scope.bMail;
+                        var bCell_scope = $scope.bCell;
+                        var carrier_scope = $scope.Carrier;
+                        var kitted_scope = $scope.Kitted;
+                        var Quantity_scope = $scope.Quantity;
+                        var Expiratiom_scope = $scope.Expiration;
+                        var Shipping_scope = $scope.Shipping;
+                        var Notes_scope = $scope.Notes;
+                        requestData.params.Buyer_username = buyer_scope;
+                        requestData.params.manufacturer = RequestManu_scope;
+                        requestData.params.Product = RequestModel_scope;
+                        requestData.params.Memory = RequestMem_scope;
+                        requestData.params.Color = RequestColor_scope;
+                        requestData.params.B_Requests1 = bMail;
+                        requestData.params.B_Requests2 = bCell;
+                        requestData.params.Carrier = RequestCarrier;
+                        requestData.params.Kitted = RequestKitted;
+                        requestData.params.Quantity = RequestQuan;
+                        requestData.params.Expiration = RequestExpiration;
+                        requestData.params.Shipping = RequestShipping;
+                        requestData.params.RNotes = RequestNotes;
+                        requestData.headers = {};
+                        var token_scope = $scope.token;
+                        requestData.headers['X-Appery-Session-Token'] = token;
+                        console.log("token", token);
+                        console.log("Finish", RequestColor_scope);
+                        return requestData;
+                        /*|button_mapping|onbeforesend|139F3B73-66FE-AFE3-C4CB-F974C80270D0||4338|*/
+                    })($scope);
+                    // read more about using rest services: https://links.appery.io/ve-snippet-rest
+                    Apperyio.get("InsertRequest_service")(requestData).then(
+                        /*|service_bookmark|bookmark|139F3B73-66FE-AFE3-C4CB-F974C80270D0||8149|*/
+                        function(success) { // success callback
+                            /*|button_mapping|onsuccess|139F3B73-66FE-AFE3-C4CB-F974C80270D0||1667|*/
+                            var modalOptions = { // About Ionic Modal: https://links.appery.io/ve-snippet-modal-ionic
+                                animation: 'slide-in-up', // The animation to show & hide with
+                                focusFirstInput: false, // Whether to autofocus the first input of the modal when shown
+                                backdropClickToClose: true, // Whether to close the modal on clicking the backdrop
+                                hardwareBackButtonClose: true // Whether the modal can be closed using the hardware back button on Android and similar devices
+                            };
+                            Apperyio.get('Modals').loadModal("Modal_Buyer_Request").then(
+                                function(modalInstance) {
+                                    modalInstance.open(modalOptions).then(function(modal) {
+                                        modal.scope.modal = modal;
+                                        modal.scope.result = "You have requested the following:";
+                                        modal.scope.result1 = RequestManu;
+                                        modal.scope.result2 = RequestModel;
+                                        modal.scope.result3 = RequestMem;
+                                        modal.scope.result4 = RequestColor;
+                                        modal.scope.result5 = RequestKitted;
+                                        modal.scope.result6 = RequestQuan;
+                                        modal.scope.result7 = RequestExpiration;
+                                        modal.scope.result8 = RequestShipping;
+                                        modal.scope.result9 = RequestCarrier;
+                                        modal.show();
                                     });
-                                console.log(error);
-                            });
-                    },
-                    function(error) { // callback to handle request error
-                        Apperyio.navigateTo("Login", {});
-                    },
-                    function(notify) { // notify callback, can fire few times
-                    });
-                Apperyio.navigateTo("Buyer_Home", {});
+                                },
+                                function(error) {
+                                    var modalOptions = { // About Ionic Modal: https://links.appery.io/ve-snippet-modal-ionic
+                                        animation: 'slide-in-up', // The animation to show & hide with
+                                        focusFirstInput: false, // Whether to autofocus the first input of the modal when shown
+                                        backdropClickToClose: true, // Whether to close the modal on clicking the backdrop
+                                        hardwareBackButtonClose: true // Whether the modal can be closed using the hardware back button on Android and similar devices
+                                    };
+                                    Apperyio.get('Modals').loadModal("Info").then(
+                                        function(modalInstance) {
+                                            modalInstance.open(modalOptions).then(function(modal) {
+                                                modal.scope.modal = modal;
+                                                modal.scope.result = "Please Try Again. There was an error";
+                                                modal.show();
+                                            });
+                                        },
+                                        function(error) {
+                                            console.log(error);
+                                        });
+                                    console.log(error);
+                                });
+                        },
+                        function(error) { // callback to handle request error
+                        },
+                        function(notify) { // notify callback, can fire few times
+                        });
+                    Apperyio.navigateTo("Buyer_Home", {});
+                }
             };
         }
     });

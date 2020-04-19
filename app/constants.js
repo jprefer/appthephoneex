@@ -5,13 +5,6 @@ define(['require'], function(require) {
          * Also there are Push Notification settings there if Push Notifications enabled for this project.
          */
         /**
-         * PizzaDatabase_settings
-         * @property database_id       - 
-         */
-        PizzaDatabase_settings: {
-            "database_id": "5e2c9d542e22d7259ebdb0ab"
-        },
-        /**
          * Settings
          */
         Settings: {},
