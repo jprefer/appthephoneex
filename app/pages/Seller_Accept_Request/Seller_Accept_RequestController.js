@@ -50,7 +50,8 @@ define(['require', 'app'],
                 console.log($scope.RequestID2.Gl_Vars.request_id);
                 RequestID3 = $scope.RequestID2.Gl_Vars.request_id;
                 console.log("RequestID3= ", RequestID3);
-                var miniID
+                var miniID;
+                //$scope.BidAmount = 999.99
                 //Get User
                 var userData = Apperyio.get("dataStorage");
                 var AllData = userData.current;
@@ -247,7 +248,8 @@ define(['require', 'app'],
                             });
                     },
                     function(error) { // callback to handle request error
-                        Apperyio.navigateTo("Login", {});
+                        alert('Please Enter a Price');
+                        Apperyio.navigateTo("Seller_Accept_Request", {});
                     },
                     function(notify) { // notify callback, can fire few times
                     });

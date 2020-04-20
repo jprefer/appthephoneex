@@ -33,6 +33,8 @@ ng-controller="Seller_Ship" ng-cloak ng-init="init()" active-screen="Shipping" c
                     </div>
                 </div>
             </div>
+        </div>
+        <div>
             <div class="row">
                 <div class="col">
                     <label class="item item-input">
@@ -40,9 +42,12 @@ ng-controller="Seller_Ship" ng-cloak ng-init="init()" active-screen="Shipping" c
                     </label>
                 </div>
                 <div class="col">
-                    <div class="item item-input">
-                        <input type="text" placeholder="Enter Tracking " value="" ng-model="Tracking1">
-                    </div>
+                    <form name="myForm">
+                        <div class="item item-input">
+                            <input type="text" placeholder="Tracking #" value="" ng-required="true" name="tracking2"
+                            ng-model="Tracking1">
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -54,7 +59,7 @@ ng-controller="Seller_Ship" ng-cloak ng-init="init()" active-screen="Shipping" c
                     </button>
                 </div>
                 <div class="col">
-                    <button class="button button-balanced button-block" ng-click="MarkShipped()">
+                    <button class="button button-balanced button-block" ng-click="MarkShipped()" ng-disabled="myForm.tracking2.$error.required">
                         Mark This Shipped
                     </button>
                 </div>

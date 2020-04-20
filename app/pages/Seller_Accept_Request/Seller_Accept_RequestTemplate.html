@@ -33,9 +33,6 @@ class="aio-empty-screen padding overflow-scroll">
         </font>
     </div>
     <div class="list">
-        <div class="item item-input">
-            <input type="text" placeholder="Add any notes you may have:" value="" ng-model="SellerNotes">
-        </div>
         <div>
             <div class="row">
                 <div class="col">
@@ -66,32 +63,39 @@ class="aio-empty-screen padding overflow-scroll">
                 </div>
             </div>
         </div>
-        <div>
-            <div class="row">
-                <div class="col col-50">
-                    <label class="item item-input">
-                        <textarea placeholder="Enter text"> Offer for {{Quantity1}} units :</textarea>
-                    </label>
-                </div>
-                <div class="col">
+    </div>
+    <div class="item item-input">
+        <input type="text" placeholder="Add any notes you may have:" value="" ng-model="SellerNotes">
+    </div>
+    <div>
+        <div class="row">
+            <div class="col">
+                <label class="item item-input">
+                    <textarea placeholder="Enter text"> Offer for {{Quantity1}} units :</textarea>
+                </label>
+            </div>
+            <div class="col">
+                <form name="myForm">
                     <div class="item item-input">
-                        <input type="text" placeholder="Enter Bid Amount Here" value="" ng-model="BidAmount">
+                        <input type="text" placeholder="Offer - 0.00" value="" ng-required="true" name="bidamount1"
+                        ng-model="BidAmount">
                     </div>
-                </div>
+                </form>
             </div>
         </div>
-        <div>
-            <div class="row row-top">
-                <div class="col">
-                    <button class="button button-assertive button-block" ng-click="gotoPage()">
-                        Go Back
-                    </button>
-                </div>
-                <div class="col">
-                    <button class="button button-balanced button-block icon-left ion-cash" ng-click="PlaceOffer()">
-                        Place Offer
-                    </button>
-                </div>
+    </div>
+    <div>
+        <div class="row row-top">
+            <div class="col">
+                <button class="button button-assertive button-block" ng-click="gotoPage()">
+                    Go Back
+                </button>
+            </div>
+            <div class="col">
+                <button class="button button-balanced button-block icon-left ion-cash" ng-click="PlaceOffer()"
+                ng-disabled="myForm.bidamount1.$error.required">
+                    Place Offer
+                </button>
             </div>
         </div>
     </div>

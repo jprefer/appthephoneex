@@ -39,6 +39,8 @@ define(['require', 'app'],
             $scope.Kit1 = Apperyio.EntityAPI('String');
             $scope.RequestID4 = Apperyio.EntityAPI('String');
             $scope.token = Apperyio.EntityAPI('String');
+            $scope.dsblBtn = Apperyio.EntityAPI('Boolean');
+            $scope.Tracking1 = Apperyio.EntityAPI('String');
             /**
              * User controller functions
              */
@@ -48,6 +50,7 @@ define(['require', 'app'],
             $scope.init = function() {
                 //On load screen logic
                 var RequestID3 = ""
+                var dsblBtn = true;
                 // inject the 'dataStorage' service
                 var data = Apperyio.get("dataStorage");
                 // user1 is a variable in the page1 scope 
@@ -63,7 +66,9 @@ define(['require', 'app'],
                 var username = AllData.username;
                 var Buyer_username = AllData.username;
                 var token = AllData.session;
-                //Get User  
+                //Get User 
+                $scope.dsblBtn = false;
+                console.log(dsblBtn);
                 // Get Data from Request
                 var requestData = {};
                 requestData = (function mapping5190($scope) {
@@ -106,6 +111,7 @@ define(['require', 'app'],
                             var ShipZip1_scope = $scope.ShipZip1;
                             var ShipAddress1a_scope = $scope.ShipAddress1a;
                             var ShipAddress2a_scope = $scope.ShipAddress2a;
+                            var Tracking1_scope = $scope.Tracking1;
                             BuyerNote1_scope = success.data[0].BuyerNote;
                             Colour1_scope = success.data[0].Colour;
                             Prod1_scope = success.data[0].Prod;
@@ -129,6 +135,7 @@ define(['require', 'app'],
                             ShipZip1_scope = success.data[0].ShipZip;
                             ShipAddress1a_scope = success.data[0].ShipAddress1;
                             ShipAddress2a_scope = success.data[0].ShipAddress2;
+                            Tracking1_scope = success.data[0].Tracking;
                             $scope.BuyerNote1 = BuyerNote1_scope;
                             $scope.Colour1 = Colour1_scope;
                             $scope.Prod1 = Prod1_scope;
@@ -152,6 +159,16 @@ define(['require', 'app'],
                             $scope.ShipZip1 = ShipZip1_scope;
                             $scope.ShipAddress1a = ShipAddress1a_scope;
                             $scope.ShipAddress2a = ShipAddress2a_scope;
+                            $scope.Tracking1 = Tracking1_scope;
+                            console.log($scope.Tracking1);
+                            //Below this is whether the item was shipped or not
+                            if ($scope.Tracking1 == null) {
+                                $scope.dsblBtn = true;
+                            } else {
+                                $scope.dsblBtn = false;
+                            }
+                            //$scope.dsblBtn = false;
+                            console.log(dsblBtn);
                             /*|button_mapping|onsuccess|F952B444-3CF8-14F2-4B7E-90AEB380A4EA||1982|*/
                         })(success, $scope);
                     },

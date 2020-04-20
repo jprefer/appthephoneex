@@ -62,7 +62,7 @@ define(['require', 'app'],
                         var userData = Apperyio.get("dataStorage");
                         userData.current = success.data;
                         // Need to fix for Sellers Also
-                        Apperyio.navigateTo("Buyer_Home", {});
+                        Apperyio.navigateTo("Login", {});
                     },
                     function(error) { // callback to handle request error
                         var userData = Apperyio.get("dataStorage");
