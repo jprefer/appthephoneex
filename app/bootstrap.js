@@ -78,6 +78,7 @@
             "menu_Main_Finish_service": "services/menu_Main_Finish_service",
             "menu_Main_Storage_service": "services/menu_Main_Storage_service",
             "Test_AllCountries_service": "services/Test_AllCountries_service",
+            "Buyer_Complete_Return_service": "services/Buyer_Complete_Return_service",
             '$Buyer_InProcess_Detail': 'pages/Buyer_InProcess_Detail',
             '$old_Buyer_Home': 'pages/old_Buyer_Home',
             '$Seller_Home': 'pages/Seller_Home',

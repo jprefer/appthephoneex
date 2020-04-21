@@ -41,6 +41,10 @@ define(['require', 'app'],
             $scope.token = Apperyio.EntityAPI('String');
             $scope.dsblBtn = Apperyio.EntityAPI('Boolean');
             $scope.Tracking1 = Apperyio.EntityAPI('String');
+            $scope.ShipDate1 = Apperyio.EntityAPI('String');
+            $scope.Seller1 = Apperyio.EntityAPI('String');
+            $scope.S_Off1a = Apperyio.EntityAPI('String');
+            $scope.S_Off2a = Apperyio.EntityAPI('String');
             /**
              * User controller functions
              */
@@ -112,6 +116,10 @@ define(['require', 'app'],
                             var ShipAddress1a_scope = $scope.ShipAddress1a;
                             var ShipAddress2a_scope = $scope.ShipAddress2a;
                             var Tracking1_scope = $scope.Tracking1;
+                            var ShipDate1_scope = $scope.ShipDate1;
+                            var Seller1_scope = $scope.Seller1;
+                            var S_Off1a_scope = $scope.S_Off1a;
+                            var S_Off2a_scope = $scope.S_Off2a;
                             BuyerNote1_scope = success.data[0].BuyerNote;
                             Colour1_scope = success.data[0].Colour;
                             Prod1_scope = success.data[0].Prod;
@@ -136,6 +144,10 @@ define(['require', 'app'],
                             ShipAddress1a_scope = success.data[0].ShipAddress1;
                             ShipAddress2a_scope = success.data[0].ShipAddress2;
                             Tracking1_scope = success.data[0].Tracking;
+                            ShipDate1_scope = success.data[0].ShipDate;
+                            Seller1_scope = success.data[0].Seller;
+                            S_Off1a_scope = success.data[0].S_Off1;
+                            S_Off2a_scope = success.data[0].S_Off2;
                             $scope.BuyerNote1 = BuyerNote1_scope;
                             $scope.Colour1 = Colour1_scope;
                             $scope.Prod1 = Prod1_scope;
@@ -160,7 +172,18 @@ define(['require', 'app'],
                             $scope.ShipAddress1a = ShipAddress1a_scope;
                             $scope.ShipAddress2a = ShipAddress2a_scope;
                             $scope.Tracking1 = Tracking1_scope;
-                            console.log($scope.Tracking1);
+                            $scope.Seller1 = Seller1_scope;
+                            $scope.S_Off1a = S_Off1a_scope;
+                            $scope.S_Off2a = S_Off2a_scope;
+                            //$scope.ShipDate1 = ShipDate1_scope;
+                            if ($scope.Tracking1 == null) {
+                                $scope.ShipDate1 = "Not Shipped Yet";
+                            } else {
+                                $scope.ShipDate1 = new Date(ShipDate1_scope.$date);
+                                var ChangetoString3 = String($scope.ShipDate1);
+                                $scope.ShipDate1 = ChangetoString3
+                                console.log($scope.Tracking1);
+                            }
                             //Below this is whether the item was shipped or not
                             if ($scope.Tracking1 == null) {
                                 $scope.dsblBtn = true;
@@ -182,6 +205,12 @@ define(['require', 'app'],
              */
             $scope.Accept = function() {
                 var Rating1 = ($scope.Rating1);
+                var Seller1 = ($scope.Seller1);
+                var S_Off1a = ($scope.S_Off1a);
+                var S_Off2a = ($scope.S_Off2a);
+                var Quan1 = ($scope.Quan1);
+                var Manu1 = ($scope.Manu1);
+                var Prod1 = ($scope.Prod1);
                 //Get User  
                 var userData = Apperyio.get("dataStorage");
                 var AllData = userData.current;
@@ -196,6 +225,12 @@ define(['require', 'app'],
                     var _id1_scope = $scope._id1;
                     requestData.params.Order_id = _id1_scope;
                     requestData.params.Rating = Rating1;
+                    requestData.params.Seller = Seller1;
+                    requestData.params.S_Off1 = S_Off1a;
+                    requestData.params.S_Off2 = S_Off2a;
+                    requestData.params.Quan = Quan1;
+                    requestData.params.Manu = Manu1;
+                    requestData.params.Prod = Prod1;
                     requestData.headers = {};
                     var token_scope = $scope.token;
                     requestData.headers['X-Appery-Session-Token'] = token;
@@ -239,6 +274,44 @@ define(['require', 'app'],
              */
             $scope.GoBack = function() {
                 Apperyio.navigateTo("Buyer_InProcess", {});
+            };
+            /**
+             * @function Return
+             */
+            $scope.Return = function() {
+                //Get User  
+                var userData = Apperyio.get("dataStorage");
+                var AllData = userData.current;
+                var username = AllData.username;
+                var Buyer_username = AllData.username;
+                var token = AllData.session;
+                //Get User  
+                var requestData = {};
+                requestData = (function mapping8621($scope) {
+                    var requestData = {};
+                    requestData.params = {};
+                    var _id1_scope = $scope._id1;
+                    requestData.params.Order_id = _id1_scope;
+                    requestData.headers = {};
+                    var token_scope = $scope.token;
+                    requestData.headers['X-Appery-Session-Token'] = token;
+                    console.log("token", token);
+                    return requestData;
+                    /*|button_mapping|onbeforesend|9037690E-9E2B-2B07-F879-13D626904069||8621|*/
+                })($scope);
+                // read more about using rest services: https://links.appery.io/ve-snippet-rest
+                Apperyio.get("Buyer_Complete_Return_service")(requestData).then(
+                    /*|service_bookmark|bookmark|9037690E-9E2B-2B07-F879-13D626904069||6097|*/
+                    function(success) { // success callback
+                        /*|button_mapping|onsuccess|9037690E-9E2B-2B07-F879-13D626904069||4835|*/
+                        alert("You Request for a Return Has Been Submitted.  A member of our team will reach out to you shortly.");
+                        Apperyio.navigateTo("Buyer_Home", {});
+                    },
+                    function(error) { // callback to handle request error
+                        Apperyio.navigateTo("Login", {});
+                    },
+                    function(notify) { // notify callback, can fire few times
+                    });
             };
         }
     });

@@ -27,7 +27,7 @@ define(['require', 'app'],
                 // set it to reference the 'dataStorage' service
                 $scope.RequestID2.Gl_Vars = data;
                 //console.log($scope.RequestID2.Gl_Vars.request_id);
-                RequestID3 = $scope.RequestID2.Gl_Vars.request_id;
+                RequestID3 = $scope.RequestID2.Gl_Vars.whereami;
                 console.log("RequestID3= ", RequestID3);
                 Apperyio.navigateTo(RequestID3, {
                     'reloadPage': true

@@ -41,6 +41,7 @@ define(['require', 'app'],
             $scope.Buyer1 = Apperyio.EntityAPI('String');
             $scope.B_Req1A = Apperyio.EntityAPI('String');
             $scope.token = Apperyio.EntityAPI('String');
+            $scope.B_Req2A = Apperyio.EntityAPI('String');
             /**
              * User controller functions
              */
@@ -110,6 +111,7 @@ define(['require', 'app'],
                             var ShipAddress2a_scope = $scope.ShipAddress2a;
                             var Buyer1_scope = $scope.Buyer1;
                             var B_Req1A_scope = $scope.B_Req1A;
+                            var B_Req2A_scope = $scope.B_Req2A;
                             BuyerNote1_scope = success.data[0].BuyerNote;
                             Colour1_scope = success.data[0].Colour;
                             Prod1_scope = success.data[0].Prod;
@@ -135,6 +137,7 @@ define(['require', 'app'],
                             ShipAddress2a_scope = success.data[0].ShipAddress2;
                             Buyer1_scope = success.data[0].Buyer;
                             B_Req1A_scope = success.data[0].B_Req1;
+                            B_Req2A_scope = success.data[0].B_Req2;
                             $scope.BuyerNote1 = BuyerNote1_scope;
                             $scope.Colour1 = Colour1_scope;
                             $scope.Prod1 = Prod1_scope;
@@ -160,6 +163,7 @@ define(['require', 'app'],
                             $scope.ShipAddress2a = ShipAddress2a_scope;
                             $scope.Buyer1 = Buyer1_scope;
                             $scope.B_Req1A = B_Req1A_scope;
+                            $scope.B_Req2A = B_Req2A_scope;
                             /*|button_mapping|onsuccess|F952B444-3CF8-14F2-4B7E-90AEB380A4EA||1982|*/
                         })(success, $scope);
                     },
@@ -177,6 +181,7 @@ define(['require', 'app'],
                 var Tracking1 = ($scope.Tracking1);
                 var Buyer1 = ($scope.Buyer1);
                 var B_Req1A = ($scope.B_Req1A);
+                var B_Req2A = ($scope.B_Req2A);
                 var Quan1 = ($scope.Quan1);
                 var Manu1 = ($scope.Manu1);
                 var Prod1 = ($scope.Prod1);
@@ -197,6 +202,7 @@ define(['require', 'app'],
                     requestData.params.Tracking = Tracking1;
                     requestData.params.Buyer = Buyer1;
                     requestData.params.B_Req1 = B_Req1A;
+                    requestData.params.B_Req2 = B_Req2A;
                     requestData.params.Quan = Quan1;
                     requestData.params.Manu = Manu1;
                     requestData.params.Prod = Prod1;

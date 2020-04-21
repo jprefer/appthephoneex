@@ -214,6 +214,9 @@ define(['require'], function(require) {
                         },
                         "order_id": {
                             "type": "string"
+                        },
+                        "whereami": {
+                            "type": "string"
                         }
                     }
                 }
@@ -2701,6 +2704,79 @@ define(['require'], function(require) {
                                             "type": "string"
                                         },
                                         "requestBody": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "headers": {
+                            "type": "object",
+                            "properties": {}
+                        }
+                    }
+                }
+            }
+        },
+        "Buyer_Complete_Return_service": {
+            "type": "object",
+            "properties": {
+                "url": {
+                    "type": "string",
+                    "default": "https://api.appery.io/rest/1/code/54ef87c8-0ce7-44ba-b33a-1d4842978747/exec"
+                },
+                "method": {
+                    "type": "string",
+                    "default": "post"
+                },
+                "request": {
+                    "type": "object",
+                    "properties": {
+                        "body": {
+                            "type": "object",
+                            "properties": {
+                                "data": {
+                                    "type": "data"
+                                }
+                            }
+                        },
+                        "query": {
+                            "type": "object",
+                            "properties": {
+                                "Order_id": {
+                                    "type": "string",
+                                    "default": "5e9e08787b1efc0cd6ca6017"
+                                }
+                            }
+                        },
+                        "headers": {
+                            "type": "object",
+                            "properties": {
+                                "Content-Type": {
+                                    "type": "string",
+                                    "default": "text/plain"
+                                },
+                                "X-Appery-Session-Token": {
+                                    "type": "string",
+                                    "default": "96831a3e-eb5a-4d49-991e-b96a71e7c853"
+                                }
+                            }
+                        }
+                    }
+                },
+                "response": {
+                    "type": "object",
+                    "properties": {
+                        "body": {
+                            "type": "object",
+                            "properties": {
+                                "$": {
+                                    "type": "object",
+                                    "properties": {
+                                        "requestBody": {
+                                            "type": "string"
+                                        },
+                                        "requestParams": {
                                             "type": "string"
                                         }
                                     }

@@ -97,7 +97,7 @@ define(['require', 'app'],
                 // user1 is a variable in the page1 scope 
                 // set it to reference the 'dataStorage' service
                 $scope.RequestID1.Gl_Vars = data;
-                $scope.RequestID1.Gl_Vars.request_id = "Buyer_Home";
+                $scope.RequestID1.Gl_Vars.whereami = "Buyer_Home";
                 //console.log(_id);
                 Apperyio.navigateTo("PassThru", {});
             };
