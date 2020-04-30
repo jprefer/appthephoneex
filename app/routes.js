@@ -136,6 +136,26 @@ define(['require'], function(require) {
      * @property {string} when["/PassThru.html"].c  - Controller for /PassThru.html URL
      * @property {string} when["/PassThru.html"].t  - Template for /PassThru.html URL
      * @property {string[]} when["/PassThru.html"].d  - Dependencies for /PassThru.html URL
+     * @property {object} when["/Register_Test.html"]    - Routing configuration for /Register_Test.html URL
+     * @property {string} when["/Register_Test.html"].c  - Controller for /Register_Test.html URL
+     * @property {string} when["/Register_Test.html"].t  - Template for /Register_Test.html URL
+     * @property {string[]} when["/Register_Test.html"].d  - Dependencies for /Register_Test.html URL
+     * @property {object} when["/tab_Verify.html"]    - Routing configuration for /tab_Verify.html URL
+     * @property {string} when["/tab_Verify.html"].c  - Controller for /tab_Verify.html URL
+     * @property {string} when["/tab_Verify.html"].t  - Template for /tab_Verify.html URL
+     * @property {string[]} when["/tab_Verify.html"].d  - Dependencies for /tab_Verify.html URL
+     * @property {object} when["/Welcome.html"]    - Routing configuration for /Welcome.html URL
+     * @property {string} when["/Welcome.html"].c  - Controller for /Welcome.html URL
+     * @property {string} when["/Welcome.html"].t  - Template for /Welcome.html URL
+     * @property {string[]} when["/Welcome.html"].d  - Dependencies for /Welcome.html URL
+     * @property {object} when["/Buyer_Ins.html"]    - Routing configuration for /Buyer_Ins.html URL
+     * @property {string} when["/Buyer_Ins.html"].c  - Controller for /Buyer_Ins.html URL
+     * @property {string} when["/Buyer_Ins.html"].t  - Template for /Buyer_Ins.html URL
+     * @property {string[]} when["/Buyer_Ins.html"].d  - Dependencies for /Buyer_Ins.html URL
+     * @property {object} when["/Seller_Ins.html"]    - Routing configuration for /Seller_Ins.html URL
+     * @property {string} when["/Seller_Ins.html"].c  - Controller for /Seller_Ins.html URL
+     * @property {string} when["/Seller_Ins.html"].t  - Template for /Seller_Ins.html URL
+     * @property {string[]} when["/Seller_Ins.html"].d  - Dependencies for /Seller_Ins.html URL
      
      * @property {object} otherwise                             - Routing configuration for another URL
      * @property {object} otherwise.redirectTo                  - Redirect to default routing URL
@@ -170,6 +190,11 @@ define(['require'], function(require) {
      * @property {string} route_names.["Buyer_Request_Test"]  - "Buyer_Request_Test" is an alias for "/Buyer_Request_Test.html" routing
      * @property {string} route_names.["Buyer_MakeRequest"]  - "Buyer_MakeRequest" is an alias for "/Buyer_MakeRequest.html" routing
      * @property {string} route_names.["PassThru"]  - "PassThru" is an alias for "/PassThru.html" routing
+     * @property {string} route_names.["Register_Test"]  - "Register_Test" is an alias for "/Register_Test.html" routing
+     * @property {string} route_names.["tab_Verify"]  - "tab_Verify" is an alias for "/tab_Verify.html" routing
+     * @property {string} route_names.["Welcome"]  - "Welcome" is an alias for "/Welcome.html" routing
+     * @property {string} route_names.["Buyer_Ins"]  - "Buyer_Ins" is an alias for "/Buyer_Ins.html" routing
+     * @property {string} route_names.["Seller_Ins"]  - "Seller_Ins" is an alias for "/Seller_Ins.html" routing
      
      */
     return {
@@ -315,6 +340,31 @@ define(['require'], function(require) {
                 c: '$PassThru/PassThruController',
                 t: '$PassThru/PassThruTemplate.html',
                 d: []
+            },
+            '/Register_Test.html': {
+                c: '$Register/RegisterController',
+                t: '$Register/RegisterTemplate.html',
+                d: []
+            },
+            '/tab_Verify.html': {
+                c: '$tab_Verify/tab_VerifyController',
+                t: '$tab_Verify/tab_VerifyTemplate.html',
+                d: []
+            },
+            '/Welcome.html': {
+                c: '$Welcome/WelcomeController',
+                t: '$Welcome/WelcomeTemplate.html',
+                d: []
+            },
+            '/Buyer_Ins.html': {
+                c: '$Buyer_Ins/Buyer_InsController',
+                t: '$Buyer_Ins/Buyer_InsTemplate.html',
+                d: []
+            },
+            '/Seller_Ins.html': {
+                c: '$Seller_Ins/Seller_InsController',
+                t: '$Seller_Ins/Seller_InsTemplate.html',
+                d: []
             }
         },
         otherwise: default_route,
@@ -348,7 +398,12 @@ define(['require'], function(require) {
             'Seller_Offers_Detail': '/Seller_Offers_Detail.html',
             'Buyer_Request_Test': '/Buyer_Request_Test.html',
             'Buyer_MakeRequest': '/Buyer_MakeRequest.html',
-            'PassThru': '/PassThru.html'
+            'PassThru': '/PassThru.html',
+            'Register_Test': '/Register_Test.html',
+            'tab_Verify': '/tab_Verify.html',
+            'Welcome': '/Welcome.html',
+            'Buyer_Ins': '/Buyer_Ins.html',
+            'Seller_Ins': '/Seller_Ins.html'
         }
     };
 });

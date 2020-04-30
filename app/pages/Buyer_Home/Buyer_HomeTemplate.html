@@ -22,7 +22,6 @@ ng-controller="Buyer_Home" ng-cloak ng-init="init()" active-screen="Home" class=
         <div class="row">
             <div class="col">
                 <div>
-                    <br>
                     <font size="4">
                         <center>
                             <b>
@@ -31,7 +30,7 @@ ng-controller="Buyer_Home" ng-cloak ng-init="init()" active-screen="Home" class=
                         </center>
                     </font>
                     <center>
-                        Remember - May Get Multiple Offers For Each Request
+                        Remember - You may Get Multiple Offers For Each Request
                     </center>
                     <center>
                         <font color="#00AADB">
@@ -44,7 +43,7 @@ ng-controller="Buyer_Home" ng-cloak ng-init="init()" active-screen="Home" class=
         </div>
     </div>
     <button class="button button-light button-icon button-block button-clear icon ion-refresh"
-    ng-click="reload()">
+    ng-click="reload()" ng-hide="true">
     </button>
     <div class="list">
         <a href="javascript:void(0)" class="item" ng-click="showDetail(item._id)" ng-repeat="item in list">

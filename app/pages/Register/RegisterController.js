@@ -19,6 +19,7 @@ define(['require', 'app'],
              */
             $scope.init = function() {
                 //On load screen logic
+                $scope.user.Country = "USA"
             };
             /**
              * @function register
@@ -51,6 +52,7 @@ define(['require', 'app'],
                     requestData.params.ExtraField3 = user_scope.ExtraField3;
                     requestData.params.ExtraField4 = user_scope.ExtraField4;
                     requestData.params.ExtraField5 = user_scope.ExtraField5;
+                    requestData.params.ActCode = user_scope.ActCode;
                     return requestData;
                     /*|button_mapping|onbeforesend|148D87C6-4EEC-41F1-82E5-CD732525AC59||3486|*/
                 })($scope);
@@ -61,8 +63,24 @@ define(['require', 'app'],
                         /*|button_mapping|onsuccess|148D87C6-4EEC-41F1-82E5-CD732525AC59||3373|*/
                         var userData = Apperyio.get("dataStorage");
                         userData.current = success.data;
-                        // Need to fix for Sellers Also
-                        Apperyio.navigateTo("Login", {});
+                        var modalOptions = { // About Ionic Modal: https://links.appery.io/ve-snippet-modal-ionic
+                            animation: 'slide-in-up', // The animation to show & hide with
+                            focusFirstInput: false, // Whether to autofocus the first input of the modal when shown
+                            backdropClickToClose: true, // Whether to close the modal on clicking the backdrop
+                            hardwareBackButtonClose: true // Whether the modal can be closed using the hardware back button on Android and similar devices
+                        };
+                        Apperyio.get('Modals').loadModal("RegistrationComplete").then(
+                            function(modalInstance) {
+                                modalInstance.open(modalOptions).then(function(modal) {
+                                    modal.scope.modal = modal;
+                                    modal.show();
+                                });
+                            },
+                            function(error) {
+                                console.log(error);
+                            });
+                        // Move on
+                        Apperyio.navigateTo("Welcome", {});
                     },
                     function(error) { // callback to handle request error
                         var userData = Apperyio.get("dataStorage");

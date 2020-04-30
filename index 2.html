@@ -6,20 +6,21 @@
             index
         </title>
         <!-- App manifest -->
-        <!-- Uncomment link and meta tags below to activate PWA icons and theme color -->
-        <!-- link rel="manifest" href="manifest.json" crossOrigin="use-credentials" -->
-        <!-- <link rel="apple-touch-icon" sizes="48x48" href="files/images/a48_48.png"><link rel="apple-touch-icon" sizes="72x72" href="files/images/apple-touch-icon-72x72.png"><link rel="apple-touch-icon" sizes="96x96" href="files/images/a96_96.png"><link rel="apple-touch-icon" sizes="144x144" href="files/images/apple-touch-icon-144x144.png"><link rel="apple-touch-icon" sizes="192x192" href="files/images/a192_192.png"><link rel="apple-touch-icon" sizes="512x512" href="files/images/a512_512.png">
-        -->
-        <!-- meta name="theme-color" content="#ffffff" -->
-        <!-- Uncomment this script to activate service worker -->
-        <!-- <script>
-        if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('sw.js')
-        .then(() => console.log('service worker installed'))
-        .catch(err => console.error('Error', err));
-        }
+        <link rel="manifest" href="manifest.json" crossOrigin="use-credentials">
+        <link rel="apple-touch-icon" sizes="48x48" href="files/images/a48_48.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="files/images/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="96x96" href="files/images/a96_96.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="files/images/apple-touch-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="192x192" href="files/images/a192_192.png">
+        <link rel="apple-touch-icon" sizes="512x512" href="files/images/a512_512.png">
+        <meta name="theme-color" content="#ffffff">
+        <script>
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.register('sw.js')
+                    .then(() => console.log('service worker installed'))
+                    .catch(err => console.error('Error', err));
+            }
         </script>
-        -->
         <script src="libs/angular/angular.min.js">
         </script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -29,11 +30,13 @@
         <link href="css/ionic/ionic.min.css" rel="stylesheet" />
         <link href="css/appery-ui/appery-ui.css" rel="stylesheet" />
         <link href="css/__aio_components.css" rel="stylesheet" />
-        <script>
-            var require = {
-                urlArgs: window.navigator.userAgent.match(/Windows Phone/i) ? undefined : "bust=1587316158"
-            };
+        <!-- Uncomment this script when not using service worker -->
+        <!-- <script>        
+        var require = {
+        urlArgs : window.navigator.userAgent.match(/Windows Phone/i) ? undefined : "bust=1587502271"
+        };
         </script>
+        -->
         <script data-main="app/bootstrap" src="libs/requirejs/require.js">
         </script>
     </head>

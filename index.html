@@ -33,7 +33,7 @@
         <!-- Uncomment this script when not using service worker -->
         <!-- <script>        
         var require = {
-        urlArgs : window.navigator.userAgent.match(/Windows Phone/i) ? undefined : "bust=1587502271"
+        urlArgs : window.navigator.userAgent.match(/Windows Phone/i) ? undefined : "bust=1588283451"
         };
         </script>
         -->
@@ -78,6 +78,12 @@
                         <p></p>
                         Profile
                         </a><!--
+                        --><a href="javascript:void(0)" class="item-icon-left item" ng-class="{active: activeScreen.name === &quot;Profile&quot;}"
+                        menu-close="" navigate-to="tab_Verify">
+                        <i class="icon ion-checkmark "></i>
+                        <p></p>
+                        Verify
+                        </a><!--
                         --><a href="javascript:void(0)" class="item-icon-left item" ng-class="{active: activeScreen.name === &quot;Bank&quot;}"
                         menu-close="" navigate-to="Bank">
                         <i class="icon ion-cash "></i>
@@ -95,8 +101,31 @@
                         <i class="icon ion-ios-telephone "></i>
                         <p></p>
                         Contact Us
+                        </a><!--
+                        --><a href="javascript:void(0)" class="item-icon-left item" ng-class="{active: activeScreen.name === &quot;Welcome&quot;}"
+                        menu-close="" navigate-to="Welcome">
+                        <i class="icon ion-information "></i>
+                        <p></p>
+                        Welcome
+                        </a><!--
+                        --><a href="javascript:void(0)" class="item">
+                        <p></p>
+                        New? - Follow The Steps Below
                         </a>
                     </div>
+                    <button class="button button-block icon-left ion-cash" menu-close="" navigate-to="Bank"
+                    ng-class="{active: activeScreen.name === &quot;Bank&quot;}">
+                        Pre-Step Enter Payment Info
+                    </button>
+                    <button class="button button-block" menu-close="" ng-click="Step1()">
+                        Step 1
+                    </button>
+                    <button class="button button-block" menu-close="" ng-click="Step2()">
+                        Step 2
+                    </button>
+                    <button class="button button-block" menu-close="" ng-click="Step3()">
+                        Step 3
+                    </button>
                 </ion-side-menu>
             </ion-side-menus>
         </div>

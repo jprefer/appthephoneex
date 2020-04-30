@@ -2,7 +2,7 @@
     "short_name": "phoneApp",
     "name": "phoneApp",
     "description": "",
-    "display": "fullscreen",
+    "display": "browser",
     "orientation": "any",
     "start_url": "/",
     "scope": "/",

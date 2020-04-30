@@ -43,6 +43,7 @@ define(['require', 'app'],
             $scope.S_Offers4A = Apperyio.EntityAPI('String');
             $scope.S_Offers5A = Apperyio.EntityAPI('String');
             $scope.token = Apperyio.EntityAPI('String');
+            $scope.peritem = Apperyio.EntityAPI('String');
             /**
              * User controller functions
              */
@@ -161,6 +162,7 @@ define(['require', 'app'],
                             $scope.B_Requests2A = B_Requests2A_scope;
                             $scope.S_Offers1A = S_Offers1A_scope;
                             $scope.S_Offers2A = S_Offers2A_scope;
+                            $scope.peritem = $scope.BuyerPrice1 / $scope.Quantity1;
                             /*|button_mapping|onsuccess|F72C58AD-0CB1-F18F-161F-44E1632C9FEA||7623|*/
                         })(success, $scope);
                     },

@@ -29,11 +29,25 @@
 
 
 
-    <div class="item" >
-            Please try again. 
+    <div class="item" ng-readonly="true" >
+            Sorry User Name is already taken
+    </div>
+
+
+
+
+    <div class="item" ng-readonly="true" >
+            Please Try another User Name
     </div>
 
     </div>
+
+
+
+
+<button class="button button-block" ng-click="modal.hide()" >
+        Try Again
+</button>
 
     </ion-content>
 
@@ -41,7 +55,7 @@
         
 
         
-    <ion-header-bar  class="bar bar-positive" >
+    <ion-header-bar  class="bar bar-assertive" >
         
 
         

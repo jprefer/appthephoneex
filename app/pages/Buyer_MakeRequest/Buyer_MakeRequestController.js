@@ -2937,7 +2937,6 @@ define(['require', 'app'],
                     } else {
                         $scope.model.ModelName = $scope.model.ModelName;
                     }
-                    console.log("modelnameNew", $scope.model.ModelName);
                     $scope.storage = {};
                 });
                 //new

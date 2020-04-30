@@ -27,11 +27,13 @@ define(['require', 'app'],
                 var requestData = {};
                 //var miniID = "";
                 //Get User
+                //xxxxxxxxxxxxx
                 var userData = Apperyio.get("dataStorage");
                 var AllData = userData.current;
                 var username = AllData.username;
                 var Buyer_username = AllData.username;
                 var token = AllData.session;
+                //xxxxxxxxxxxx
                 //Get User  
                 console.log(username);
                 console.log(AllData);
@@ -86,7 +88,7 @@ define(['require', 'app'],
              * @function gotoBuyer_Test
              */
             $scope.gotoBuyer_Test = function() {
-                Apperyio.navigateTo("Screen1", {});
+                Apperyio.navigateTo("Register_Test", {});
             };
             /**
              * @function reload
