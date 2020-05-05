@@ -1,6 +1,5 @@
 <div show-header="true" show-footer="true" show-top-tabs="true" show-tabs="true"
-ng-controller="Register" ng-cloak ng-init="init()" active-screen="Register Test"
-class="aio-empty-screen padding overflow-scroll">
+ng-controller="Register" ng-cloak ng-init="init()" active-screen="Register" class="aio-empty-screen padding overflow-scroll">
     <button class="button button-energized button-block">
         User Registration
     </button>
@@ -13,20 +12,27 @@ class="aio-empty-screen padding overflow-scroll">
                 ng-model="user.username">
             </div>
             <p class="assertive">
-                Passwords must be at least 6 characters and contain at least one capital letter,
+                Passwords must be at least 8 characters and contain at least one capital letter,
                 1 number, and 1 special character
             </p>
             <div class="item item-input">
                 <i class="icon ion-locked dark placeholder-icon">
                 </i>
-                <input type="password" placeholder="Password" value="" ng-required="true" ng-minlength="6"
+                <input type="password" placeholder="Password" value="" ng-required="true" ng-pattern="/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/"
                 name="password1" ng-model="user.password">
             </div>
+            <p ng-show="!loginForm.password1.$valid" class="assertive">
+                Password is not following the above rules
+            </p>
+            <p ng-show="loginForm.password1.$valid" class="balanced">
+                Good Password
+            </p>
             <div class="item item-input">
                 <i class="icon ion-locked dark placeholder-icon">
                 </i>
                 <input type="password" placeholder="Repeat Password " value="" ng-required="true"
-                ng-minlength="6" name="password2" ng-model="Password2">
+                ng-pattern="/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/" name="password2"
+                ng-model="Password2">
             </div>
             <p ng-show="user.password != Password2" class="assertive">
                 Passwords do not match
@@ -59,14 +65,14 @@ class="aio-empty-screen padding overflow-scroll">
                 <i class="icon ion-iphone dark placeholder-icon">
                 </i>
                 <input type="tel" placeholder="Mobile Phone (You will need to verify - next step)"
-                value="" ng-required="true" ng-minlength="10" name="mobile" ng-model="user.MobilePhone"
-                ng-maxlength="10">
+                value="" ng-required="true" ng-pattern="/^[0][1-9]\d{9}$|^[1-9]\d{9}$/" name="mobile"
+                ng-model="user.MobilePhone">
             </div>
             <div class="item item-input">
                 <i class="icon ion-ios-telephone dark placeholder-icon">
                 </i>
-                <input type="tel" placeholder="Business Phone" value="" ng-required="true" name="phone"
-                ng-model="user.BusinessPhone">
+                <input type="tel" placeholder="Business Phone" value="" ng-required="true" ng-pattern="/^[0][1-9]\d{9}$|^[1-9]\d{9}$/"
+                name="phone" ng-model="user.BusinessPhone">
             </div>
             <div class="item item-input">
                 <i class="icon ion-location dark placeholder-icon">
@@ -212,23 +218,17 @@ class="aio-empty-screen padding overflow-scroll">
             </div>
         </div>
     </div>
-    <button class="button button-positive button-block" ng-click="register()" ng-disabled="loginForm.uname.$error.required||loginForm.email1.$error.required||loginForm.email1.$error.email||loginForm.comp.$error.required||loginForm.firstname.$error.required||loginForm.lastname.$error.required||loginForm.mobile.$error.required||loginForm.phone.$error.required||loginForm.address.$error.required||loginForm.city.$error.required||loginForm.state.$error.required||loginForm.zip.$error.required||loginForm.country.$error.required||loginForm.resale.$error.required||loginForm.password1.$error.required||loginForm.password1.$error.minlength||loginForm.password2.$error.minlength||loginForm.mobile.$error.minlength||loginForm.mobile.$error.maxlength">
+    <button class="button button-positive button-block" ng-click="register()" ng-disabled="loginForm.uname.$error.required||!loginForm.password1.$valid||!loginForm.password2.$valid||loginForm.email1.$error.required||loginForm.email1.$error.email||loginForm.comp.$error.required||loginForm.firstname.$error.required||loginForm.lastname.$error.required||loginForm.mobile.$error.required||!loginForm.mobile.$valid||loginForm.phone.$error.required||!loginForm.phone.$valid||oginForm.address.$error.required||loginForm.city.$error.required||loginForm.state.$error.required||loginForm.zip.$error.required||loginForm.country.$error.required||loginForm.resale.$error.required">
         Register
     </button>
     <p ng-show="loginForm.uname.$error.required" class="assertive">
         UserName Required
     </p>
-    <p ng-show="loginForm.password1.$error.required" class="assertive">
-        Password Required
+    <p ng-show="!loginForm.password1.$valid" class="assertive">
+        Password Does Not Follow Rules
     </p>
-    <p ng-show="loginForm.password1.$valid.minlength" class="assertive">
-        Password Too Short
-    </p>
-    <p ng-show="loginForm.password2.$error.required" class="assertive">
-        Repeat Password Required
-    </p>
-    <p ng-show="loginForm.password2.$valid.minlength" class="assertive">
-        Repeat Password Too Short
+    <p ng-show="!loginForm.password2.$valid" class="assertive">
+        Repeat Password Not Following Rules
     </p>
     <p ng-show="loginForm.email1.$error.required" class="assertive">
         Email Required
@@ -245,14 +245,11 @@ class="aio-empty-screen padding overflow-scroll">
     <p ng-show="loginForm.lastname.$error.required" class="assertive">
         Last Name Required
     </p>
-    <p ng-show="loginForm.mobile.$error.required" class="assertive">
-        Mobile Number Required
-    </p>
-    <p ng-show="loginForm.mobile.$error.maxlength" class="assertive">
+    <p ng-show="!loginForm.mobile.$valid" class="assertive">
         Mobile Number Needs to be in format 5551231234
     </p>
-    <p ng-show="loginForm.mobile.$error.minlength" class="assertive">
-        Mobile Number Needs to be in format 5551231234
+    <p ng-show="!loginForm.phone.$valid" class="assertive">
+        Business Phone Number Needs to be in format 5551231234
     </p>
     <p ng-show="loginForm.address.$error.required" class="assertive">
         Address Line 1 Required

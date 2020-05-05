@@ -88,7 +88,7 @@ define(['require', 'app'],
              * @function gotoBuyer_Test
              */
             $scope.gotoBuyer_Test = function() {
-                Apperyio.navigateTo("Register_Test", {});
+                Apperyio.navigateTo("Test", {});
             };
             /**
              * @function reload

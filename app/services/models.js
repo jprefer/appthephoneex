@@ -460,6 +460,73 @@ define(['require'], function(require) {
                 }
             }
         },
+        "UpdatePasswordGetCode_service": {
+            "type": "object",
+            "properties": {
+                "url": {
+                    "type": "string",
+                    "default": "https://api.appery.io/rest/1/code/5a8d1687-9b6a-4727-8ea6-e0d7a3e58bf6/exec"
+                },
+                "method": {
+                    "type": "string",
+                    "default": "post"
+                },
+                "request": {
+                    "type": "object",
+                    "properties": {
+                        "body": {
+                            "type": "object",
+                            "properties": {
+                                "data": {
+                                    "type": "data"
+                                }
+                            }
+                        },
+                        "query": {
+                            "type": "object",
+                            "properties": {
+                                "username": {
+                                    "type": "string",
+                                    "default": "john"
+                                }
+                            }
+                        },
+                        "headers": {
+                            "type": "object",
+                            "properties": {
+                                "Content-Type": {
+                                    "type": "string",
+                                    "default": "text/plain"
+                                }
+                            }
+                        }
+                    }
+                },
+                "response": {
+                    "type": "object",
+                    "properties": {
+                        "body": {
+                            "type": "object",
+                            "properties": {
+                                "$": {
+                                    "type": "object",
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "default": "An email with the recovery code has been sent to you. Please follow the instructions to reset your password"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "headers": {
+                            "type": "object",
+                            "properties": {}
+                        }
+                    }
+                }
+            }
+        },
         "Buyer_InProcess_Detail_service": {
             "type": "object",
             "properties": {
@@ -1545,6 +1612,81 @@ define(['require'], function(require) {
                                         },
                                         "requestBody": {
                                             "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "headers": {
+                            "type": "object",
+                            "properties": {}
+                        }
+                    }
+                }
+            }
+        },
+        "Update_UserPassword_service": {
+            "type": "object",
+            "properties": {
+                "url": {
+                    "type": "string",
+                    "default": "https://api.appery.io/rest/1/code/3c1442f5-be1d-4610-806b-d7627859a913/exec"
+                },
+                "method": {
+                    "type": "string",
+                    "default": "post"
+                },
+                "request": {
+                    "type": "object",
+                    "properties": {
+                        "body": {
+                            "type": "object",
+                            "properties": {
+                                "data": {
+                                    "type": "data"
+                                }
+                            }
+                        },
+                        "query": {
+                            "type": "object",
+                            "properties": {
+                                "newPassword": {
+                                    "type": "string",
+                                    "default": "john1"
+                                },
+                                "secretCode": {
+                                    "type": "string",
+                                    "default": "1112"
+                                },
+                                "username": {
+                                    "type": "string",
+                                    "default": "johnpr"
+                                }
+                            }
+                        },
+                        "headers": {
+                            "type": "object",
+                            "properties": {
+                                "Content-Type": {
+                                    "type": "string",
+                                    "default": "text/plain"
+                                }
+                            }
+                        }
+                    }
+                },
+                "response": {
+                    "type": "object",
+                    "properties": {
+                        "body": {
+                            "type": "object",
+                            "properties": {
+                                "$": {
+                                    "type": "object",
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "default": "Your pasword was successfully changed. A confirmation email has been sent to you"
                                         }
                                     }
                                 }

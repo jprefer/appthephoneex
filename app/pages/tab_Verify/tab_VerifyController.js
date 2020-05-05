@@ -157,6 +157,7 @@ define(['require', 'app'],
                         console.log("TextStatus", $scope.TextStatus);
                         if ($scope.TextStatus == "approved") {
                             alert(mobile + " has been Verified - Next Time you login Status will be updated - Thank you");
+                            $scope.mobileV = true;
                             var requestData = {};
                             requestData = (function mapping3626($scope) {
                                 var requestData = {};
@@ -229,6 +230,7 @@ define(['require', 'app'],
                         console.log("MailStatus", $scope.MailStatus);
                         if ($scope.MailStatus == "approved") {
                             alert(Email + " has been Verified - Next Time you login Status will be updated - Thank you");
+                            $scope.emailV = true;
                             var requestData = {};
                             requestData = (function mapping5466($scope) {
                                 var requestData = {};

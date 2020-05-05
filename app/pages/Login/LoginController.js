@@ -121,7 +121,7 @@ define(['require', 'app'],
                             backdropClickToClose: true, // Whether to close the modal on clicking the backdrop
                             hardwareBackButtonClose: true // Whether the modal can be closed using the hardware back button on Android and similar devices
                         };
-                        Apperyio.get('Modals').loadModal("MessagePopup").then(
+                        Apperyio.get('Modals').loadModal("MessagePopup_WrongUserNamePass").then(
                             function(modalInstance) {
                                 modalInstance.open(modalOptions).then(function(modal) {
                                     modal.scope.modal = modal;
