@@ -1,0 +1,55 @@
+<div show-header="true" show-footer="true" show-top-tabs="true" show-tabs="true"
+ng-controller="Buyer_Home" ng-cloak ng-init="init()" active-screen="Home" class="aio-empty-screen padding overflow-scroll">
+    <div class="button-bar">
+        <button class="button button-calm button-block button-small icon-left ion-alert"
+        ng-click="gotoBuyerRequestSee()">
+            My Requests
+        </button>
+        <button class="button button-calm button-block button-small icon-left ion-wrench"
+        ng-click="gotoBuyerInProcess()">
+            In Process
+        </button>
+        <button class="button button-calm button-block button-small icon-left ion-checkmark-round"
+        ng-click="gotoBuyerComplete()">
+            Completed
+        </button>
+    </div>
+    <button class="button button-calm button-block button-large icon-left ion-iphone"
+    ng-click="gotoBuyerMakeRequest()">
+        Make a Request
+    </button>
+    <div>
+        <div class="row">
+            <div class="col">
+                <div>
+                    <font size="4">
+                        <center>
+                            <b>
+                                Offers For Items That Were Requested
+                            </b>
+                        </center>
+                    </font>
+                    <center>
+                        Remember - You may Get Multiple Offers For Each Request
+                    </center>
+                    <center>
+                        <font color="#00AADB">
+                            (Click Below To Accept or Decline)
+                        </font>
+                    </center>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button class="button button-light button-icon button-block button-clear icon ion-refresh"
+    ng-click="reload()" ng-hide="true">
+    </button>
+    <div class="list">
+        <a href="javascript:void(0)" class="item" ng-click="showDetail(item._id)" ng-repeat="item in list">
+        <h2>Offer: {{item.BuyerPrice|currency}} --&gt; {{item. so_manufacturer}} {{item. so_Product}} </h2>
+        <p>{{item.so_Memory}} / {{item.so_Color}} / {{item.so_Carrier}} /  Offer ID: {{item._id.substring(20)}}</p>
+        Quan:{{item.so_Quantity}} / Grade: {{item.so_Condition}}  / Request ID: {{item.fk_Request_id.substring(20)}}
+        </a>
+    </div>
+</div>
