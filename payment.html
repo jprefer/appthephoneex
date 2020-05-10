@@ -4,6 +4,12 @@
 <title> Square Web Form</title>
 <!-- link to the SqPaymentForm library -->
 <script>
+const queryString = window.location.search;
+console.log(queryString);
+// l?username=john&custID=123123123
+
+const urlParams = new URLSearchParams(queryString);
+
 const product = urlParams.get('custID')
 console.log(product);
 // shirt
