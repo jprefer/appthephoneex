@@ -36,11 +36,11 @@ fieldset {
 }
 
 #form-container {
-  position: relative;
+  position: fixed;
   width: 380px;
   margin: 0 auto;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(0%);
 }
 
 .third {
