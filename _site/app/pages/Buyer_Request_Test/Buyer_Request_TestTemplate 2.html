@@ -1,0 +1,195 @@
+<div show-header="true" show-footer="true" show-top-tabs="true" show-tabs="true"
+ng-controller="Buyer_Request_Test" ng-cloak ng-init="init()" active-screen="Make Request"
+class="aio-empty-screen padding overflow-scroll">
+    <button class="button button-calm button-block">
+    </button>
+    <div class="list card">
+        <div class="item item-input item-select ">
+            <div class="input-label">
+                Manufacturer
+            </div>
+            <select ng-options="item for item in list" ng-model="selected.item">
+                <option>
+                    Option
+                </option>
+            </select>
+        </div>
+        <div class="item item-input item-select ">
+            <div class="input-label">
+                Type
+            </div>
+            <select ng-options="item1 for item in list" ng-model="selected1.item1">
+                <option>
+                    Option
+                </option>
+            </select>
+        </div>
+        <div class="item item-input item-select ">
+            <div class="input-label">
+                Model
+            </div>
+            <select ng-options="item.name for item in list" ng-model="selected.item">
+                <option>
+                    Option
+                </option>
+            </select>
+        </div>
+        <div class="item item-input item-select ">
+            <div class="input-label">
+                Memory
+            </div>
+            <select ng-options="item1.mem for item1 in list1" ng-model="selected1.item1">
+                <option>
+                    Option
+                </option>
+            </select>
+        </div>
+        <div class="item item-input item-select ">
+            <div class="input-label">
+                Color
+            </div>
+            <select ng-options="item2.Color for item2 in list2" ng-model="selected2.item2">
+                <option>
+                    Option
+                </option>
+            </select>
+        </div>
+        <div class="item item-input item-select ">
+            <div class="input-label">
+                Carrier
+            </div>
+            <select ng-init="Carrier=&quot;Unlocked&quot;" ng-model="Carrier">
+                <option value="Unlocked" selected>
+                    Unlocked
+                </option>
+                <option value="AT&T">
+                    AT&amp;T
+                </option>
+                <option value="Verizon">
+                    Verizon
+                </option>
+                <option value="T-Mobile">
+                    T-Mobile
+                </option>
+                <option value="Sprint">
+                    Sprint
+                </option>
+            </select>
+        </div>
+        <div class="item item-input item-select ">
+            <div class="input-label">
+                Kitted
+            </div>
+            <select ng-init="Kitted=&quot;No Kit&quot;" ng-model="Kitted">
+                <option value="No Kit">
+                    No
+                </option>
+                <option value="Box Only">
+                    Box Only
+                </option>
+                <option value="Box with OEM">
+                    Box with OEM Accessories
+                </option>
+                <option value="Box with AfterMarket">
+                    Box with AfterMarket Accessories
+                </option>
+            </select>
+        </div>
+        <div class="item item-input item-select ">
+            <div class="input-label">
+                Quantity
+            </div>
+            <select ng-init="quantity = &quot;5&quot;" ng-model="quantity">
+                <option value="1">
+                    1 Unit
+                </option>
+                <option value="2">
+                    2 Units
+                </option>
+                <option value="3">
+                    3 Units
+                </option>
+                <option value="4">
+                    4 Units
+                </option>
+                <option value="5">
+                    5 Units
+                </option>
+                <option value="6">
+                    6 Units
+                </option>
+                <option value="7">
+                    7 Units
+                </option>
+                <option value="8">
+                    8 Units
+                </option>
+                <option value="9">
+                    9 Units
+                </option>
+                <option value="10">
+                    10 Units
+                </option>
+                <option value="11">
+                    11 Units
+                </option>
+                <option value="12">
+                    12 Units
+                </option>
+                <option value="13">
+                    13 Units
+                </option>
+                <option value="14">
+                    14 Units
+                </option>
+                <option value="15">
+                    15 Units
+                </option>
+            </select>
+        </div>
+        <div class="item item-input item-select ">
+            <div class="input-label">
+                Request Expiration
+            </div>
+            <select ng-init="expiration = &quot;4&quot;" ng-model="expiration">
+                <option value="1">
+                    1 Day
+                </option>
+                <option value="2">
+                    2 Days
+                </option>
+                <option value="3">
+                    3 Days
+                </option>
+                <option value="4">
+                    4 Days
+                </option>
+                <option value="7">
+                    1 Week
+                </option>
+                <option value="14">
+                    2 Weeks
+                </option>
+            </select>
+        </div>
+        <div class="item item-input item-select ">
+            <div class="input-label">
+                Shipping Method
+            </div>
+            <select ng-options="item3.ShippingType for item3 in list3" ng-model="selected3.item3">
+                <option>
+                    Option
+                </option>
+            </select>
+        </div>
+        <div class="item item-input">
+            <input type="text" placeholder="Enter any notes that you have: " value="" ng-model="notes">
+        </div>
+        <label class="item item-input">
+            <textarea placeholder=""></textarea>
+        </label>
+        <button class="button button-calm button-full icon-left ion-paper-airplane" ng-click="addItem()">
+            Send Request
+        </button>
+    </div>
+</div>

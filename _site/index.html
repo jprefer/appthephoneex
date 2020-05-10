@@ -6,20 +6,21 @@
             index
         </title>
         <!-- App manifest -->
-        <!-- Uncomment link and meta tags below to activate PWA icons and theme color -->
-        <!-- link rel="manifest" href="manifest.json" crossOrigin="use-credentials" -->
-        <!-- <link rel="apple-touch-icon" sizes="48x48" href="files/images/a48_48.png"><link rel="apple-touch-icon" sizes="72x72" href="files/images/apple-touch-icon-72x72.png"><link rel="apple-touch-icon" sizes="96x96" href="files/images/a96_96.png"><link rel="apple-touch-icon" sizes="144x144" href="files/images/apple-touch-icon-144x144.png"><link rel="apple-touch-icon" sizes="192x192" href="files/images/a192_192.png"><link rel="apple-touch-icon" sizes="512x512" href="files/images/a512_512.png">
-        -->
-        <!-- meta name="theme-color" content="#ffffff" -->
-        <!-- Uncomment this script to activate service worker -->
-        <!-- <script>
-        if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('sw.js')
-        .then(() => console.log('service worker installed'))
-        .catch(err => console.error('Error', err));
-        }
+        <link rel="manifest" href="manifest.json" crossOrigin="use-credentials">
+        <link rel="apple-touch-icon" sizes="48x48" href="files/images/a48_48.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="files/images/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="96x96" href="files/images/a96_96.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="files/images/apple-touch-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="192x192" href="files/images/a192_192.png">
+        <link rel="apple-touch-icon" sizes="512x512" href="files/images/a512_512.png">
+        <meta name="theme-color" content="#ffffff">
+        <script>
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.register('sw.js')
+                    .then(() => console.log('service worker installed'))
+                    .catch(err => console.error('Error', err));
+            }
         </script>
-        -->
         <script src="libs/angular/angular.min.js">
         </script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -29,11 +30,13 @@
         <link href="css/ionic/ionic.min.css" rel="stylesheet" />
         <link href="css/appery-ui/appery-ui.css" rel="stylesheet" />
         <link href="css/__aio_components.css" rel="stylesheet" />
-        <script>
-            var require = {
-                urlArgs: window.navigator.userAgent.match(/Windows Phone/i) ? undefined : "bust=1585776396"
-            };
+        <!-- Uncomment this script when not using service worker -->
+        <!-- <script>        
+        var require = {
+        urlArgs : window.navigator.userAgent.match(/Windows Phone/i) ? undefined : "bust=1588715171"
+        };
         </script>
+        -->
         <script data-main="app/bootstrap" src="libs/requirejs/require.js">
         </script>
     </head>
@@ -75,6 +78,12 @@
                         <p></p>
                         Profile
                         </a><!--
+                        --><a href="javascript:void(0)" class="item-icon-left item" ng-class="{active: activeScreen.name === &quot;Profile&quot;}"
+                        menu-close="" navigate-to="tab_Verify">
+                        <i class="icon ion-checkmark "></i>
+                        <p></p>
+                        Verify
+                        </a><!--
                         --><a href="javascript:void(0)" class="item-icon-left item" ng-class="{active: activeScreen.name === &quot;Bank&quot;}"
                         menu-close="" navigate-to="Bank">
                         <i class="icon ion-cash "></i>
@@ -92,8 +101,31 @@
                         <i class="icon ion-ios-telephone "></i>
                         <p></p>
                         Contact Us
+                        </a><!--
+                        --><a href="javascript:void(0)" class="item-icon-left item" ng-class="{active: activeScreen.name === &quot;Welcome&quot;}"
+                        menu-close="" navigate-to="Welcome">
+                        <i class="icon ion-information "></i>
+                        <p></p>
+                        Welcome
+                        </a><!--
+                        --><a href="javascript:void(0)" class="item">
+                        <p></p>
+                        New? - Follow The Steps Below
                         </a>
                     </div>
+                    <button class="button button-block icon-left ion-cash" menu-close="" navigate-to="Bank"
+                    ng-class="{active: activeScreen.name === &quot;Bank&quot;}">
+                        Pre-Step Enter Payment Info
+                    </button>
+                    <button class="button button-block" menu-close="" ng-click="Step1()">
+                        Step 1
+                    </button>
+                    <button class="button button-block" menu-close="" ng-click="Step2()">
+                        Step 2
+                    </button>
+                    <button class="button button-block" menu-close="" ng-click="Step3()">
+                        Step 3
+                    </button>
                 </ion-side-menu>
             </ion-side-menus>
         </div>
