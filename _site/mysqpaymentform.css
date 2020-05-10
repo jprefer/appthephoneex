@@ -36,8 +36,8 @@ fieldset {
 }
 
 #form-container {
-  position: fixed;
-  width: 280px;
+  position: relative;
+  width: 380px;
   margin: 0 auto;
   top: 50%;
   transform: translateY(-50%);
@@ -84,7 +84,7 @@ fieldset {
 
 /* Customize the "Pay with Credit Card" button */
 .button-credit-card {
-  width: 75%;
+  width: 100%;
   height: 56px;
   margin-top: 10px;
   background: #4A90E2;
