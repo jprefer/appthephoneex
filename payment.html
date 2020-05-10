@@ -50,6 +50,8 @@ console.log(username);
      <div class="third" id="sq-cvv"></div>
      <div class="third" id="sq-postal-code"></div>
      <button id="sq-creditcard" class="button-credit-card" onclick="onGetCardNonce(event)">Pay $1.00</button>
+           <ul id="errors" class="error" style="display:none"></ul>
+
    </div> <!-- end #form-container --> 
    <!-- TODO: Add script from step 1.1.3 -->
    <script type="text/javascript">
@@ -93,14 +95,23 @@ console.log(username);
            * Triggered when: SqPaymentForm completes a card nonce request
            */
            cardNonceResponseReceived: function (errors, nonce, cardData) {
+           const errorList = document.getElementById("errors");
            if (errors) {
                // Log errors from nonce generation to the browser developer console.
-               console.error('Encountered errors:');
-               errors.forEach(function (error) {
-                   console.error('  ' + error.message);
-               });
-               alert('Encountered errors, check browser developer console for more details');
+               //console.error('Encountered errors:');
+              // errors.forEach(function (error) {
+               //    console.error('  ' + error.message);
+              // });
+              // alert('Encountered errors, check browser developer console for more details');
+              let error_html = "";
+          for (var i = 0; i < errors.length; i++) {
+            error_html += "<li> " + errors[i].message + " </li>";
+          }
+          errorList.innerHTML = error_html;
+          errorList.style.display = 'inline-block';
                return;
+               errorList.style.display = 'none';
+        errorList.innerHTML = "";
            }
               alert(`The generated nonce is:\n${nonce}`);
               //TODO: Replace alert with code in step 2.1
