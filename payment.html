@@ -3,6 +3,22 @@
 <head> 
 <title> Square Web Form</title>
 <!-- link to the SqPaymentForm library -->
+<script>
+const product = urlParams.get('custID')
+console.log(product);
+// shirt
+
+const color = urlParams.get('username')
+console.log(color);
+// blue
+
+const newUser = urlParams.get('newuser')
+console.log(newUser);
+// empty string
+</script>
+<script>
+document.write(custID);
+</script>
 <script type="text/javascript" src="https://js.squareupsandbox.com/v2/paymentform">
 </script>
 
@@ -12,9 +28,7 @@
 </head>
 
 <body>
-echo "<h6>userName " . $_GET["username"] . "</h6>";
-
-
+This is version 1.0
 
    <div id="form-container">
      <div id="sq-card-number"></div>
