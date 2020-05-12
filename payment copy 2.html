@@ -113,8 +113,7 @@ console.log(user);
                errorList.style.display = 'none';
         errorList.innerHTML = "";
            }
-              //alert(`The generated nonce is:\n${nonce}`);
-              alert(`working.....`);
+              alert(`The generated nonce is:\n${nonce}`);
               //TODO: Replace alert with code in step 2.1
               
                 var xhr = new XMLHttpRequest();
@@ -130,11 +129,6 @@ console.log(user);
 				};
 				var data = JSON.stringify({"sqCust": sqCust, "user": user, "sqNonce": nonce});
 				xhr.send(data);
-				if (xhr.status == 200) {
-         Alert(Sucess!!); 
-      }else { 
-       Alert(Fail, Please Try Again); 
-     }
            }
        }
      });
