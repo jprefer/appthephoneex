@@ -6,21 +6,21 @@
 <script>
 const queryString = window.location.search;
 console.log(queryString);
-// ?username=john&custID=123123123
+// l?username=john&custID=123123123
 
 const urlParams = new URLSearchParams(queryString);
 
-const sqCust = urlParams.get('custID')
-console.log(sqCust);
-// CustomerID
+const custID = urlParams.get('custID')
+console.log(custID);
+// shirt
 
-const user = urlParams.get('username')
-console.log(user);
-// user
+const username = urlParams.get('username')
+console.log(username);
+// blue
 
 
 </script>
-<!-- link to the SqPaymentForm library -->
+
 <script type="text/javascript" src="https://js.squareupsandbox.com/v2/paymentform">
 </script>
 
@@ -115,20 +115,6 @@ console.log(username);
            }
               alert(`The generated nonce is:\n${nonce}`);
               //TODO: Replace alert with code in step 2.1
-              
-                var xhr = new XMLHttpRequest();
-				var url = "https://api.appery.io/rest/1/apiexpress/api/update_ccof/PostCCofUser?apiKey=3edad746-dd32-496b-9acc-fe953b60d5cf";
-				xhr.open("POST", url, true);
-				xhr.setRequestHeader("Content-Type", "application/json");
-				xhr.onreadystatechange = function () {
-   				 if (xhr.readyState === 4 && xhr.status === 200) {
-       			 var json = JSON.parse(xhr.responseText);
-       			 console.log(xhr.status);
-        		 console.log(xhr.responseText);
-    					}
-				};
-				var data = JSON.stringify({"sqCust": sqCust, "user": user, "sqNonce": nonce});
-				xhr.send(data);
            }
        }
      });
