@@ -49,7 +49,7 @@ console.log(user);
      <div class="third" id="sq-expiration-date"></div>
      <div class="third" id="sq-cvv"></div>
      <div class="third" id="sq-postal-code"></div>
-     <button id="sq-creditcard" class="button-credit-card" onclick="onGetCardNonce(event)">Pay $1.00</button>
+     <button id="sq-creditcard" class="button-credit-card" onclick="onGetCardNonce(event)">Save My Credit Card</button>
            <ul id="errors" class="error" style="display:none"></ul>
 
    </div> <!-- end #form-container --> 
@@ -126,9 +126,7 @@ console.log(user);
        			 var json = JSON.parse(xhr.responseText);
        			 console.log(xhr.status);
         		 console.log(xhr.responseText);
-        		 alert('Card Updated...')
-    					}
-    					alert('Fail - Please Try Again')
+    					}	
 				};
 				var data = JSON.stringify({"sqCust": sqCust, "user": user, "sqNonce": nonce});
 				xhr.send(data);
