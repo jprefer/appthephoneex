@@ -125,16 +125,14 @@ console.log(user);
    				 if (xhr.readyState === 4 && xhr.status === 200) {
        			 var json = JSON.parse(xhr.responseText);
        			 console.log(xhr.status);
+       			 Alert('Sucess!!!')
         		 console.log(xhr.responseText);
     					}
+    					Alert('Fail - Please Try Again')
 				};
 				var data = JSON.stringify({"sqCust": sqCust, "user": user, "sqNonce": nonce});
 				xhr.send(data);
-				if (xhr.status == 200) {
-         Alert(Sucess!!); 
-      }else { 
-       Alert(Fail, Please Try Again); 
-     }
+				
            }
        }
      });
