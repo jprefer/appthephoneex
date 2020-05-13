@@ -39,7 +39,7 @@ fieldset {
   position: fixed;
   width: 380px;
   margin: 0 auto;
-  top: 50%;
+  top: 25%;
   transform: translateY(-25%);
 }
 
