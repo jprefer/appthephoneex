@@ -130,7 +130,11 @@ console.log(user);
         		 console.log("str", str);
         		 var n = str.search('"HTTP_RESPONSE_CODE":400}');
         		 console.log("n", n);
-        		 console.log("ReponseCode",xhr.responseText.HTTP_RESPONSE_CODE);
+        		if (n == -1) {
+       			  alert('Credit Card Registration Completed')
+    			  }else { 
+    			    alert('Credit Card Registration Failed - Please try again'); 
+  				   }
         		 console.log("Done");
     					}	
 				};
