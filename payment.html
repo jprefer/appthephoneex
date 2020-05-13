@@ -124,8 +124,12 @@ console.log(user);
 				xhr.onreadystatechange = function () {
    				 if (xhr.readyState === 4 && xhr.status === 200) {
        			 var json = JSON.parse(xhr.responseText);
-       			 console.log(xhr.status);
-        		 console.log(xhr.responseText);
+       			 console.log("xhr.status", xhr.status);
+        		 console.log("xhr.responseText", xhr.responseText);
+        		 var str =  xhr.responseText;
+        		 console.log("str", str);
+        		 var n = str.search('"HTTP_RESPONSE_CODE":400}');
+        		 console.log("n", n);
         		 console.log("ReponseCode",xhr.responseText.HTTP_RESPONSE_CODE);
         		 console.log("Done");
     					}	
