@@ -44,6 +44,22 @@ define(['require', 'app'],
             $scope.S_Offers5A = Apperyio.EntityAPI('String');
             $scope.token = Apperyio.EntityAPI('String');
             $scope.peritem = Apperyio.EntityAPI('String');
+            $scope.transFee = Apperyio.EntityAPI('String');
+            $scope.idempotKey = Apperyio.EntityAPI('String');
+            $scope.sourceID = Apperyio.EntityAPI('String');
+            $scope.acceptPartial = Apperyio.EntityAPI('Boolean');
+            $scope.autoComplete = Apperyio.EntityAPI('Boolean');
+            $scope.customerID = Apperyio.EntityAPI('String');
+            $scope.referenceID = Apperyio.EntityAPI('String');
+            $scope.statementIdent = Apperyio.EntityAPI('String');
+            $scope.amount = Apperyio.EntityAPI('Number');
+            $scope.currency = Apperyio.EntityAPI('String');
+            $scope.sqResponseCode = Apperyio.EntityAPI('String');
+            $scope.list = Apperyio.EntityAPI('List');
+            $scope.sqReponsetext = Apperyio.EntityAPI('String');
+            $scope.list1 = Apperyio.EntityAPI('List1');
+            $scope.sqPaymentid = Apperyio.EntityAPI('String');
+            $scope.sqRefid = Apperyio.EntityAPI('String');
             /**
              * User controller functions
              */
@@ -68,6 +84,8 @@ define(['require', 'app'],
                 var username = AllData.username;
                 var Buyer_username = AllData.username;
                 var token = AllData.session;
+                var defaultPayMethod = AllData.defaultPayMethod;
+                var defaultPayFee = AllData.defaultPayFee;
                 //Get User  
                 console.log(username);
                 console.log(AllData);
@@ -163,6 +181,7 @@ define(['require', 'app'],
                             $scope.S_Offers1A = S_Offers1A_scope;
                             $scope.S_Offers2A = S_Offers2A_scope;
                             $scope.peritem = $scope.BuyerPrice1 / $scope.Quantity1;
+                            $scope.transFee = defaultPayFee;
                             /*|button_mapping|onsuccess|F72C58AD-0CB1-F18F-161F-44E1632C9FEA||7623|*/
                         })(success, $scope);
                     },
@@ -329,7 +348,7 @@ define(['require', 'app'],
             $scope.AcceptOffer = function() {
                 //On load screen logic
                 var requestData = {};
-                //Get Seller User
+                //Get Buyer User
                 var userData = Apperyio.get("dataStorage");
                 var AllData = userData.current;
                 //Get User  Info
@@ -346,6 +365,10 @@ define(['require', 'app'],
                 var ShipPhone = AllData.BusinessPhone;
                 var ResaleNumber = AllData.ResaleNumber;
                 var token = AllData.session;
+                var sqCustID = AllData.sqCustID;
+                var sqCCOF = AllData.sqCCOF;
+                var defaultPayMethod = AllData.defaultPayMethod;
+                var defaultPayFee = AllData.defaultPayFee;
                 RequestNotes2 = ($scope.BuyNotes2);
                 console.log(Buyer, CompanyName, ShipFirstName, ResaleNumber);
                 console.log("Color: ", $scope.Color1, "Memory:", $scope.Memory1);
@@ -449,6 +472,385 @@ define(['require', 'app'],
                     function(notify) { // notify callback, can fire few times
                     });
                 Apperyio.navigateTo("Buyer_Home", {});
+            };
+            /**
+             * @function demo
+             */
+            $scope.demo = function() {
+                //On load screen logic
+                var requestData = {};
+                //Get Buyer User
+                var userData = Apperyio.get("dataStorage");
+                var AllData = userData.current;
+                //Get User  Info
+                var Buyer = AllData.username;
+                var CompanyName = AllData.Company;
+                var ShipFirstName = AllData.FirstName;
+                var ShipLastName = AllData.LastName;
+                var ShipAddress1 = AllData.ShippingAddress1;
+                var ShipAddress2 = AllData.ShippingAddress2;
+                var ShipCity = AllData.City;
+                var ShipState = AllData.State;
+                var ShipZip = AllData.Zip;
+                var Country = AllData.country;
+                var ShipPhone = AllData.BusinessPhone;
+                var ResaleNumber = AllData.ResaleNumber;
+                var token = AllData.session;
+                var sqCustID = AllData.sqCustID;
+                var sqCCOF = AllData.sqCCOF;
+                var defaultPayMethod = AllData.defaultPayMethod;
+                var defaultPayFee = AllData.defaultPayFee;
+                RequestNotes2 = ($scope.BuyNotes2);
+                console.log(Buyer, CompanyName, ShipFirstName, ResaleNumber);
+                console.log("Color: ", $scope.Color1, "Memory:", $scope.Memory1);
+                //Check Type of payment
+                switch (defaultPayMethod) {
+                    case "creditcard":
+                        console.log("They are using Credit Card");
+                        if (sqCCOF === null) {
+                            alert('Please enter a valid credit card');
+                            Apperyio.navigateTo("Bank", {});
+                            break;
+                        } else {
+                        }
+                        var idempotKey = Math.random().toString(36).slice(-12);
+                        //For Live Traffic uncomment below
+                        //var sourceID = sqCCOF;
+                        var sourceID = "ccof:customer-card-id-ok";
+                        var acceptPartial = false;
+                        var autoComplete = true;
+                        var customerID = sqCustID;
+                        var referenceID = $scope.fk_Request_id1;
+                        var statementIdent = "PhoneEx-Req:" + $scope.fk_Request_id1.substring(20);
+                        var currency = "USD";
+                        var tempamt = ($scope.BuyerPrice1 + ($scope.BuyerPrice1 * defaultPayFee)) * 100;
+                        var amount = Number(tempamt.toFixed(0));
+                        var requestData = {};
+                        requestData = (function mapping9109($scope) {
+                            var requestData = {};
+                            requestData.data = {};
+                            //var idempotKey_scope = $scope.idempotKey;
+                            //var sourceID_scope = $scope.sourceID;
+                            //var acceptPartial_scope = $scope.acceptPartial;
+                            // var autoComplete_scope = $scope.autoComplete;
+                            //var customerID_scope = $scope.customerID;
+                            //var referenceID_scope = $scope.referenceID;
+                            //var statementIdent_scope = $scope.statementIdent;
+                            //var amount_scope = $scope.amount;
+                            //var currency_scope = $scope.currency;
+                            _.set(requestData.data, 'idempotency_key', idempotKey);
+                            _.set(requestData.data, 'source_id', sourceID);
+                            _.set(requestData.data, 'accept_partial_authorization', acceptPartial);
+                            _.set(requestData.data, 'autocomplete', autoComplete);
+                            _.set(requestData.data, 'customer_id', customerID);
+                            _.set(requestData.data, 'reference_id', referenceID);
+                            _.set(requestData.data, 'statement_description_identifier', statementIdent);
+                            _.set(requestData.data, 'amount_money.amount', amount);
+                            _.set(requestData.data, 'amount_money.currency', currency);
+                            console.log("amount", amount);
+                            return requestData;
+                            /*|button_mapping|onbeforesend|10BEC4FD-D8C5-005B-59D3-38DB22A92C48||9109|*/
+                        })($scope);
+                        // read more about using rest services: https://links.appery.io/ve-snippet-rest
+                        Apperyio.get("Square_payments_Pay_using_ccof_post")(requestData).then(
+                            /*|service_bookmark|bookmark|10BEC4FD-D8C5-005B-59D3-38DB22A92C48||2703|*/
+                            function(success) { // success callback
+                                (function mapping5916(success, $scope) {
+                                    var list_scope = $scope.list;
+                                    list_scope = success.data;
+                                    $scope.list = list_scope;
+                                    //console.log($scope.list);
+                                    //console.log("Details",$scope.list.BODY);
+                                    //console.log("Amount",$scope.list.BODY.payment.amount_money.amount);
+                                    //console.log("httpCode",$scope.list.HTTP_RESPONSE_CODE)
+                                    /*|button_mapping|onsuccess|10BEC4FD-D8C5-005B-59D3-38DB22A92C48||5916|*/
+                                })(success, $scope);
+                                var sqReponseCode = ($scope.list.HTTP_RESPONSE_CODE);
+                                console.log("Details", $scope.list.BODY);
+                                if (sqReponseCode == 200) {
+                                    //console.log("Amount",$scope.list.BODY.payment.amount_money.amount);
+                                    var requestData = {};
+                                    //Get Buyer User
+                                    var userData = Apperyio.get("dataStorage");
+                                    var AllData = userData.current;
+                                    //Get User  Info
+                                    var Buyer = AllData.username;
+                                    var token = AllData.session;
+                                    var sqPaymentid = ($scope.list.BODY.payment.id);
+                                    var sqCreatedat = ($scope.list.BODY.payment.created_at);
+                                    var sqUpdatedat = ($scope.list.BODY.payment.updated_at);
+                                    var sqAmount = ($scope.list.BODY.payment.amount_money.amount) / 100;
+                                    var sqCurr = ($scope.list.BODY.payment.amount_money.currency);
+                                    var sqStatus = ($scope.list.BODY.payment.card_details.status);
+                                    var sqCardbrand = ($scope.list.BODY.payment.card_details.card.card_brand);
+                                    var sqLast4 = ($scope.list.BODY.payment.card_details.card.last_4);
+                                    var sqExpmonth = ($scope.list.BODY.payment.card_details.card.exp_month);
+                                    var sqExpyear = ($scope.list.BODY.payment.card_details.card.exp_year);
+                                    var sqFingerprint = ($scope.list.BODY.payment.card_details.card.fingerprint);
+                                    var sqCardtype = ($scope.list.BODY.payment.card_details.card.card_type);
+                                    var sqPrepaidtype = ($scope.list.BODY.payment.card_details.card.prepaid_type);
+                                    var sqBin = ($scope.list.BODY.payment.card_details.card.bin);
+                                    var sqEntrymethod = ($scope.list.BODY.payment.card_details.entry_method);
+                                    //console.log("Amount",amount);
+                                    var sqCvvstatus = ($scope.list.BODY.payment.card_details.cvv_status);
+                                    var sqAvsstatus = ($scope.list.BODY.payment.card_details.avs_status);
+                                    var sqStateDesc = ($scope.list.BODY.payment.card_details.statement_description);
+                                    var sqLocalid = ($scope.list.BODY.payment.location_id);
+                                    var sqOrderid = ($scope.list.BODY.payment.order_id);
+                                    var sqRefid = ($scope.list.BODY.payment.reference_id);
+                                    var sqCustid = ($scope.list.BODY.payment.customer_id);
+                                    var sqTotalmoneyamt = ($scope.list.BODY.payment.total_money.amount);
+                                    var sqTotalmoneycurr = ($scope.list.BODY.payment.total_money.currency);
+                                    var sqStatedescid = ($scope.list.BODY.payment.statement_description_identifier);
+                                    var sqReceiptnum = ($scope.list.BODY.payment.receipt_number);
+                                    var sqUrl = ($scope.list.BODY.payment.receipt_url);
+                                    var sqDelayAction = ($scope.list.BODY.payment.delay_action);
+                                    var sqDelayuntil = ($scope.list.BODY.payment.delayed_until);
+                                    //console.log("avs_status",avs_status);
+                                    // console.log("httpCode",$scope.list.HTTP_RESPONSE_CODE)
+                                    alert('sucess - Your Receipt Number is:' + sqReceiptnum);
+                                    requestData = (function mapping4647($scope) {
+                                        var requestData = {};
+                                        requestData.params = {};
+                                        requestData.params.sqReponseCode = sqReponseCode;
+                                        requestData.params.BuyerUserName = Buyer;
+                                        requestData.params.sqPaymentid = sqPaymentid;
+                                        requestData.params.sqCreatedat = sqCreatedat;
+                                        requestData.params.sqUpdatedat = sqUpdatedat;
+                                        requestData.params.sqAmount = sqAmount;
+                                        requestData.params.sqCurr = sqCurr;
+                                        requestData.params.sqStatus = sqStatus;
+                                        requestData.params.sqCardbrand = sqCardbrand;
+                                        requestData.params.sqLast4 = sqLast4;
+                                        requestData.params.sqExpmonth = sqExpmonth;
+                                        requestData.params.sqExpyear = sqExpyear;
+                                        requestData.params.sqFingerprint = sqFingerprint;
+                                        requestData.params.sqCardtype = sqCardtype;
+                                        requestData.params.sqPrepaidtype = sqPrepaidtype;
+                                        requestData.params.sqBin = sqBin;
+                                        requestData.params.sqEntrymethod = sqEntrymethod;
+                                        requestData.params.sqCvvstatus = sqCvvstatus;
+                                        requestData.params.sqAvsstatus = sqAvsstatus;
+                                        requestData.params.sqStateDesc = sqStateDesc;
+                                        requestData.params.sqLocalid = sqLocalid;
+                                        requestData.params.sqOrderid = sqOrderid;
+                                        requestData.params.sqRefid = sqRefid;
+                                        requestData.params.sqCustid = sqCustid;
+                                        requestData.params.sqTotalmoneyamt = sqTotalmoneyamt;
+                                        requestData.params.sqTotalmoneycurr = sqTotalmoneycurr;
+                                        requestData.params.sqStatedescid = sqStatedescid;
+                                        requestData.params.sqReceiptnum = sqReceiptnum;
+                                        requestData.params.sqUrl = sqUrl;
+                                        requestData.params.sqDelayAction = sqDelayAction;
+                                        requestData.params.sqDelayuntil = sqDelayuntil;
+                                        requestData.headers = {};
+                                        var token_scope = $scope.token;
+                                        requestData.headers['X-Appery-Session-Token'] = token;
+                                        console.log("token", token);
+                                        return requestData;
+                                        /*|button_mapping|onbeforesend|07E1728F-48BB-A68C-0744-B2009AFE9210||4647|*/
+                                    })($scope);
+                                    // read more about using rest services: https://links.appery.io/ve-snippet-rest
+                                    Apperyio.get("sq_InsertPayment_service")(requestData).then(
+                                        /*|service_bookmark|bookmark|07E1728F-48BB-A68C-0744-B2009AFE9210||6992|*/
+                                        function(success) { // success callback
+                                            /*|button_mapping|onsuccess|07E1728F-48BB-A68C-0744-B2009AFE9210||6301|*/
+                                        },
+                                        function(error) { // callback to handle request error
+                                        },
+                                        function(notify) { // notify callback, can fire few times
+                                        });
+                                    //AcceptOffer()
+                                    var requestData = {};
+                                    //Get Buyer User
+                                    var userData = Apperyio.get("dataStorage");
+                                    var AllData = userData.current;
+                                    //Get User  Info
+                                    var Buyer = AllData.username;
+                                    var CompanyName = AllData.Company;
+                                    var ShipFirstName = AllData.FirstName;
+                                    var ShipLastName = AllData.LastName;
+                                    var ShipAddress1 = AllData.ShippingAddress1;
+                                    var ShipAddress2 = AllData.ShippingAddress2;
+                                    var ShipCity = AllData.City;
+                                    var ShipState = AllData.State;
+                                    var ShipZip = AllData.Zip;
+                                    var Country = AllData.country;
+                                    var ShipPhone = AllData.BusinessPhone;
+                                    var ResaleNumber = AllData.ResaleNumber;
+                                    var token = AllData.session;
+                                    var sqCustID = AllData.sqCustID;
+                                    var sqCCOF = AllData.sqCCOF;
+                                    var defaultPayMethod = AllData.defaultPayMethod;
+                                    var defaultPayFee = AllData.defaultPayFee;
+                                    RequestNotes2 = ($scope.BuyNotes2);
+                                    console.log(Buyer, CompanyName, ShipFirstName, ResaleNumber);
+                                    console.log("Color: ", $scope.Color1, "Memory:", $scope.Memory1);
+                                    console.log("LastSqPAymentID: ", sqPaymentid);
+                                    var requestData = {};
+                                    requestData = (function mapping6990($scope) {
+                                        var requestData = {};
+                                        requestData.headers = {};
+                                        var token_scope = $scope.token;
+                                        requestData.headers['X-Appery-Session-Token'] = token;
+                                        console.log("token", token);
+                                        //below orig
+                                        requestData.params = {};
+                                        requestData.params.Buyer = Buyer;
+                                        requestData.params.CompanyName = CompanyName;
+                                        requestData.params.ShipFirstName = ShipFirstName;
+                                        requestData.params.ShipLastName = ShipLastName;
+                                        requestData.params.ShipAddress1 = ShipAddress1;
+                                        requestData.params.ShipAddress2 = ShipAddress2;
+                                        requestData.params.ShipCity = ShipCity;
+                                        requestData.params.ShipState = ShipState;
+                                        requestData.params.ShipZip = ShipZip;
+                                        requestData.params.Country = Country;
+                                        requestData.params.ResaleNumber = ResaleNumber;
+                                        requestData.params.ShipPhone = ShipPhone;
+                                        requestData.params.CC_Trans_id = sqPaymentid;
+                                        requestData.params.Manu = $scope.manufacturer1;
+                                        requestData.params.Prod = $scope.Product1;
+                                        requestData.params.Mem = $scope.Memory1;
+                                        requestData.params.Colour = $scope.Color1;
+                                        requestData.params.Cond = $scope.Condition1;
+                                        requestData.params.Quan = $scope.Quantity1;
+                                        requestData.params.BuyerNote = $scope.RNotes1;
+                                        requestData.params.SellerNote = $scope.OfferNotes1;
+                                        requestData.params.BuyingPrice = $scope.BuyerPrice1;
+                                        requestData.params.Shipping = $scope.Shipping1;
+                                        requestData.params.Offer_id = $scope._id1;
+                                        requestData.params.Request_id = $scope.fk_Request_id1;
+                                        requestData.params.Seller = $scope.Seller1;
+                                        requestData.params.Price = $scope.OfferPrice1;
+                                        requestData.params.SellingPrice = $scope.SellerPrice1;
+                                        requestData.params.CVC_Code = sqPaymentid;
+                                        requestData.params.BuyerNote2 = RequestNotes2;
+                                        requestData.params.Kit = $scope.Kitted1;
+                                        requestData.params.ChoiceCarrier = $scope.Carrier1;
+                                        requestData.params.B_Req1 = $scope.B_Requests1A;
+                                        requestData.params.B_Req2 = $scope.B_Requests2A;
+                                        requestData.params.S_Off1 = $scope.S_Offers1A;
+                                        requestData.params.S_Off2 = $scope.S_Offers2A;
+                                        return requestData;
+                                        /*CLICK TO EDIT MAPPING*/
+                                    })($scope);
+                                    // read more about using rest services: https://links.appery.io/ve-snippet-rest
+                                    Apperyio.get("InsertOrders_service")(requestData).then(
+                                        function(success) { // success callback
+                                            /*CLICK TO EDIT MAPPING*/
+                                            var modalOptions = { // About Ionic Modal: https://links.appery.io/ve-snippet-modal-ionic
+                                                animation: 'slide-in-up', // The animation to show & hide with
+                                                focusFirstInput: false, // Whether to autofocus the first input of the modal when shown
+                                                backdropClickToClose: true, // Whether to close the modal on clicking the backdrop
+                                                hardwareBackButtonClose: true // Whether the modal can be closed using the hardware back button on Android and similar devices
+                                            };
+                                            Apperyio.get('Modals').loadModal("Modal_Buyer_Accept_Offer").then(
+                                                function(modalInstance) {
+                                                    modalInstance.open(modalOptions).then(function(modal) {
+                                                        modal.scope.modal = modal;
+                                                        modal.scope.result = "You have Ordered the following:";
+                                                        modal.scope.result1 = $scope.manufacturer1;
+                                                        modal.scope.result2 = $scope.Product1;
+                                                        modal.scope.result3 = $scope.Memory1;
+                                                        modal.scope.result4 = $scope.Color1;
+                                                        modal.scope.result5 = $scope.Condition1;
+                                                        modal.scope.result6 = $scope.Quantity1;
+                                                        modal.scope.result7 = $scope.BuyerPrice1;
+                                                        modal.scope.result8 = $scope.Shipping1;
+                                                        modal.show();
+                                                    });
+                                                },
+                                                function(error) {
+                                                    var modalOptions = { // About Ionic Modal: https://links.appery.io/ve-snippet-modal-ionic
+                                                        animation: 'slide-in-up', // The animation to show & hide with
+                                                        focusFirstInput: false, // Whether to autofocus the first input of the modal when shown
+                                                        backdropClickToClose: true, // Whether to close the modal on clicking the backdrop
+                                                        hardwareBackButtonClose: true // Whether the modal can be closed using the hardware back button on Android and similar devices
+                                                    };
+                                                    Apperyio.get('Modals').loadModal("Info").then(
+                                                        function(modalInstance) {
+                                                            modalInstance.open(modalOptions).then(function(modal) {
+                                                                modal.scope.modal = modal;
+                                                                modal.scope.result = "Please Try Again. There was an error";
+                                                                modal.show();
+                                                            });
+                                                        },
+                                                        function(error) {
+                                                            console.log(error);
+                                                        });
+                                                    console.log(error);
+                                                });
+                                        },
+                                        function(error) { // callback to handle request error
+                                        },
+                                        function(notify) { // notify callback, can fire few times
+                                        });
+                                    Apperyio.navigateTo("Buyer_Home", {});
+                                } else {
+                                    var requestData = {};
+                                    //Get Buyer User
+                                    var userData = Apperyio.get("dataStorage");
+                                    var AllData = userData.current;
+                                    //Get User  Info
+                                    var Buyer = AllData.username;
+                                    var token = AllData.session;
+                                    console.log("Details", $scope.list.BODY);
+                                    console.log($scope.list);
+                                    var sqErrorcategory = ($scope.list.BODY.errors[0].category);
+                                    var sqErrorccode = ($scope.list.BODY.errors[0].code);
+                                    var sqErrordetail = ($scope.list.BODY.errors[0].detail);
+                                    console.log("Detailsof error", sqErrorcategory);
+                                    alert('Sorry - Transaction Failed: Error Code: ' + sqErrordetail);
+                                    var requestData = {};
+                                    requestData = (function mapping6666($scope) {
+                                        var sqRefid = $scope.sqRefid
+                                        //var Buyer = $scope.Buyer_username1
+                                        var requestData = {};
+                                        requestData.params = {};
+                                        requestData.params.sqReponseCode = sqReponseCode;
+                                        requestData.params.sqErrorcategory = sqErrorcategory;
+                                        requestData.params.sqErrorccode = sqErrorccode;
+                                        requestData.params.sqErrordetail = sqErrordetail;
+                                        requestData.params.sqRefid = $scope.fk_Request_id1;
+                                        requestData.params.sqCustid = customerID;
+                                        requestData.params.BuyerUserName = Buyer;
+                                        requestData.params.sqAmount = amount / 100;
+                                        requestData.headers = {};
+                                        var token_scope = $scope.token;
+                                        requestData.headers['X-Appery-Session-Token'] = token;
+                                        console.log("token", token);
+                                        return requestData;
+                                        /*|button_mapping|onbeforesend|885449E9-6453-511D-38CE-64BF2F23E7DE||6666|*/
+                                    })($scope);
+                                    // read more about using rest services: https://links.appery.io/ve-snippet-rest
+                                    Apperyio.get("sq_InsertPayment_service")(requestData).then(
+                                        /*|service_bookmark|bookmark|885449E9-6453-511D-38CE-64BF2F23E7DE||9630|*/
+                                        function(success) { // success callback
+                                            /*|button_mapping|onsuccess|885449E9-6453-511D-38CE-64BF2F23E7DE||8210|*/
+                                        },
+                                        function(error) { // callback to handle request error
+                                        },
+                                        function(notify) { // notify callback, can fire few times
+                                        });
+                                    Apperyio.navigateTo("Bank", {});
+                                }
+                            },
+                            function(error) { // callback to handle request error
+                            },
+                            function(notify) { // notify callback, can fire few times
+                            });
+                        break;
+                    case "escrow":
+                        console.log("They are using Escrow");
+                        break;
+                    case "bitpay":
+                        console.log("They are using bitpay");
+                        break;
+                    case ach:
+                        console.log("They are using ACH");
+                        break;
+                }
             };
         }
     });

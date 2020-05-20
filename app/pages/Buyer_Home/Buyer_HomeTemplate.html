@@ -45,9 +45,6 @@ ng-controller="Buyer_Home" ng-cloak ng-init="init()" active-screen="Home" class=
     <button class="button button-light button-icon button-block button-clear icon ion-refresh"
     ng-click="reload()" ng-hide="true">
     </button>
-    <button class="button button-assertive button-block" ng-click="gotoBuyer_Test()">
-        Test Clicks
-    </button>
     <div class="list">
         <a href="javascript:void(0)" class="item" ng-click="showDetail(item._id)" ng-repeat="item in list">
         <h2>Offer: {{item.BuyerPrice|currency}} --&gt; {{item. so_manufacturer}} {{item. so_Product}} </h2>

@@ -8,8 +8,8 @@ ng-controller="Register" ng-cloak ng-init="init()" active-screen="Register" clas
             <div class="item item-input">
                 <i class="icon ion-person dark placeholder-icon">
                 </i>
-                <input type="text" placeholder="Username" value="" ng-required="true" name="uname"
-                ng-model="user.username">
+                <input type="text" placeholder="Username" value="" ng-required="true" ng-pattern="/^\S*$/"
+                name="uname" ng-model="user.username">
             </div>
             <p class="assertive">
                 Passwords must be at least 8 characters and contain at least one capital letter,
@@ -103,8 +103,8 @@ ng-controller="Register" ng-cloak ng-init="init()" active-screen="Register" clas
             <div class="item item-input">
                 <i class="icon ion-ios-flag dark placeholder-icon">
                 </i>
-                <input type="text" placeholder="Country" value="USA" ng-required="true" name="country"
-                ng-model="user. Country">
+                <input type="text" placeholder="Country" value="US" ng-required="true" name="country"
+                ng-model="user. country">
             </div>
             <div class="item item-input">
                 <i class="icon ion-ios-paper-outline dark placeholder-icon">
@@ -218,11 +218,14 @@ ng-controller="Register" ng-cloak ng-init="init()" active-screen="Register" clas
             </div>
         </div>
     </div>
-    <button class="button button-positive button-block" ng-click="register()" ng-disabled="loginForm.uname.$error.required||!loginForm.password1.$valid||!loginForm.password2.$valid||loginForm.email1.$error.required||loginForm.email1.$error.email||loginForm.comp.$error.required||loginForm.firstname.$error.required||loginForm.lastname.$error.required||loginForm.mobile.$error.required||!loginForm.mobile.$valid||loginForm.phone.$error.required||!loginForm.phone.$valid||oginForm.address.$error.required||loginForm.city.$error.required||loginForm.state.$error.required||loginForm.zip.$error.required||loginForm.country.$error.required||loginForm.resale.$error.required">
+    <button class="button button-positive button-block" ng-click="register()" ng-disabled="loginForm.uname.$error.required||!loginForm.password1.$valid||!loginForm.password2.$valid||loginForm.email1.$error.required||loginForm.email1.$error.email||loginForm.comp.$error.required||loginForm.firstname.$error.required||loginForm.lastname.$error.required||loginForm.mobile.$error.required||!loginForm.mobile.$valid||loginForm.phone.$error.required||!loginForm.phone.$valid||oginForm.address.$error.required||loginForm.city.$error.required||loginForm.state.$error.required||loginForm.zip.$error.required||loginForm.country.$error.required||loginForm.resale.$error.required||!loginForm.uname.$valid">
         Register
     </button>
     <p ng-show="loginForm.uname.$error.required" class="assertive">
         UserName Required
+    </p>
+    <p ng-show="!loginForm.uname.$valid" class="assertive">
+        UserName can not have spaces
     </p>
     <p ng-show="!loginForm.password1.$valid" class="assertive">
         Password Does Not Follow Rules

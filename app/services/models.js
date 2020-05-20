@@ -218,16 +218,28 @@ define(['require'], function(require) {
                 "Gl_Vars": {
                     "type": "object",
                     "properties": {
+                        "request_id3": {
+                            "type": "string"
+                        },
                         "request_id2": {
                             "type": "string"
                         },
                         "request_id": {
                             "type": "string"
                         },
+                        "request_id5": {
+                            "type": "string"
+                        },
                         "order_id": {
                             "type": "string"
                         },
+                        "request_id6": {
+                            "type": "string"
+                        },
                         "whereami": {
+                            "type": "string"
+                        },
+                        "request_id4": {
                             "type": "string"
                         }
                     }
@@ -315,6 +327,166 @@ define(['require'], function(require) {
             "items": [{
                 "type": "string"
             }]
+        },
+        "sq_defaultCC_service": {
+            "type": "object",
+            "properties": {
+                "url": {
+                    "type": "string",
+                    "default": "https://api.appery.io/rest/1/code/0fff38e6-c55a-4d7e-9053-e66dca61927c/exec"
+                },
+                "method": {
+                    "type": "string",
+                    "default": "post"
+                },
+                "request": {
+                    "type": "object",
+                    "properties": {
+                        "body": {
+                            "type": "object",
+                            "properties": {
+                                "data": {
+                                    "type": "data"
+                                }
+                            }
+                        },
+                        "query": {
+                            "type": "object",
+                            "properties": {
+                                "sqCust": {
+                                    "type": "string",
+                                    "default": "9VQAMJQH7CWAD72YPHPBQGP9BR"
+                                },
+                                "sqCCOF": {
+                                    "type": "string",
+                                    "default": "ccof:e7IjAnmqGQWL0nZ73GB"
+                                }
+                            }
+                        },
+                        "headers": {
+                            "type": "object",
+                            "properties": {
+                                "Content-Type": {
+                                    "type": "string",
+                                    "default": "text/plain"
+                                }
+                            }
+                        }
+                    }
+                },
+                "response": {
+                    "type": "object",
+                    "properties": {
+                        "body": {
+                            "type": "object",
+                            "properties": {
+                                "$": {
+                                    "type": "object",
+                                    "properties": {
+                                        "id": {
+                                            "type": "string",
+                                            "default": "ccof:e7IjAnmqGQWL0nZ73GB"
+                                        },
+                                        "last_4": {
+                                            "type": "string",
+                                            "default": "1111"
+                                        },
+                                        "exp_month": {
+                                            "type": "number",
+                                            "default": 11
+                                        },
+                                        "exp_year": {
+                                            "type": "number",
+                                            "default": 2022
+                                        },
+                                        "card_brand": {
+                                            "type": "string",
+                                            "default": "VISA"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "headers": {
+                            "type": "object",
+                            "properties": {}
+                        }
+                    }
+                }
+            }
+        },
+        "sq_DeleteCard_service": {
+            "type": "object",
+            "properties": {
+                "url": {
+                    "type": "string",
+                    "default": "https://api.appery.io/rest/1/code/4c7d6a4c-db4a-483a-9823-6072617cc654/exec"
+                },
+                "method": {
+                    "type": "string",
+                    "default": "post"
+                },
+                "request": {
+                    "type": "object",
+                    "properties": {
+                        "body": {
+                            "type": "object",
+                            "properties": {
+                                "data": {
+                                    "type": "data"
+                                }
+                            }
+                        },
+                        "query": {
+                            "type": "object",
+                            "properties": {
+                                "sqCust": {
+                                    "type": "string",
+                                    "default": "9VQAMJQH7CWAD72YPHPBQGP9BR"
+                                },
+                                "sqCCOF": {
+                                    "type": "string",
+                                    "default": "ccof:yLLNTuW7M9Jv5EaK3GB"
+                                }
+                            }
+                        },
+                        "headers": {
+                            "type": "object",
+                            "properties": {
+                                "Content-Type": {
+                                    "type": "string",
+                                    "default": "text/plain"
+                                }
+                            }
+                        }
+                    }
+                },
+                "response": {
+                    "type": "object",
+                    "properties": {
+                        "body": {
+                            "type": "object",
+                            "properties": {
+                                "$": {
+                                    "type": "object",
+                                    "properties": {
+                                        "requestParams": {
+                                            "type": "string"
+                                        },
+                                        "requestBody": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "headers": {
+                            "type": "object",
+                            "properties": {}
+                        }
+                    }
+                }
+            }
         },
         "Seller_MakeTrackingAlive_service": {
             "type": "object",
@@ -1484,6 +1656,79 @@ define(['require'], function(require) {
                 }
             }
         },
+        "sq_Update_Ccof_inUser_service": {
+            "type": "object",
+            "properties": {
+                "url": {
+                    "type": "string",
+                    "default": "https://api.appery.io/rest/1/code/d4227921-0c38-462c-a611-a1e39c773cff/exec"
+                },
+                "method": {
+                    "type": "string",
+                    "default": "post"
+                },
+                "request": {
+                    "type": "object",
+                    "properties": {
+                        "body": {
+                            "type": "object",
+                            "properties": {
+                                "data": {
+                                    "type": "data"
+                                }
+                            }
+                        },
+                        "query": {
+                            "type": "object",
+                            "properties": {
+                                "userProfile_id": {
+                                    "type": "string",
+                                    "default": "5e337992b56b5d0a94db6aa5"
+                                },
+                                "NewCCOF": {
+                                    "type": "string",
+                                    "default": "ccof:gswHEkoebx824wXQ3GB"
+                                }
+                            }
+                        },
+                        "headers": {
+                            "type": "object",
+                            "properties": {
+                                "Content-Type": {
+                                    "type": "string",
+                                    "default": "text/plain"
+                                }
+                            }
+                        }
+                    }
+                },
+                "response": {
+                    "type": "object",
+                    "properties": {
+                        "body": {
+                            "type": "object",
+                            "properties": {
+                                "$": {
+                                    "type": "object",
+                                    "properties": {
+                                        "requestBody": {
+                                            "type": "string"
+                                        },
+                                        "requestParams": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "headers": {
+                            "type": "object",
+                            "properties": {}
+                        }
+                    }
+                }
+            }
+        },
         "Request_To_Seller_Detail_service": {
             "type": "object",
             "properties": {
@@ -1542,6 +1787,173 @@ define(['require'], function(require) {
                                             "type": "string"
                                         },
                                         "requestParams": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "headers": {
+                            "type": "object",
+                            "properties": {}
+                        }
+                    }
+                }
+            }
+        },
+        "sq_InsertPayment_service": {
+            "type": "object",
+            "properties": {
+                "url": {
+                    "type": "string",
+                    "default": "https://api.appery.io/rest/1/code/38ec0f5b-132f-42d0-a933-4b27df996504/exec"
+                },
+                "method": {
+                    "type": "string",
+                    "default": "post"
+                },
+                "request": {
+                    "type": "object",
+                    "properties": {
+                        "body": {
+                            "type": "object",
+                            "properties": {
+                                "data": {
+                                    "type": "data"
+                                }
+                            }
+                        },
+                        "query": {
+                            "type": "object",
+                            "properties": {
+                                "sqErrorcategory": {
+                                    "type": "string"
+                                },
+                                "sqExpmonth": {
+                                    "type": "string"
+                                },
+                                "sqDelayuntil": {
+                                    "type": "string"
+                                },
+                                "sqUrl": {
+                                    "type": "string"
+                                },
+                                "sqBin": {
+                                    "type": "string"
+                                },
+                                "sqCurr": {
+                                    "type": "string"
+                                },
+                                "sqReponseCode": {
+                                    "type": "string"
+                                },
+                                "sqStateDesc": {
+                                    "type": "string"
+                                },
+                                "sqLast4": {
+                                    "type": "string"
+                                },
+                                "sqCardbrand": {
+                                    "type": "string"
+                                },
+                                "sqCreatedat": {
+                                    "type": "string"
+                                },
+                                "sqFingerprint": {
+                                    "type": "string"
+                                },
+                                "sqPaymentid": {
+                                    "type": "string"
+                                },
+                                "sqExpyear": {
+                                    "type": "string"
+                                },
+                                "sqErrordetail": {
+                                    "type": "string"
+                                },
+                                "sqRefid": {
+                                    "type": "string"
+                                },
+                                "sqAvsstatus": {
+                                    "type": "string"
+                                },
+                                "sqErrorccode": {
+                                    "type": "string"
+                                },
+                                "sqReceiptnum": {
+                                    "type": "string"
+                                },
+                                "sqStatedescid": {
+                                    "type": "string"
+                                },
+                                "sqPrepaidtype": {
+                                    "type": "string"
+                                },
+                                "sqDelayAction": {
+                                    "type": "string"
+                                },
+                                "sqTotalmoneycurr": {
+                                    "type": "string"
+                                },
+                                "sqUpdatedat": {
+                                    "type": "string"
+                                },
+                                "sqTotalmoneyamt": {
+                                    "type": "string"
+                                },
+                                "sqStatus": {
+                                    "type": "string"
+                                },
+                                "sqEntrymethod": {
+                                    "type": "string"
+                                },
+                                "sqCvvstatus": {
+                                    "type": "string"
+                                },
+                                "sqCardtype": {
+                                    "type": "string"
+                                },
+                                "BuyerUserName": {
+                                    "type": "string"
+                                },
+                                "sqLocalid": {
+                                    "type": "string"
+                                },
+                                "sqOrderid": {
+                                    "type": "string"
+                                },
+                                "sqCustid": {
+                                    "type": "string"
+                                },
+                                "sqAmount": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "headers": {
+                            "type": "object",
+                            "properties": {
+                                "Content-Type": {
+                                    "type": "string",
+                                    "default": "text/plain"
+                                }
+                            }
+                        }
+                    }
+                },
+                "response": {
+                    "type": "object",
+                    "properties": {
+                        "body": {
+                            "type": "object",
+                            "properties": {
+                                "$": {
+                                    "type": "object",
+                                    "properties": {
+                                        "requestParams": {
+                                            "type": "string"
+                                        },
+                                        "requestBody": {
                                             "type": "string"
                                         }
                                     }
@@ -2423,6 +2835,75 @@ define(['require'], function(require) {
                 }
             }
         },
+        "sq_RetrieveCustomer_CCOF_service": {
+            "type": "object",
+            "properties": {
+                "url": {
+                    "type": "string",
+                    "default": "https://api.appery.io/rest/1/code/2e43863c-9652-4bd7-b792-d11c136d953f/exec"
+                },
+                "method": {
+                    "type": "string",
+                    "default": "post"
+                },
+                "request": {
+                    "type": "object",
+                    "properties": {
+                        "body": {
+                            "type": "object",
+                            "properties": {
+                                "data": {
+                                    "type": "data"
+                                }
+                            }
+                        },
+                        "query": {
+                            "type": "object",
+                            "properties": {
+                                "sqCust": {
+                                    "type": "string",
+                                    "default": "68DGPJ22M96YZE2HFBZV20JZDW"
+                                }
+                            }
+                        },
+                        "headers": {
+                            "type": "object",
+                            "properties": {
+                                "Content-Type": {
+                                    "type": "string",
+                                    "default": "text/plain"
+                                }
+                            }
+                        }
+                    }
+                },
+                "response": {
+                    "type": "object",
+                    "properties": {
+                        "body": {
+                            "type": "object",
+                            "properties": {
+                                "$": {
+                                    "type": "object",
+                                    "properties": {
+                                        "requestParams": {
+                                            "type": "string"
+                                        },
+                                        "requestBody": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "headers": {
+                            "type": "object",
+                            "properties": {}
+                        }
+                    }
+                }
+            }
+        },
         "Update_TextVer_True_service": {
             "type": "object",
             "properties": {
@@ -2773,6 +3254,312 @@ define(['require'], function(require) {
                         "headers": {
                             "type": "object",
                             "properties": {}
+                        }
+                    }
+                }
+            }
+        },
+        "Square_payments_Pay_using_ccof_post": {
+            "type": "object",
+            "properties": {
+                "url": {
+                    "type": "string",
+                    "default": "https://api.appery.io/rest/1/apiexpress/api/payments/Pay_using_ccof"
+                },
+                "method": {
+                    "type": "string",
+                    "default": "post"
+                },
+                "request": {
+                    "type": "object",
+                    "properties": {
+                        "body": {
+                            "type": "object",
+                            "properties": {
+                                "source_id": {
+                                    "type": "string",
+                                    "default": "ccof:customer-card-id-bad"
+                                },
+                                "autocomplete": {
+                                    "type": "boolean",
+                                    "default": true
+                                },
+                                "idempotency_key": {
+                                    "type": "string",
+                                    "default": "956ae8c-839a-474b-8975-ff245663f40a"
+                                },
+                                "customer_id": {
+                                    "type": "string",
+                                    "default": "E9P8KRH7J0Z2N98EVE3KXV4K9G"
+                                },
+                                "amount_money": {
+                                    "type": "object",
+                                    "properties": {
+                                        "amount": {
+                                            "type": "number",
+                                            "default": 1500
+                                        },
+                                        "currency": {
+                                            "type": "string",
+                                            "default": "USD"
+                                        }
+                                    }
+                                },
+                                "accept_partial_authorization": {
+                                    "type": "boolean",
+                                    "default": false
+                                },
+                                "reference_id": {
+                                    "type": "string",
+                                    "default": "orderId goes here"
+                                },
+                                "statement_description_identifier": {
+                                    "type": "string",
+                                    "default": "order:ABCD"
+                                }
+                            }
+                        },
+                        "query": {
+                            "type": "object",
+                            "properties": {}
+                        },
+                        "headers": {
+                            "type": "object",
+                            "properties": {
+                                "X-Appery-Api-Express-Api-Key": {
+                                    "type": "string",
+                                    "default": "{Square_settings.API_EXPRESS_API_KEY}"
+                                }
+                            }
+                        }
+                    }
+                },
+                "response": {
+                    "type": "object",
+                    "properties": {
+                        "body": {
+                            "type": "object",
+                            "properties": {
+                                "BODY": {
+                                    "type": "object",
+                                    "properties": {
+                                        "payment": {
+                                            "type": "object",
+                                            "properties": {
+                                                "reference_id": {
+                                                    "type": "string",
+                                                    "default": "orderId goes here"
+                                                },
+                                                "id": {
+                                                    "type": "string",
+                                                    "default": "vhh6YtnxRfqRNJb1bthW5kkx5x8YY"
+                                                },
+                                                "delay_action": {
+                                                    "type": "string",
+                                                    "default": "CANCEL"
+                                                },
+                                                "order_id": {
+                                                    "type": "string",
+                                                    "default": "s88UCp88bT1k16lZ35qZEF0gtl9YY"
+                                                },
+                                                "card_details": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "cvv_status": {
+                                                            "type": "string",
+                                                            "default": "CVV_ACCEPTED"
+                                                        },
+                                                        "status": {
+                                                            "type": "string",
+                                                            "default": "CAPTURED"
+                                                        },
+                                                        "statement_description": {
+                                                            "type": "string",
+                                                            "default": "SQ *DEFAULT TEST ACCOUNT"
+                                                        },
+                                                        "entry_method": {
+                                                            "type": "string",
+                                                            "default": "ON_FILE"
+                                                        },
+                                                        "card": {
+                                                            "type": "object",
+                                                            "properties": {
+                                                                "exp_year": {
+                                                                    "type": "number",
+                                                                    "default": 2022
+                                                                },
+                                                                "bin": {
+                                                                    "type": "string",
+                                                                    "default": "371263"
+                                                                },
+                                                                "prepaid_type": {
+                                                                    "type": "string",
+                                                                    "default": "NOT_PREPAID"
+                                                                },
+                                                                "fingerprint": {
+                                                                    "type": "string",
+                                                                    "default": "sq-1-ppm8xzkrh0t006nkam2ZlTDurzAn-J09xpPd0a7mgVTAjTVWiwiygniYH7Y95Mtmhw"
+                                                                },
+                                                                "card_brand": {
+                                                                    "type": "string",
+                                                                    "default": "AMERICAN_EXPRESS"
+                                                                },
+                                                                "last_4": {
+                                                                    "type": "string",
+                                                                    "default": "6550"
+                                                                },
+                                                                "exp_month": {
+                                                                    "type": "number",
+                                                                    "default": 1
+                                                                },
+                                                                "card_type": {
+                                                                    "type": "string",
+                                                                    "default": "CREDIT"
+                                                                }
+                                                            }
+                                                        },
+                                                        "avs_status": {
+                                                            "type": "string",
+                                                            "default": "AVS_ACCEPTED"
+                                                        }
+                                                    }
+                                                },
+                                                "statement_description_identifier": {
+                                                    "type": "string",
+                                                    "default": "order:ABCD"
+                                                },
+                                                "location_id": {
+                                                    "type": "string",
+                                                    "default": "95E4G0AEMS0ZG"
+                                                },
+                                                "delay_duration": {
+                                                    "type": "string",
+                                                    "default": "PT168H"
+                                                },
+                                                "customer_id": {
+                                                    "type": "string",
+                                                    "default": "E9P8KRH7J0Z2N98EVE3KXV4K9G"
+                                                },
+                                                "receipt_number": {
+                                                    "type": "string",
+                                                    "default": "vhh6"
+                                                },
+                                                "receipt_url": {
+                                                    "type": "string",
+                                                    "default": "https://squareupsandbox.com/receipt/preview/vhh6YtnxRfqRNJb1bthW5kkx5x8YY"
+                                                },
+                                                "status": {
+                                                    "type": "string",
+                                                    "default": "COMPLETED"
+                                                },
+                                                "source_type": {
+                                                    "type": "string",
+                                                    "default": "CARD"
+                                                },
+                                                "amount_money": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "amount": {
+                                                            "type": "number",
+                                                            "default": 1500
+                                                        },
+                                                        "currency": {
+                                                            "type": "string",
+                                                            "default": "USD"
+                                                        }
+                                                    }
+                                                },
+                                                "total_money": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "amount": {
+                                                            "type": "number",
+                                                            "default": 1500
+                                                        },
+                                                        "currency": {
+                                                            "type": "string",
+                                                            "default": "USD"
+                                                        }
+                                                    }
+                                                },
+                                                "delayed_until": {
+                                                    "type": "string",
+                                                    "default": "2020-05-21T21:50:28.642Z"
+                                                },
+                                                "updated_at": {
+                                                    "type": "string",
+                                                    "default": "2020-05-14T21:50:28.796Z"
+                                                },
+                                                "created_at": {
+                                                    "type": "string",
+                                                    "default": "2020-05-14T21:50:28.642Z"
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "HTTP_RESPONSE_HEADERS": {
+                                    "type": "object",
+                                    "properties": {
+                                        "X-Frame-Options": {
+                                            "type": "string",
+                                            "default": "DENY"
+                                        },
+                                        "Vary": {
+                                            "type": "string",
+                                            "default": "Accept-Encoding, User-Agent"
+                                        },
+                                        "X-Xss-Protection": {
+                                            "type": "string",
+                                            "default": "1; mode=block"
+                                        },
+                                        "Content-Type": {
+                                            "type": "string",
+                                            "default": "application/json"
+                                        },
+                                        "Squareup--Connect--V2--Common--Versionmetadata-Bin": {
+                                            "type": "string",
+                                            "default": "CgoyMDIwLTA0LTIy"
+                                        },
+                                        "Date": {
+                                            "type": "string",
+                                            "default": "Thu, 14 May 2020 21:52:33 GMT"
+                                        },
+                                        "Frame-Options": {
+                                            "type": "string",
+                                            "default": "DENY"
+                                        },
+                                        "Strict-Transport-Security": {
+                                            "type": "string",
+                                            "default": "max-age=631152000; includeSubDomains; preload"
+                                        },
+                                        "X-Content-Type-Options": {
+                                            "type": "string",
+                                            "default": "nosniff"
+                                        },
+                                        "Square-Version": {
+                                            "type": "string",
+                                            "default": "2020-04-22"
+                                        },
+                                        "Transfer-Encoding": {
+                                            "type": "string",
+                                            "default": "chunked"
+                                        }
+                                    }
+                                },
+                                "HTTP_RESPONSE_CODE": {
+                                    "type": "number",
+                                    "default": 200
+                                }
+                            }
+                        },
+                        "headers": {
+                            "type": "object",
+                            "properties": {
+                                "Content-Type": {
+                                    "type": "string"
+                                }
+                            }
                         }
                     }
                 }

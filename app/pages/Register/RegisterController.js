@@ -19,7 +19,7 @@ define(['require', 'app'],
              */
             $scope.init = function() {
                 //On load screen logic
-                $scope.user.Country = "USA"
+                $scope.user.country = "US";
             };
             /**
              * @function register

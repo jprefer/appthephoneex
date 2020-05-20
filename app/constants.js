@@ -16,6 +16,13 @@ define(['require'], function(require) {
             "database_id": "5e32d1af2e22d7259ebf3de6"
         },
         /**
+         * Square_settings
+         * @property API_EXPRESS_API_KEY       - 
+         */
+        Square_settings: {
+            "API_EXPRESS_API_KEY": "c1e2c002-8c85-4d72-96da-78ceb41f3978"
+        },
+        /**
          * PushSettings
          * @property PushApiKey       - 
          */
