@@ -1,16 +1,16 @@
 /**
- * Module initializes rest service sq_DeleteCard_service
+ * Module initializes rest service sq_RetrieveCustomer_CCOF_service
  */
 define(['require'], function(require) {
     return [{
         type: 'service',
-        name: 'sq_DeleteCard_service',
-        deps: ['Apperyio', 'REST', sq_DeleteCard_serviceImpl]
+        name: 'sq_RetrieveCustomer_CCOF_service',
+        deps: ['Apperyio', 'REST', sq_RetrieveCustomer_CCOF_serviceImpl]
     }];
     /**
-     * @function sq_DeleteCard_serviceImpl
+     * @function sq_RetrieveCustomer_CCOF_serviceImpl
      */
-    function sq_DeleteCard_serviceImpl(Apperyio, REST) {
+    function sq_RetrieveCustomer_CCOF_serviceImpl(Apperyio, REST) {
         var REST = new REST();
         /**
          * REST options. Initial values of "headers", "params", "data" and "echo" store are stored in models.js.
@@ -29,15 +29,15 @@ define(['require'], function(require) {
          * @property {string} serviceName                     - Service name
          */
         this.config = {
-            url: "https://api.appery.io/rest/1/code/614a2f6a-2b7b-412d-9f9f-89c0d6485959/exec",
+            url: "https://api.appery.io/rest/1/code/2e43863c-9652-4bd7-b792-d11c136d953f/exec",
             method: "post",
-            headers: Apperyio.EntityAPI("sq_DeleteCard_service.request.headers"),
-            params: Apperyio.EntityAPI("sq_DeleteCard_service.request.query"),
-            data: Apperyio.EntityAPI("sq_DeleteCard_service.request.body", undefined, true, true) || "",
+            headers: Apperyio.EntityAPI("sq_RetrieveCustomer_CCOF_service.request.headers"),
+            params: Apperyio.EntityAPI("sq_RetrieveCustomer_CCOF_service.request.query"),
+            data: Apperyio.EntityAPI("sq_RetrieveCustomer_CCOF_service.request.body", undefined, true, true) || "",
             aio_config: {
                 requestType: "data",
                 responseType: "json",
-                serviceName: "sq_DeleteCard_service"
+                serviceName: "sq_RetrieveCustomer_CCOF_service"
             }
         };
         this.inst = REST.setDefaults(this.config);

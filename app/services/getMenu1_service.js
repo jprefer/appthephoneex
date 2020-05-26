@@ -1,16 +1,16 @@
 /**
- * Module initializes rest service sq_DeleteCard_service
+ * Module initializes rest service getMenu1_service
  */
 define(['require'], function(require) {
     return [{
         type: 'service',
-        name: 'sq_DeleteCard_service',
-        deps: ['Apperyio', 'REST', sq_DeleteCard_serviceImpl]
+        name: 'getMenu1_service',
+        deps: ['Apperyio', 'REST', getMenu1_serviceImpl]
     }];
     /**
-     * @function sq_DeleteCard_serviceImpl
+     * @function getMenu1_serviceImpl
      */
-    function sq_DeleteCard_serviceImpl(Apperyio, REST) {
+    function getMenu1_serviceImpl(Apperyio, REST) {
         var REST = new REST();
         /**
          * REST options. Initial values of "headers", "params", "data" and "echo" store are stored in models.js.
@@ -29,15 +29,15 @@ define(['require'], function(require) {
          * @property {string} serviceName                     - Service name
          */
         this.config = {
-            url: "https://api.appery.io/rest/1/code/614a2f6a-2b7b-412d-9f9f-89c0d6485959/exec",
+            url: "https://api.appery.io/rest/1/code/2d47ea5e-a8b2-44be-94bf-f4c55a36f235/exec",
             method: "post",
-            headers: Apperyio.EntityAPI("sq_DeleteCard_service.request.headers"),
-            params: Apperyio.EntityAPI("sq_DeleteCard_service.request.query"),
-            data: Apperyio.EntityAPI("sq_DeleteCard_service.request.body", undefined, true, true) || "",
+            headers: Apperyio.EntityAPI("getMenu1_service.request.headers"),
+            params: Apperyio.EntityAPI("getMenu1_service.request.query"),
+            data: Apperyio.EntityAPI("getMenu1_service.request.body", undefined, true, true) || "",
             aio_config: {
                 requestType: "data",
                 responseType: "json",
-                serviceName: "sq_DeleteCard_service"
+                serviceName: "getMenu1_service"
             }
         };
         this.inst = REST.setDefaults(this.config);

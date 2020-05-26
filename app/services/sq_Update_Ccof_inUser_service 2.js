@@ -1,16 +1,16 @@
 /**
- * Module initializes rest service sq_DeleteCard_service
+ * Module initializes rest service sq_Update_Ccof_inUser_service
  */
 define(['require'], function(require) {
     return [{
         type: 'service',
-        name: 'sq_DeleteCard_service',
-        deps: ['Apperyio', 'REST', sq_DeleteCard_serviceImpl]
+        name: 'sq_Update_Ccof_inUser_service',
+        deps: ['Apperyio', 'REST', sq_Update_Ccof_inUser_serviceImpl]
     }];
     /**
-     * @function sq_DeleteCard_serviceImpl
+     * @function sq_Update_Ccof_inUser_serviceImpl
      */
-    function sq_DeleteCard_serviceImpl(Apperyio, REST) {
+    function sq_Update_Ccof_inUser_serviceImpl(Apperyio, REST) {
         var REST = new REST();
         /**
          * REST options. Initial values of "headers", "params", "data" and "echo" store are stored in models.js.
@@ -29,15 +29,15 @@ define(['require'], function(require) {
          * @property {string} serviceName                     - Service name
          */
         this.config = {
-            url: "https://api.appery.io/rest/1/code/614a2f6a-2b7b-412d-9f9f-89c0d6485959/exec",
+            url: "https://api.appery.io/rest/1/code/d4227921-0c38-462c-a611-a1e39c773cff/exec",
             method: "post",
-            headers: Apperyio.EntityAPI("sq_DeleteCard_service.request.headers"),
-            params: Apperyio.EntityAPI("sq_DeleteCard_service.request.query"),
-            data: Apperyio.EntityAPI("sq_DeleteCard_service.request.body", undefined, true, true) || "",
+            headers: Apperyio.EntityAPI("sq_Update_Ccof_inUser_service.request.headers"),
+            params: Apperyio.EntityAPI("sq_Update_Ccof_inUser_service.request.query"),
+            data: Apperyio.EntityAPI("sq_Update_Ccof_inUser_service.request.body", undefined, true, true) || "",
             aio_config: {
                 requestType: "data",
                 responseType: "json",
-                serviceName: "sq_DeleteCard_service"
+                serviceName: "sq_Update_Ccof_inUser_service"
             }
         };
         this.inst = REST.setDefaults(this.config);

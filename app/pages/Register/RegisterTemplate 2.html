@@ -1,0 +1,275 @@
+<div show-header="true" show-footer="true" show-top-tabs="true" show-tabs="true"
+ng-controller="Register" ng-cloak ng-init="init()" active-screen="Register" class="aio-empty-screen padding overflow-scroll">
+    <button class="button button-energized button-block">
+        User Registration
+    </button>
+    <form name="loginForm">
+        <div class="list">
+            <div class="item item-input">
+                <i class="icon ion-person dark placeholder-icon">
+                </i>
+                <input type="text" placeholder="Username" value="" ng-required="true" ng-pattern="/^\S*$/"
+                name="uname" ng-model="user.username">
+            </div>
+            <p class="assertive">
+                Passwords must be at least 8 characters and contain at least one capital letter,
+                1 number, and 1 special character
+            </p>
+            <div class="item item-input">
+                <i class="icon ion-locked dark placeholder-icon">
+                </i>
+                <input type="password" placeholder="Password" value="" ng-required="true" ng-pattern="/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/"
+                name="password1" ng-model="user.password">
+            </div>
+            <p ng-show="!loginForm.password1.$valid" class="assertive">
+                Password is not following the above rules
+            </p>
+            <p ng-show="loginForm.password1.$valid" class="balanced">
+                Good Password
+            </p>
+            <div class="item item-input">
+                <i class="icon ion-locked dark placeholder-icon">
+                </i>
+                <input type="password" placeholder="Repeat Password " value="" ng-required="true"
+                ng-pattern="/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/" name="password2"
+                ng-model="Password2">
+            </div>
+            <p ng-show="user.password != Password2" class="assertive">
+                Passwords do not match
+            </p>
+            <div class="item item-input">
+                <i class="icon ion-ios-email dark placeholder-icon">
+                </i>
+                <input type="email" placeholder="Email - (You will get a  verification request)"
+                value="" ng-required="true" name="email1" ng-model="user.email">
+            </div>
+            <div class="item item-input">
+                <i class="icon ion-home dark placeholder-icon">
+                </i>
+                <input type="text" placeholder="Company Name" value="" ng-required="true" name="comp"
+                ng-model="user.Company">
+            </div>
+            <div class="item item-input">
+                <i class="icon ion-ios-arrow-thin-right dark placeholder-icon">
+                </i>
+                <input type="text" placeholder="First Name" value="" ng-required="true" name="firstname"
+                ng-model="user.FirstName">
+            </div>
+            <div class="item item-input">
+                <i class="icon ion-ios-arrow-thin-left dark placeholder-icon">
+                </i>
+                <input type="text" placeholder="Last Name" value="" ng-required="true" name="lastname"
+                ng-model="user.LastName">
+            </div>
+            <div class="item item-input">
+                <i class="icon ion-iphone dark placeholder-icon">
+                </i>
+                <input type="tel" placeholder="Mobile Phone (You will need to verify - next step)"
+                value="" ng-required="true" ng-pattern="/^[0][1-9]\d{9}$|^[1-9]\d{9}$/" name="mobile"
+                ng-model="user.MobilePhone">
+            </div>
+            <div class="item item-input">
+                <i class="icon ion-ios-telephone dark placeholder-icon">
+                </i>
+                <input type="tel" placeholder="Business Phone" value="" ng-required="true" ng-pattern="/^[0][1-9]\d{9}$|^[1-9]\d{9}$/"
+                name="phone" ng-model="user.BusinessPhone">
+            </div>
+            <div class="item item-input">
+                <i class="icon ion-location dark placeholder-icon">
+                </i>
+                <input type="text" placeholder="Address" value="" ng-required="true" name="address"
+                ng-model="user.ShippingAddress1">
+            </div>
+            <div class="item item-input">
+                <input type="text" placeholder="Unit / Suite" value="" ng-model="user.ShippingAddress2">
+            </div>
+            <div class="item item-input">
+                <i class="icon ion-ios-location-outline dark placeholder-icon">
+                </i>
+                <input type="text" placeholder="City" value="" ng-required="true" name="city" ng-model="user.City">
+            </div>
+            <div class="item item-input">
+                <i class="icon ion-ios-location-outline dark placeholder-icon">
+                </i>
+                <input type="text" placeholder="State" value="" ng-required="true" name="state"
+                ng-model="user.State">
+            </div>
+            <div class="item item-input">
+                <i class="icon ion-ios-location-outline dark placeholder-icon">
+                </i>
+                <input type="text" placeholder="Zip Code" value="" ng-required="true" name="zip"
+                ng-model="user.Zip">
+            </div>
+            <div class="item item-input">
+                <i class="icon ion-ios-flag dark placeholder-icon">
+                </i>
+                <input type="text" placeholder="Country" value="US" ng-required="true" name="country"
+                ng-model="user. country">
+            </div>
+            <div class="item item-input">
+                <i class="icon ion-ios-paper-outline dark placeholder-icon">
+                </i>
+                <input type="text" placeholder="State Resale Number" value="" ng-required="true"
+                name="resale" ng-model="user.ResaleNumber">
+            </div>
+            <div class="item item-input">
+                <i class="icon ion-ios-checkmark-outline dark placeholder-icon">
+                </i>
+                <input type="text" placeholder="Act Code - (Sellers Only)" value="" ng-model="user.ActCode">
+            </div>
+        </div>
+    </form>
+    <div>
+        <font size="4">
+            <center>
+                <b>
+                    You Entered:
+                </b>
+            </center>
+        </font>
+        <b>
+            UserName:
+        </b>
+        {{user.username}}
+        <br>
+        <b>
+            Email:
+        </b>
+        {{user.email}}
+        <br>
+        <b>
+            Company Name:
+        </b>
+        {{user.Company}}
+        <br>
+        <b>
+            First Name:
+        </b>
+        {{user.FirstName}}
+        <br>
+        <b>
+            Last Name:
+        </b>
+        {{user.LastName}}
+        <br>
+        <b>
+            Cell Phone:
+        </b>
+        {{user.MobilePhone}}
+        <br>
+        <b>
+            Business Phone:
+        </b>
+        {{user.BusinessPhone}}
+        <br>
+        <b>
+            Business Address:
+        </b>
+        {{user.ShippingAddress1}}
+        <br>
+        <b>
+            Suite:
+        </b>
+        {{user.ShippingAddress2}}
+        <br>
+        <b>
+            City:
+        </b>
+        {{user.City}}
+        <br>
+        <b>
+            State:
+        </b>
+        {{user.State}}
+        <br>
+        <b>
+            Zip:
+        </b>
+        {{user.Zip}}
+        <br>
+        <b>
+            Country:
+        </b>
+        {{user.Country}}
+        <br>
+        <b>
+            Tax Resale Number:
+        </b>
+        {{user.ResaleNumber}}
+        <br>
+        <b>
+            Act Code (Sellers Only):
+        </b>
+        {{user.ActCode}}
+        <br>
+    </div>
+    <div class="card">
+        <div class="item-divider item">
+            <div>
+                <font size="4">
+                    <center>
+                        <b>
+                            If all of the above items are correct,
+                            <br>
+                            Press Register to Continue:
+                        </b>
+                    </center>
+                </font>
+            </div>
+        </div>
+    </div>
+    <button class="button button-positive button-block" ng-click="register()" ng-disabled="loginForm.uname.$error.required||!loginForm.password1.$valid||!loginForm.password2.$valid||loginForm.email1.$error.required||loginForm.email1.$error.email||loginForm.comp.$error.required||loginForm.firstname.$error.required||loginForm.lastname.$error.required||loginForm.mobile.$error.required||!loginForm.mobile.$valid||loginForm.phone.$error.required||!loginForm.phone.$valid||oginForm.address.$error.required||loginForm.city.$error.required||loginForm.state.$error.required||loginForm.zip.$error.required||loginForm.country.$error.required||loginForm.resale.$error.required||!loginForm.uname.$valid">
+        Register
+    </button>
+    <p ng-show="loginForm.uname.$error.required" class="assertive">
+        UserName Required
+    </p>
+    <p ng-show="!loginForm.uname.$valid" class="assertive">
+        UserName can not have spaces
+    </p>
+    <p ng-show="!loginForm.password1.$valid" class="assertive">
+        Password Does Not Follow Rules
+    </p>
+    <p ng-show="!loginForm.password2.$valid" class="assertive">
+        Repeat Password Not Following Rules
+    </p>
+    <p ng-show="loginForm.email1.$error.required" class="assertive">
+        Email Required
+    </p>
+    <p ng-show="loginForm.email1.$error.email" class="assertive">
+        Proper Email Format Required
+    </p>
+    <p ng-show="loginForm.comp.$error.required" class="assertive">
+        Company Name Required
+    </p>
+    <p ng-show="loginForm.firstname.$error.required" class="assertive">
+        First Name Required
+    </p>
+    <p ng-show="loginForm.lastname.$error.required" class="assertive">
+        Last Name Required
+    </p>
+    <p ng-show="!loginForm.mobile.$valid" class="assertive">
+        Mobile Number Needs to be in format 5551231234
+    </p>
+    <p ng-show="!loginForm.phone.$valid" class="assertive">
+        Business Phone Number Needs to be in format 5551231234
+    </p>
+    <p ng-show="loginForm.address.$error.required" class="assertive">
+        Address Line 1 Required
+    </p>
+    <p ng-show="loginForm.city.$error.required" class="assertive">
+        City Required
+    </p>
+    <p ng-show="loginForm.state.$error.required" class="assertive">
+        State Required
+    </p>
+    <p ng-show="loginForm.zip.$error.required" class="assertive">
+        Zip Code Required
+    </p>
+    <p ng-show="loginForm.country.$error.required" class="assertive">
+        Country Required
+    </p>
+    <p ng-show="loginForm.resale.$error.required" class="assertive">
+        Resale Number Required
+    </p>
+</div>

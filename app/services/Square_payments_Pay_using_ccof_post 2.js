@@ -1,16 +1,16 @@
 /**
- * Module initializes rest service sq_DeleteCard_service
+ * Module initializes rest service Square_payments_Pay_using_ccof_post
  */
 define(['require'], function(require) {
     return [{
         type: 'service',
-        name: 'sq_DeleteCard_service',
-        deps: ['Apperyio', 'REST', sq_DeleteCard_serviceImpl]
+        name: 'Square_payments_Pay_using_ccof_post',
+        deps: ['Apperyio', 'REST', Square_payments_Pay_using_ccof_postImpl]
     }];
     /**
-     * @function sq_DeleteCard_serviceImpl
+     * @function Square_payments_Pay_using_ccof_postImpl
      */
-    function sq_DeleteCard_serviceImpl(Apperyio, REST) {
+    function Square_payments_Pay_using_ccof_postImpl(Apperyio, REST) {
         var REST = new REST();
         /**
          * REST options. Initial values of "headers", "params", "data" and "echo" store are stored in models.js.
@@ -29,15 +29,15 @@ define(['require'], function(require) {
          * @property {string} serviceName                     - Service name
          */
         this.config = {
-            url: "https://api.appery.io/rest/1/code/614a2f6a-2b7b-412d-9f9f-89c0d6485959/exec",
+            url: "https://api.appery.io/rest/1/apiexpress/api/payments/Pay_using_ccof",
             method: "post",
-            headers: Apperyio.EntityAPI("sq_DeleteCard_service.request.headers"),
-            params: Apperyio.EntityAPI("sq_DeleteCard_service.request.query"),
-            data: Apperyio.EntityAPI("sq_DeleteCard_service.request.body", undefined, true, true) || "",
+            headers: Apperyio.EntityAPI("Square_payments_Pay_using_ccof_post.request.headers"),
+            params: Apperyio.EntityAPI("Square_payments_Pay_using_ccof_post.request.query"),
+            data: Apperyio.EntityAPI("Square_payments_Pay_using_ccof_post.request.body", undefined, true, true) || "",
             aio_config: {
-                requestType: "data",
+                requestType: "json",
                 responseType: "json",
-                serviceName: "sq_DeleteCard_service"
+                serviceName: "Square_payments_Pay_using_ccof_post"
             }
         };
         this.inst = REST.setDefaults(this.config);

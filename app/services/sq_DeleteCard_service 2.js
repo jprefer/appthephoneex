@@ -29,7 +29,7 @@ define(['require'], function(require) {
          * @property {string} serviceName                     - Service name
          */
         this.config = {
-            url: "https://api.appery.io/rest/1/code/614a2f6a-2b7b-412d-9f9f-89c0d6485959/exec",
+            url: "https://api.appery.io/rest/1/code/4c7d6a4c-db4a-483a-9823-6072617cc654/exec",
             method: "post",
             headers: Apperyio.EntityAPI("sq_DeleteCard_service.request.headers"),
             params: Apperyio.EntityAPI("sq_DeleteCard_service.request.query"),
