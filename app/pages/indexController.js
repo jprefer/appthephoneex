@@ -53,7 +53,9 @@ define(['require'],
              * @function gotoBuyerMakeRequest
              */
             $scope.gotoBuyerMakeRequest = function() {
-                Apperyio.navigateTo("Buyer_MakeRequest", {});
+                Apperyio.navigateTo("Buyer_MakeRequest", {
+                    'reloadPage': true
+                });
             };
             /**
              * @function gotoBuyerComplete
