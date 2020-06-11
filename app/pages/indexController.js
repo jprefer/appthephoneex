@@ -63,7 +63,7 @@ define(['require'],
                 $scope.RequestID1.Gl_Vars = data;
                 $scope.RequestID1.Gl_Vars.whereami = "Buyer_MakeRequest";
                 //console.log(_id);
-                alert('You are about to make a request');
+                //alert('You are about to make a request');
                 Apperyio.navigateTo("PassThru", {});
                 //Apperyio.navigateTo("Buyer_MakeRequest", {'reloadPage': true}); 
             };

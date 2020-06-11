@@ -102,7 +102,7 @@ define(['require', 'app'],
                         return c.ModelId == $scope.model.Id;
                     });
                     // Check to see if its a Cellular ipad
-                    if ($scope.type.TypeName == "iPad - WiFi/Cellular") {
+                    if ($scope.type.Id == 3) {
                         $scope.model.ModelName = $scope.model.ModelName + " - Cellular";
                     } else {
                         $scope.model.ModelName = $scope.model.ModelName;
