@@ -1,0 +1,156 @@
+<html> 
+
+<head> 
+<title> Square Web Form</title>
+<!-- link to the SqPaymentForm library -->
+<script>
+const queryString = window.location.search;
+//console.log(queryString);
+// ?username=john&custID=123123123
+
+const urlParams = new URLSearchParams(queryString);
+
+const sqCust = urlParams.get('custID')
+//console.log(sqCust);
+// CustomerID
+
+const user = urlParams.get('username')
+//console.log(user);
+// user
+
+
+</script>
+<!-- link to the SqPaymentForm library -->
+<script type="text/javascript" src="https://js.squareup.com/v2/paymentform">
+</script>
+
+<!-- link yto the local custom styles for SqPaymentForm -->
+<link rel="stylesheet" type="text/css" href="mysqpaymentform.css">
+
+</head>
+
+<body>
+
+
+
+
+
+   <div id="form-container">
+     <div id="sq-card-number"></div>
+     <div class="third" id="sq-expiration-date"></div>
+     <div class="third" id="sq-cvv"></div>
+     <div class="third" id="sq-postal-code"></div>
+     <button id="sq-creditcard" class="button-credit-card" onclick="onGetCardNonce(event)">Save My Credit Card</button>
+           <ul id="errors" class="error" style="display:none"></ul>
+
+   </div> <!-- end #form-container --> 
+   <!-- TODO: Add script from step 1.1.3 -->
+   <script type="text/javascript">
+     // Create and initialize a payment form object
+     const paymentForm = new SqPaymentForm({
+       // Initialize the payment form elements
+       
+       //TODO: Replace with your sandbox application ID
+       applicationId: "sq0idp-8HrXu9fS-lkQpJ5VKvrlPw",
+       inputClass: 'sq-input',
+       autoBuild: false,
+       // Customize the CSS for SqPaymentForm iframe elements
+       inputStyles: [{
+           fontSize: '10px',
+           lineHeight: '24px',
+           padding: '10px',
+           placeholderColor: '#a0a0a0',
+           backgroundColor: 'transparent',
+       }],
+       // Initialize the credit card placeholders
+       cardNumber: {
+           elementId: 'sq-card-number',
+           placeholder: 'Card Number'
+       },
+       cvv: {
+           elementId: 'sq-cvv',
+           placeholder: 'CVV'
+       },
+       expirationDate: {
+           elementId: 'sq-expiration-date',
+           placeholder: 'MM/YY'
+       },
+       postalCode: {
+           elementId: 'sq-postal-code',
+           placeholder: 'Zip Code'
+       },
+       // SqPaymentForm callback functions
+       callbacks: {
+           /*
+           * callback function: cardNonceResponseReceived
+           * Triggered when: SqPaymentForm completes a card nonce request
+           */
+           cardNonceResponseReceived: function (errors, nonce, cardData) {
+           const errorList = document.getElementById("errors");
+           if (errors) {
+               // Log errors from nonce generation to the browser developer console.
+               //console.error('Encountered errors:');
+              // errors.forEach(function (error) {
+               //    console.error('  ' + error.message);
+              // });
+              // alert('Encountered errors, check browser developer console for more details');
+              let error_html = "";
+          for (var i = 0; i < errors.length; i++) {
+            error_html += "<li> " + errors[i].message + " </li>";
+          }
+          errorList.innerHTML = error_html;
+          errorList.style.display = 'inline-block';
+               return;
+               errorList.style.display = 'none';
+        errorList.innerHTML = "";
+           }
+              //alert(`The generated nonce is:\n${nonce}`);
+              
+              //TODO: Replace alert with code in step 2.1 - Just writing anything
+              
+                var xhr = new XMLHttpRequest();
+				var url = "https://api.appery.io/rest/1/apiexpress/api/update_ccof/PostCCofUser_ptod?apiKey=3edad746-dd32-496b-9acc-fe953b60d5cf";
+				xhr.open("POST", url, true);
+				xhr.setRequestHeader("Content-Type", "application/json");
+				xhr.onreadystatechange = function () {
+   				 if (xhr.readyState === 4 && xhr.status === 200) {
+       			 var json = JSON.parse(xhr.responseText);
+       			 //console.log("xhr.status", xhr.status);
+        		 console.log(xhr.responseText);
+        		 var str =  xhr.responseText;
+        		// console.log("str", str);
+        		 var n = str.search('"HTTP_RESPONSE_CODE":400}');
+        		 //console.log("n", n);
+        		if (n < 0) {
+       			  alert('Credit Card Registration Completed - Please tap the home key in the upper right corner to continue.')
+       			  location.replace("https://app.thephoneex.com/payment_blank.html")
+    			  }else { 
+    			    alert('Credit Card Registration Failed - Please try again - Please tap the home key in the upper right corner to continue.'); 
+    			    location.replace("https://app.thephoneex.com/payment_blank.html")
+  				   }
+        		 //console.log("Done");
+    					}	
+				};
+				var data = JSON.stringify({"sqCust": sqCust, "user": user, "sqNonce": nonce});
+				xhr.send(data);
+           }
+       }
+     });
+     //TODO: paste code from step 1.1.4
+          //TODO: paste code from step 1.1.5
+               paymentForm.build();
+
+     // onGetCardNonce is triggered when the "Pay $1.00" button is clicked
+     function onGetCardNonce(event) {
+       // Don't submit the form until SqPaymentForm returns with a nonce
+       event.preventDefault();
+       // Request a nonce from the SqPaymentForm object
+       paymentForm.requestCardNonce();
+     }
+
+   </script>
+
+
+</body>
+
+</html>

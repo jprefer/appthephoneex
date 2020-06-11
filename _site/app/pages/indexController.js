@@ -11,6 +11,7 @@ define(['require'],
             $scope.activeScreen = Apperyio.EntityAPI('ActiveScreen');
             $scope.User = Apperyio.EntityAPI('User');
             $scope.pass = Apperyio.EntityAPI('Pass');
+            $scope.RequestID1 = Apperyio.EntityAPI('DataStorage');
             /**
              * User controller functions
              */
@@ -53,7 +54,18 @@ define(['require'],
              * @function gotoBuyerMakeRequest
              */
             $scope.gotoBuyerMakeRequest = function() {
-                Apperyio.navigateTo("Buyer_MakeRequest", {});
+                //try this
+                //On load screen logic
+                // inject the 'dataStorage' service
+                var data = Apperyio.get("dataStorage");
+                // user1 is a variable in the page1 scope 
+                // set it to reference the 'dataStorage' service
+                $scope.RequestID1.Gl_Vars = data;
+                $scope.RequestID1.Gl_Vars.whereami = "Buyer_MakeRequest";
+                //console.log(_id);
+                //alert('You are about to make a request');
+                Apperyio.navigateTo("PassThru", {});
+                //Apperyio.navigateTo("Buyer_MakeRequest", {'reloadPage': true}); 
             };
             /**
              * @function gotoBuyerComplete

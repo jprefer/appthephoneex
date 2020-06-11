@@ -33,7 +33,7 @@
         <!-- Uncomment this script when not using service worker -->
         <!-- <script>        
         var require = {
-        urlArgs : window.navigator.userAgent.match(/Windows Phone/i) ? undefined : "bust=1587592118"
+        urlArgs : window.navigator.userAgent.match(/Windows Phone/i) ? undefined : "bust=1591880029"
         };
         </script>
         -->
@@ -78,6 +78,12 @@
                         <p></p>
                         Profile
                         </a><!--
+                        --><a href="javascript:void(0)" class="item-icon-left item" ng-class="{active: activeScreen.name === &quot;Profile&quot;}"
+                        menu-close="" navigate-to="tab_Verify">
+                        <i class="icon ion-checkmark "></i>
+                        <p></p>
+                        Verify
+                        </a><!--
                         --><a href="javascript:void(0)" class="item-icon-left item" ng-class="{active: activeScreen.name === &quot;Bank&quot;}"
                         menu-close="" navigate-to="Bank">
                         <i class="icon ion-cash "></i>
@@ -95,6 +101,12 @@
                         <i class="icon ion-ios-telephone "></i>
                         <p></p>
                         Contact Us
+                        </a><!--
+                        --><a href="javascript:void(0)" class="item-icon-left item" ng-class="{active: activeScreen.name === &quot;Welcome&quot;}"
+                        menu-close="" navigate-to="Welcome">
+                        <i class="icon ion-information "></i>
+                        <p></p>
+                        Welcome
                         </a><!--
                         --><a href="javascript:void(0)" class="item">
                         <p></p>

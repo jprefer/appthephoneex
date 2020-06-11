@@ -1,0 +1,113 @@
+<div show-header="true" show-footer="true" show-top-tabs="true" show-tabs="true"
+ng-controller="tabProfile_old" ng-cloak ng-init="init()" active-screen="Profile"
+class="aio-empty-screen padding overflow-scroll">
+    <div class="card">
+        <div class="item-divider item">
+            User Name
+        </div>
+        <div class="item">
+            {{user.username}}
+        </div>
+    </div>
+    <div class="card">
+        <div class="item-divider item">
+            Email Address New
+        </div>
+        <div class="item">
+            <div class="item item-input">
+                <input type="text" placeholder="{{user. email}}" value="" ng-model="new_email">
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="item-divider item">
+            Company
+        </div>
+        <div class="item">
+            {{user. Company}}
+        </div>
+    </div>
+    <div class="card">
+        <div class="item-divider item">
+            First Name
+        </div>
+        <div class="item">
+            {{user.FirstName}}
+        </div>
+    </div>
+    <div class="card">
+        <div class="item-divider item">
+            Last Name
+        </div>
+        <div class="item">
+            {{user.LastName}}
+        </div>
+    </div>
+    <div class="card">
+        <div class="item-divider item">
+            Mobile Phone Number
+        </div>
+        <div class="item">
+            {{user. MobilePhone}}
+        </div>
+    </div>
+    <div class="card">
+        <div class="item-divider item">
+            Business Phone Number
+        </div>
+        <div class="item">
+            {{user. BusinessPhone}}
+        </div>
+    </div>
+    <div class="card">
+        <div class="item-divider item">
+            Shipping Address
+        </div>
+        <div class="item">
+            {{user. ShippingAddress1}}
+        </div>
+    </div>
+    <div class="card">
+        <div class="item-divider item">
+            Unit / Suite
+        </div>
+        <div class="item">
+            {{user. ShippingAddress2}}
+        </div>
+    </div>
+    <div class="card">
+        <div class="item-divider item">
+            City
+        </div>
+        <div class="item">
+            {{user.City}}
+        </div>
+    </div>
+    <div class="card">
+        <div class="item-divider item">
+            State
+        </div>
+        <div class="item">
+            {{user.State}}
+        </div>
+    </div>
+    <div class="card">
+        <div class="item-divider item">
+            Zip Code
+        </div>
+        <div class="item">
+            {{user.Zip}}
+        </div>
+    </div>
+    <div class="card">
+        <div class="item-divider item">
+            State Resale Certificate Number
+        </div>
+        <div class="item">
+            {{user. ResaleNumber}}
+        </div>
+    </div>
+    <button class="button button-block" ng-click="lo()">
+        Log Out
+    </button>
+</div>

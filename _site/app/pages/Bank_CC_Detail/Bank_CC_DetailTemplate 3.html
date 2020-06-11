@@ -1,0 +1,49 @@
+<div show-header="true" show-footer="true" show-top-tabs="true" show-tabs="true"
+ng-controller="Bank_CC_Detail" ng-cloak ng-init="init()" active-screen="Credit Card Detail"
+class="aio-empty-screen padding overflow-scroll">
+    <div>
+        <p>
+            &nbsp;
+        </p>
+        <p style="text-align: center;">
+            <strong>
+                {{cc_state}}
+            </strong>
+        </p>
+        <p style="text-align: center;">
+            <span style="color: #0000ff;">
+                Card Brand:
+            </span>
+            {{sqCardBrand}}
+        </p>
+        <p style="text-align: center;">
+            <span style="color: #0000ff;">
+                Card Number:
+            </span>
+            xxx xxxx xxxxxx{{sqLast_4}}
+        </p>
+        <p style="text-align: center;">
+            <span style="color: #0000ff;">
+                Expiration:
+            </span>
+            {{sqMonth}}/{{sqYear}}
+        </p>
+        <p>
+            &nbsp;
+        </p>
+        <p>
+            &nbsp;
+        </p>
+    </div>
+    <div class="button-bar">
+        <button class="button button-assertive button-block button-small" ng-click="deleteCard()">
+            Delete Card
+        </button>
+        <button class="button button-royal button-block button-small" ng-click="goBack()">
+            Go Back
+        </button>
+        <button class="button button-calm button-block button-small" ng-click="makeDefault()">
+            Make Default
+        </button>
+    </div>
+</div>

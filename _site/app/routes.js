@@ -112,14 +112,6 @@ define(['require'], function(require) {
      * @property {string} when["/Buyer_Complete_Detail.html"].c  - Controller for /Buyer_Complete_Detail.html URL
      * @property {string} when["/Buyer_Complete_Detail.html"].t  - Template for /Buyer_Complete_Detail.html URL
      * @property {string[]} when["/Buyer_Complete_Detail.html"].d  - Dependencies for /Buyer_Complete_Detail.html URL
-     * @property {object} when["/Screen1.html"]    - Routing configuration for /Screen1.html URL
-     * @property {string} when["/Screen1.html"].c  - Controller for /Screen1.html URL
-     * @property {string} when["/Screen1.html"].t  - Template for /Screen1.html URL
-     * @property {string[]} when["/Screen1.html"].d  - Dependencies for /Screen1.html URL
-     * @property {object} when["/Screen2.html"]    - Routing configuration for /Screen2.html URL
-     * @property {string} when["/Screen2.html"].c  - Controller for /Screen2.html URL
-     * @property {string} when["/Screen2.html"].t  - Template for /Screen2.html URL
-     * @property {string[]} when["/Screen2.html"].d  - Dependencies for /Screen2.html URL
      * @property {object} when["/Seller_Offers_Detail.html"]    - Routing configuration for /Seller_Offers_Detail.html URL
      * @property {string} when["/Seller_Offers_Detail.html"].c  - Controller for /Seller_Offers_Detail.html URL
      * @property {string} when["/Seller_Offers_Detail.html"].t  - Template for /Seller_Offers_Detail.html URL
@@ -156,14 +148,22 @@ define(['require'], function(require) {
      * @property {string} when["/Seller_Ins.html"].c  - Controller for /Seller_Ins.html URL
      * @property {string} when["/Seller_Ins.html"].t  - Template for /Seller_Ins.html URL
      * @property {string[]} when["/Seller_Ins.html"].d  - Dependencies for /Seller_Ins.html URL
-     * @property {object} when["/Test.html"]    - Routing configuration for /Test.html URL
-     * @property {string} when["/Test.html"].c  - Controller for /Test.html URL
-     * @property {string} when["/Test.html"].t  - Template for /Test.html URL
-     * @property {string[]} when["/Test.html"].d  - Dependencies for /Test.html URL
      * @property {object} when["/ForgotPassword.html"]    - Routing configuration for /ForgotPassword.html URL
      * @property {string} when["/ForgotPassword.html"].c  - Controller for /ForgotPassword.html URL
      * @property {string} when["/ForgotPassword.html"].t  - Template for /ForgotPassword.html URL
      * @property {string[]} when["/ForgotPassword.html"].d  - Dependencies for /ForgotPassword.html URL
+     * @property {object} when["/sq_iFrame.html"]    - Routing configuration for /sq_iFrame.html URL
+     * @property {string} when["/sq_iFrame.html"].c  - Controller for /sq_iFrame.html URL
+     * @property {string} when["/sq_iFrame.html"].t  - Template for /sq_iFrame.html URL
+     * @property {string[]} when["/sq_iFrame.html"].d  - Dependencies for /sq_iFrame.html URL
+     * @property {object} when["/Buyer_Pay.html"]    - Routing configuration for /Buyer_Pay.html URL
+     * @property {string} when["/Buyer_Pay.html"].c  - Controller for /Buyer_Pay.html URL
+     * @property {string} when["/Buyer_Pay.html"].t  - Template for /Buyer_Pay.html URL
+     * @property {string[]} when["/Buyer_Pay.html"].d  - Dependencies for /Buyer_Pay.html URL
+     * @property {object} when["/Bank_CC_Detail.html"]    - Routing configuration for /Bank_CC_Detail.html URL
+     * @property {string} when["/Bank_CC_Detail.html"].c  - Controller for /Bank_CC_Detail.html URL
+     * @property {string} when["/Bank_CC_Detail.html"].t  - Template for /Bank_CC_Detail.html URL
+     * @property {string[]} when["/Bank_CC_Detail.html"].d  - Dependencies for /Bank_CC_Detail.html URL
      
      * @property {object} otherwise                             - Routing configuration for another URL
      * @property {object} otherwise.redirectTo                  - Redirect to default routing URL
@@ -192,8 +192,6 @@ define(['require'], function(require) {
      * @property {string} route_names.["Buyer_InProcess_Detail"]  - "Buyer_InProcess_Detail" is an alias for "/Buyer_InProcess_Detail.html" routing
      * @property {string} route_names.["Seller_Complete_Detail"]  - "Seller_Complete_Detail" is an alias for "/Seller_Complete_Detail.html" routing
      * @property {string} route_names.["Buyer_Complete_Detail"]  - "Buyer_Complete_Detail" is an alias for "/Buyer_Complete_Detail.html" routing
-     * @property {string} route_names.["Screen1"]  - "Screen1" is an alias for "/Screen1.html" routing
-     * @property {string} route_names.["Screen2"]  - "Screen2" is an alias for "/Screen2.html" routing
      * @property {string} route_names.["Seller_Offers_Detail"]  - "Seller_Offers_Detail" is an alias for "/Seller_Offers_Detail.html" routing
      * @property {string} route_names.["Buyer_Request_Test"]  - "Buyer_Request_Test" is an alias for "/Buyer_Request_Test.html" routing
      * @property {string} route_names.["Buyer_MakeRequest"]  - "Buyer_MakeRequest" is an alias for "/Buyer_MakeRequest.html" routing
@@ -203,8 +201,10 @@ define(['require'], function(require) {
      * @property {string} route_names.["Welcome"]  - "Welcome" is an alias for "/Welcome.html" routing
      * @property {string} route_names.["Buyer_Ins"]  - "Buyer_Ins" is an alias for "/Buyer_Ins.html" routing
      * @property {string} route_names.["Seller_Ins"]  - "Seller_Ins" is an alias for "/Seller_Ins.html" routing
-     * @property {string} route_names.["Test"]  - "Test" is an alias for "/Test.html" routing
      * @property {string} route_names.["ForgotPassword"]  - "ForgotPassword" is an alias for "/ForgotPassword.html" routing
+     * @property {string} route_names.["sq_iFrame"]  - "sq_iFrame" is an alias for "/sq_iFrame.html" routing
+     * @property {string} route_names.["Screen1"]  - "Screen1" is an alias for "/Buyer_Pay.html" routing
+     * @property {string} route_names.["Bank_CC_Detail"]  - "Bank_CC_Detail" is an alias for "/Bank_CC_Detail.html" routing
      
      */
     return {
@@ -376,14 +376,19 @@ define(['require'], function(require) {
                 t: '$Seller_Ins/Seller_InsTemplate.html',
                 d: []
             },
-            '/Test.html': {
-                c: '$Test/TestController',
-                t: '$Test/TestTemplate.html',
-                d: []
-            },
             '/ForgotPassword.html': {
                 c: '$ForgotPassword/ForgotPasswordController',
                 t: '$ForgotPassword/ForgotPasswordTemplate.html',
+                d: []
+            },
+            '/sq_iFrame.html': {
+                c: '$sq_iFrame/sq_iFrameController',
+                t: '$sq_iFrame/sq_iFrameTemplate.html',
+                d: []
+            },
+            '/Bank_CC_Detail.html': {
+                c: '$Bank_CC_Detail/Bank_CC_DetailController',
+                t: '$Bank_CC_Detail/Bank_CC_DetailTemplate.html',
                 d: []
             }
         },
@@ -413,8 +418,6 @@ define(['require'], function(require) {
             'Buyer_InProcess_Detail': '/Buyer_InProcess_Detail.html',
             'Seller_Complete_Detail': '/Seller_Complete_Detail.html',
             'Buyer_Complete_Detail': '/Buyer_Complete_Detail.html',
-            'Screen1': '/Screen1.html',
-            'Screen2': '/Screen2.html',
             'Seller_Offers_Detail': '/Seller_Offers_Detail.html',
             'Buyer_Request_Test': '/Buyer_Request_Test.html',
             'Buyer_MakeRequest': '/Buyer_MakeRequest.html',
@@ -424,8 +427,10 @@ define(['require'], function(require) {
             'Welcome': '/Welcome.html',
             'Buyer_Ins': '/Buyer_Ins.html',
             'Seller_Ins': '/Seller_Ins.html',
-            'Test': '/Test.html',
-            'ForgotPassword': '/ForgotPassword.html'
+            'ForgotPassword': '/ForgotPassword.html',
+            'sq_iFrame': '/sq_iFrame.html',
+            'Screen1': '/Buyer_Pay.html',
+            'Bank_CC_Detail': '/Bank_CC_Detail.html'
         }
     };
 });

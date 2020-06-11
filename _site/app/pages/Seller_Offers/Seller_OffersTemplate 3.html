@@ -1,0 +1,45 @@
+<div show-header="true" show-footer="true" show-top-tabs="true" show-tabs="true"
+ng-controller="Seller_Offers" ng-cloak ng-init="init()" active-screen="My Current Offers"
+class="aio-empty-screen padding overflow-scroll">
+    <div class="button-bar">
+        <button class="button button-energized button-block button-small icon-left ion-alert"
+        ng-click="gotoSellerOffers()">
+            All My Offers
+        </button>
+        <button class="button button-energized button-block button-small icon-left ion-wrench"
+        ng-click="gotoSellerInProcess()">
+            In Process
+        </button>
+        <button class="button button-energized button-block button-small icon-left ion-checkmark-round"
+        ng-click="gotoSellerComplete()">
+            Completed
+        </button>
+    </div>
+    <button class="button button-energized button-block button-small icon-left ion-cash"
+    ng-click="gotoSellerAccepted()">
+        Accepted Offers - Shipping Required
+    </button>
+    <div>
+        <div class="row">
+            <div class="col">
+                <div>
+                    <br>
+                    <font size="4">
+                        <center>
+                            <b>
+                                Offers that are currently under consideration with Buyers
+                            </b>
+                        </center>
+                    </font>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="list">
+        <a href="javascript:void(0)" class="item" ng-click="showDetail(item._id)" ng-repeat="item in list">
+        <h2>Offer: {{item.OfferPrice|currency}} --&gt; {{item. so_manufacturer}} {{item. so_Product}} </h2>
+        <p>{{item.so_Memory}} / {{item.so_Color}} / {{item.so_Carrier}} /  Offer ID: {{item._id.substring(20)}}</p>
+        Quan:{{item.so_Quantity}} / Grade: {{item.so_Condition}}  / Request ID: {{item.fk_Request_id.substring(20)}}
+        </a>
+    </div>
+</div>
