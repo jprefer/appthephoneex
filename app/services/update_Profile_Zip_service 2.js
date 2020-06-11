@@ -1,16 +1,16 @@
 /**
- * Module initializes rest service sq_RetrieveCustomer_CCOF_service
+ * Module initializes rest service update_Profile_Zip_service
  */
 define(['require'], function(require) {
     return [{
         type: 'service',
-        name: 'sq_RetrieveCustomer_CCOF_service',
-        deps: ['Apperyio', 'REST', sq_RetrieveCustomer_CCOF_serviceImpl]
+        name: 'update_Profile_Zip_service',
+        deps: ['Apperyio', 'REST', update_Profile_Zip_serviceImpl]
     }];
     /**
-     * @function sq_RetrieveCustomer_CCOF_serviceImpl
+     * @function update_Profile_Zip_serviceImpl
      */
-    function sq_RetrieveCustomer_CCOF_serviceImpl(Apperyio, REST) {
+    function update_Profile_Zip_serviceImpl(Apperyio, REST) {
         var REST = new REST();
         /**
          * REST options. Initial values of "headers", "params", "data" and "echo" store are stored in models.js.
@@ -29,15 +29,15 @@ define(['require'], function(require) {
          * @property {string} serviceName                     - Service name
          */
         this.config = {
-            url: "https://api.appery.io/rest/1/code/2e43863c-9652-4bd7-b792-d11c136d953f/exec",
+            url: "https://api.appery.io/rest/1/code/71be4bfa-068c-4c02-aabe-6245d60652fc/exec",
             method: "post",
-            headers: Apperyio.EntityAPI("sq_RetrieveCustomer_CCOF_service.request.headers"),
-            params: Apperyio.EntityAPI("sq_RetrieveCustomer_CCOF_service.request.query"),
-            data: Apperyio.EntityAPI("sq_RetrieveCustomer_CCOF_service.request.body", undefined, true, true) || "",
+            headers: Apperyio.EntityAPI("update_Profile_Zip_service.request.headers"),
+            params: Apperyio.EntityAPI("update_Profile_Zip_service.request.query"),
+            data: Apperyio.EntityAPI("update_Profile_Zip_service.request.body", undefined, true, true) || "",
             aio_config: {
                 requestType: "data",
                 responseType: "json",
-                serviceName: "sq_RetrieveCustomer_CCOF_service"
+                serviceName: "update_Profile_Zip_service"
             }
         };
         this.inst = REST.setDefaults(this.config);

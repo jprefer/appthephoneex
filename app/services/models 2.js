@@ -2088,6 +2088,75 @@ define(['require'], function(require) {
                 }
             }
         },
+        "Request_ToBuyer_offer_Detail_service": {
+            "type": "object",
+            "properties": {
+                "url": {
+                    "type": "string",
+                    "default": "https://api.appery.io/rest/1/code/b1891604-14cb-4003-95d8-302b7c62d88e/exec"
+                },
+                "method": {
+                    "type": "string",
+                    "default": "post"
+                },
+                "request": {
+                    "type": "object",
+                    "properties": {
+                        "body": {
+                            "type": "object",
+                            "properties": {
+                                "data": {
+                                    "type": "data"
+                                }
+                            }
+                        },
+                        "query": {
+                            "type": "object",
+                            "properties": {
+                                "CurrentRequestID": {
+                                    "type": "string",
+                                    "default": "5e4d5a893147710a1f6332a1"
+                                }
+                            }
+                        },
+                        "headers": {
+                            "type": "object",
+                            "properties": {
+                                "Content-Type": {
+                                    "type": "string",
+                                    "default": "text/plain"
+                                }
+                            }
+                        }
+                    }
+                },
+                "response": {
+                    "type": "object",
+                    "properties": {
+                        "body": {
+                            "type": "object",
+                            "properties": {
+                                "$": {
+                                    "type": "object",
+                                    "properties": {
+                                        "requestParams": {
+                                            "type": "string"
+                                        },
+                                        "requestBody": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "headers": {
+                            "type": "object",
+                            "properties": {}
+                        }
+                    }
+                }
+            }
+        },
         "sq_InsertPayment_service": {
             "type": "object",
             "properties": {
@@ -2255,12 +2324,12 @@ define(['require'], function(require) {
                 }
             }
         },
-        "Request_ToBuyer_offer_Detail_service": {
+        "update_Profile_BusinessPhone_service": {
             "type": "object",
             "properties": {
                 "url": {
                     "type": "string",
-                    "default": "https://api.appery.io/rest/1/code/b1891604-14cb-4003-95d8-302b7c62d88e/exec"
+                    "default": "https://api.appery.io/rest/1/code/b051b4ef-5fd2-48ca-b8cf-27ab7ddb1331/exec"
                 },
                 "method": {
                     "type": "string",
@@ -2280,15 +2349,23 @@ define(['require'], function(require) {
                         "query": {
                             "type": "object",
                             "properties": {
-                                "CurrentRequestID": {
+                                "profile_id": {
                                     "type": "string",
-                                    "default": "5e4d5a893147710a1f6332a1"
+                                    "default": "5e337992b56b5d0a94db6aa5"
+                                },
+                                "changeField": {
+                                    "type": "string",
+                                    "default": "123"
                                 }
                             }
                         },
                         "headers": {
                             "type": "object",
                             "properties": {
+                                "X-Appery-Session-Token": {
+                                    "type": "string",
+                                    "default": "4094e449-7f53-4a2e-a884-5b224f3779d2"
+                                },
                                 "Content-Type": {
                                     "type": "string",
                                     "default": "text/plain"
@@ -2399,12 +2476,12 @@ define(['require'], function(require) {
                 }
             }
         },
-        "Seller_Shipped_Detail_service": {
+        "update_Profile_Resale_service": {
             "type": "object",
             "properties": {
                 "url": {
                     "type": "string",
-                    "default": "https://api.appery.io/rest/1/code/ed9a3868-c9c4-46eb-8c41-16949cd3a724/exec"
+                    "default": "https://api.appery.io/rest/1/code/153373cd-d972-4d2a-aa39-5a64537990cc/exec"
                 },
                 "method": {
                     "type": "string",
@@ -2424,9 +2501,90 @@ define(['require'], function(require) {
                         "query": {
                             "type": "object",
                             "properties": {
-                                "CurrentRequestID": {
+                                "profile_id": {
                                     "type": "string",
-                                    "default": "5e598f0b80c1b20a2aa8ee0a"
+                                    "default": "5e337992b56b5d0a94db6aa5"
+                                },
+                                "changeField": {
+                                    "type": "string",
+                                    "default": "123"
+                                }
+                            }
+                        },
+                        "headers": {
+                            "type": "object",
+                            "properties": {
+                                "Content-Type": {
+                                    "type": "string",
+                                    "default": "text/plain"
+                                },
+                                "X-Appery-Session-Token": {
+                                    "type": "string",
+                                    "default": "675744d7-ab70-4f55-a246-c0a5f43d64ec"
+                                }
+                            }
+                        }
+                    }
+                },
+                "response": {
+                    "type": "object",
+                    "properties": {
+                        "body": {
+                            "type": "object",
+                            "properties": {
+                                "$": {
+                                    "type": "object",
+                                    "properties": {
+                                        "requestParams": {
+                                            "type": "string"
+                                        },
+                                        "requestBody": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "headers": {
+                            "type": "object",
+                            "properties": {}
+                        }
+                    }
+                }
+            }
+        },
+        "update_Profile_City_service": {
+            "type": "object",
+            "properties": {
+                "url": {
+                    "type": "string",
+                    "default": "https://api.appery.io/rest/1/code/6e706ef5-2ab4-4778-b293-71fd2ddb8a92/exec"
+                },
+                "method": {
+                    "type": "string",
+                    "default": "post"
+                },
+                "request": {
+                    "type": "object",
+                    "properties": {
+                        "body": {
+                            "type": "object",
+                            "properties": {
+                                "data": {
+                                    "type": "data"
+                                }
+                            }
+                        },
+                        "query": {
+                            "type": "object",
+                            "properties": {
+                                "changeField": {
+                                    "type": "string",
+                                    "default": "123"
+                                },
+                                "profile_id": {
+                                    "type": "string",
+                                    "default": "5e337992b56b5d0a94db6aa5"
                                 }
                             }
                         },
@@ -2434,7 +2592,8 @@ define(['require'], function(require) {
                             "type": "object",
                             "properties": {
                                 "X-Appery-Session-Token": {
-                                    "type": "string"
+                                    "type": "string",
+                                    "default": "3540d71c-e6df-4760-91e0-b990776d3155"
                                 },
                                 "Content-Type": {
                                     "type": "string",
@@ -2457,6 +2616,160 @@ define(['require'], function(require) {
                                             "type": "string"
                                         },
                                         "requestBody": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "headers": {
+                            "type": "object",
+                            "properties": {}
+                        }
+                    }
+                }
+            }
+        },
+        "update_Profile_Zip_service": {
+            "type": "object",
+            "properties": {
+                "url": {
+                    "type": "string",
+                    "default": "https://api.appery.io/rest/1/code/71be4bfa-068c-4c02-aabe-6245d60652fc/exec"
+                },
+                "method": {
+                    "type": "string",
+                    "default": "post"
+                },
+                "request": {
+                    "type": "object",
+                    "properties": {
+                        "body": {
+                            "type": "object",
+                            "properties": {
+                                "data": {
+                                    "type": "data"
+                                }
+                            }
+                        },
+                        "query": {
+                            "type": "object",
+                            "properties": {
+                                "changeField": {
+                                    "type": "string",
+                                    "default": "123"
+                                },
+                                "profile_id": {
+                                    "type": "string",
+                                    "default": "5e337992b56b5d0a94db6aa5"
+                                }
+                            }
+                        },
+                        "headers": {
+                            "type": "object",
+                            "properties": {
+                                "X-Appery-Session-Token": {
+                                    "type": "string",
+                                    "default": "675744d7-ab70-4f55-a246-c0a5f43d64ec"
+                                },
+                                "Content-Type": {
+                                    "type": "string",
+                                    "default": "text/plain"
+                                }
+                            }
+                        }
+                    }
+                },
+                "response": {
+                    "type": "object",
+                    "properties": {
+                        "body": {
+                            "type": "object",
+                            "properties": {
+                                "$": {
+                                    "type": "object",
+                                    "properties": {
+                                        "requestParams": {
+                                            "type": "string"
+                                        },
+                                        "requestBody": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "headers": {
+                            "type": "object",
+                            "properties": {}
+                        }
+                    }
+                }
+            }
+        },
+        "update_Profile_State_service": {
+            "type": "object",
+            "properties": {
+                "url": {
+                    "type": "string",
+                    "default": "https://api.appery.io/rest/1/code/bb39c1a7-dce1-4f15-a075-e4c4a0406bd1/exec"
+                },
+                "method": {
+                    "type": "string",
+                    "default": "post"
+                },
+                "request": {
+                    "type": "object",
+                    "properties": {
+                        "body": {
+                            "type": "object",
+                            "properties": {
+                                "data": {
+                                    "type": "data"
+                                }
+                            }
+                        },
+                        "query": {
+                            "type": "object",
+                            "properties": {
+                                "changeField": {
+                                    "type": "string",
+                                    "default": "123"
+                                },
+                                "profile_id": {
+                                    "type": "string",
+                                    "default": "5e337992b56b5d0a94db6aa5"
+                                }
+                            }
+                        },
+                        "headers": {
+                            "type": "object",
+                            "properties": {
+                                "X-Appery-Session-Token": {
+                                    "type": "string",
+                                    "default": "675744d7-ab70-4f55-a246-c0a5f43d64ec"
+                                },
+                                "Content-Type": {
+                                    "type": "string",
+                                    "default": "text/plain"
+                                }
+                            }
+                        }
+                    }
+                },
+                "response": {
+                    "type": "object",
+                    "properties": {
+                        "body": {
+                            "type": "object",
+                            "properties": {
+                                "$": {
+                                    "type": "object",
+                                    "properties": {
+                                        "requestBody": {
+                                            "type": "string"
+                                        },
+                                        "requestParams": {
                                             "type": "string"
                                         }
                                     }
@@ -2529,6 +2842,408 @@ define(['require'], function(require) {
                                             "type": "string"
                                         },
                                         "requestBody": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "headers": {
+                            "type": "object",
+                            "properties": {}
+                        }
+                    }
+                }
+            }
+        },
+        "RegisterNewUser_prod_service": {
+            "type": "object",
+            "properties": {
+                "url": {
+                    "type": "string",
+                    "default": "https://api.appery.io/rest/1/code/0668aed3-f620-4ac4-bda6-ed9d36238ee9/exec"
+                },
+                "method": {
+                    "type": "string",
+                    "default": "post"
+                },
+                "request": {
+                    "type": "object",
+                    "properties": {
+                        "body": {
+                            "type": "object",
+                            "properties": {
+                                "data": {
+                                    "type": "data"
+                                }
+                            }
+                        },
+                        "query": {
+                            "type": "object",
+                            "properties": {
+                                "Zip": {
+                                    "type": "string",
+                                    "default": "33139"
+                                },
+                                "ExtraField1": {
+                                    "type": "string"
+                                },
+                                "ExtraField3": {
+                                    "type": "string"
+                                },
+                                "email": {
+                                    "type": "string",
+                                    "default": "jprefer@gmail.com"
+                                },
+                                "username": {
+                                    "type": "string",
+                                    "default": "pencil12345"
+                                },
+                                "ExtraField4": {
+                                    "type": "string"
+                                },
+                                "ExtraField5": {
+                                    "type": "string"
+                                },
+                                "password": {
+                                    "type": "string",
+                                    "default": "Duece"
+                                },
+                                "InActive": {
+                                    "type": "string"
+                                },
+                                "ActCode": {
+                                    "type": "string",
+                                    "default": "S3864"
+                                },
+                                "City": {
+                                    "type": "string",
+                                    "default": "Miami Beach"
+                                },
+                                "State": {
+                                    "type": "string",
+                                    "default": "FL"
+                                },
+                                "UserType": {
+                                    "type": "string"
+                                },
+                                "BusinessPhone": {
+                                    "type": "string",
+                                    "default": "5613954905"
+                                },
+                                "ShippingAddress1": {
+                                    "type": "string",
+                                    "default": "1228 West Ave"
+                                },
+                                "ExtraField2": {
+                                    "type": "string"
+                                },
+                                "ResaleNumber": {
+                                    "type": "string",
+                                    "default": "1231231234"
+                                },
+                                "LastName": {
+                                    "type": "string",
+                                    "default": "Prefer"
+                                },
+                                "Company": {
+                                    "type": "string",
+                                    "default": "SCT"
+                                },
+                                "ShippingAddress2": {
+                                    "type": "string",
+                                    "default": "1010"
+                                },
+                                "FirstName": {
+                                    "type": "string",
+                                    "default": "John"
+                                },
+                                "MobilePhone": {
+                                    "type": "string",
+                                    "default": "5616998998"
+                                }
+                            }
+                        },
+                        "headers": {
+                            "type": "object",
+                            "properties": {
+                                "Content-Type": {
+                                    "type": "string",
+                                    "default": "text/plain"
+                                }
+                            }
+                        }
+                    }
+                },
+                "response": {
+                    "type": "object",
+                    "properties": {
+                        "body": {
+                            "type": "object",
+                            "properties": {
+                                "$": {
+                                    "type": "object",
+                                    "properties": {
+                                        "requestBody": {
+                                            "type": "string"
+                                        },
+                                        "requestParams": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "headers": {
+                            "type": "object",
+                            "properties": {}
+                        }
+                    }
+                }
+            }
+        },
+        "Seller_Shipped_Detail_service": {
+            "type": "object",
+            "properties": {
+                "url": {
+                    "type": "string",
+                    "default": "https://api.appery.io/rest/1/code/ed9a3868-c9c4-46eb-8c41-16949cd3a724/exec"
+                },
+                "method": {
+                    "type": "string",
+                    "default": "post"
+                },
+                "request": {
+                    "type": "object",
+                    "properties": {
+                        "body": {
+                            "type": "object",
+                            "properties": {
+                                "data": {
+                                    "type": "data"
+                                }
+                            }
+                        },
+                        "query": {
+                            "type": "object",
+                            "properties": {
+                                "CurrentRequestID": {
+                                    "type": "string",
+                                    "default": "5e598f0b80c1b20a2aa8ee0a"
+                                }
+                            }
+                        },
+                        "headers": {
+                            "type": "object",
+                            "properties": {
+                                "X-Appery-Session-Token": {
+                                    "type": "string"
+                                },
+                                "Content-Type": {
+                                    "type": "string",
+                                    "default": "text/plain"
+                                }
+                            }
+                        }
+                    }
+                },
+                "response": {
+                    "type": "object",
+                    "properties": {
+                        "body": {
+                            "type": "object",
+                            "properties": {
+                                "$": {
+                                    "type": "object",
+                                    "properties": {
+                                        "requestParams": {
+                                            "type": "string"
+                                        },
+                                        "requestBody": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "headers": {
+                            "type": "object",
+                            "properties": {}
+                        }
+                    }
+                }
+            }
+        },
+        "Square_payments_Pay_using_ccof_prod_post": {
+            "type": "object",
+            "properties": {
+                "url": {
+                    "type": "string",
+                    "default": "https://api.appery.io/rest/1/apiexpress/api/payments/Pay_using_ccof_prod"
+                },
+                "method": {
+                    "type": "string",
+                    "default": "post"
+                },
+                "request": {
+                    "type": "object",
+                    "properties": {
+                        "body": {
+                            "type": "object",
+                            "properties": {
+                                "source_id": {
+                                    "type": "string",
+                                    "default": "ccof:customer-card-id-ok"
+                                },
+                                "customer_id": {
+                                    "type": "string",
+                                    "default": "E9P8KRH7J0Z2N98EVE3KXV4K9G"
+                                },
+                                "accept_partial_authorization": {
+                                    "type": "boolean",
+                                    "default": false
+                                },
+                                "autocomplete": {
+                                    "type": "boolean",
+                                    "default": true
+                                },
+                                "reference_id": {
+                                    "type": "string",
+                                    "default": "orderId goes here"
+                                },
+                                "statement_description_identifier": {
+                                    "type": "string",
+                                    "default": "order:ABCD"
+                                },
+                                "idempotency_key": {
+                                    "type": "string",
+                                    "default": "956ae8c-839a-474b-8975-ff245663f40a"
+                                },
+                                "location_id": {
+                                    "type": "string",
+                                    "default": "MEWPDBNFQF79S"
+                                },
+                                "amount_money": {
+                                    "type": "object",
+                                    "properties": {
+                                        "currency": {
+                                            "type": "string",
+                                            "default": "USD"
+                                        },
+                                        "amount": {
+                                            "type": "number",
+                                            "default": 1500
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "query": {
+                            "type": "object",
+                            "properties": {}
+                        },
+                        "headers": {
+                            "type": "object",
+                            "properties": {
+                                "X-Appery-Api-Express-Api-Key": {
+                                    "type": "string",
+                                    "default": "{Square_settings.API_EXPRESS_API_KEY}"
+                                }
+                            }
+                        }
+                    }
+                },
+                "response": {
+                    "type": "object",
+                    "properties": {
+                        "body": {
+                            "type": "object",
+                            "properties": {
+                                "HTTP_RESPONSE_HEADERS": {
+                                    "type": "object",
+                                    "properties": {}
+                                },
+                                "BODY": {
+                                    "type": "object",
+                                    "properties": {}
+                                },
+                                "HTTP_RESPONSE_CODE": {
+                                    "type": "number",
+                                    "default": 200
+                                }
+                            }
+                        },
+                        "headers": {
+                            "type": "object",
+                            "properties": {
+                                "Content-Type": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "sq_RetrieveCustomer_CCOF_prod_service": {
+            "type": "object",
+            "properties": {
+                "url": {
+                    "type": "string",
+                    "default": "https://api.appery.io/rest/1/code/e8ddb071-023f-4985-9972-443891fef389/exec"
+                },
+                "method": {
+                    "type": "string",
+                    "default": "post"
+                },
+                "request": {
+                    "type": "object",
+                    "properties": {
+                        "body": {
+                            "type": "object",
+                            "properties": {
+                                "data": {
+                                    "type": "data"
+                                }
+                            }
+                        },
+                        "query": {
+                            "type": "object",
+                            "properties": {
+                                "sqCust": {
+                                    "type": "string",
+                                    "default": "Y5HG3G31XCRHN8DQPFK90MZV40"
+                                }
+                            }
+                        },
+                        "headers": {
+                            "type": "object",
+                            "properties": {
+                                "Content-Type": {
+                                    "type": "string",
+                                    "default": "text/plain"
+                                },
+                                "X-Appery-Session-Token": {
+                                    "type": "string",
+                                    "default": "61b89378-668c-4137-88f4-4474caed616f"
+                                }
+                            }
+                        }
+                    }
+                },
+                "response": {
+                    "type": "object",
+                    "properties": {
+                        "body": {
+                            "type": "object",
+                            "properties": {
+                                "$": {
+                                    "type": "object",
+                                    "properties": {
+                                        "requestBody": {
+                                            "type": "string"
+                                        },
+                                        "requestParams": {
                                             "type": "string"
                                         }
                                     }
@@ -2656,6 +3371,83 @@ define(['require'], function(require) {
                                 },
                                 "X-Appery-Session-Token": {
                                     "type": "string"
+                                }
+                            }
+                        }
+                    }
+                },
+                "response": {
+                    "type": "object",
+                    "properties": {
+                        "body": {
+                            "type": "object",
+                            "properties": {
+                                "$": {
+                                    "type": "object",
+                                    "properties": {
+                                        "requestBody": {
+                                            "type": "string"
+                                        },
+                                        "requestParams": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "headers": {
+                            "type": "object",
+                            "properties": {}
+                        }
+                    }
+                }
+            }
+        },
+        "update_Profile_FirstName_service": {
+            "type": "object",
+            "properties": {
+                "url": {
+                    "type": "string",
+                    "default": "https://api.appery.io/rest/1/code/fa4b6ea7-802e-4e80-8b67-f2d32fb706f3/exec"
+                },
+                "method": {
+                    "type": "string",
+                    "default": "post"
+                },
+                "request": {
+                    "type": "object",
+                    "properties": {
+                        "body": {
+                            "type": "object",
+                            "properties": {
+                                "data": {
+                                    "type": "data"
+                                }
+                            }
+                        },
+                        "query": {
+                            "type": "object",
+                            "properties": {
+                                "changeField": {
+                                    "type": "string",
+                                    "default": "123"
+                                },
+                                "profile_id": {
+                                    "type": "string",
+                                    "default": "5e337992b56b5d0a94db6aa5"
+                                }
+                            }
+                        },
+                        "headers": {
+                            "type": "object",
+                            "properties": {
+                                "X-Appery-Session-Token": {
+                                    "type": "string",
+                                    "default": "3540d71c-e6df-4760-91e0-b990776d3155"
+                                },
+                                "Content-Type": {
+                                    "type": "string",
+                                    "default": "text/plain"
                                 }
                             }
                         }
@@ -2837,6 +3629,83 @@ define(['require'], function(require) {
                                             "type": "string"
                                         },
                                         "requestParams": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "headers": {
+                            "type": "object",
+                            "properties": {}
+                        }
+                    }
+                }
+            }
+        },
+        "update_Profile_LastName_service": {
+            "type": "object",
+            "properties": {
+                "url": {
+                    "type": "string",
+                    "default": "https://api.appery.io/rest/1/code/cc5d70b6-e962-4fce-8af9-91e1c37b0bb0/exec"
+                },
+                "method": {
+                    "type": "string",
+                    "default": "post"
+                },
+                "request": {
+                    "type": "object",
+                    "properties": {
+                        "body": {
+                            "type": "object",
+                            "properties": {
+                                "data": {
+                                    "type": "data"
+                                }
+                            }
+                        },
+                        "query": {
+                            "type": "object",
+                            "properties": {
+                                "changeField": {
+                                    "type": "string",
+                                    "default": "123"
+                                },
+                                "profile_id": {
+                                    "type": "string",
+                                    "default": "5e337992b56b5d0a94db6aa5"
+                                }
+                            }
+                        },
+                        "headers": {
+                            "type": "object",
+                            "properties": {
+                                "X-Appery-Session-Token": {
+                                    "type": "string",
+                                    "default": "3540d71c-e6df-4760-91e0-b990776d3155"
+                                },
+                                "Content-Type": {
+                                    "type": "string",
+                                    "default": "text/plain"
+                                }
+                            }
+                        }
+                    }
+                },
+                "response": {
+                    "type": "object",
+                    "properties": {
+                        "body": {
+                            "type": "object",
+                            "properties": {
+                                "$": {
+                                    "type": "object",
+                                    "properties": {
+                                        "requestParams": {
+                                            "type": "string"
+                                        },
+                                        "requestBody": {
                                             "type": "string"
                                         }
                                     }
@@ -3260,6 +4129,83 @@ define(['require'], function(require) {
                 }
             }
         },
+        "update_Profile_ShippingAddress1_service": {
+            "type": "object",
+            "properties": {
+                "url": {
+                    "type": "string",
+                    "default": "https://api.appery.io/rest/1/code/3864e47a-8c32-4dbd-b5a7-29aabef79895/exec"
+                },
+                "method": {
+                    "type": "string",
+                    "default": "post"
+                },
+                "request": {
+                    "type": "object",
+                    "properties": {
+                        "body": {
+                            "type": "object",
+                            "properties": {
+                                "data": {
+                                    "type": "data"
+                                }
+                            }
+                        },
+                        "query": {
+                            "type": "object",
+                            "properties": {
+                                "profile_id": {
+                                    "type": "string",
+                                    "default": "5e337992b56b5d0a94db6aa5"
+                                },
+                                "changeField": {
+                                    "type": "string",
+                                    "default": "123"
+                                }
+                            }
+                        },
+                        "headers": {
+                            "type": "object",
+                            "properties": {
+                                "X-Appery-Session-Token": {
+                                    "type": "string",
+                                    "default": "b54e7359-5684-4454-9751-7d57463d2ad5"
+                                },
+                                "Content-Type": {
+                                    "type": "string",
+                                    "default": "text/plain"
+                                }
+                            }
+                        }
+                    }
+                },
+                "response": {
+                    "type": "object",
+                    "properties": {
+                        "body": {
+                            "type": "object",
+                            "properties": {
+                                "$": {
+                                    "type": "object",
+                                    "properties": {
+                                        "requestBody": {
+                                            "type": "string"
+                                        },
+                                        "requestParams": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "headers": {
+                            "type": "object",
+                            "properties": {}
+                        }
+                    }
+                }
+            }
+        },
         "Seller_Shipped_See_service": {
             "type": "object",
             "properties": {
@@ -3300,6 +4246,83 @@ define(['require'], function(require) {
                                 },
                                 "X-Appery-Session-Token": {
                                     "type": "string"
+                                }
+                            }
+                        }
+                    }
+                },
+                "response": {
+                    "type": "object",
+                    "properties": {
+                        "body": {
+                            "type": "object",
+                            "properties": {
+                                "$": {
+                                    "type": "object",
+                                    "properties": {
+                                        "requestBody": {
+                                            "type": "string"
+                                        },
+                                        "requestParams": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "headers": {
+                            "type": "object",
+                            "properties": {}
+                        }
+                    }
+                }
+            }
+        },
+        "update_Profile_ShippingAddress2_service": {
+            "type": "object",
+            "properties": {
+                "url": {
+                    "type": "string",
+                    "default": "https://api.appery.io/rest/1/code/eba32a2b-be23-4f95-938c-1873efd1d1ad/exec"
+                },
+                "method": {
+                    "type": "string",
+                    "default": "post"
+                },
+                "request": {
+                    "type": "object",
+                    "properties": {
+                        "body": {
+                            "type": "object",
+                            "properties": {
+                                "data": {
+                                    "type": "data"
+                                }
+                            }
+                        },
+                        "query": {
+                            "type": "object",
+                            "properties": {
+                                "profile_id": {
+                                    "type": "string",
+                                    "default": "5e337992b56b5d0a94db6aa5"
+                                },
+                                "changeField": {
+                                    "type": "string",
+                                    "default": "123"
+                                }
+                            }
+                        },
+                        "headers": {
+                            "type": "object",
+                            "properties": {
+                                "Content-Type": {
+                                    "type": "string",
+                                    "default": "text/plain"
+                                },
+                                "X-Appery-Session-Token": {
+                                    "type": "string",
+                                    "default": "b54e7359-5684-4454-9751-7d57463d2ad5"
                                 }
                             }
                         }
@@ -4146,6 +5169,79 @@ define(['require'], function(require) {
                 }
             }
         },
+        "update_Profile_Password_service": {
+            "type": "object",
+            "properties": {
+                "url": {
+                    "type": "string",
+                    "default": "https://api.appery.io/rest/1/code/20879620-bb9f-4ce0-b4dd-504bad49b273/exec"
+                },
+                "method": {
+                    "type": "string",
+                    "default": "post"
+                },
+                "request": {
+                    "type": "object",
+                    "properties": {
+                        "body": {
+                            "type": "object",
+                            "properties": {
+                                "data": {
+                                    "type": "data"
+                                }
+                            }
+                        },
+                        "query": {
+                            "type": "object",
+                            "properties": {
+                                "username": {
+                                    "type": "string",
+                                    "default": "john"
+                                },
+                                "changeField": {
+                                    "type": "string",
+                                    "default": "123"
+                                }
+                            }
+                        },
+                        "headers": {
+                            "type": "object",
+                            "properties": {
+                                "Content-Type": {
+                                    "type": "string",
+                                    "default": "text/plain"
+                                }
+                            }
+                        }
+                    }
+                },
+                "response": {
+                    "type": "object",
+                    "properties": {
+                        "body": {
+                            "type": "object",
+                            "properties": {
+                                "$": {
+                                    "type": "object",
+                                    "properties": {
+                                        "requestParams": {
+                                            "type": "string"
+                                        },
+                                        "requestBody": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "headers": {
+                            "type": "object",
+                            "properties": {}
+                        }
+                    }
+                }
+            }
+        },
         "menu_Main_Model_service": {
             "type": "object",
             "properties": {
@@ -4758,6 +5854,83 @@ define(['require'], function(require) {
                         "headers": {
                             "type": "object",
                             "properties": {
+                                "Content-Type": {
+                                    "type": "string",
+                                    "default": "text/plain"
+                                }
+                            }
+                        }
+                    }
+                },
+                "response": {
+                    "type": "object",
+                    "properties": {
+                        "body": {
+                            "type": "object",
+                            "properties": {
+                                "$": {
+                                    "type": "object",
+                                    "properties": {
+                                        "requestParams": {
+                                            "type": "string"
+                                        },
+                                        "requestBody": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "headers": {
+                            "type": "object",
+                            "properties": {}
+                        }
+                    }
+                }
+            }
+        },
+        "update_Profile_Company_service": {
+            "type": "object",
+            "properties": {
+                "url": {
+                    "type": "string",
+                    "default": "https://api.appery.io/rest/1/code/ce592ade-eedf-4f00-986e-0e9b6ae1fa18/exec"
+                },
+                "method": {
+                    "type": "string",
+                    "default": "post"
+                },
+                "request": {
+                    "type": "object",
+                    "properties": {
+                        "body": {
+                            "type": "object",
+                            "properties": {
+                                "data": {
+                                    "type": "data"
+                                }
+                            }
+                        },
+                        "query": {
+                            "type": "object",
+                            "properties": {
+                                "profile_id": {
+                                    "type": "string",
+                                    "default": "5e337992b56b5d0a94db6aa5"
+                                },
+                                "changeField": {
+                                    "type": "string",
+                                    "default": "123"
+                                }
+                            }
+                        },
+                        "headers": {
+                            "type": "object",
+                            "properties": {
+                                "X-Appery-Session-Token": {
+                                    "type": "string",
+                                    "default": "e0324021-5c9a-4cf4-867a-4a22a4175c5c"
+                                },
                                 "Content-Type": {
                                     "type": "string",
                                     "default": "text/plain"
@@ -5429,6 +6602,87 @@ define(['require'], function(require) {
                 }
             }
         },
+        "update_Profile_Mobile_service": {
+            "type": "object",
+            "properties": {
+                "url": {
+                    "type": "string",
+                    "default": "https://api.appery.io/rest/1/code/f45c74ed-0dec-4471-a980-32b37df7f2de/exec"
+                },
+                "method": {
+                    "type": "string",
+                    "default": "post"
+                },
+                "request": {
+                    "type": "object",
+                    "properties": {
+                        "body": {
+                            "type": "object",
+                            "properties": {
+                                "data": {
+                                    "type": "data"
+                                }
+                            }
+                        },
+                        "query": {
+                            "type": "object",
+                            "properties": {
+                                "changeField": {
+                                    "type": "string",
+                                    "default": "9999999999"
+                                },
+                                "username": {
+                                    "type": "string",
+                                    "default": "john"
+                                },
+                                "profile_id": {
+                                    "type": "string",
+                                    "default": "5e337992b56b5d0a94db6aa5"
+                                }
+                            }
+                        },
+                        "headers": {
+                            "type": "object",
+                            "properties": {
+                                "Content-Type": {
+                                    "type": "string",
+                                    "default": "text/plain"
+                                },
+                                "X-Appery-Session-Token": {
+                                    "type": "string",
+                                    "default": "4ff6e65a-b305-4d61-8842-8cb91aa260a8"
+                                }
+                            }
+                        }
+                    }
+                },
+                "response": {
+                    "type": "object",
+                    "properties": {
+                        "body": {
+                            "type": "object",
+                            "properties": {
+                                "$": {
+                                    "type": "object",
+                                    "properties": {
+                                        "requestParams": {
+                                            "type": "string"
+                                        },
+                                        "requestBody": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "headers": {
+                            "type": "object",
+                            "properties": {}
+                        }
+                    }
+                }
+            }
+        },
         "LoginUser_service": {
             "type": "object",
             "properties": {
@@ -5541,6 +6795,83 @@ define(['require'], function(require) {
                                             "type": "string"
                                         },
                                         "ExtraField4": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "headers": {
+                            "type": "object",
+                            "properties": {}
+                        }
+                    }
+                }
+            }
+        },
+        "update_Profile_Email_service": {
+            "type": "object",
+            "properties": {
+                "url": {
+                    "type": "string",
+                    "default": "https://api.appery.io/rest/1/code/e5058480-222f-43d6-858f-482961619460/exec"
+                },
+                "method": {
+                    "type": "string",
+                    "default": "post"
+                },
+                "request": {
+                    "type": "object",
+                    "properties": {
+                        "body": {
+                            "type": "object",
+                            "properties": {
+                                "data": {
+                                    "type": "data"
+                                }
+                            }
+                        },
+                        "query": {
+                            "type": "object",
+                            "properties": {
+                                "changeField": {
+                                    "type": "string",
+                                    "default": "jprefer@gmail.com"
+                                },
+                                "profile_id": {
+                                    "type": "string",
+                                    "default": "5e337992b56b5d0a94db6aa5"
+                                },
+                                "username": {
+                                    "type": "string",
+                                    "default": "john"
+                                }
+                            }
+                        },
+                        "headers": {
+                            "type": "object",
+                            "properties": {
+                                "Content-Type": {
+                                    "type": "string",
+                                    "default": "text/plain"
+                                }
+                            }
+                        }
+                    }
+                },
+                "response": {
+                    "type": "object",
+                    "properties": {
+                        "body": {
+                            "type": "object",
+                            "properties": {
+                                "$": {
+                                    "type": "object",
+                                    "properties": {
+                                        "requestParams": {
+                                            "type": "string"
+                                        },
+                                        "requestBody": {
                                             "type": "string"
                                         }
                                     }

@@ -1,16 +1,16 @@
 /**
- * Module initializes rest service Seller_MakeTrackingAlive_service
+ * Module initializes rest service update_Profile_Mobile_service
  */
 define(['require'], function(require) {
     return [{
         type: 'service',
-        name: 'Seller_MakeTrackingAlive_service',
-        deps: ['Apperyio', 'REST', Seller_MakeTrackingAlive_serviceImpl]
+        name: 'update_Profile_Mobile_service',
+        deps: ['Apperyio', 'REST', update_Profile_Mobile_serviceImpl]
     }];
     /**
-     * @function Seller_MakeTrackingAlive_serviceImpl
+     * @function update_Profile_Mobile_serviceImpl
      */
-    function Seller_MakeTrackingAlive_serviceImpl(Apperyio, REST) {
+    function update_Profile_Mobile_serviceImpl(Apperyio, REST) {
         var REST = new REST();
         /**
          * REST options. Initial values of "headers", "params", "data" and "echo" store are stored in models.js.
@@ -29,15 +29,15 @@ define(['require'], function(require) {
          * @property {string} serviceName                     - Service name
          */
         this.config = {
-            url: "https://api.appery.io/rest/1/code/d89c87e9-7281-4e31-be95-fe943b6994ca/exec",
+            url: "https://api.appery.io/rest/1/code/f45c74ed-0dec-4471-a980-32b37df7f2de/exec",
             method: "post",
-            headers: Apperyio.EntityAPI("Seller_MakeTrackingAlive_service.request.headers"),
-            params: Apperyio.EntityAPI("Seller_MakeTrackingAlive_service.request.query"),
-            data: Apperyio.EntityAPI("Seller_MakeTrackingAlive_service.request.body", undefined, true, true) || "",
+            headers: Apperyio.EntityAPI("update_Profile_Mobile_service.request.headers"),
+            params: Apperyio.EntityAPI("update_Profile_Mobile_service.request.query"),
+            data: Apperyio.EntityAPI("update_Profile_Mobile_service.request.body", undefined, true, true) || "",
             aio_config: {
                 requestType: "data",
                 responseType: "json",
-                serviceName: "Seller_MakeTrackingAlive_service"
+                serviceName: "update_Profile_Mobile_service"
             }
         };
         this.inst = REST.setDefaults(this.config);

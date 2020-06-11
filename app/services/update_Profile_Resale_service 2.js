@@ -1,16 +1,16 @@
 /**
- * Module initializes rest service Buyer_Shipped_See_service
+ * Module initializes rest service update_Profile_Resale_service
  */
 define(['require'], function(require) {
     return [{
         type: 'service',
-        name: 'Buyer_Shipped_See_service',
-        deps: ['Apperyio', 'REST', Buyer_Shipped_See_serviceImpl]
+        name: 'update_Profile_Resale_service',
+        deps: ['Apperyio', 'REST', update_Profile_Resale_serviceImpl]
     }];
     /**
-     * @function Buyer_Shipped_See_serviceImpl
+     * @function update_Profile_Resale_serviceImpl
      */
-    function Buyer_Shipped_See_serviceImpl(Apperyio, REST) {
+    function update_Profile_Resale_serviceImpl(Apperyio, REST) {
         var REST = new REST();
         /**
          * REST options. Initial values of "headers", "params", "data" and "echo" store are stored in models.js.
@@ -29,15 +29,15 @@ define(['require'], function(require) {
          * @property {string} serviceName                     - Service name
          */
         this.config = {
-            url: "https://api.appery.io/rest/1/code/c57bb60a-13de-4b7e-a5d3-432b726bfb12/exec",
+            url: "https://api.appery.io/rest/1/code/153373cd-d972-4d2a-aa39-5a64537990cc/exec",
             method: "post",
-            headers: Apperyio.EntityAPI("Buyer_Shipped_See_service.request.headers"),
-            params: Apperyio.EntityAPI("Buyer_Shipped_See_service.request.query"),
-            data: Apperyio.EntityAPI("Buyer_Shipped_See_service.request.body", undefined, true, true) || "",
+            headers: Apperyio.EntityAPI("update_Profile_Resale_service.request.headers"),
+            params: Apperyio.EntityAPI("update_Profile_Resale_service.request.query"),
+            data: Apperyio.EntityAPI("update_Profile_Resale_service.request.body", undefined, true, true) || "",
             aio_config: {
                 requestType: "data",
                 responseType: "json",
-                serviceName: "Buyer_Shipped_See_service"
+                serviceName: "update_Profile_Resale_service"
             }
         };
         this.inst = REST.setDefaults(this.config);

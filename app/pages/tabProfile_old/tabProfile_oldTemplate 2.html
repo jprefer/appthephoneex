@@ -1,5 +1,6 @@
 <div show-header="true" show-footer="true" show-top-tabs="true" show-tabs="true"
-ng-controller="tabProfile" ng-cloak ng-init="init()" active-screen="Profile" class="aio-empty-screen padding overflow-scroll">
+ng-controller="tabProfile_old" ng-cloak ng-init="init()" active-screen="Profile"
+class="aio-empty-screen padding overflow-scroll">
     <div class="card">
         <div class="item-divider item">
             User Name
@@ -10,10 +11,12 @@ ng-controller="tabProfile" ng-cloak ng-init="init()" active-screen="Profile" cla
     </div>
     <div class="card">
         <div class="item-divider item">
-            Email Address
+            Email Address New
         </div>
         <div class="item">
-            {{user. email}}
+            <div class="item item-input">
+                <input type="text" placeholder="{{user. email}}" value="" ng-model="new_email">
+            </div>
         </div>
     </div>
     <div class="card">

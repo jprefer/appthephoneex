@@ -1,16 +1,16 @@
 /**
- * Module initializes rest service Test_AllCountries_service
+ * Module initializes rest service update_Profile_FirstName_service
  */
 define(['require'], function(require) {
     return [{
         type: 'service',
-        name: 'Test_AllCountries_service',
-        deps: ['Apperyio', 'REST', Test_AllCountries_serviceImpl]
+        name: 'update_Profile_FirstName_service',
+        deps: ['Apperyio', 'REST', update_Profile_FirstName_serviceImpl]
     }];
     /**
-     * @function Test_AllCountries_serviceImpl
+     * @function update_Profile_FirstName_serviceImpl
      */
-    function Test_AllCountries_serviceImpl(Apperyio, REST) {
+    function update_Profile_FirstName_serviceImpl(Apperyio, REST) {
         var REST = new REST();
         /**
          * REST options. Initial values of "headers", "params", "data" and "echo" store are stored in models.js.
@@ -29,15 +29,15 @@ define(['require'], function(require) {
          * @property {string} serviceName                     - Service name
          */
         this.config = {
-            url: "https://api.appery.io/rest/1/code/7637402e-9a37-4ff8-9b51-a84fd01d60b5/exec",
+            url: "https://api.appery.io/rest/1/code/fa4b6ea7-802e-4e80-8b67-f2d32fb706f3/exec",
             method: "post",
-            headers: Apperyio.EntityAPI("Test_AllCountries_service.request.headers"),
-            params: Apperyio.EntityAPI("Test_AllCountries_service.request.query"),
-            data: Apperyio.EntityAPI("Test_AllCountries_service.request.body", undefined, true, true) || "",
+            headers: Apperyio.EntityAPI("update_Profile_FirstName_service.request.headers"),
+            params: Apperyio.EntityAPI("update_Profile_FirstName_service.request.query"),
+            data: Apperyio.EntityAPI("update_Profile_FirstName_service.request.body", undefined, true, true) || "",
             aio_config: {
                 requestType: "data",
                 responseType: "json",
-                serviceName: "Test_AllCountries_service"
+                serviceName: "update_Profile_FirstName_service"
             }
         };
         this.inst = REST.setDefaults(this.config);

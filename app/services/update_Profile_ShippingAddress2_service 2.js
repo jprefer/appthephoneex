@@ -1,16 +1,16 @@
 /**
- * Module initializes rest service BuyerRejectOffer_service
+ * Module initializes rest service update_Profile_ShippingAddress2_service
  */
 define(['require'], function(require) {
     return [{
         type: 'service',
-        name: 'BuyerRejectOffer_service',
-        deps: ['Apperyio', 'REST', BuyerRejectOffer_serviceImpl]
+        name: 'update_Profile_ShippingAddress2_service',
+        deps: ['Apperyio', 'REST', update_Profile_ShippingAddress2_serviceImpl]
     }];
     /**
-     * @function BuyerRejectOffer_serviceImpl
+     * @function update_Profile_ShippingAddress2_serviceImpl
      */
-    function BuyerRejectOffer_serviceImpl(Apperyio, REST) {
+    function update_Profile_ShippingAddress2_serviceImpl(Apperyio, REST) {
         var REST = new REST();
         /**
          * REST options. Initial values of "headers", "params", "data" and "echo" store are stored in models.js.
@@ -29,15 +29,15 @@ define(['require'], function(require) {
          * @property {string} serviceName                     - Service name
          */
         this.config = {
-            url: "https://api.appery.io/rest/1/code/c7212199-cf4e-4d8c-9eca-e3306e104d41/exec",
+            url: "https://api.appery.io/rest/1/code/eba32a2b-be23-4f95-938c-1873efd1d1ad/exec",
             method: "post",
-            headers: Apperyio.EntityAPI("BuyerRejectOffer_service.request.headers"),
-            params: Apperyio.EntityAPI("BuyerRejectOffer_service.request.query"),
-            data: Apperyio.EntityAPI("BuyerRejectOffer_service.request.body", undefined, true, true) || "",
+            headers: Apperyio.EntityAPI("update_Profile_ShippingAddress2_service.request.headers"),
+            params: Apperyio.EntityAPI("update_Profile_ShippingAddress2_service.request.query"),
+            data: Apperyio.EntityAPI("update_Profile_ShippingAddress2_service.request.body", undefined, true, true) || "",
             aio_config: {
                 requestType: "data",
                 responseType: "json",
-                serviceName: "BuyerRejectOffer_service"
+                serviceName: "update_Profile_ShippingAddress2_service"
             }
         };
         this.inst = REST.setDefaults(this.config);

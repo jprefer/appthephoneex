@@ -608,7 +608,7 @@ define(['require', 'app'],
                                     var sqDelayuntil = ($scope.list.BODY.payment.delayed_until);
                                     //console.log("avs_status",avs_status);
                                     // console.log("httpCode",$scope.list.HTTP_RESPONSE_CODE)
-                                    alert('sucess - Your Receipt Number is:' + sqReceiptnum);
+                                    alert('success - Your Receipt Number is:' + sqReceiptnum);
                                     requestData = (function mapping4647($scope) {
                                         var requestData = {};
                                         requestData.params = {};
