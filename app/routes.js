@@ -164,6 +164,14 @@ define(['require'], function(require) {
      * @property {string} when["/Bank_CC_Detail.html"].c  - Controller for /Bank_CC_Detail.html URL
      * @property {string} when["/Bank_CC_Detail.html"].t  - Template for /Bank_CC_Detail.html URL
      * @property {string[]} when["/Bank_CC_Detail.html"].d  - Dependencies for /Bank_CC_Detail.html URL
+     * @property {object} when["/tabSBank.html"]    - Routing configuration for /tabSBank.html URL
+     * @property {string} when["/tabSBank.html"].c  - Controller for /tabSBank.html URL
+     * @property {string} when["/tabSBank.html"].t  - Template for /tabSBank.html URL
+     * @property {string[]} when["/tabSBank.html"].d  - Dependencies for /tabSBank.html URL
+     * @property {object} when["/tab_Help.html"]    - Routing configuration for /tab_Help.html URL
+     * @property {string} when["/tab_Help.html"].c  - Controller for /tab_Help.html URL
+     * @property {string} when["/tab_Help.html"].t  - Template for /tab_Help.html URL
+     * @property {string[]} when["/tab_Help.html"].d  - Dependencies for /tab_Help.html URL
      
      * @property {object} otherwise                             - Routing configuration for another URL
      * @property {object} otherwise.redirectTo                  - Redirect to default routing URL
@@ -205,6 +213,8 @@ define(['require'], function(require) {
      * @property {string} route_names.["sq_iFrame"]  - "sq_iFrame" is an alias for "/sq_iFrame.html" routing
      * @property {string} route_names.["Screen1"]  - "Screen1" is an alias for "/Buyer_Pay.html" routing
      * @property {string} route_names.["Bank_CC_Detail"]  - "Bank_CC_Detail" is an alias for "/Bank_CC_Detail.html" routing
+     * @property {string} route_names.["tabSBank"]  - "tabSBank" is an alias for "/tabSBank.html" routing
+     * @property {string} route_names.["tab_Help"]  - "tab_Help" is an alias for "/tab_Help.html" routing
      
      */
     return {
@@ -390,6 +400,16 @@ define(['require'], function(require) {
                 c: '$Bank_CC_Detail/Bank_CC_DetailController',
                 t: '$Bank_CC_Detail/Bank_CC_DetailTemplate.html',
                 d: []
+            },
+            '/tabSBank.html': {
+                c: '$tabSBank/tabSBankController',
+                t: '$tabSBank/tabSBankTemplate.html',
+                d: []
+            },
+            '/tab_Help.html': {
+                c: '$tab_Help/tab_HelpController',
+                t: '$tab_Help/tab_HelpTemplate.html',
+                d: []
             }
         },
         otherwise: default_route,
@@ -430,7 +450,9 @@ define(['require'], function(require) {
             'ForgotPassword': '/ForgotPassword.html',
             'sq_iFrame': '/sq_iFrame.html',
             'Screen1': '/Buyer_Pay.html',
-            'Bank_CC_Detail': '/Bank_CC_Detail.html'
+            'Bank_CC_Detail': '/Bank_CC_Detail.html',
+            'tabSBank': '/tabSBank.html',
+            'tab_Help': '/tab_Help.html'
         }
     };
 });

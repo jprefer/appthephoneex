@@ -16,6 +16,7 @@ define(['require', 'app'],
             $scope.list = Apperyio.EntityAPI('List');
             $scope.RequestID1 = Apperyio.EntityAPI('DataStorage');
             $scope.token = Apperyio.EntityAPI('String');
+            $scope.inactive = Apperyio.EntityAPI('String');
             /**
              * User controller functions
              */
@@ -24,6 +25,8 @@ define(['require', 'app'],
              */
             $scope.init = function() {
                 //On load screen logic
+                $ionicSideMenuDelegate = Apperyio.get("$ionicSideMenuDelegate");
+                $ionicSideMenuDelegate.canDragContent(true);
                 var requestData = {};
                 //var miniID = "";
                 //Get User
@@ -33,41 +36,67 @@ define(['require', 'app'],
                 var username = AllData.username;
                 var Buyer_username = AllData.username;
                 var token = AllData.session;
+                var inactive = AllData.InActive;
                 //xxxxxxxxxxxx
                 //Get User  
                 console.log(username);
                 console.log(AllData);
                 console.log(token);
-                var requestData = {};
-                requestData = (function mapping2289($scope) {
+                if (inactive !== null) {
+                    alert('Your Account has been inactivated due to ' + inactive + '. Please contact customer service to resolve.');
                     var requestData = {};
-                    requestData.params = {};
-                    var username_scope = $scope.username;
-                    requestData.params.username = username;
-                    requestData.headers = {};
-                    var token_scope = $scope.token;
-                    requestData.headers['X-Appery-Session-Token'] = token;
-                    console.log("token", token);
-                    return requestData;
-                    /*|button_mapping|onbeforesend|214D4B44-2CB9-E04C-0C76-E5BF1F8E43B9||2289|*/
-                })($scope);
-                // read more about using rest services: https://links.appery.io/ve-snippet-rest
-                Apperyio.get("ReturnOffersToBuyer_service")(requestData).then(
-                    /*|service_bookmark|bookmark|214D4B44-2CB9-E04C-0C76-E5BF1F8E43B9||4587|*/
-                    function(success) { // success callback
-                        (function mapping6258(success, $scope) {
-                            var list_scope = $scope.list;
-                            list_scope = success.data;
-                            $scope.list = list_scope;
-                            console.log($scope.list)
-                            /*|button_mapping|onsuccess|214D4B44-2CB9-E04C-0C76-E5BF1F8E43B9||6258|*/
-                        })(success, $scope);
-                    },
-                    function(error) { // callback to handle request error
-                        Apperyio.navigateTo("Login", {});
-                    },
-                    function(notify) { // notify callback, can fire few times
-                    });
+                    var sessionToken = $scope.user.session;
+                    console.log(sessionToken);
+                    requestData = (function mapping7038($scope) {
+                        var requestData = {};
+                        requestData.headers = {};
+                        var user_scope = $scope.user;
+                        requestData.headers['X-Appery-Session-Token'] = token;
+                        return requestData;
+                        /*CLICK TO EDIT MAPPING*/
+                    })($scope);
+                    // read more about using rest services: https://links.appery.io/ve-snippet-rest
+                    Apperyio.get("phoneapp_logout_service")(requestData).then(
+                        function(success) { // success callback
+                            /*CLICK TO EDIT MAPPING*/
+                            Apperyio.navigateTo("Login", {});
+                        },
+                        function(error) { // callback to handle request error
+                        },
+                        function(notify) { // notify callback, can fire few times
+                        });
+                } else {
+                    var requestData = {};
+                    requestData = (function mapping2289($scope) {
+                        var requestData = {};
+                        requestData.params = {};
+                        var username_scope = $scope.username;
+                        requestData.params.username = username;
+                        requestData.headers = {};
+                        var token_scope = $scope.token;
+                        requestData.headers['X-Appery-Session-Token'] = token;
+                        console.log("token", token);
+                        return requestData;
+                        /*|button_mapping|onbeforesend|214D4B44-2CB9-E04C-0C76-E5BF1F8E43B9||2289|*/
+                    })($scope);
+                    // read more about using rest services: https://links.appery.io/ve-snippet-rest
+                    Apperyio.get("ReturnOffersToBuyer_service")(requestData).then(
+                        /*|service_bookmark|bookmark|214D4B44-2CB9-E04C-0C76-E5BF1F8E43B9||4587|*/
+                        function(success) { // success callback
+                            (function mapping6258(success, $scope) {
+                                var list_scope = $scope.list;
+                                list_scope = success.data;
+                                $scope.list = list_scope;
+                                console.log($scope.list)
+                                /*|button_mapping|onsuccess|214D4B44-2CB9-E04C-0C76-E5BF1F8E43B9||6258|*/
+                            })(success, $scope);
+                        },
+                        function(error) { // callback to handle request error
+                            Apperyio.navigateTo("Login", {});
+                        },
+                        function(notify) { // notify callback, can fire few times
+                        });
+                }
             };
             /**
              * @function showDetail

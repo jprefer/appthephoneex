@@ -105,5 +105,11 @@ define(['require', 'app'],
                     function(notify) { // notify callback, can fire few times
                     });
             };
+            /**
+             * @function gotologin
+             */
+            $scope.gotologin = function() {
+                Apperyio.navigateTo("Login", {});
+            };
         }
     });

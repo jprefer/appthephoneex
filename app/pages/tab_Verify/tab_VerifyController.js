@@ -263,11 +263,5 @@ define(['require', 'app'],
                     function(notify) { // notify callback, can fire few times
                     });
             };
-            /**
-             * @function gotoBank
-             */
-            $scope.gotoBank = function() {
-                Apperyio.navigateTo("Bank");
-            };
         }
     });

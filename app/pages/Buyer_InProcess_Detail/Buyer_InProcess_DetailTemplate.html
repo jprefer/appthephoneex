@@ -1,22 +1,22 @@
 <div show-header="true" show-footer="true" show-top-tabs="true" show-tabs="true"
 ng-controller="Buyer_InProcess_Detail" ng-cloak ng-init="init()" active-screen="Accept Shipment"
-class="aio-empty-screen padding overflow-scroll">
+class="CSS_BG_LightBlue aio-empty-screen padding overflow-scroll">
     <button class="button button-calm button-block button-small">
         ORDER ID: {{_id1.substring(20)}}
     </button>
     <div class="list">
-        <label class="item item-input">
-            <textarea placeholder="Enter text" ng-readonly="true">Please Rate Seller and Accept Shipment</textarea>
-        </label>
+        <p>
+            Please Rate Seller and Accept Shipment
+        </p>
         <div>
             <div class="row">
                 <div class="col">
-                    <label class="item item-input">
-                        <textarea placeholder="Enter text" ng-readonly="true">Rate the Seller</textarea>
-                    </label>
+                    <p>
+                        Rate the Seller
+                    </p>
                 </div>
                 <div class="col">
-                    <div class="item item-input item-select ">
+                    <div class="item item-input item-select CSS_BG_LightBlue">
                         <div class="input-label">
                             Pick
                         </div>
@@ -44,19 +44,21 @@ class="aio-empty-screen padding overflow-scroll">
         <div>
             <div class="row">
                 <div class="col col-33">
-                    <button class="button button-assertive button-block" ng-click="Return()" ng-disabled="dsblBtn">
+                    <button class="button button-assertive button-block icon-left ion-sad-outline" ng-click="Return()"
+                    ng-disabled="dsblBtn">
                         Return
                     </button>
                 </div>
                 <div class="col">
-                    <button class="button button-balanced button-block" ng-click="Accept()" ng-disabled="dsblBtn">
+                    <button class="button button-balanced button-block icon-left ion-happy-outline"
+                    ng-click="Accept()" ng-disabled="dsblBtn">
                         Accept
                     </button>
                 </div>
             </div>
         </div>
     </div>
-    <button class="button button-calm button-block" ng-click="GoBack()">
+    <button class="button button-royal button-block icon-left ion-arrow-left-c" ng-click="GoBack()">
         Go Back
     </button>
     <div>

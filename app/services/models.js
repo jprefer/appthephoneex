@@ -569,6 +569,80 @@ define(['require'], function(require) {
                 }
             }
         },
+        "Seller_Accepted_Seller_Orders_NotShipped_Count_service": {
+            "type": "object",
+            "properties": {
+                "url": {
+                    "type": "string",
+                    "default": "https://api.appery.io/rest/1/code/6192a1f2-68b5-415b-890c-2a141b6cd7a5/exec"
+                },
+                "method": {
+                    "type": "string",
+                    "default": "post"
+                },
+                "request": {
+                    "type": "object",
+                    "properties": {
+                        "body": {
+                            "type": "object",
+                            "properties": {
+                                "data": {
+                                    "type": "data"
+                                }
+                            }
+                        },
+                        "query": {
+                            "type": "object",
+                            "properties": {
+                                "username": {
+                                    "type": "string",
+                                    "default": "johnp"
+                                }
+                            }
+                        },
+                        "headers": {
+                            "type": "object",
+                            "properties": {
+                                "X-Appery-Session-Token": {
+                                    "type": "string",
+                                    "default": "66f58c49-e299-43f8-88f2-4f6a0c03e56f"
+                                },
+                                "Content-Type": {
+                                    "type": "string",
+                                    "default": "text/plain"
+                                }
+                            }
+                        }
+                    }
+                },
+                "response": {
+                    "type": "object",
+                    "properties": {
+                        "body": {
+                            "type": "object",
+                            "properties": {
+                                "$": {
+                                    "type": "array",
+                                    "items": [{
+                                        "type": "object",
+                                        "properties": {
+                                            "count": {
+                                                "type": "number",
+                                                "default": 2
+                                            }
+                                        }
+                                    }]
+                                }
+                            }
+                        },
+                        "headers": {
+                            "type": "object",
+                            "properties": {}
+                        }
+                    }
+                }
+            }
+        },
         "sq_DeleteCard_prod_service": {
             "type": "object",
             "properties": {

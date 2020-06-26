@@ -1,16 +1,16 @@
 <div show-header="true" show-footer="true" show-top-tabs="true" show-tabs="true"
-ng-controller="tabBank" ng-cloak ng-init="init()" active-screen="Bank" class="aio-empty-screen padding overflow-scroll">
+ng-controller="tabBank" ng-cloak ng-init="init()" active-screen="Bank" class="CSS_BG_LightPurple aio-empty-screen padding overflow-scroll">
     <div class="card">
-        <div class="item-divider item">
+        <div class="item-divider item CSS_BG_LightPurple">
             Default Credit Card
         </div>
-        <div class="item">
-            <label class="item item-input">
-                <textarea placeholder="Enter text" ng-readonly="true">{{default_cardBrand}}  xxx xxx xxx {{default_last4}}</textarea>
-            </label>
-            <label class="item item-input">
-                <textarea placeholder="Enter text" ng-readonly="true">Expires: {{default_expMonth}}/{{default_expYear}}</textarea>
-            </label>
+        <div class="item CSS_BG_LightPurple">
+            <p>
+                {{default_cardBrand}} xxx xxx xxx {{default_last4}}
+            </p>
+            <p>
+                Expires: {{default_expMonth}}/{{default_expYear}}
+            </p>
         </div>
     </div>
     <p class="royal">
@@ -183,12 +183,12 @@ ng-controller="tabBank" ng-cloak ng-init="init()" active-screen="Bank" class="ai
         Click on the credit card you want to delete or make default
     </p>
     <div class="card">
-        <div class="item-divider item">
+        <div class="item-divider item CSS_BG_LightPurple">
             Cards on File
         </div>
-        <div class="item">
+        <div class="item CSS_BG_LightPurple">
             <div class="list">
-                <a href="javascript:void(0)" class="item-icon-left item" ng-click="ChangeCard(item.id,item.card_brand,item.last_4,item.exp_month,item.exp_year)"
+                <a href="javascript:void(0)" class="item-icon-left item CSS_BG_LightPurple" ng-click="ChangeCard(item.id,item.card_brand,item.last_4,item.exp_month,item.exp_year)"
                 ng-repeat="item in list">
                 <i class="icon ion-card "></i>
                 <h2>{{item.card_brand}} xxxxxxx{{item.last_4}}</h2>

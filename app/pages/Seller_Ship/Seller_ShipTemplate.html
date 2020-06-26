@@ -1,12 +1,12 @@
 <div show-header="true" show-footer="true" show-top-tabs="true" show-tabs="true"
-ng-controller="Seller_Ship" ng-cloak ng-init="init()" active-screen="Shipping" class="aio-empty-screen padding overflow-scroll">
+ng-controller="Seller_Ship" ng-cloak ng-init="init()" active-screen="Shipping" class="CSS_BG_LightGold aio-empty-screen padding overflow-scroll">
     <button class="button button-energized button-block button-small">
         ORDER ID: {{_id1.substring(20)}}
     </button>
     <div class="list">
-        <label class="item item-input">
-            <textarea placeholder="Enter text" ng-readonly="true">Enter The Shipping Details Below</textarea>
-        </label>
+        <p>
+            Enter The Shipping Details Below
+        </p>
         <div>
             <div class="row">
                 <div class="col">
@@ -15,7 +15,7 @@ ng-controller="Seller_Ship" ng-cloak ng-init="init()" active-screen="Shipping" c
                     </p>
                 </div>
                 <div class="col">
-                    <div class="item item-input item-select ">
+                    <div class="item item-input item-select CSS_BG_LightGold">
                         <div class="input-label">
                             Pick
                         </div>
@@ -54,21 +54,19 @@ ng-controller="Seller_Ship" ng-cloak ng-init="init()" active-screen="Shipping" c
         <div>
             <div class="row">
                 <div class="col">
-                    <button class="button button-assertive button-block" ng-click="GoBack()">
+                    <button class="button button-royal button-block icon-left ion-arrow-left-c" ng-click="GoBack()">
                         Go Back
                     </button>
                 </div>
                 <div class="col">
-                    <button class="button button-balanced button-block" ng-click="MarkShipped()" ng-disabled="myForm.tracking2.$error.required">
-                        Mark This Shipped
+                    <button class="button button-balanced button-block icon-left ion-checkmark-round"
+                    ng-click="MarkShipped()" ng-disabled="myForm.tracking2.$error.required">
+                        Mark Shipped
                     </button>
                 </div>
             </div>
         </div>
     </div>
-    <button class="button button-block">
-        Packing Slip
-    </button>
     <div>
         <b>
             <center>

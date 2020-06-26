@@ -45,7 +45,7 @@ define(['require', 'app'],
             $scope.lo = function() {
                 var requestData = {};
                 var sessionToken = $scope.user.session;
-                console.log(sessionToken)
+                console.log(sessionToken);
                 requestData = (function mapping7038($scope) {
                     var requestData = {};
                     requestData.headers = {};

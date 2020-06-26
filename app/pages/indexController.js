@@ -19,6 +19,7 @@ define(['require'],
              * @function init
              */
             $scope.init = function() {
+                //init
                 $scope.visionStatus = {};
                 $scope.RequestID = {
                     current: 0
@@ -33,22 +34,46 @@ define(['require'],
                 //userData.current = success.data;
                 // Apperyio.navigateTo("Welcome", {});
                 var AllData = userData.current;
-                var turn = AllData.UserType
+                var turn = AllData.UserType;
+                //old
+                //  if (turn == "B") {
+                //    Apperyio.navigateTo("Buyer_Home", {'reloadPage': true}); 
+                //   }else { 
+                //      Apperyio.navigateTo("Seller_Home", {'reloadPage': true}); 
+                //    }
                 if (turn == "B") {
-                    Apperyio.navigateTo("Buyer_Home", {
-                        'reloadPage': true
-                    });
+                    // inject the 'dataStorage' service
+                    var data = Apperyio.get("dataStorage");
+                    // user1 is a variable in the page1 scope 
+                    // set it to reference the 'dataStorage' service
+                    $scope.RequestID1.Gl_Vars = data;
+                    $scope.RequestID1.Gl_Vars.whereami = "Buyer_Home";
+                    //console.log(_id);
+                    Apperyio.navigateTo("PassThru", {});
                 } else {
-                    Apperyio.navigateTo("Seller_Home", {
-                        'reloadPage': true
-                    });
+                    // inject the 'dataStorage' service
+                    var data = Apperyio.get("dataStorage");
+                    // user1 is a variable in the page1 scope 
+                    // set it to reference the 'dataStorage' service
+                    $scope.RequestID1.Gl_Vars = data;
+                    $scope.RequestID1.Gl_Vars.whereami = "Seller_Home";
+                    //console.log(_id);
+                    Apperyio.navigateTo("PassThru", {});
                 }
             };
             /**
              * @function gotoBuyerInProcess
              */
             $scope.gotoBuyerInProcess = function() {
-                Apperyio.navigateTo("Buyer_InProcess", {});
+                //Apperyio.navigateTo("Buyer_InProcess", {}); 
+                // inject the 'dataStorage' service
+                var data = Apperyio.get("dataStorage");
+                // user1 is a variable in the page1 scope 
+                // set it to reference the 'dataStorage' service
+                $scope.RequestID1.Gl_Vars = data;
+                $scope.RequestID1.Gl_Vars.whereami = "Buyer_InProcess";
+                //console.log(_id);
+                Apperyio.navigateTo("PassThru", {});
             };
             /**
              * @function gotoBuyerMakeRequest
@@ -71,51 +96,113 @@ define(['require'],
              * @function gotoBuyerComplete
              */
             $scope.gotoBuyerComplete = function() {
-                Apperyio.navigateTo("Buyer_Complete", {});
+                //Apperyio.navigateTo("Buyer_Complete", {}); 
+                // inject the 'dataStorage' service
+                var data = Apperyio.get("dataStorage");
+                // user1 is a variable in the page1 scope 
+                // set it to reference the 'dataStorage' service
+                $scope.RequestID1.Gl_Vars = data;
+                $scope.RequestID1.Gl_Vars.whereami = "Buyer_Complete";
+                //console.log(_id);
+                Apperyio.navigateTo("PassThru", {});
             };
             /**
              * @function gotoBuyerHome
              */
             $scope.gotoBuyerHome = function() {
-                Apperyio.navigateTo("Buyer_Home", {
-                    'reloadPage': true
-                });
+                //Apperyio.navigateTo("Buyer_Home", {'reloadPage': true}); 
+                // inject the 'dataStorage' service
+                var data = Apperyio.get("dataStorage");
+                // user1 is a variable in the page1 scope 
+                // set it to reference the 'dataStorage' service
+                $scope.RequestID1.Gl_Vars = data;
+                $scope.RequestID1.Gl_Vars.whereami = "Buyer_Home";
+                //console.log(_id);
+                Apperyio.navigateTo("PassThru", {});
             };
             /**
              * @function gotoBuyerRequestSee
              */
             $scope.gotoBuyerRequestSee = function() {
-                Apperyio.navigateTo("Buyer_Requests_See", {});
+                //Apperyio.navigateTo("Buyer_Requests_See", {}); 
+                // inject the 'dataStorage' service
+                var data = Apperyio.get("dataStorage");
+                // user1 is a variable in the page1 scope 
+                // set it to reference the 'dataStorage' service
+                $scope.RequestID1.Gl_Vars = data;
+                $scope.RequestID1.Gl_Vars.whereami = "Buyer_Requests_See";
+                //console.log(_id);
+                Apperyio.navigateTo("PassThru", {});
             };
             /**
              * @function gotoSellerHome
              */
             $scope.gotoSellerHome = function() {
-                Apperyio.navigateTo("Seller_Home", {});
+                //Apperyio.navigateTo("Seller_Home", {}); 
+                // inject the 'dataStorage' service
+                var data = Apperyio.get("dataStorage");
+                // user1 is a variable in the page1 scope 
+                // set it to reference the 'dataStorage' service
+                $scope.RequestID1.Gl_Vars = data;
+                $scope.RequestID1.Gl_Vars.whereami = "Seller_Home";
+                //console.log(_id);
+                Apperyio.navigateTo("PassThru", {});
             };
             /**
              * @function gotoSellerInProcess
              */
             $scope.gotoSellerInProcess = function() {
-                Apperyio.navigateTo("Seller_InProcess", {});
+                //Apperyio.navigateTo("Seller_InProcess", {});
+                // inject the 'dataStorage' service
+                var data = Apperyio.get("dataStorage");
+                // user1 is a variable in the page1 scope 
+                // set it to reference the 'dataStorage' service
+                $scope.RequestID1.Gl_Vars = data;
+                $scope.RequestID1.Gl_Vars.whereami = "Seller_InProcess";
+                //console.log(_id);
+                Apperyio.navigateTo("PassThru", {});
             };
             /**
              * @function gotoSellerComplete
              */
             $scope.gotoSellerComplete = function() {
-                Apperyio.navigateTo("Seller_Complete", {});
+                //Apperyio.navigateTo("Seller_Complete", {});
+                // inject the 'dataStorage' service
+                var data = Apperyio.get("dataStorage");
+                // user1 is a variable in the page1 scope 
+                // set it to reference the 'dataStorage' service
+                $scope.RequestID1.Gl_Vars = data;
+                $scope.RequestID1.Gl_Vars.whereami = "Seller_Complete";
+                //console.log(_id);
+                Apperyio.navigateTo("PassThru", {});
             };
             /**
              * @function gotoSellerAccepted
              */
             $scope.gotoSellerAccepted = function() {
-                Apperyio.navigateTo("Seller_Accepted", {});
+                //Apperyio.navigateTo("Seller_Accepted", {});
+                // inject the 'dataStorage' service
+                var data = Apperyio.get("dataStorage");
+                // user1 is a variable in the page1 scope 
+                // set it to reference the 'dataStorage' service
+                $scope.RequestID1.Gl_Vars = data;
+                $scope.RequestID1.Gl_Vars.whereami = "Seller_Accepted";
+                //console.log(_id);
+                Apperyio.navigateTo("PassThru", {});
             };
             /**
              * @function gotoSellerOffers
              */
             $scope.gotoSellerOffers = function() {
-                Apperyio.navigateTo("Seller_Offers", {});
+                //Apperyio.navigateTo("Seller_Offers", {});
+                // inject the 'dataStorage' service
+                var data = Apperyio.get("dataStorage");
+                // user1 is a variable in the page1 scope 
+                // set it to reference the 'dataStorage' service
+                $scope.RequestID1.Gl_Vars = data;
+                $scope.RequestID1.Gl_Vars.whereami = "Seller_Offers";
+                //console.log(_id);
+                Apperyio.navigateTo("PassThru", {});
             };
             /**
              * @function gotoLogin
@@ -342,6 +429,226 @@ define(['require'],
                         'reloadPage': true
                     });
                 }
+            };
+            /**
+             * @function sPendingOffers
+             */
+            $scope.sPendingOffers = function() {
+                var userData = Apperyio.get("dataStorage");
+                var AllData = userData.current;
+                var turn = AllData.UserType;
+                if (turn == "B") {
+                    alert("Buyers do not have access to this menu");
+                } else {
+                    //Apperyio.navigateTo("Seller_Offers", {});
+                    // inject the 'dataStorage' service
+                    var data = Apperyio.get("dataStorage");
+                    // user1 is a variable in the page1 scope 
+                    // set it to reference the 'dataStorage' service
+                    $scope.RequestID1.Gl_Vars = data;
+                    $scope.RequestID1.Gl_Vars.whereami = "Seller_Offers";
+                    //console.log(_id);
+                    Apperyio.navigateTo("PassThru", {});
+                }
+            };
+            /**
+             * @function inprocess
+             */
+            $scope.inprocess = function() {
+                var userData = Apperyio.get("dataStorage");
+                var AllData = userData.current;
+                var turn = AllData.UserType;
+                if (turn == "B") {
+                    //Apperyio.navigateTo("Buyer_Requests_See", {}); 
+                    // inject the 'dataStorage' service
+                    var data = Apperyio.get("dataStorage");
+                    // user1 is a variable in the page1 scope 
+                    // set it to reference the 'dataStorage' service
+                    $scope.RequestID1.Gl_Vars = data;
+                    $scope.RequestID1.Gl_Vars.whereami = "Buyer_InProcess";
+                    //console.log(_id);
+                    Apperyio.navigateTo("PassThru", {});
+                } else {
+                    //Apperyio.navigateTo("Seller_Offers", {});
+                    // inject the 'dataStorage' service
+                    var data = Apperyio.get("dataStorage");
+                    // user1 is a variable in the page1 scope 
+                    // set it to reference the 'dataStorage' service
+                    $scope.RequestID1.Gl_Vars = data;
+                    $scope.RequestID1.Gl_Vars.whereami = "Seller_InProcess";
+                    //console.log(_id);
+                    Apperyio.navigateTo("PassThru", {});
+                }
+            };
+            /**
+             * @function completed
+             */
+            $scope.completed = function() {
+                var userData = Apperyio.get("dataStorage");
+                var AllData = userData.current;
+                var turn = AllData.UserType;
+                if (turn == "B") {
+                    //Apperyio.navigateTo("Buyer_Requests_See", {}); 
+                    // inject the 'dataStorage' service
+                    var data = Apperyio.get("dataStorage");
+                    // user1 is a variable in the page1 scope 
+                    // set it to reference the 'dataStorage' service
+                    $scope.RequestID1.Gl_Vars = data;
+                    $scope.RequestID1.Gl_Vars.whereami = "Buyer_Complete";
+                    //console.log(_id);
+                    Apperyio.navigateTo("PassThru", {});
+                } else {
+                    //Apperyio.navigateTo("Seller_Offers", {});
+                    // inject the 'dataStorage' service
+                    var data = Apperyio.get("dataStorage");
+                    // user1 is a variable in the page1 scope 
+                    // set it to reference the 'dataStorage' service
+                    $scope.RequestID1.Gl_Vars = data;
+                    $scope.RequestID1.Gl_Vars.whereami = "Seller_Complete";
+                    //console.log(_id);
+                    Apperyio.navigateTo("PassThru", {});
+                }
+            };
+            /**
+             * @function sMakeRequest
+             */
+            $scope.sMakeRequest = function() {
+                var userData = Apperyio.get("dataStorage");
+                var AllData = userData.current;
+                var turn = AllData.UserType;
+                if (turn == "B") {
+                    //Apperyio.navigateTo("Buyer_Requests_See", {}); 
+                    // inject the 'dataStorage' service
+                    var data = Apperyio.get("dataStorage");
+                    // user1 is a variable in the page1 scope 
+                    // set it to reference the 'dataStorage' service
+                    $scope.RequestID1.Gl_Vars = data;
+                    $scope.RequestID1.Gl_Vars.whereami = "Buyer_MakeRequest";
+                    //console.log(_id);
+                    Apperyio.navigateTo("PassThru", {});
+                } else {
+                    alert("Sellers do not have access to this menu");
+                }
+            };
+            /**
+             * @function sRequestsSee
+             */
+            $scope.sRequestsSee = function() {
+                var userData = Apperyio.get("dataStorage");
+                var AllData = userData.current;
+                var turn = AllData.UserType;
+                if (turn == "B") {
+                    //Apperyio.navigateTo("Buyer_Requests_See", {}); 
+                    // inject the 'dataStorage' service
+                    var data = Apperyio.get("dataStorage");
+                    // user1 is a variable in the page1 scope 
+                    // set it to reference the 'dataStorage' service
+                    $scope.RequestID1.Gl_Vars = data;
+                    $scope.RequestID1.Gl_Vars.whereami = "Buyer_Requests_See";
+                    //console.log(_id);
+                    Apperyio.navigateTo("PassThru", {});
+                } else {
+                    alert("Sellers do not have access to this menu");
+                }
+            };
+            /**
+             * @function gotoProfile
+             */
+            $scope.gotoProfile = function() {
+                //Apperyio.navigateTo("Seller_Home", {}); 
+                // inject the 'dataStorage' service
+                var data = Apperyio.get("dataStorage");
+                // user1 is a variable in the page1 scope 
+                // set it to reference the 'dataStorage' service
+                $scope.RequestID1.Gl_Vars = data;
+                $scope.RequestID1.Gl_Vars.whereami = "Profile";
+                //console.log(_id);
+                Apperyio.navigateTo("PassThru", {});
+            };
+            /**
+             * @function gotoVerify
+             */
+            $scope.gotoVerify = function() {
+                //Apperyio.navigateTo("Seller_Home", {}); 
+                // inject the 'dataStorage' service
+                var data = Apperyio.get("dataStorage");
+                // user1 is a variable in the page1 scope 
+                // set it to reference the 'dataStorage' service
+                $scope.RequestID1.Gl_Vars = data;
+                $scope.RequestID1.Gl_Vars.whereami = "tab_Verify";
+                //console.log(_id);
+                Apperyio.navigateTo("PassThru", {});
+            };
+            /**
+             * @function gotoBank
+             */
+            $scope.gotoBank = function() {
+                var userData = Apperyio.get("dataStorage");
+                var AllData = userData.current;
+                var turn = AllData.UserType;
+                if (turn == "B") {
+                    //Apperyio.navigateTo("Buyer_Requests_See", {}); 
+                    // inject the 'dataStorage' service
+                    var data = Apperyio.get("dataStorage");
+                    // user1 is a variable in the page1 scope 
+                    // set it to reference the 'dataStorage' service
+                    $scope.RequestID1.Gl_Vars = data;
+                    $scope.RequestID1.Gl_Vars.whereami = "Bank";
+                    //console.log(_id);
+                    Apperyio.navigateTo("PassThru", {});
+                } else {
+                    //Apperyio.navigateTo("Seller_Offers", {});
+                    // inject the 'dataStorage' service
+                    var data = Apperyio.get("dataStorage");
+                    // user1 is a variable in the page1 scope 
+                    // set it to reference the 'dataStorage' service
+                    $scope.RequestID1.Gl_Vars = data;
+                    $scope.RequestID1.Gl_Vars.whereami = "tabSBank";
+                    //console.log(_id);
+                    Apperyio.navigateTo("PassThru", {});
+                }
+            };
+            /**
+             * @function gotoInfo
+             */
+            $scope.gotoInfo = function() {
+                //Apperyio.navigateTo("Seller_Home", {}); 
+                // inject the 'dataStorage' service
+                var data = Apperyio.get("dataStorage");
+                // user1 is a variable in the page1 scope 
+                // set it to reference the 'dataStorage' service
+                $scope.RequestID1.Gl_Vars = data;
+                $scope.RequestID1.Gl_Vars.whereami = "Info";
+                //console.log(_id);
+                Apperyio.navigateTo("PassThru", {});
+            };
+            /**
+             * @function gotoContact
+             */
+            $scope.gotoContact = function() {
+                //Apperyio.navigateTo("Seller_Home", {}); 
+                // inject the 'dataStorage' service
+                var data = Apperyio.get("dataStorage");
+                // user1 is a variable in the page1 scope 
+                // set it to reference the 'dataStorage' service
+                $scope.RequestID1.Gl_Vars = data;
+                $scope.RequestID1.Gl_Vars.whereami = "Contact_Us";
+                //console.log(_id);
+                Apperyio.navigateTo("PassThru", {});
+            };
+            /**
+             * @function gotoHelp
+             */
+            $scope.gotoHelp = function() {
+                //Apperyio.navigateTo("Seller_Home", {}); 
+                // inject the 'dataStorage' service
+                var data = Apperyio.get("dataStorage");
+                // user1 is a variable in the page1 scope 
+                // set it to reference the 'dataStorage' service
+                $scope.RequestID1.Gl_Vars = data;
+                $scope.RequestID1.Gl_Vars.whereami = "tab_Help";
+                //console.log(_id);
+                Apperyio.navigateTo("PassThru", {});
             };
         }
         return ['$scope', 'Apperyio', controller];

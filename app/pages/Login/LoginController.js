@@ -31,6 +31,8 @@ define(['require', 'app'],
              */
             $scope.init = function() {
                 //On load screen logic
+                $ionicSideMenuDelegate = Apperyio.get("$ionicSideMenuDelegate");
+                $ionicSideMenuDelegate.canDragContent(false);
             };
             /**
              * @function login
@@ -108,6 +110,7 @@ define(['require', 'app'],
                             });
                         //Below this is the path the program takes depending on buyer or seller
                         //console.log("main.username1: ",main.username1);
+                        localStorage.clear();
                         if (turn == "S") {
                             Apperyio.navigateTo("Seller_Home", {});
                         } else {
@@ -115,7 +118,11 @@ define(['require', 'app'],
                             //var requestData = {};
                             /*CLICK TO EDIT MAPPING*/
                             //new
-                            localStorage.clear();
+                            //localStorage.clear();
+                            //working on this part
+                            var myString2 = "B";
+                            localStorage.setItem("localStorageString1", myString2); // set the value
+                            console.log("mystringatlogin", myString2);
                             // read more about using rest services: https://links.appery.io/ve-snippet-rest
                             Apperyio.get("getMenu1_service")(requestData).then(
                                 function(success) { // success callback

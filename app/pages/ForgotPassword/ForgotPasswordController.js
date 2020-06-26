@@ -93,5 +93,11 @@ define(['require', 'app'],
                     });
                 Apperyio.navigateTo("Login", {});
             };
+            /**
+             * @function gotologin
+             */
+            $scope.gotologin = function() {
+                Apperyio.navigateTo("Login", {});
+            };
         }
     });
