@@ -308,7 +308,7 @@ define(['require', 'app'],
                         Apperyio.navigateTo("Buyer_Home", {});
                     },
                     function(error) { // callback to handle request error
-                        Apperyio.navigateTo("Login", {});
+                        //Apperyio.navigateTo("Login", {});
                     },
                     function(notify) { // notify callback, can fire few times
                     });

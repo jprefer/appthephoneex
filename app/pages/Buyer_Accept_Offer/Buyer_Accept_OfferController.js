@@ -60,6 +60,8 @@ define(['require', 'app'],
             $scope.list1 = Apperyio.EntityAPI('List1');
             $scope.sqPaymentid = Apperyio.EntityAPI('String');
             $scope.sqRefid = Apperyio.EntityAPI('String');
+            $scope.escrowAmt1 = Apperyio.EntityAPI('Number');
+            $scope.escrowAmtEnd = Apperyio.EntityAPI('Number');
             /**
              * User controller functions
              */
@@ -186,7 +188,7 @@ define(['require', 'app'],
                         })(success, $scope);
                     },
                     function(error) { // callback to handle request error
-                        Apperyio.navigateTo("Login", {});
+                        //Apperyio.navigateTo("Login", {});
                     },
                     function(notify) { // notify callback, can fire few times
                     });
@@ -336,7 +338,7 @@ define(['require', 'app'],
                             });
                     },
                     function(error) { // callback to handle request error
-                        Apperyio.navigateTo("Login", {});
+                        //Apperyio.navigateTo("Login", {});
                     },
                     function(notify) { // notify callback, can fire few times
                     });
@@ -786,7 +788,7 @@ define(['require', 'app'],
                                         },
                                         function(notify) { // notify callback, can fire few times
                                         });
-                                    Apperyio.navigateTo("Buyer_Home", {});
+                                    Apperyio.navigateTo("Buyer_InProcess", {});
                                 } else {
                                     var requestData = {};
                                     //Get Buyer User
@@ -843,12 +845,279 @@ define(['require', 'app'],
                         break;
                     case "escrow":
                         console.log("They are using Escrow");
+                        //see if there is enough money in escrow
+                        var requestData = {};
+                        requestData = (function mapping7614($scope) {
+                            var requestData = {};
+                            requestData.params = {};
+                            var Buyer_username1_scope = $scope.Buyer_username1;
+                            requestData.params.username = Buyer;
+                            requestData.headers = {};
+                            var token_scope = $scope.token;
+                            requestData.headers['X-Appery-Session-Token'] = token;
+                            console.log("token", token);
+                            return requestData;
+                            /*|button_mapping|onbeforesend|88E60CDF-BC98-536D-076C-82375D827222||7614|*/
+                        })($scope);
+                        // read more about using rest services: https://links.appery.io/ve-snippet-rest
+                        Apperyio.get("BuyerBank_GetAvailable_service")(requestData).then(
+                            /*|service_bookmark|bookmark|88E60CDF-BC98-536D-076C-82375D827222||9822|*/
+                            function(success) { // success callback
+                                (function mapping2451(success, $scope) {
+                                    var escrowAmt1_scope = $scope.escrowAmt1;
+                                    escrowAmt1_scope = success.data[0].EscrowAmt;
+                                    $scope.escrowAmt1 = escrowAmt1_scope;
+                                    /*|button_mapping|onsuccess|88E60CDF-BC98-536D-076C-82375D827222||2451|*/
+                                })(success, $scope);
+                                console.log("EscrowAmt", $scope.escrowAmt1)
+                                console.log("PurchaseAmt", $scope.BuyerPrice1)
+                                if ($scope.escrowAmt1 < $scope.BuyerPrice1) {
+                                    alert('Please add funds to your Escrow Account')
+                                    Apperyio.navigateTo("Buyer_Home", {});
+                                } else {
+                                    var requestData = {};
+                                    requestData = (function mapping6990($scope) {
+                                        var requestData = {};
+                                        requestData.headers = {};
+                                        var token_scope = $scope.token;
+                                        requestData.headers['X-Appery-Session-Token'] = token;
+                                        console.log("token", token);
+                                        //below orig
+                                        requestData.params = {};
+                                        requestData.params.Buyer = Buyer;
+                                        requestData.params.CompanyName = CompanyName;
+                                        requestData.params.ShipFirstName = ShipFirstName;
+                                        requestData.params.ShipLastName = ShipLastName;
+                                        requestData.params.ShipAddress1 = ShipAddress1;
+                                        requestData.params.ShipAddress2 = ShipAddress2;
+                                        requestData.params.ShipCity = ShipCity;
+                                        requestData.params.ShipState = ShipState;
+                                        requestData.params.ShipZip = ShipZip;
+                                        requestData.params.Country = Country;
+                                        requestData.params.ResaleNumber = ResaleNumber;
+                                        requestData.params.ShipPhone = ShipPhone;
+                                        requestData.params.Manu = $scope.manufacturer1;
+                                        requestData.params.Prod = $scope.Product1;
+                                        requestData.params.Mem = $scope.Memory1;
+                                        requestData.params.Colour = $scope.Color1;
+                                        requestData.params.Cond = $scope.Condition1;
+                                        requestData.params.Quan = $scope.Quantity1;
+                                        requestData.params.BuyerNote = $scope.RNotes1;
+                                        requestData.params.SellerNote = $scope.OfferNotes1;
+                                        requestData.params.BuyingPrice = $scope.BuyerPrice1;
+                                        requestData.params.Shipping = $scope.Shipping1;
+                                        requestData.params.Offer_id = $scope._id1;
+                                        requestData.params.Request_id = $scope.fk_Request_id1;
+                                        requestData.params.Seller = $scope.Seller1;
+                                        requestData.params.Price = $scope.OfferPrice1;
+                                        requestData.params.SellingPrice = $scope.SellerPrice1;
+                                        requestData.params.CVC_Code = "Escrow";
+                                        requestData.params.BuyerNote2 = RequestNotes2;
+                                        requestData.params.Kit = $scope.Kitted1;
+                                        requestData.params.ChoiceCarrier = $scope.Carrier1;
+                                        requestData.params.B_Req1 = $scope.B_Requests1A;
+                                        requestData.params.B_Req2 = $scope.B_Requests2A;
+                                        requestData.params.S_Off1 = $scope.S_Offers1A;
+                                        requestData.params.S_Off2 = $scope.S_Offers2A;
+                                        requestData.params.B_Req4 = $scope.escrowAmt1;
+                                        return requestData;
+                                        /*CLICK TO EDIT MAPPING*/
+                                    })($scope);
+                                    // read more about using rest services: https://links.appery.io/ve-snippet-rest
+                                    Apperyio.get("InsertOrders_service")(requestData).then(
+                                        function(success) { // success callback
+                                            var requestData = {};
+                                            requestData = (function mapping4242($scope) {
+                                                var requestData = {};
+                                                requestData.params = {};
+                                                var escrowAmt1_scope = $scope.BuyerPrice1;
+                                                var Buyer_username1_scope = $scope.Buyer_username1;
+                                                requestData.params.tranAmt = $scope.BuyerPrice1;
+                                                requestData.params.username = Buyer;
+                                                requestData.headers = {};
+                                                var token_scope = $scope.token;
+                                                requestData.headers['X-Appery-Session-Token'] = token;
+                                                console.log("token", token);
+                                                console.log("escrowAmt1_scope", escrowAmt1_scope);
+                                                return requestData;
+                                                /*|button_mapping|onbeforesend|C0CA0B1C-86FD-D566-CA06-36EF3A20C282||4242|*/
+                                            })($scope);
+                                            // read more about using rest services: https://links.appery.io/ve-snippet-rest
+                                            Apperyio.get("BuyerBank_UpdateAvailable_service")(requestData).then(
+                                                /*|service_bookmark|bookmark|C0CA0B1C-86FD-D566-CA06-36EF3A20C282||4341|*/
+                                                function(success) { // success callback
+                                                    /*|button_mapping|onsuccess|C0CA0B1C-86FD-D566-CA06-36EF3A20C282||9973|*/
+                                                },
+                                                function(error) { // callback to handle request error
+                                                },
+                                                function(notify) { // notify callback, can fire few times
+                                                });
+                                            /*CLICK TO EDIT MAPPING*/
+                                            var modalOptions = { // About Ionic Modal: https://links.appery.io/ve-snippet-modal-ionic
+                                                animation: 'slide-in-up', // The animation to show & hide with
+                                                focusFirstInput: false, // Whether to autofocus the first input of the modal when shown
+                                                backdropClickToClose: true, // Whether to close the modal on clicking the backdrop
+                                                hardwareBackButtonClose: true // Whether the modal can be closed using the hardware back button on Android and similar devices
+                                            };
+                                            Apperyio.get('Modals').loadModal("Modal_Buyer_Accept_Offer").then(
+                                                function(modalInstance) {
+                                                    modalInstance.open(modalOptions).then(function(modal) {
+                                                        modal.scope.modal = modal;
+                                                        modal.scope.result = "You have Ordered the following:";
+                                                        modal.scope.result1 = $scope.manufacturer1;
+                                                        modal.scope.result2 = $scope.Product1;
+                                                        modal.scope.result3 = $scope.Memory1;
+                                                        modal.scope.result4 = $scope.Color1;
+                                                        modal.scope.result5 = $scope.Condition1;
+                                                        modal.scope.result6 = $scope.Quantity1;
+                                                        modal.scope.result7 = $scope.BuyerPrice1;
+                                                        modal.scope.result8 = $scope.Shipping1;
+                                                        modal.show();
+                                                    });
+                                                },
+                                                function(error) {
+                                                    var modalOptions = { // About Ionic Modal: https://links.appery.io/ve-snippet-modal-ionic
+                                                        animation: 'slide-in-up', // The animation to show & hide with
+                                                        focusFirstInput: false, // Whether to autofocus the first input of the modal when shown
+                                                        backdropClickToClose: true, // Whether to close the modal on clicking the backdrop
+                                                        hardwareBackButtonClose: true // Whether the modal can be closed using the hardware back button on Android and similar devices
+                                                    };
+                                                    Apperyio.get('Modals').loadModal("Info").then(
+                                                        function(modalInstance) {
+                                                            modalInstance.open(modalOptions).then(function(modal) {
+                                                                modal.scope.modal = modal;
+                                                                modal.scope.result = "Please Try Again. There was an error";
+                                                                modal.show();
+                                                            });
+                                                        },
+                                                        function(error) {
+                                                            console.log(error);
+                                                        });
+                                                    console.log(error);
+                                                });
+                                        },
+                                        function(error) { // callback to handle request error
+                                        },
+                                        function(notify) { // notify callback, can fire few times
+                                        });
+                                    Apperyio.navigateTo("Buyer_InProcess", {});
+                                }
+                                //end of success
+                            },
+                            function(error) { // callback to handle request error
+                            },
+                            function(notify) { // notify callback, can fire few times
+                            });
                         break;
                     case "bitpay":
                         console.log("They are using bitpay");
                         break;
-                    case ach:
-                        console.log("They are using ACH");
+                    case "test":
+                        console.log("They are using test");
+                        var requestData = {};
+                        requestData = (function mapping6990($scope) {
+                            var requestData = {};
+                            requestData.headers = {};
+                            var token_scope = $scope.token;
+                            requestData.headers['X-Appery-Session-Token'] = token;
+                            console.log("token", token);
+                            //below orig
+                            requestData.params = {};
+                            requestData.params.Buyer = Buyer;
+                            requestData.params.CompanyName = CompanyName;
+                            requestData.params.ShipFirstName = ShipFirstName;
+                            requestData.params.ShipLastName = ShipLastName;
+                            requestData.params.ShipAddress1 = ShipAddress1;
+                            requestData.params.ShipAddress2 = ShipAddress2;
+                            requestData.params.ShipCity = ShipCity;
+                            requestData.params.ShipState = ShipState;
+                            requestData.params.ShipZip = ShipZip;
+                            requestData.params.Country = Country;
+                            requestData.params.ResaleNumber = ResaleNumber;
+                            requestData.params.ShipPhone = ShipPhone;
+                            requestData.params.Manu = $scope.manufacturer1;
+                            requestData.params.Prod = $scope.Product1;
+                            requestData.params.Mem = $scope.Memory1;
+                            requestData.params.Colour = $scope.Color1;
+                            requestData.params.Cond = $scope.Condition1;
+                            requestData.params.Quan = $scope.Quantity1;
+                            requestData.params.BuyerNote = $scope.RNotes1;
+                            requestData.params.SellerNote = $scope.OfferNotes1;
+                            requestData.params.BuyingPrice = $scope.BuyerPrice1;
+                            requestData.params.Shipping = $scope.Shipping1;
+                            requestData.params.Offer_id = $scope._id1;
+                            requestData.params.Request_id = $scope.fk_Request_id1;
+                            requestData.params.Seller = $scope.Seller1;
+                            requestData.params.Price = $scope.OfferPrice1;
+                            requestData.params.SellingPrice = $scope.SellerPrice1;
+                            requestData.params.CVC_Code = "Testing";
+                            requestData.params.BuyerNote2 = RequestNotes2;
+                            requestData.params.Kit = $scope.Kitted1;
+                            requestData.params.ChoiceCarrier = $scope.Carrier1;
+                            requestData.params.B_Req1 = $scope.B_Requests1A;
+                            requestData.params.B_Req2 = $scope.B_Requests2A;
+                            requestData.params.S_Off1 = $scope.S_Offers1A;
+                            requestData.params.S_Off2 = $scope.S_Offers2A;
+                            return requestData;
+                            /*CLICK TO EDIT MAPPING*/
+                        })($scope);
+                        // read more about using rest services: https://links.appery.io/ve-snippet-rest
+                        Apperyio.get("InsertOrders_service")(requestData).then(
+                            function(success) { // success callback
+                                /*CLICK TO EDIT MAPPING*/
+                                var modalOptions = { // About Ionic Modal: https://links.appery.io/ve-snippet-modal-ionic
+                                    animation: 'slide-in-up', // The animation to show & hide with
+                                    focusFirstInput: false, // Whether to autofocus the first input of the modal when shown
+                                    backdropClickToClose: true, // Whether to close the modal on clicking the backdrop
+                                    hardwareBackButtonClose: true // Whether the modal can be closed using the hardware back button on Android and similar devices
+                                };
+                                Apperyio.get('Modals').loadModal("Modal_Buyer_Accept_Offer").then(
+                                    function(modalInstance) {
+                                        modalInstance.open(modalOptions).then(function(modal) {
+                                            modal.scope.modal = modal;
+                                            modal.scope.result = "You have Ordered the following:";
+                                            modal.scope.result1 = $scope.manufacturer1;
+                                            modal.scope.result2 = $scope.Product1;
+                                            modal.scope.result3 = $scope.Memory1;
+                                            modal.scope.result4 = $scope.Color1;
+                                            modal.scope.result5 = $scope.Condition1;
+                                            modal.scope.result6 = $scope.Quantity1;
+                                            modal.scope.result7 = $scope.BuyerPrice1;
+                                            modal.scope.result8 = $scope.Shipping1;
+                                            modal.show();
+                                        });
+                                    },
+                                    function(error) {
+                                        var modalOptions = { // About Ionic Modal: https://links.appery.io/ve-snippet-modal-ionic
+                                            animation: 'slide-in-up', // The animation to show & hide with
+                                            focusFirstInput: false, // Whether to autofocus the first input of the modal when shown
+                                            backdropClickToClose: true, // Whether to close the modal on clicking the backdrop
+                                            hardwareBackButtonClose: true // Whether the modal can be closed using the hardware back button on Android and similar devices
+                                        };
+                                        Apperyio.get('Modals').loadModal("Info").then(
+                                            function(modalInstance) {
+                                                modalInstance.open(modalOptions).then(function(modal) {
+                                                    modal.scope.modal = modal;
+                                                    modal.scope.result = "Please Try Again. There was an error";
+                                                    modal.show();
+                                                });
+                                            },
+                                            function(error) {
+                                                console.log(error);
+                                            });
+                                        console.log(error);
+                                    });
+                            },
+                            function(error) { // callback to handle request error
+                            },
+                            function(notify) { // notify callback, can fire few times
+                            });
+                        Apperyio.navigateTo("Buyer_InProcess", {});
+                        break;
+                    case "suspend":
+                        console.log("Account Suspended through payment");
+                        alert('Your account has an issue. Please contact customer service')
+                        Apperyio.navigateTo("Buyer_Home", {});
                         break;
                 }
             };

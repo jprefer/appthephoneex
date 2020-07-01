@@ -118,6 +118,8 @@
             "RegisterNewUser_prod_service": "services/RegisterNewUser_prod_service",
             "sq_RetrieveCustomer_CCOF_prod_service": "services/sq_RetrieveCustomer_CCOF_prod_service",
             "Seller_Accepted_Seller_Orders_NotShipped_Count_service": "services/Seller_Accepted_Seller_Orders_NotShipped_Count_service",
+            "BuyerBank_GetAvailable_service": "services/BuyerBank_GetAvailable_service",
+            "BuyerBank_UpdateAvailable_service": "services/BuyerBank_UpdateAvailable_service",
             '$Buyer_InProcess_Detail': 'pages/Buyer_InProcess_Detail',
             '$old_Buyer_Home': 'pages/old_Buyer_Home',
             '$Seller_InProcess': 'pages/Seller_InProcess',

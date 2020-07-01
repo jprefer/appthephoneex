@@ -719,6 +719,83 @@ define(['require'], function(require) {
                 }
             }
         },
+        "BuyerBank_UpdateAvailable_service": {
+            "type": "object",
+            "properties": {
+                "url": {
+                    "type": "string",
+                    "default": "https://api.appery.io/rest/1/code/b3e4d9e2-b33e-42a1-8567-75a519e52334/exec"
+                },
+                "method": {
+                    "type": "string",
+                    "default": "post"
+                },
+                "request": {
+                    "type": "object",
+                    "properties": {
+                        "body": {
+                            "type": "object",
+                            "properties": {
+                                "data": {
+                                    "type": "data"
+                                }
+                            }
+                        },
+                        "query": {
+                            "type": "object",
+                            "properties": {
+                                "username": {
+                                    "type": "string",
+                                    "default": "john"
+                                },
+                                "tranAmt": {
+                                    "type": "string",
+                                    "default": "450"
+                                }
+                            }
+                        },
+                        "headers": {
+                            "type": "object",
+                            "properties": {
+                                "X-Appery-Session-Token": {
+                                    "type": "string",
+                                    "default": "003cede9-845f-4ec1-8fd9-89182a571972"
+                                },
+                                "Content-Type": {
+                                    "type": "string",
+                                    "default": "text/plain"
+                                }
+                            }
+                        }
+                    }
+                },
+                "response": {
+                    "type": "object",
+                    "properties": {
+                        "body": {
+                            "type": "object",
+                            "properties": {
+                                "$": {
+                                    "type": "object",
+                                    "properties": {
+                                        "requestParams": {
+                                            "type": "string"
+                                        },
+                                        "requestBody": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "headers": {
+                            "type": "object",
+                            "properties": {}
+                        }
+                    }
+                }
+            }
+        },
         "Seller_MakeTrackingAlive_service": {
             "type": "object",
             "properties": {
@@ -3543,6 +3620,106 @@ define(['require'], function(require) {
                                             "type": "string"
                                         }
                                     }
+                                }
+                            }
+                        },
+                        "headers": {
+                            "type": "object",
+                            "properties": {}
+                        }
+                    }
+                }
+            }
+        },
+        "BuyerBank_GetAvailable_service": {
+            "type": "object",
+            "properties": {
+                "url": {
+                    "type": "string",
+                    "default": "https://api.appery.io/rest/1/code/48f78e51-0b12-401a-8d85-f6b36ee49059/exec"
+                },
+                "method": {
+                    "type": "string",
+                    "default": "post"
+                },
+                "request": {
+                    "type": "object",
+                    "properties": {
+                        "body": {
+                            "type": "object",
+                            "properties": {
+                                "data": {
+                                    "type": "data"
+                                }
+                            }
+                        },
+                        "query": {
+                            "type": "object",
+                            "properties": {
+                                "username": {
+                                    "type": "string",
+                                    "default": "tony"
+                                }
+                            }
+                        },
+                        "headers": {
+                            "type": "object",
+                            "properties": {
+                                "Content-Type": {
+                                    "type": "string",
+                                    "default": "text/plain"
+                                },
+                                "X-Appery-Session-Token": {
+                                    "type": "string",
+                                    "default": "003cede9-845f-4ec1-8fd9-89182a571972"
+                                }
+                            }
+                        }
+                    }
+                },
+                "response": {
+                    "type": "object",
+                    "properties": {
+                        "body": {
+                            "type": "object",
+                            "properties": {
+                                "$": {
+                                    "type": "array",
+                                    "items": [{
+                                        "type": "object",
+                                        "properties": {
+                                            "_id": {
+                                                "type": "string",
+                                                "default": "5efb69302e22d7088c99b848"
+                                            },
+                                            "EscrowAmt": {
+                                                "type": "number",
+                                                "default": 5000
+                                            },
+                                            "_updatedAt": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "$date": {
+                                                        "type": "string",
+                                                        "default": "2020-06-30T16:32:51.755Z"
+                                                    }
+                                                }
+                                            },
+                                            "username": {
+                                                "type": "string",
+                                                "default": "tony"
+                                            },
+                                            "_createdAt": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "$date": {
+                                                        "type": "string",
+                                                        "default": "2020-06-30T16:32:48.868Z"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }]
                                 }
                             }
                         },

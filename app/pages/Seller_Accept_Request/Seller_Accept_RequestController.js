@@ -134,7 +134,7 @@ define(['require', 'app'],
                         })(success, $scope);
                     },
                     function(error) { // callback to handle request error
-                        Apperyio.navigateTo("Login", {});
+                        //Apperyio.navigateTo("Login", {});
                     },
                     function(notify) { // notify callback, can fire few times
                     });
@@ -253,7 +253,7 @@ define(['require', 'app'],
                     },
                     function(notify) { // notify callback, can fire few times
                     });
-                Apperyio.navigateTo("Seller_Home", {});
+                Apperyio.navigateTo("Seller_Offers", {});
             };
         }
     });

@@ -168,7 +168,7 @@ define(['require', 'app'],
                         })(success, $scope);
                     },
                     function(error) { // callback to handle request error
-                        Apperyio.navigateTo("Login", {});
+                        //Apperyio.navigateTo("Login", {});
                     },
                     function(notify) { // notify callback, can fire few times
                     });
@@ -220,7 +220,7 @@ define(['require', 'app'],
                         /*|button_mapping|onsuccess|C5292A6D-40A0-15FB-1B23-1D09BE8635D1||5392|*/
                     },
                     function(error) { // callback to handle request error
-                        Apperyio.navigateTo("Login", {});
+                        //Apperyio.navigateTo("Login", {});
                     },
                     function(notify) { // notify callback, can fire few times
                     });
@@ -243,7 +243,7 @@ define(['require', 'app'],
                     function(error) {
                         console.log(error);
                     });
-                Apperyio.navigateTo("Seller_Accepted", {});
+                Apperyio.navigateTo("Seller_Home", {});
             };
             /**
              * @function GoBack

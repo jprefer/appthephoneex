@@ -101,7 +101,7 @@ define(['require', 'app'],
                     $scope.storages = allStorages.filter(function(c) {
                         return c.ModelId == $scope.model.Id;
                     });
-                    // Check to see if its a Cellular ipad
+                    // Check to see if its a Cellular 
                     if ($scope.type.Id == 3) {
                         $scope.model.ModelName = $scope.model.ModelName + " - Cellular";
                     } else {

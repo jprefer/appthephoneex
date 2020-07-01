@@ -34,7 +34,7 @@
         <!-- Uncomment this script when not using service worker -->
         <!-- <script>        
         var require = {
-        urlArgs : window.navigator.userAgent.match(/Windows Phone/i) ? undefined : "bust=1593204028"
+        urlArgs : window.navigator.userAgent.match(/Windows Phone/i) ? undefined : "bust=1593612932"
         };
         </script>
         -->
@@ -96,10 +96,6 @@
                     ng-click="gotoProfile()">
                         Profile
                     </button>
-                    <button class="button button-dark button-block icon-left ion-checkmark-round" menu-close=""
-                    ng-click="gotoVerify()">
-                        Verify
-                    </button>
                     <button class="button button-calm button-block icon-left ion-cash" menu-close=""
                     ng-click="gotoBank()">
                         Bank
@@ -111,6 +107,10 @@
                     <button class="button button-positive button-block icon-left ion-information" menu-close=""
                     ng-click="gotoInfo()">
                         Info
+                    </button>
+                    <button class="button button-dark button-block icon-left ion-checkmark-round" menu-close=""
+                    ng-click="gotoVerify()">
+                        Verify Email &amp; Phone
                     </button>
                     <button class="button button-stable button-block icon-left ion-ios-telephone" menu-close=""
                     ng-click="gotoContact()">
