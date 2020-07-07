@@ -32,6 +32,7 @@ define(['require', 'app'],
                 $ionicSideMenuDelegate = Apperyio.get("$ionicSideMenuDelegate");
                 $ionicSideMenuDelegate.canDragContent(true);
                 var dsblBtn = true;
+                $scope.showBtn = true;
                 //On load screen logic
                 var userData = Apperyio.get("dataStorage");
                 var AllData = userData.current;
@@ -124,13 +125,16 @@ define(['require', 'app'],
                                 //Below this is whether the items are shipped or not
                                 if ($scope.unshippedCount === 0) {
                                     $scope.dsblBtn = true;
-                                    $scope.wordBtn = "There are NO items to ship"
+                                    $scope.showBtn = false;
+                                    $scope.wordBtn = "There are NO items to ship";
                                 } else {
                                     $scope.dsblBtn = false;
-                                    $scope.wordBtn = "You have " + $scope.unshippedCount + " Accepted OFFERS. Items need to ship"
+                                    $scope.showBtn = true;
+                                    $scope.wordBtn = $scope.unshippedCount + " accepted offers";
+                                    $scope.badgeCnt = $scope.unshippedCount;
                                 }
                                 //$scope.dsblBtn = false;
-                                console.log(dsblBtn);
+                                console.log("showBtn", $scope.showBtn);
                                 /*|button_mapping|onsuccess|74ACF7FD-6A4B-49C1-D279-461019F09F73||2821|*/
                             })(success, $scope);
                         },
@@ -154,6 +158,19 @@ define(['require', 'app'],
                 console.log(_id);
                 console.log($scope.RequestID1.Gl_Vars.request_id);
                 Apperyio.navigateTo("Seller_Accept_Request");
+            };
+            /**
+             * @function gotoFilter
+             */
+            $scope.gotoFilter = function() {
+                // inject the 'dataStorage' service
+                var data = Apperyio.get("dataStorage");
+                // user1 is a variable in the page1 scope 
+                // set it to reference the 'dataStorage' service
+                $scope.RequestID1.Gl_Vars = data;
+                $scope.RequestID1.Gl_Vars.whereami = "Seller_Filter";
+                //console.log(_id);
+                Apperyio.navigateTo("PassThru", {});
             };
         }
     });

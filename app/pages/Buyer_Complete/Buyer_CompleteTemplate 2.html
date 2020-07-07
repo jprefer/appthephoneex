@@ -1,0 +1,28 @@
+<div show-header="true" show-footer="true" show-top-tabs="true" show-tabs="true"
+ng-controller="Buyer_Complete" ng-cloak ng-init="init()" active-screen="Complete"
+class="CSS_BG_LightBlue aio-empty-screen padding overflow-scroll">
+    <div>
+        <br>
+        <font size="4">
+            <center>
+                <b>
+                    Completed Orders
+                </b>
+            </center>
+        </font>
+        <center>
+            <font color="#FEC82E">
+                (Click To See Details)
+            </font>
+        </center>
+        <br>
+    </div>
+    <div class="list">
+        <a href="javascript:void(0)" class="item CSS_BG_LightBlue" ng-click="showDetail(item._id)"
+        ng-repeat="item in list">
+        <h2>Order: {{item.BuyingPrice|currency}} --&gt; {{item. Manu}} {{item. Prod}} </h2>
+        <p>Closed: {{item.AcceptDate.$date.substring(0,10)}} </p>
+        Quan:{{item.Quan}}  / Order ID: {{item._id.substring(20)}}
+        </a>
+    </div>
+</div>

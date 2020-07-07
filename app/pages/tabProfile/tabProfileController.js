@@ -62,6 +62,7 @@ define(['require', 'app'],
                         Apperyio.navigateTo("Login", {});
                     },
                     function(error) { // callback to handle request error
+                        Apperyio.navigateTo("Login", {});
                     },
                     function(notify) { // notify callback, can fire few times
                     });
@@ -98,32 +99,13 @@ define(['require', 'app'],
                     /*|service_bookmark|bookmark|FBD35E48-B62B-B724-C2F2-E142D81C0C0A||7659|*/
                     function(success) { // success callback
                         /*|button_mapping|onsuccess|FBD35E48-B62B-B724-C2F2-E142D81C0C0A||6286|*/
-                        alert('You have successfully changed your email address.  Please remember to verify your new email address. You will be logged out. Please log back in.');
-                        var requestData = {};
-                        var sessionToken = $scope.user.session;
-                        console.log(sessionToken)
-                        requestData = (function mapping7038($scope) {
-                            var requestData = {};
-                            requestData.headers = {};
-                            var user_scope = $scope.user;
-                            requestData.headers['X-Appery-Session-Token'] = user_scope.session;
-                            return requestData;
-                            /*CLICK TO EDIT MAPPING*/
-                        })($scope);
-                        // read more about using rest services: https://links.appery.io/ve-snippet-rest
-                        Apperyio.get("phoneapp_logout_service")(requestData).then(
-                            function(success) { // success callback
-                                /*CLICK TO EDIT MAPPING*/
-                                Apperyio.navigateTo("Login", {});
-                            },
-                            function(error) { // callback to handle request error
-                            },
-                            function(notify) { // notify callback, can fire few times
-                            });
+                        alert('You have successfully changed your email address.  Please remember to verify your new email address.');
+                        userData.current.email = new_email1;
+                        userData.current.EmailVer = false;
                     },
                     function(error) { // callback to handle request error
                         alert('An error has occured. Please try again Later');
-                        Apperyio.navigateTo("Contact_Us", {});
+                        //Apperyio.navigateTo("Contact_Us", {}); 
                     },
                     function(notify) { // notify callback, can fire few times
                     });
@@ -163,32 +145,13 @@ define(['require', 'app'],
                     /*|service_bookmark|bookmark|7270039F-DFBC-407B-0E12-99211DF8DD10||1323|*/
                     function(success) { // success callback
                         /*|button_mapping|onsuccess|7270039F-DFBC-407B-0E12-99211DF8DD10||3058|*/
-                        alert('You have successfully changed your email address.  Please remember to verify your new email address. You will be logged out. Please log back in.');
-                        var requestData = {};
-                        var sessionToken = $scope.user.session;
-                        console.log(sessionToken);
-                        requestData = (function mapping7038($scope) {
-                            var requestData = {};
-                            requestData.headers = {};
-                            var user_scope = $scope.user;
-                            requestData.headers['X-Appery-Session-Token'] = user_scope.session;
-                            return requestData;
-                            /*CLICK TO EDIT MAPPING*/
-                        })($scope);
-                        // read more about using rest services: https://links.appery.io/ve-snippet-rest
-                        Apperyio.get("phoneapp_logout_service")(requestData).then(
-                            function(success) { // success callback
-                                /*CLICK TO EDIT MAPPING*/
-                                Apperyio.navigateTo("Login", {});
-                            },
-                            function(error) { // callback to handle request error
-                            },
-                            function(notify) { // notify callback, can fire few times
-                            });
+                        alert('You have successfully changed your Mobile Number.  Please remember to verify your mobile number.');
+                        userData.current.MobilePhone = "+1" + new_mobile1;
+                        userData.current.TextVer = false;
                     },
                     function(error) { // callback to handle request error
                         alert('An error has occured. Please try again Later');
-                        Apperyio.navigateTo("Contact_Us", {});
+                        //Apperyio.navigateTo("Contact_Us", {}); 
                     },
                     function(notify) { // notify callback, can fire few times
                     });
@@ -268,32 +231,13 @@ define(['require', 'app'],
                     /*|service_bookmark|bookmark|57BC03D7-0C2F-BACA-4562-297B4AF69C2D||4132|*/
                     function(success) { // success callback
                         /*|button_mapping|onsuccess|57BC03D7-0C2F-BACA-4562-297B4AF69C2D||4731|*/
-                        alert('You have successfully changed your Company Name. You will be logged out. Please log back in.');
+                        alert('You have successfully changed your Company Name.');
                         var requestData = {};
                         var sessionToken = $scope.user.session;
-                        console.log(sessionToken);
-                        requestData = (function mapping7038($scope) {
-                            var requestData = {};
-                            requestData.headers = {};
-                            var user_scope = $scope.user;
-                            requestData.headers['X-Appery-Session-Token'] = user_scope.session;
-                            return requestData;
-                            /*CLICK TO EDIT MAPPING*/
-                        })($scope);
-                        // read more about using rest services: https://links.appery.io/ve-snippet-rest
-                        Apperyio.get("phoneapp_logout_service")(requestData).then(
-                            function(success) { // success callback
-                                /*CLICK TO EDIT MAPPING*/
-                                Apperyio.navigateTo("Login", {});
-                            },
-                            function(error) { // callback to handle request error
-                            },
-                            function(notify) { // notify callback, can fire few times
-                            });
+                        userData.current.Company = new_company1;
                     },
                     function(error) { // callback to handle request error
                         alert('An error has occured. Please try again Later');
-                        Apperyio.navigateTo("Contact_Us", {});
                     },
                     function(notify) { // notify callback, can fire few times
                     });
@@ -330,32 +274,12 @@ define(['require', 'app'],
                 Apperyio.get("update_Profile_BusinessPhone_service")(requestData).then(
                     function(success) { // success callback
                         /*CLICK TO EDIT MAPPING*/
-                        alert('You have successfully changed your Business Phone Number. You will be logged out. Please log back in.');
-                        var requestData = {};
-                        var sessionToken = $scope.user.session;
-                        console.log(sessionToken);
-                        requestData = (function mapping7038($scope) {
-                            var requestData = {};
-                            requestData.headers = {};
-                            var user_scope = $scope.user;
-                            requestData.headers['X-Appery-Session-Token'] = user_scope.session;
-                            return requestData;
-                            /*CLICK TO EDIT MAPPING*/
-                        })($scope);
-                        // read more about using rest services: https://links.appery.io/ve-snippet-rest
-                        Apperyio.get("phoneapp_logout_service")(requestData).then(
-                            function(success) { // success callback
-                                /*CLICK TO EDIT MAPPING*/
-                                Apperyio.navigateTo("Login", {});
-                            },
-                            function(error) { // callback to handle request error
-                            },
-                            function(notify) { // notify callback, can fire few times
-                            });
+                        alert('You have successfully changed your Business Phone Number.');
+                        userData.current.BusinessPhone = new_businessphone1;
                     },
                     function(error) { // callback to handle request error
                         alert('An error has occured. Please try again Later');
-                        Apperyio.navigateTo("Contact_Us", {});
+                        //Apperyio.navigateTo("Contact_Us", {}); 
                     },
                     function(notify) { // notify callback, can fire few times
                     });
@@ -392,32 +316,12 @@ define(['require', 'app'],
                 Apperyio.get("update_Profile_ShippingAddress1_service")(requestData).then(
                     function(success) { // success callback
                         /*CLICK TO EDIT MAPPING*/
-                        alert('You have successfully changed your Shipping Address. You will be logged out. Please log back in.');
-                        var requestData = {};
-                        var sessionToken = $scope.user.session;
-                        console.log(sessionToken);
-                        requestData = (function mapping7038($scope) {
-                            var requestData = {};
-                            requestData.headers = {};
-                            var user_scope = $scope.user;
-                            requestData.headers['X-Appery-Session-Token'] = user_scope.session;
-                            return requestData;
-                            /*CLICK TO EDIT MAPPING*/
-                        })($scope);
-                        // read more about using rest services: https://links.appery.io/ve-snippet-rest
-                        Apperyio.get("phoneapp_logout_service")(requestData).then(
-                            function(success) { // success callback
-                                /*CLICK TO EDIT MAPPING*/
-                                Apperyio.navigateTo("Login", {});
-                            },
-                            function(error) { // callback to handle request error
-                            },
-                            function(notify) { // notify callback, can fire few times
-                            });
+                        alert('You have successfully changed your Shipping Address.');
+                        userData.current.ShippingAddress1 = new_shippingaddress1a;
                     },
                     function(error) { // callback to handle request error
                         alert('An error has occured. Please try again Later');
-                        Apperyio.navigateTo("Contact_Us", {});
+                        //Apperyio.navigateTo("Contact_Us", {}); 
                     },
                     function(notify) { // notify callback, can fire few times
                     });
@@ -454,28 +358,8 @@ define(['require', 'app'],
                 Apperyio.get("update_Profile_ShippingAddress2_service")(requestData).then(
                     function(success) { // success callback
                         /*CLICK TO EDIT MAPPING*/
-                        alert('You have successfully changed your Unit / Suite #. You will be logged out. Please log back in.');
-                        var requestData = {};
-                        var sessionToken = $scope.user.session;
-                        console.log(sessionToken);
-                        requestData = (function mapping7038($scope) {
-                            var requestData = {};
-                            requestData.headers = {};
-                            var user_scope = $scope.user;
-                            requestData.headers['X-Appery-Session-Token'] = user_scope.session;
-                            return requestData;
-                            /*CLICK TO EDIT MAPPING*/
-                        })($scope);
-                        // read more about using rest services: https://links.appery.io/ve-snippet-rest
-                        Apperyio.get("phoneapp_logout_service")(requestData).then(
-                            function(success) { // success callback
-                                /*CLICK TO EDIT MAPPING*/
-                                Apperyio.navigateTo("Login", {});
-                            },
-                            function(error) { // callback to handle request error
-                            },
-                            function(notify) { // notify callback, can fire few times
-                            });
+                        alert('You have successfully changed your Unit / Suite #.');
+                        userData.current.ShippingAddress2 = new_shippingaddress2a;
                     },
                     function(error) { // callback to handle request error
                         alert('An error has occured. Please try again Later');
@@ -516,28 +400,8 @@ define(['require', 'app'],
                 Apperyio.get("update_Profile_FirstName_service")(requestData).then(
                     function(success) { // success callback
                         /*CLICK TO EDIT MAPPING*/
-                        alert('You have successfully changed your First Name. You will be logged out. Please log back in.');
-                        var requestData = {};
-                        var sessionToken = $scope.user.session;
-                        console.log(sessionToken);
-                        requestData = (function mapping7038($scope) {
-                            var requestData = {};
-                            requestData.headers = {};
-                            var user_scope = $scope.user;
-                            requestData.headers['X-Appery-Session-Token'] = user_scope.session;
-                            return requestData;
-                            /*CLICK TO EDIT MAPPING*/
-                        })($scope);
-                        // read more about using rest services: https://links.appery.io/ve-snippet-rest
-                        Apperyio.get("phoneapp_logout_service")(requestData).then(
-                            function(success) { // success callback
-                                /*CLICK TO EDIT MAPPING*/
-                                Apperyio.navigateTo("Login", {});
-                            },
-                            function(error) { // callback to handle request error
-                            },
-                            function(notify) { // notify callback, can fire few times
-                            });
+                        alert('You have successfully changed your First Name.');
+                        userData.current.FirstName = new_firstname1;
                     },
                     function(error) { // callback to handle request error
                         alert('An error has occured. Please try again Later');
@@ -578,32 +442,12 @@ define(['require', 'app'],
                 Apperyio.get("update_Profile_LastName_service")(requestData).then(
                     function(success) { // success callback
                         /*CLICK TO EDIT MAPPING*/
-                        alert('You have successfully changed your Last Name. You will be logged out. Please log back in.');
-                        var requestData = {};
-                        var sessionToken = $scope.user.session;
-                        console.log(sessionToken);
-                        requestData = (function mapping7038($scope) {
-                            var requestData = {};
-                            requestData.headers = {};
-                            var user_scope = $scope.user;
-                            requestData.headers['X-Appery-Session-Token'] = user_scope.session;
-                            return requestData;
-                            /*CLICK TO EDIT MAPPING*/
-                        })($scope);
-                        // read more about using rest services: https://links.appery.io/ve-snippet-rest
-                        Apperyio.get("phoneapp_logout_service")(requestData).then(
-                            function(success) { // success callback
-                                /*CLICK TO EDIT MAPPING*/
-                                Apperyio.navigateTo("Login", {});
-                            },
-                            function(error) { // callback to handle request error
-                            },
-                            function(notify) { // notify callback, can fire few times
-                            });
+                        alert('You have successfully changed your Last Name.');
+                        userData.current.LastName = new_lastname1;
                     },
                     function(error) { // callback to handle request error
                         alert('An error has occured. Please try again Later');
-                        Apperyio.navigateTo("Contact_Us", {});
+                        //Apperyio.navigateTo("Contact_Us", {}); 
                     },
                     function(notify) { // notify callback, can fire few times
                     });
@@ -640,32 +484,12 @@ define(['require', 'app'],
                 Apperyio.get("update_Profile_State_service")(requestData).then(
                     function(success) { // success callback
                         /*CLICK TO EDIT MAPPING*/
-                        alert('You have successfully changed your State. You will be logged out. Please log back in.');
-                        var requestData = {};
-                        var sessionToken = $scope.user.session;
-                        console.log(sessionToken);
-                        requestData = (function mapping7038($scope) {
-                            var requestData = {};
-                            requestData.headers = {};
-                            var user_scope = $scope.user;
-                            requestData.headers['X-Appery-Session-Token'] = user_scope.session;
-                            return requestData;
-                            /*CLICK TO EDIT MAPPING*/
-                        })($scope);
-                        // read more about using rest services: https://links.appery.io/ve-snippet-rest
-                        Apperyio.get("phoneapp_logout_service")(requestData).then(
-                            function(success) { // success callback
-                                /*CLICK TO EDIT MAPPING*/
-                                Apperyio.navigateTo("Login", {});
-                            },
-                            function(error) { // callback to handle request error
-                            },
-                            function(notify) { // notify callback, can fire few times
-                            });
+                        alert('You have successfully changed your State.');
+                        userData.current.State = new_state1;
                     },
                     function(error) { // callback to handle request error
                         alert('An error has occured. Please try again Later');
-                        Apperyio.navigateTo("Contact_Us", {});
+                        //Apperyio.navigateTo("Contact_Us", {}); 
                     },
                     function(notify) { // notify callback, can fire few times
                     });
@@ -702,32 +526,12 @@ define(['require', 'app'],
                 Apperyio.get("update_Profile_City_service")(requestData).then(
                     function(success) { // success callback
                         /*CLICK TO EDIT MAPPING*/
-                        alert('You have successfully changed your City. You will be logged out. Please log back in.');
-                        var requestData = {};
-                        var sessionToken = $scope.user.session;
-                        console.log(sessionToken);
-                        requestData = (function mapping7038($scope) {
-                            var requestData = {};
-                            requestData.headers = {};
-                            var user_scope = $scope.user;
-                            requestData.headers['X-Appery-Session-Token'] = user_scope.session;
-                            return requestData;
-                            /*CLICK TO EDIT MAPPING*/
-                        })($scope);
-                        // read more about using rest services: https://links.appery.io/ve-snippet-rest
-                        Apperyio.get("phoneapp_logout_service")(requestData).then(
-                            function(success) { // success callback
-                                /*CLICK TO EDIT MAPPING*/
-                                Apperyio.navigateTo("Login", {});
-                            },
-                            function(error) { // callback to handle request error
-                            },
-                            function(notify) { // notify callback, can fire few times
-                            });
+                        alert('You have successfully changed your City.');
+                        userData.current.City = new_city1;
                     },
                     function(error) { // callback to handle request error
                         alert('An error has occured. Please try again Later');
-                        Apperyio.navigateTo("Contact_Us", {});
+                        //Apperyio.navigateTo("Contact_Us", {}); 
                     },
                     function(notify) { // notify callback, can fire few times
                     });
@@ -764,32 +568,12 @@ define(['require', 'app'],
                 Apperyio.get("update_Profile_Resale_service")(requestData).then(
                     function(success) { // success callback
                         /*CLICK TO EDIT MAPPING*/
-                        alert('You have successfully changed your Resale Number. You will be logged out. Please log back in.');
-                        var requestData = {};
-                        var sessionToken = $scope.user.session;
-                        console.log(sessionToken);
-                        requestData = (function mapping7038($scope) {
-                            var requestData = {};
-                            requestData.headers = {};
-                            var user_scope = $scope.user;
-                            requestData.headers['X-Appery-Session-Token'] = user_scope.session;
-                            return requestData;
-                            /*CLICK TO EDIT MAPPING*/
-                        })($scope);
-                        // read more about using rest services: https://links.appery.io/ve-snippet-rest
-                        Apperyio.get("phoneapp_logout_service")(requestData).then(
-                            function(success) { // success callback
-                                /*CLICK TO EDIT MAPPING*/
-                                Apperyio.navigateTo("Login", {});
-                            },
-                            function(error) { // callback to handle request error
-                            },
-                            function(notify) { // notify callback, can fire few times
-                            });
+                        alert('You have successfully changed your Resale Number.');
+                        userData.current.ResaleNumber = new_resalenumber1;
                     },
                     function(error) { // callback to handle request error
                         alert('An error has occured. Please try again Later');
-                        Apperyio.navigateTo("Contact_Us", {});
+                        //Apperyio.navigateTo("Contact_Us", {}); 
                     },
                     function(notify) { // notify callback, can fire few times
                     });
@@ -826,32 +610,12 @@ define(['require', 'app'],
                 Apperyio.get("update_Profile_Zip_service")(requestData).then(
                     function(success) { // success callback
                         /*CLICK TO EDIT MAPPING*/
-                        alert('You have successfully changed your Zip Code. You will be logged out. Please log back in.');
-                        var requestData = {};
-                        var sessionToken = $scope.user.session;
-                        console.log(sessionToken);
-                        requestData = (function mapping7038($scope) {
-                            var requestData = {};
-                            requestData.headers = {};
-                            var user_scope = $scope.user;
-                            requestData.headers['X-Appery-Session-Token'] = user_scope.session;
-                            return requestData;
-                            /*CLICK TO EDIT MAPPING*/
-                        })($scope);
-                        // read more about using rest services: https://links.appery.io/ve-snippet-rest
-                        Apperyio.get("phoneapp_logout_service")(requestData).then(
-                            function(success) { // success callback
-                                /*CLICK TO EDIT MAPPING*/
-                                Apperyio.navigateTo("Login", {});
-                            },
-                            function(error) { // callback to handle request error
-                            },
-                            function(notify) { // notify callback, can fire few times
-                            });
+                        alert('You have successfully changed your Zip Code.');
+                        userData.current.Zip = new_zip1;
                     },
                     function(error) { // callback to handle request error
                         alert('An error has occured. Please try again Later');
-                        Apperyio.navigateTo("Contact_Us", {});
+                        //Apperyio.navigateTo("Contact_Us", {}); 
                     },
                     function(notify) { // notify callback, can fire few times
                     });

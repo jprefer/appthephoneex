@@ -1,0 +1,63 @@
+<div show-header="true" show-footer="true" show-top-tabs="true" show-tabs="true"
+ng-controller="Buyer_Accept_Offer" ng-cloak ng-init="init()" active-screen="Accept / Decline Offer"
+class="CSS_BG_LightBlue aio-empty-screen padding overflow-scroll">
+    <button class="button button-calm button-block button-small">
+        Your Request ID: {{fk_Request_id1.substring(20)}}
+    </button>
+    <p>
+        {{manufacturer1}} - {{Product1}} {{Carrier1}}
+    </p>
+    <p>
+        Memory: {{Memory1}} / Color: {{Color1}} / Condition: {{Condition1}} / Kitted: {{Kitted1}}
+    </p>
+    <p>
+        Quantity: {{Quantity1}}
+    </p>
+    <p>
+        Your Original Notes / Special Requests: {{RNotes1}}
+    </p>
+    <p>
+        Sellers Note back to you: {{OfferNotes1}}
+    </p>
+    <p>
+        Shipping method you requested: {{Shipping1}}
+    </p>
+    <p>
+        Your offer will Expire: {{offerExpires1}} (Offer ID: {{_id1.substring(20)}})
+    </p>
+    <p>
+        Total Price For Equipment: {{BuyerPrice1|currency}} (including shipping) which comes
+        out to {{peritem |currency}} per item
+    </p>
+    <div class="list">
+        <div class="item item-input">
+            <input type="text" placeholder="Enter Any Other Notes Here" value="" ng-model="BuyNotes2">
+        </div>
+        <p class="assertive">
+            Warning: Once you press the &quot;Accept Offer&quot; button, your default payment
+            method will be immediately charged. This will also include a transaction fee of {{transFee*BuyerPrice1|currency}}.
+            The total that your default payment method will be charged is: {{(transFee*BuyerPrice1)+BuyerPrice1|currency}}
+        </p>
+        <p class="positive">
+            Interested in lower transaction fees? Check out our other payment types in the &quot;Bank&quot;
+            section
+        </p>
+        <div>
+            <div class="row">
+                <div class="col">
+                    <button class="button button-assertive button-block icon-left ion-hammer" ng-click="RejectOffer()">
+                        Reject Offer
+                    </button>
+                </div>
+                <div class="col">
+                    <button class="button button-balanced button-block icon-left ion-cash" ng-click="demo()">
+                        Accept Offer
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button class="button button-calm button-block icon-left ion-arrow-left-c" ng-click="gotoBuyerHome()">
+        Do Nothing - Go Back
+    </button>
+</div>

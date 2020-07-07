@@ -42,7 +42,9 @@ define(['require', 'app'],
                 console.log(username);
                 console.log(AllData);
                 console.log(token);
-                if (inactive !== null) {
+                console.log("Inactive", inactive);
+                console.log("len", inactive.length);
+                if (inactive.length > 1) {
                     alert('Your Account has been inactivated due to ' + inactive + '. Please contact customer service to resolve.');
                     var requestData = {};
                     var sessionToken = $scope.user.session;

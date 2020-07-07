@@ -178,6 +178,7 @@ define(['require', 'app'],
                         requestData.params.Expiration = RequestExpiration;
                         requestData.params.Shipping = RequestShipping;
                         requestData.params.RNotes = RequestNotes;
+                        requestData.params.type = RequestType;
                         requestData.headers = {};
                         var token_scope = $scope.token;
                         requestData.headers['X-Appery-Session-Token'] = token;

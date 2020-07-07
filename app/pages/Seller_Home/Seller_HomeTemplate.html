@@ -1,22 +1,43 @@
 <div show-header="true" show-footer="true" show-top-tabs="true" show-tabs="true"
 ng-controller="Seller_Home" ng-cloak ng-init="init()" active-screen="Home" class="CSS_BG_LightGold aio-empty-screen padding overflow-scroll">
-    <button class="button button-assertive button-block button-small icon-left ion-ios-cart"
-    ng-click="gotoSellerAccepted()" ng-disabled="dsblBtn">
-        {{wordBtn}}
-    </button>
+    <div class="list">
+        <div class="item-divider item" ng-click="gotoSellerAccepted()" ng-show="showBtn">
+            <h2>
+                {{wordBtn}}
+            </h2>
+            <p>
+                Click here to resolve
+            </p>
+            Items need to ship
+            <span class="badge badge-assertive">
+                {{badgeCnt}}
+            </span>
+        </div>
+    </div>
     <div>
-        <br>
-        <font size="4">
-            <center>
-                <b>
-                    Requests From Buyers
-                </b>
-            </center>
-        </font>
-        <center>
-            (Click Below To See Details And To Make An Offer)
-        </center>
-        <br>
+        <div class="row">
+            <div class="col col-80">
+                <div>
+                    <br>
+                    <font size="4">
+                        <center>
+                            <b>
+                                Requests From Buyers
+                            </b>
+                        </center>
+                    </font>
+                    <center>
+                        (Click Below To See Details And To Make An Offer)
+                    </center>
+                    <br>
+                </div>
+            </div>
+            <div class="col">
+                <button class="button button-positive button-block button-small" ng-click="gotoFilter()">
+                    Filter
+                </button>
+            </div>
+        </div>
     </div>
     <div class="list">
         <a href="javascript:void(0)" class="item CSS_BG_LightGold" ng-checked="" ng-click="showDetail(item._id)"

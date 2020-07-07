@@ -27,6 +27,12 @@ define(['require', 'app'],
             $scope.sq_CCOF = Apperyio.EntityAPI('String');
             $scope.sq_CustID = Apperyio.EntityAPI('String');
             $scope.RequestID1 = Apperyio.EntityAPI('DataStorage');
+            $scope.paymentType = Apperyio.EntityAPI('String');
+            $scope.escrowAmt = Apperyio.EntityAPI('String');
+            $scope.profileID = Apperyio.EntityAPI('String');
+            $scope.list1 = Apperyio.EntityAPI('List1');
+            $scope.item1 = Apperyio.EntityAPI('String');
+            $scope.userEmail = Apperyio.EntityAPI('String');
             /**
              * User controller functions
              */
@@ -35,6 +41,7 @@ define(['require', 'app'],
              */
             $scope.init = function() {
                 var requestData = {};
+                //PaymentType Init Stuff
                 //var miniID = "";
                 //Get User
                 //xxxxxxxxxxxxx
@@ -46,13 +53,16 @@ define(['require', 'app'],
                 var token = AllData.session;
                 var sq_CCOF = AllData.sqCCOF;
                 var sq_CustID = AllData.sqCustID;
+                var paymentType = AllData.defaultPayMethod;
                 //xxxxxxxxxxxx
                 //Get User  
                 console.log(username);
                 console.log(AllData);
                 console.log(token);
-                console.log("FromApp", custID)
+                console.log("FromApp", custID);
+                console.log("PaymentType", paymentType);
                 //On load screen logic
+                //PaymentType Init Stuff
                 var requestData = {};
                 requestData = (function mapping7417($scope) {
                     var requestData = {};
@@ -136,6 +146,174 @@ define(['require', 'app'],
                     },
                     function(notify) { // notify callback, can fire few times
                     });
+                var requestData = {};
+                requestData = (function mapping2118($scope) {
+                    var requestData = {};
+                    requestData.params = {};
+                    //var username_scope = $scope.username;
+                    requestData.params.username = username;
+                    requestData.headers = {};
+                    var token_scope = $scope.token;
+                    requestData.headers['X-Appery-Session-Token'] = token;
+                    console.log("token", token);
+                    console.log("Whois", username)
+                    return requestData;
+                    /*|button_mapping|onbeforesend|EA30F1E7-F0B1-2714-2C74-543F9B63DF64||2118|*/
+                })($scope);
+                // read more about using rest services: https://links.appery.io/ve-snippet-rest
+                Apperyio.get("BuyerBank_GetAvailable_tBank_service")(requestData).then(
+                    /*|service_bookmark|bookmark|EA30F1E7-F0B1-2714-2C74-543F9B63DF64||7453|*/
+                    function(success) { // success callback
+                        (function mapping7169(success, $scope) {
+                            var escrowAmt_scope = $scope.escrowAmt;
+                            escrowAmt_scope = success.data[0].EscrowAmt;
+                            $scope.escrowAmt = escrowAmt_scope;
+                            console.log("amt:", $scope.escrowAmt);
+                            // When there is  escrow Account
+                            switch (paymentType) {
+                                case "creditcard":
+                                    console.log("They are using Credit Card");
+                                    $scope.lblText = "Your Payment method is currently by Credit Card";
+                                    $scope.lblText3 = "Use BTC / ACH / Wire / Check to fill your Escrow Account";
+                                    $scope.btn2Text = "Change to Escrow";
+                                    $scope.btn3Text = "Click for instructions";
+                                    $scope.btn4Text = "Escrow: $" + $scope.escrowAmt.toFixed(2) + " Scroll down for details";
+                                    $scope.btn1Show = false;
+                                    $scope.btn2Show = true;
+                                    $scope.btn3Show = true;
+                                    $scope.btn4Show = true;
+                                    $scope.eDetailShow = true;
+                                    break;
+                                case "escrow":
+                                    console.log("They are using escrow");
+                                    $scope.lblText = "Your Payment method is currently by Escrow";
+                                    //$scope.lblText1 = "Change to your Credit Card";
+                                    //$scope.lblText2 = "Your Payment method is currently by Escrow";
+                                    $scope.lblText3 = "Use BTC / ACH / Wire / Check to fill your Escrow Account";
+                                    $scope.btn1Text = "Change to Credit Card";
+                                    $scope.btn2Text = "N/A";
+                                    $scope.btn3Text = "Click for instructions";
+                                    $scope.btn4Text = "Escrow: $" + $scope.escrowAmt.toFixed(2) + " Scroll down for details";
+                                    $scope.btn2Show = false;
+                                    $scope.btn1Show = true;
+                                    $scope.btn3Show = true;
+                                    $scope.btn4Show = true;
+                                    $scope.eDetailShow = true;
+                                    break;
+                                case "test":
+                                    console.log("They are using test");
+                                    $scope.lblText = "Your Payment method is in test mode";
+                                    //$scope.lblText1 = "Change to your Credit Card";
+                                    //$scope.lblText2 = "Your Payment method is currently by Escrow";
+                                    $scope.lblText3 = "Use BTC / ACH / Wire / Check to fill your Escrow Account";
+                                    $scope.btn1Text = "Change to Credit Card";
+                                    $scope.btn2Text = "Change to Escrow";
+                                    $scope.btn3Text = "Click for instructions";
+                                    $scope.btn4Text = "Escrow: $" + $scope.escrowAmt.toFixed(2) + " Scroll down for details";
+                                    $scope.btn2Show = true;
+                                    $scope.btn1Show = true;
+                                    $scope.btn3Show = true;
+                                    $scope.btn4Show = true;
+                                    $scope.eDetailShow = true;
+                                    break;
+                                case "suspend":
+                                    console.log("They are using suspended");
+                                    $scope.lblText = "Your account has a problem. Please contact customer service";
+                                    $scope.btn2Show = false;
+                                    $scope.btn1Show = false;
+                                    $scope.btn3Show = false;
+                                    $scope.btn4Show = false;
+                                    $scope.eDetailShow = false;
+                                    break;
+                            }
+                            /*|button_mapping|onsuccess|EA30F1E7-F0B1-2714-2C74-543F9B63DF64||7169|*/
+                        })(success, $scope);
+                    },
+                    function(error) { // callback to handle request error
+                        // When there is no escrow Account
+                        switch (paymentType) {
+                            case "creditcard":
+                                console.log("They are using Credit Card");
+                                $scope.lblText = "Your Payment method is currently by Credit Card";
+                                $scope.lblText3 = "Use BTC / ACH / Wire / Check to fill your Escrow Account";
+                                $scope.btn2Text = "Change to Escrow";
+                                $scope.btn3Text = "Click for instructions";
+                                $scope.btn1Show = false;
+                                $scope.btn2Show = false;
+                                $scope.btn3Show = true;
+                                $scope.btn4Show = false;
+                                $scope.eDetailShow = false;
+                                break;
+                            case "escrow":
+                                console.log("They are using escrow");
+                                $scope.lblText = "There is a problem with your escrow account. Please contact customer service";
+                                //$scope.lblText1 = "Change to your Credit Card";
+                                //$scope.lblText2 = "Your Payment method is currently by Escrow";
+                                $scope.lblText3 = "Use BTC / ACH / Wire / Check to fill your Escrow Account";
+                                $scope.btn1Text = "Change to Credit Card";
+                                $scope.btn2Text = "N/A";
+                                $scope.btn3Text = "Click for instructions";
+                                $scope.btn2Show = false;
+                                $scope.btn1Show = true;
+                                $scope.btn3Show = true;
+                                $scope.btn4Show = false;
+                                $scope.eDetailShow = false;
+                                break;
+                            case "test":
+                                console.log("They are using test");
+                                $scope.lblText = "Your Payment method is in test mode";
+                                //$scope.lblText1 = "Change to your Credit Card";
+                                //$scope.lblText2 = "Your Payment method is currently by Escrow";
+                                $scope.lblText3 = "Use BTC / ACH / Wire / Check to fill your Escrow Account";
+                                $scope.btn1Text = "Change to Credit Card";
+                                $scope.btn2Text = "Change to Escrow";
+                                $scope.btn3Text = "Click for instructions";
+                                $scope.btn2Show = false;
+                                $scope.btn1Show = true;
+                                $scope.btn3Show = true;
+                                $scope.btn4Show = false;
+                                $scope.eDetailShow = false;
+                                break;
+                            case "suspend":
+                                console.log("They are using suspended");
+                                $scope.lblText = "Your account has a problem. Please contact customer service";
+                                $scope.btn2Show = false;
+                                $scope.btn1Show = false;
+                                $scope.btn3Show = false;
+                                $scope.btn4Show = false;
+                                $scope.eDetailShow = false;
+                                break;
+                        }
+                    },
+                    function(notify) { // notify callback, can fire few times
+                    });
+                var requestData = {};
+                requestData = (function mapping8870($scope) {
+                    var requestData = {};
+                    requestData.params = {};
+                    var username_scope = $scope.username;
+                    requestData.params.username = username;
+                    requestData.headers = {};
+                    var token_scope = $scope.token;
+                    requestData.headers['X-Appery-Session-Token'] = token;
+                    console.log("token", token);
+                    return requestData;
+                    /*|button_mapping|onbeforesend|A32FB606-F01E-0A4D-9460-7F6C9DA362A1||8870|*/
+                })($scope);
+                // read more about using rest services: https://links.appery.io/ve-snippet-rest
+                Apperyio.get("GetEscrowTranactions_user_service")(requestData).then(
+                    /*|service_bookmark|bookmark|A32FB606-F01E-0A4D-9460-7F6C9DA362A1||4774|*/
+                    function(success) { // success callback
+                        /*|button_mapping|onsuccess|A32FB606-F01E-0A4D-9460-7F6C9DA362A1||3858|*/
+                        var list_scope = $scope.list1;
+                        list1_scope = success.data;
+                        $scope.list1 = list1_scope;
+                        console.log("list1", $scope.list1)
+                    },
+                    function(error) { // callback to handle request error
+                    },
+                    function(notify) { // notify callback, can fire few times
+                    });
             };
             /**
              * @function gotoSquareCCOF
@@ -169,6 +347,165 @@ define(['require', 'app'],
                 console.log($scope.RequestID1.Gl_Vars.request_id4);
                 console.log($scope.RequestID1.Gl_Vars.request_id5);
                 Apperyio.navigateTo("Bank_CC_Detail");
+            };
+            /**
+             * @function changetoCC
+             */
+            $scope.changetoCC = function() {
+                //Get User
+                //xxxxxxxxxxxxx
+                var userData = Apperyio.get("dataStorage");
+                var AllData = userData.current;
+                var token = AllData.session;
+                var paymentType = "creditcard";
+                var profileID = AllData.profile_id;
+                //xxxxxxxxxxxx
+                //Get User  
+                console.log(AllData);
+                console.log(token);
+                console.log("PaymentType", paymentType);
+                var paymentType1 = paymentType
+                var requestData = {};
+                requestData = (function mapping6094($scope) {
+                    var requestData = {};
+                    requestData.params = {};
+                    var profileID_scope = $scope.profileID;
+                    var paymentType_scope = $scope.paymentType;
+                    requestData.params.profile_id = profileID;
+                    requestData.params.changeField = paymentType;
+                    requestData.headers = {};
+                    var token_scope = $scope.token;
+                    requestData.headers['X-Appery-Session-Token'] = token;
+                    console.log("token", token);
+                    return requestData;
+                    /*|button_mapping|onbeforesend|B141CB25-6D96-2EAD-3633-64FE1096F7BB||6094|*/
+                })($scope);
+                // read more about using rest services: https://links.appery.io/ve-snippet-rest
+                Apperyio.get("updatePaymentType_service")(requestData).then(
+                    /*|service_bookmark|bookmark|B141CB25-6D96-2EAD-3633-64FE1096F7BB||7234|*/
+                    function(success) { // success callback
+                        /*|button_mapping|onsuccess|B141CB25-6D96-2EAD-3633-64FE1096F7BB||5845|*/
+                        alert('Your payment type has been changed to your default credit card');
+                        userData.current.defaultPayMethod = "creditcard";
+                        //Apperyio.navigateTo("Buyer_Requests_See", {}); 
+                        // inject the 'dataStorage' service
+                        var data = Apperyio.get("dataStorage");
+                        // user1 is a variable in the page1 scope 
+                        // set it to reference the 'dataStorage' service
+                        $scope.RequestID1.Gl_Vars = data;
+                        $scope.RequestID1.Gl_Vars.whereami = "Bank";
+                        //console.log(_id);
+                        Apperyio.navigateTo("PassThru", {});
+                    },
+                    function(error) { // callback to handle request error
+                    },
+                    function(notify) { // notify callback, can fire few times
+                    });
+            };
+            /**
+             * @function changetoEscrow
+             */
+            $scope.changetoEscrow = function() {
+                //Get User
+                //xxxxxxxxxxxxx
+                var userData = Apperyio.get("dataStorage");
+                var AllData = userData.current;
+                var token = AllData.session;
+                var paymentType = "escrow";
+                var profileID = AllData.profile_id
+                //xxxxxxxxxxxx
+                //Get User  
+                console.log(AllData);
+                console.log(token);
+                console.log("PaymentType", paymentType);
+                var paymentType1 = paymentType
+                var requestData = {};
+                requestData = (function mapping6094($scope) {
+                    var requestData = {};
+                    requestData.params = {};
+                    var profileID_scope = $scope.profileID;
+                    var paymentType_scope = $scope.paymentType;
+                    requestData.params.profile_id = profileID;
+                    requestData.params.changeField = paymentType;
+                    requestData.headers = {};
+                    var token_scope = $scope.token;
+                    requestData.headers['X-Appery-Session-Token'] = token;
+                    console.log("token", token);
+                    return requestData;
+                    /*CLICK TO EDIT MAPPING*/
+                })($scope);
+                // read more about using rest services: https://links.appery.io/ve-snippet-rest
+                Apperyio.get("updatePaymentType_service")(requestData).then(
+                    function(success) { // success callback
+                        /*CLICK TO EDIT MAPPING*/
+                        alert('Your payment type has been changed to your escrow account.');
+                        userData.current.defaultPayMethod = "escrow";
+                        //Apperyio.navigateTo("Buyer_Requests_See", {}); 
+                        // inject the 'dataStorage' service
+                        var data = Apperyio.get("dataStorage");
+                        // user1 is a variable in the page1 scope 
+                        // set it to reference the 'dataStorage' service
+                        $scope.RequestID1.Gl_Vars = data;
+                        $scope.RequestID1.Gl_Vars.whereami = "Bank";
+                        //console.log(_id);
+                        Apperyio.navigateTo("PassThru", {});
+                    },
+                    function(error) { // callback to handle request error
+                    },
+                    function(notify) { // notify callback, can fire few times
+                    });
+            };
+            /**
+             * @function gotoEscrowdetail
+             */
+            $scope.gotoEscrowdetail = function() {
+                //Apperyio.navigateTo("Buyer_Requests_See", {}); 
+                // inject the 'dataStorage' service
+                var data = Apperyio.get("dataStorage");
+                // user1 is a variable in the page1 scope 
+                // set it to reference the 'dataStorage' service
+                $scope.RequestID1.Gl_Vars = data;
+                $scope.RequestID1.Gl_Vars.whereami = "Bank";
+                //console.log(_id);
+                Apperyio.navigateTo("PassThru", {});
+            };
+            /**
+             * @function escrowInstruct
+             */
+            $scope.escrowInstruct = function() {
+                //On load screen logic
+                var userData = Apperyio.get("dataStorage");
+                var AllData = userData.current;
+                var username = AllData.username;
+                var userEmail = AllData.email;
+                var token = AllData.session;
+                //Get User  
+                var requestData = {};
+                requestData = (function mapping9037($scope) {
+                    var requestData = {};
+                    requestData.params = {};
+                    var userEmail_scope = $scope.userEmail;
+                    requestData.params.user_email = userEmail;
+                    requestData.headers = {};
+                    var token_scope = $scope.token;
+                    requestData.headers['X-Appery-Session-Token'] = token;
+                    console.log("token", token);
+                    return requestData;
+                    /*|button_mapping|onbeforesend|E000459D-6112-B893-632D-6AD5A827E17F||9037|*/
+                })($scope);
+                // read more about using rest services: https://links.appery.io/ve-snippet-rest
+                Apperyio.get("SendEmailforEscrow_service")(requestData).then(
+                    /*|service_bookmark|bookmark|E000459D-6112-B893-632D-6AD5A827E17F||8808|*/
+                    function(success) { // success callback
+                        /*|button_mapping|onsuccess|E000459D-6112-B893-632D-6AD5A827E17F||3801|*/
+                        alert('Instructions have been sent to the email address on your account');
+                    },
+                    function(error) { // callback to handle request error
+                        alert('There has been a problem. Please ty again later');
+                    },
+                    function(notify) { // notify callback, can fire few times
+                    });
+                //alert('Instructions have been sent to the email address on your account');
             };
         }
     });

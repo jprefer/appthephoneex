@@ -1,0 +1,26 @@
+<div show-header="true" show-footer="true" show-top-tabs="true" show-tabs="true"
+ng-controller="Buyer_Requests_See" ng-cloak ng-init="init()" active-screen="My Active Requests"
+class="aio-empty-screen padding overflow-scroll">
+    <div>
+        <font size="4">
+            <center>
+                <b>
+                    All Active Requests
+                </b>
+            </center>
+        </font>
+    </div>
+    <div>
+        <div class="row">
+            <div class="col">
+                <div class="list">
+                    <a href="javascript:void(0)" class="item-divider item" ng-repeat="item in list">
+                    <h4>{{item. manufacturer}} {{item. Product}} / {{item.Carrier}} - Quan:{{item.Quantity}}  </h4>
+                    <p>{{item.Memory}}/{{item.Color}}/Ship: {{item.Shipping}} / Kit: {{item.Kitted}}</p>
+                    Requested: {{item._createdAt.$date.substring(0, 10)}}  Request ID: {{item._id.substring(20)}}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

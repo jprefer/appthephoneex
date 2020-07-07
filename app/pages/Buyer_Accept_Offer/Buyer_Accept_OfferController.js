@@ -872,8 +872,8 @@ define(['require', 'app'],
                                 console.log("EscrowAmt", $scope.escrowAmt1)
                                 console.log("PurchaseAmt", $scope.BuyerPrice1)
                                 if ($scope.escrowAmt1 < $scope.BuyerPrice1) {
-                                    alert('Please add funds to your Escrow Account')
-                                    Apperyio.navigateTo("Buyer_Home", {});
+                                    alert('Please add funds to your Escrow Account or change payment type to credit card')
+                                    Apperyio.navigateTo("Bank", {});
                                 } else {
                                     var requestData = {};
                                     requestData = (function mapping6990($scope) {

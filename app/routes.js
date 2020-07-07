@@ -172,6 +172,18 @@ define(['require'], function(require) {
      * @property {string} when["/tab_Help.html"].c  - Controller for /tab_Help.html URL
      * @property {string} when["/tab_Help.html"].t  - Template for /tab_Help.html URL
      * @property {string[]} when["/tab_Help.html"].d  - Dependencies for /tab_Help.html URL
+     * @property {object} when["/Buyer_Escrow.html"]    - Routing configuration for /Buyer_Escrow.html URL
+     * @property {string} when["/Buyer_Escrow.html"].c  - Controller for /Buyer_Escrow.html URL
+     * @property {string} when["/Buyer_Escrow.html"].t  - Template for /Buyer_Escrow.html URL
+     * @property {string[]} when["/Buyer_Escrow.html"].d  - Dependencies for /Buyer_Escrow.html URL
+     * @property {object} when["/Seller_Filter.html"]    - Routing configuration for /Seller_Filter.html URL
+     * @property {string} when["/Seller_Filter.html"].c  - Controller for /Seller_Filter.html URL
+     * @property {string} when["/Seller_Filter.html"].t  - Template for /Seller_Filter.html URL
+     * @property {string[]} when["/Seller_Filter.html"].d  - Dependencies for /Seller_Filter.html URL
+     * @property {object} when["/Seller_Filter_Home.html"]    - Routing configuration for /Seller_Filter_Home.html URL
+     * @property {string} when["/Seller_Filter_Home.html"].c  - Controller for /Seller_Filter_Home.html URL
+     * @property {string} when["/Seller_Filter_Home.html"].t  - Template for /Seller_Filter_Home.html URL
+     * @property {string[]} when["/Seller_Filter_Home.html"].d  - Dependencies for /Seller_Filter_Home.html URL
      
      * @property {object} otherwise                             - Routing configuration for another URL
      * @property {object} otherwise.redirectTo                  - Redirect to default routing URL
@@ -215,6 +227,9 @@ define(['require'], function(require) {
      * @property {string} route_names.["Bank_CC_Detail"]  - "Bank_CC_Detail" is an alias for "/Bank_CC_Detail.html" routing
      * @property {string} route_names.["tabSBank"]  - "tabSBank" is an alias for "/tabSBank.html" routing
      * @property {string} route_names.["tab_Help"]  - "tab_Help" is an alias for "/tab_Help.html" routing
+     * @property {string} route_names.["Buyer_Escrow"]  - "Buyer_Escrow" is an alias for "/Buyer_Escrow.html" routing
+     * @property {string} route_names.["Seller_Filter"]  - "Seller_Filter" is an alias for "/Seller_Filter.html" routing
+     * @property {string} route_names.["Seller_Filter_Home"]  - "Seller_Filter_Home" is an alias for "/Seller_Filter_Home.html" routing
      
      */
     return {
@@ -254,16 +269,6 @@ define(['require'], function(require) {
             '/Seller_Home.html': {
                 c: '$Seller_Home/Seller_HomeController',
                 t: '$Seller_Home/Seller_HomeTemplate.html',
-                d: []
-            },
-            '/tabContact_Us.html': {
-                c: '$tabContact_Us/tabContact_UsController',
-                t: '$tabContact_Us/tabContact_UsTemplate.html',
-                d: []
-            },
-            '/Buyer_MakeRequest_old.html': {
-                c: '$Buyer_MakeRequest_old/Buyer_MakeRequest_oldController',
-                t: '$Buyer_MakeRequest_old/Buyer_MakeRequest_oldTemplate.html',
                 d: []
             },
             '/Buyer_Home.html': {
@@ -346,11 +351,6 @@ define(['require'], function(require) {
                 t: '$Seller_Offers_Detail/Seller_Offers_DetailTemplate.html',
                 d: []
             },
-            '/Buyer_Request_Test.html': {
-                c: '$Buyer_Request_Test/Buyer_Request_TestController',
-                t: '$Buyer_Request_Test/Buyer_Request_TestTemplate.html',
-                d: []
-            },
             '/Buyer_MakeRequest.html': {
                 c: '$Buyer_MakeRequest/Buyer_MakeRequestController',
                 t: '$Buyer_MakeRequest/Buyer_MakeRequestTemplate.html',
@@ -401,14 +401,19 @@ define(['require'], function(require) {
                 t: '$Bank_CC_Detail/Bank_CC_DetailTemplate.html',
                 d: []
             },
-            '/tabSBank.html': {
-                c: '$tabSBank/tabSBankController',
-                t: '$tabSBank/tabSBankTemplate.html',
-                d: []
-            },
             '/tab_Help.html': {
                 c: '$tab_Help/tab_HelpController',
                 t: '$tab_Help/tab_HelpTemplate.html',
+                d: []
+            },
+            '/Seller_Filter.html': {
+                c: '$Seller_Filter/Seller_FilterController',
+                t: '$Seller_Filter/Seller_FilterTemplate.html',
+                d: []
+            },
+            '/Seller_Filter_Home.html': {
+                c: '$Seller_Filter_Home/Seller_Filter_HomeController',
+                t: '$Seller_Filter_Home/Seller_Filter_HomeTemplate.html',
                 d: []
             }
         },
@@ -452,7 +457,10 @@ define(['require'], function(require) {
             'Screen1': '/Buyer_Pay.html',
             'Bank_CC_Detail': '/Bank_CC_Detail.html',
             'tabSBank': '/tabSBank.html',
-            'tab_Help': '/tab_Help.html'
+            'tab_Help': '/tab_Help.html',
+            'Buyer_Escrow': '/Buyer_Escrow.html',
+            'Seller_Filter': '/Seller_Filter.html',
+            'Seller_Filter_Home': '/Seller_Filter_Home.html'
         }
     };
 });

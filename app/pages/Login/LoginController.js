@@ -112,6 +112,63 @@ define(['require', 'app'],
                         //console.log("main.username1: ",main.username1);
                         localStorage.clear();
                         if (turn == "S") {
+                            var myString2 = "S";
+                            localStorage.setItem("localStorageString1", myString2); // set the value
+                            console.log("mystringatlogin", myString2);
+                            // read more about using rest services: https://links.appery.io/ve-snippet-rest
+                            Apperyio.get("getMenu1_service")(requestData).then(
+                                function(success) { // success callback
+                                    (function mapping8022(success, $scope) {
+                                        var tempmenu1_scope = $scope.tempmenu1;
+                                        tempmenu1_scope = success.data;
+                                        $scope.tempmenu1 = tempmenu1_scope;
+                                        /*CLICK TO EDIT MAPPING*/
+                                    })(success, $scope);
+                                    var myStringArray1 = JSON.stringify($scope.tempmenu1);
+                                    localStorage.setItem("localStorageStringArray1", myStringArray1); // set the value
+                                },
+                                function(error) { // callback to handle request error
+                                },
+                                function(notify) { // notify callback, can fire few times
+                                });
+                            //var requestData = {};
+                            /*CLICK TO EDIT MAPPING*/
+                            // read more about using rest services: https://links.appery.io/ve-snippet-rest
+                            Apperyio.get("getMenu2_service")(requestData).then(
+                                function(success) { // success callback
+                                    (function mapping7075(success, $scope) {
+                                        var tempmenu2_scope = $scope.tempmenu2;
+                                        tempmenu2_scope = success.data;
+                                        $scope.tempmenu2 = tempmenu2_scope;
+                                        /*CLICK TO EDIT MAPPING*/
+                                    })(success, $scope);
+                                    var myStringArray2 = JSON.stringify($scope.tempmenu2);
+                                    localStorage.setItem("localStorageStringArray2", myStringArray2); // set the value
+                                },
+                                function(error) { // callback to handle request error
+                                },
+                                function(notify) { // notify callback, can fire few times
+                                });
+                            //var requestData = {};
+                            /*CLICK TO EDIT MAPPING*/
+                            // read more about using rest services: https://links.appery.io/ve-snippet-rest
+                            Apperyio.get("getMenu3_service")(requestData).then(
+                                function(success) { // success callback
+                                    (function mapping5631(success, $scope) {
+                                        var tempmenu3_scope = $scope.tempmenu3;
+                                        tempmenu3_scope = success.data;
+                                        $scope.tempmenu3 = tempmenu3_scope;
+                                        /*CLICK TO EDIT MAPPING*/
+                                    })(success, $scope);
+                                    var myStringArray3 = JSON.stringify($scope.tempmenu3);
+                                    localStorage.setItem("localStorageStringArray3", myStringArray3); // set the value
+                                    console.log("I am on the LoginPage");
+                                    console.log("myArray3_index", myStringArray3)
+                                },
+                                function(error) { // callback to handle request error
+                                },
+                                function(notify) { // notify callback, can fire few times
+                                });
                             Apperyio.navigateTo("Seller_Home", {});
                         } else {
                             // REgister menu for buyers - Change Menu - Log everyone out
@@ -188,7 +245,7 @@ define(['require', 'app'],
                                     })(success, $scope);
                                     var myStringArray4 = JSON.stringify($scope.tempmenu4);
                                     localStorage.setItem("localStorageStringArray4", myStringArray4); // set the value
-                                    console.log("I am on the indexPage");
+                                    console.log("I am on the LoginPage");
                                     console.log("myArray4_index", myStringArray4)
                                 },
                                 function(error) { // callback to handle request error

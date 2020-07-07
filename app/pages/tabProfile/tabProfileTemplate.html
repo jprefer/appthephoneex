@@ -358,7 +358,7 @@ ng-controller="tabProfile" ng-cloak ng-init="init()" active-screen="Profile" cla
             </p>
         </div>
         <button class="button button-balanced button-block icon-left ion-unlocked" ng-click="changePassword()"
-        ng-disabled="(newPassword != newPassword2)||passwordForm.newpassword.$error.required">
+        ng-disabled="newPassword != newPassword2||passwordForm. password1.$error.required||! passwordForm.password1.$valid">
             Change Password
         </button>
     </form>

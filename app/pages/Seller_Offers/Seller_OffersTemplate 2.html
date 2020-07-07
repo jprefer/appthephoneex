@@ -1,0 +1,28 @@
+<div show-header="true" show-footer="true" show-top-tabs="true" show-tabs="true"
+ng-controller="Seller_Offers" ng-cloak ng-init="init()" active-screen="My Current Offers"
+class="CSS_BG_LightGold aio-empty-screen padding overflow-scroll">
+    <div>
+        <div class="row">
+            <div class="col">
+                <div>
+                    <br>
+                    <font size="4">
+                        <center>
+                            <b>
+                                Offers that are currently under consideration with Buyers
+                            </b>
+                        </center>
+                    </font>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="list">
+        <a href="javascript:void(0)" class="item CSS_BG_LightGold" ng-click="showDetail(item._id)"
+        ng-repeat="item in list">
+        <h2>Offer: {{item.OfferPrice|currency}} --&gt; {{item. so_manufacturer}} {{item. so_Product}} </h2>
+        <p>{{item.so_Memory}} / {{item.so_Color}} / {{item.so_Carrier}} /  Offer ID: {{item._id.substring(20)}}</p>
+        Quan:{{item.so_Quantity}} / Grade: {{item.so_Condition}}  / Request ID: {{item.fk_Request_id.substring(20)}}
+        </a>
+    </div>
+</div>

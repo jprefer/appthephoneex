@@ -1,0 +1,16 @@
+<div show-header="true" show-footer="true" show-top-tabs="true" show-tabs="true"
+ng-controller="sq_iFrame" ng-cloak ng-init="init()" active-screen="Credit Card" class="CSS_BG_LightPurple aio-empty-screen padding overflow-scroll">
+    <p>
+        Here you will be saving your Credit Card for future use. We do not store any of
+        your Credit Card Data. We use PCI-DSS compliant third party credit card vault and
+        tokenization providers. When you are done, please tap the home key in the upper right
+        corner.
+    </p>
+    <button class="button button-royal button-block icon-left ion-arrow-left-c" ng-click="goBank()">
+        Do Nothing - Go Back
+    </button>
+    <div>
+        <iframe ng-src="{{builturl}}" width="425" height="600" scrolling="no" frameborder="1">
+        </iframe>
+    </div>
+</div>

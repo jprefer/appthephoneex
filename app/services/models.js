@@ -719,6 +719,79 @@ define(['require'], function(require) {
                 }
             }
         },
+        "SendEmailforEscrow_service": {
+            "type": "object",
+            "properties": {
+                "url": {
+                    "type": "string",
+                    "default": "https://api.appery.io/rest/1/code/b718ee58-002b-4573-8f0a-6be4bc36a055/exec"
+                },
+                "method": {
+                    "type": "string",
+                    "default": "post"
+                },
+                "request": {
+                    "type": "object",
+                    "properties": {
+                        "body": {
+                            "type": "object",
+                            "properties": {
+                                "data": {
+                                    "type": "data"
+                                }
+                            }
+                        },
+                        "query": {
+                            "type": "object",
+                            "properties": {
+                                "user_email": {
+                                    "type": "string",
+                                    "default": "jprefer@gmail.com"
+                                }
+                            }
+                        },
+                        "headers": {
+                            "type": "object",
+                            "properties": {
+                                "X-Appery-Session-Token": {
+                                    "type": "string",
+                                    "default": "a26f5635-edf2-461a-a317-5a9dfcba45f7"
+                                },
+                                "Content-Type": {
+                                    "type": "string",
+                                    "default": "text/plain"
+                                }
+                            }
+                        }
+                    }
+                },
+                "response": {
+                    "type": "object",
+                    "properties": {
+                        "body": {
+                            "type": "object",
+                            "properties": {
+                                "$": {
+                                    "type": "object",
+                                    "properties": {
+                                        "requestParams": {
+                                            "type": "string"
+                                        },
+                                        "requestBody": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "headers": {
+                            "type": "object",
+                            "properties": {}
+                        }
+                    }
+                }
+            }
+        },
         "BuyerBank_UpdateAvailable_service": {
             "type": "object",
             "properties": {
@@ -926,6 +999,79 @@ define(['require'], function(require) {
                                             "type": "string"
                                         },
                                         "requestParams": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "headers": {
+                            "type": "object",
+                            "properties": {}
+                        }
+                    }
+                }
+            }
+        },
+        "GetEscrowTranactions_user_service": {
+            "type": "object",
+            "properties": {
+                "url": {
+                    "type": "string",
+                    "default": "https://api.appery.io/rest/1/code/dcc1a14d-630c-4164-80c3-bd2b2a03be88/exec"
+                },
+                "method": {
+                    "type": "string",
+                    "default": "post"
+                },
+                "request": {
+                    "type": "object",
+                    "properties": {
+                        "body": {
+                            "type": "object",
+                            "properties": {
+                                "data": {
+                                    "type": "data"
+                                }
+                            }
+                        },
+                        "query": {
+                            "type": "object",
+                            "properties": {
+                                "username": {
+                                    "type": "string",
+                                    "default": "john"
+                                }
+                            }
+                        },
+                        "headers": {
+                            "type": "object",
+                            "properties": {
+                                "X-Appery-Session-Token": {
+                                    "type": "string",
+                                    "default": "a26f5635-edf2-461a-a317-5a9dfcba45f7"
+                                },
+                                "Content-Type": {
+                                    "type": "string",
+                                    "default": "text/plain"
+                                }
+                            }
+                        }
+                    }
+                },
+                "response": {
+                    "type": "object",
+                    "properties": {
+                        "body": {
+                            "type": "object",
+                            "properties": {
+                                "$": {
+                                    "type": "object",
+                                    "properties": {
+                                        "requestParams": {
+                                            "type": "string"
+                                        },
+                                        "requestBody": {
                                             "type": "string"
                                         }
                                     }
@@ -2061,7 +2207,7 @@ define(['require'], function(require) {
                                 },
                                 "X-Appery-Session-Token": {
                                     "type": "string",
-                                    "default": "d6a6e3ee-4356-43e4-85f8-f8a30585065a"
+                                    "default": "3f47d997-2e8d-412f-8fcd-3bc198de571e"
                                 }
                             }
                         }
@@ -2516,6 +2662,82 @@ define(['require'], function(require) {
                                 "X-Appery-Session-Token": {
                                     "type": "string",
                                     "default": "4094e449-7f53-4a2e-a884-5b224f3779d2"
+                                },
+                                "Content-Type": {
+                                    "type": "string",
+                                    "default": "text/plain"
+                                }
+                            }
+                        }
+                    }
+                },
+                "response": {
+                    "type": "object",
+                    "properties": {
+                        "body": {
+                            "type": "object",
+                            "properties": {
+                                "$": {
+                                    "type": "object",
+                                    "properties": {
+                                        "requestParams": {
+                                            "type": "string"
+                                        },
+                                        "requestBody": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "headers": {
+                            "type": "object",
+                            "properties": {}
+                        }
+                    }
+                }
+            }
+        },
+        "updatePaymentType_service": {
+            "type": "object",
+            "properties": {
+                "url": {
+                    "type": "string",
+                    "default": "https://api.appery.io/rest/1/code/28cfbd6d-6747-4bb3-b890-8eae4e27aa8c/exec"
+                },
+                "method": {
+                    "type": "string",
+                    "default": "post"
+                },
+                "request": {
+                    "type": "object",
+                    "properties": {
+                        "body": {
+                            "type": "object",
+                            "properties": {
+                                "data": {
+                                    "type": "data"
+                                }
+                            }
+                        },
+                        "query": {
+                            "type": "object",
+                            "properties": {
+                                "changeField": {
+                                    "type": "string",
+                                    "default": "creditcard"
+                                },
+                                "profile_id": {
+                                    "type": "string",
+                                    "default": "5e337992b56b5d0a94db6aa5"
+                                }
+                            }
+                        },
+                        "headers": {
+                            "type": "object",
+                            "properties": {
+                                "X-Appery-Session-Token": {
+                                    "type": "string"
                                 },
                                 "Content-Type": {
                                     "type": "string",
@@ -3684,42 +3906,15 @@ define(['require'], function(require) {
                             "type": "object",
                             "properties": {
                                 "$": {
-                                    "type": "array",
-                                    "items": [{
-                                        "type": "object",
-                                        "properties": {
-                                            "_id": {
-                                                "type": "string",
-                                                "default": "5efb69302e22d7088c99b848"
-                                            },
-                                            "EscrowAmt": {
-                                                "type": "number",
-                                                "default": 5000
-                                            },
-                                            "_updatedAt": {
-                                                "type": "object",
-                                                "properties": {
-                                                    "$date": {
-                                                        "type": "string",
-                                                        "default": "2020-06-30T16:32:51.755Z"
-                                                    }
-                                                }
-                                            },
-                                            "username": {
-                                                "type": "string",
-                                                "default": "tony"
-                                            },
-                                            "_createdAt": {
-                                                "type": "object",
-                                                "properties": {
-                                                    "$date": {
-                                                        "type": "string",
-                                                        "default": "2020-06-30T16:32:48.868Z"
-                                                    }
-                                                }
-                                            }
+                                    "type": "object",
+                                    "properties": {
+                                        "requestBody": {
+                                            "type": "string"
+                                        },
+                                        "requestParams": {
+                                            "type": "string"
                                         }
-                                    }]
+                                    }
                                 }
                             }
                         },
@@ -4678,6 +4873,91 @@ define(['require'], function(require) {
                 }
             }
         },
+        "Seller_Filtered_Home_Seller_Filtered_Requests_Model_service": {
+            "type": "object",
+            "properties": {
+                "url": {
+                    "type": "string",
+                    "default": "https://api.appery.io/rest/1/code/617a9478-0ebd-426c-b110-a7b28205b152/exec"
+                },
+                "method": {
+                    "type": "string",
+                    "default": "post"
+                },
+                "request": {
+                    "type": "object",
+                    "properties": {
+                        "body": {
+                            "type": "object",
+                            "properties": {
+                                "data": {
+                                    "type": "data"
+                                }
+                            }
+                        },
+                        "query": {
+                            "type": "object",
+                            "properties": {
+                                "company": {
+                                    "type": "string",
+                                    "default": "Samsung"
+                                },
+                                "username": {
+                                    "type": "string",
+                                    "default": "johnp"
+                                },
+                                "product": {
+                                    "type": "string",
+                                    "default": "Galaxy Tab S 10.5"
+                                },
+                                "type": {
+                                    "type": "string",
+                                    "default": "Tablet"
+                                }
+                            }
+                        },
+                        "headers": {
+                            "type": "object",
+                            "properties": {
+                                "Content-Type": {
+                                    "type": "string",
+                                    "default": "text/plain"
+                                },
+                                "X-Appery-Session-Token": {
+                                    "type": "string",
+                                    "default": "385e8acd-fed6-4f82-82ce-bb0f55a7c823"
+                                }
+                            }
+                        }
+                    }
+                },
+                "response": {
+                    "type": "object",
+                    "properties": {
+                        "body": {
+                            "type": "object",
+                            "properties": {
+                                "$": {
+                                    "type": "object",
+                                    "properties": {
+                                        "requestParams": {
+                                            "type": "string"
+                                        },
+                                        "requestBody": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "headers": {
+                            "type": "object",
+                            "properties": {}
+                        }
+                    }
+                }
+            }
+        },
         "BuyerRejectOffer_service": {
             "type": "object",
             "properties": {
@@ -4712,6 +4992,83 @@ define(['require'], function(require) {
                         "headers": {
                             "type": "object",
                             "properties": {
+                                "Content-Type": {
+                                    "type": "string",
+                                    "default": "text/plain"
+                                }
+                            }
+                        }
+                    }
+                },
+                "response": {
+                    "type": "object",
+                    "properties": {
+                        "body": {
+                            "type": "object",
+                            "properties": {
+                                "$": {
+                                    "type": "object",
+                                    "properties": {
+                                        "requestBody": {
+                                            "type": "string"
+                                        },
+                                        "requestParams": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "headers": {
+                            "type": "object",
+                            "properties": {}
+                        }
+                    }
+                }
+            }
+        },
+        "Seller_Filtered_Home_Seller_Filtered_Requests_Company_service": {
+            "type": "object",
+            "properties": {
+                "url": {
+                    "type": "string",
+                    "default": "https://api.appery.io/rest/1/code/f72d7dd0-7021-4349-9f93-3a8048cb34d8/exec"
+                },
+                "method": {
+                    "type": "string",
+                    "default": "post"
+                },
+                "request": {
+                    "type": "object",
+                    "properties": {
+                        "body": {
+                            "type": "object",
+                            "properties": {
+                                "data": {
+                                    "type": "data"
+                                }
+                            }
+                        },
+                        "query": {
+                            "type": "object",
+                            "properties": {
+                                "username": {
+                                    "type": "string",
+                                    "default": "johnp"
+                                },
+                                "company": {
+                                    "type": "string",
+                                    "default": "Samsung"
+                                }
+                            }
+                        },
+                        "headers": {
+                            "type": "object",
+                            "properties": {
+                                "X-Appery-Session-Token": {
+                                    "type": "string",
+                                    "default": "385e8acd-fed6-4f82-82ce-bb0f55a7c823"
+                                },
                                 "Content-Type": {
                                     "type": "string",
                                     "default": "text/plain"
@@ -4809,6 +5166,106 @@ define(['require'], function(require) {
                                             "type": "string"
                                         }
                                     }
+                                }
+                            }
+                        },
+                        "headers": {
+                            "type": "object",
+                            "properties": {}
+                        }
+                    }
+                }
+            }
+        },
+        "BuyerBank_GetAvailable_tBank_service": {
+            "type": "object",
+            "properties": {
+                "url": {
+                    "type": "string",
+                    "default": "https://api.appery.io/rest/1/code/cd2e9e2e-cc2b-40ba-a6b6-728b95c0c593/exec"
+                },
+                "method": {
+                    "type": "string",
+                    "default": "post"
+                },
+                "request": {
+                    "type": "object",
+                    "properties": {
+                        "body": {
+                            "type": "object",
+                            "properties": {
+                                "data": {
+                                    "type": "data"
+                                }
+                            }
+                        },
+                        "query": {
+                            "type": "object",
+                            "properties": {
+                                "username": {
+                                    "type": "string",
+                                    "default": "tony"
+                                }
+                            }
+                        },
+                        "headers": {
+                            "type": "object",
+                            "properties": {
+                                "X-Appery-Session-Token": {
+                                    "type": "string",
+                                    "default": "a5957d6e-b101-46e5-9939-22adb6b0d6c9"
+                                },
+                                "Content-Type": {
+                                    "type": "string",
+                                    "default": "text/plain"
+                                }
+                            }
+                        }
+                    }
+                },
+                "response": {
+                    "type": "object",
+                    "properties": {
+                        "body": {
+                            "type": "object",
+                            "properties": {
+                                "$": {
+                                    "type": "array",
+                                    "items": [{
+                                        "type": "object",
+                                        "properties": {
+                                            "EscrowAmt": {
+                                                "type": "number",
+                                                "default": 5000
+                                            },
+                                            "username": {
+                                                "type": "string",
+                                                "default": "tony"
+                                            },
+                                            "_id": {
+                                                "type": "string",
+                                                "default": "5efb69302e22d7088c99b848"
+                                            },
+                                            "_updatedAt": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "$date": {
+                                                        "type": "string",
+                                                        "default": "2020-06-30T16:32:51.755Z"
+                                                    }
+                                                }
+                                            },
+                                            "_createdAt": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "$date": {
+                                                        "type": "string",
+                                                        "default": "2020-06-30T16:32:48.868Z"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }]
                                 }
                             }
                         },
@@ -5121,6 +5578,87 @@ define(['require'], function(require) {
                                     "type": "string"
                                 }
                             }
+                        }
+                    }
+                }
+            }
+        },
+        "Seller_Filtered_Home_Seller_Filtered_Requests_Type_service": {
+            "type": "object",
+            "properties": {
+                "url": {
+                    "type": "string",
+                    "default": "https://api.appery.io/rest/1/code/2e982f36-d59a-4ff7-9510-7de4ec639254/exec"
+                },
+                "method": {
+                    "type": "string",
+                    "default": "post"
+                },
+                "request": {
+                    "type": "object",
+                    "properties": {
+                        "body": {
+                            "type": "object",
+                            "properties": {
+                                "data": {
+                                    "type": "data"
+                                }
+                            }
+                        },
+                        "query": {
+                            "type": "object",
+                            "properties": {
+                                "company": {
+                                    "type": "string",
+                                    "default": "Samsung"
+                                },
+                                "username": {
+                                    "type": "string",
+                                    "default": "johnp"
+                                },
+                                "type": {
+                                    "type": "string",
+                                    "default": "Tablet"
+                                }
+                            }
+                        },
+                        "headers": {
+                            "type": "object",
+                            "properties": {
+                                "X-Appery-Session-Token": {
+                                    "type": "string",
+                                    "default": "385e8acd-fed6-4f82-82ce-bb0f55a7c823"
+                                },
+                                "Content-Type": {
+                                    "type": "string",
+                                    "default": "text/plain"
+                                }
+                            }
+                        }
+                    }
+                },
+                "response": {
+                    "type": "object",
+                    "properties": {
+                        "body": {
+                            "type": "object",
+                            "properties": {
+                                "$": {
+                                    "type": "object",
+                                    "properties": {
+                                        "requestParams": {
+                                            "type": "string"
+                                        },
+                                        "requestBody": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "headers": {
+                            "type": "object",
+                            "properties": {}
                         }
                     }
                 }
@@ -6665,6 +7203,87 @@ define(['require'], function(require) {
                 }
             }
         },
+        "update_Profile_Mobile_service": {
+            "type": "object",
+            "properties": {
+                "url": {
+                    "type": "string",
+                    "default": "https://api.appery.io/rest/1/code/f45c74ed-0dec-4471-a980-32b37df7f2de/exec"
+                },
+                "method": {
+                    "type": "string",
+                    "default": "post"
+                },
+                "request": {
+                    "type": "object",
+                    "properties": {
+                        "body": {
+                            "type": "object",
+                            "properties": {
+                                "data": {
+                                    "type": "data"
+                                }
+                            }
+                        },
+                        "query": {
+                            "type": "object",
+                            "properties": {
+                                "changeField": {
+                                    "type": "string",
+                                    "default": "9999999999"
+                                },
+                                "username": {
+                                    "type": "string",
+                                    "default": "john"
+                                },
+                                "profile_id": {
+                                    "type": "string",
+                                    "default": "5e337992b56b5d0a94db6aa5"
+                                }
+                            }
+                        },
+                        "headers": {
+                            "type": "object",
+                            "properties": {
+                                "Content-Type": {
+                                    "type": "string",
+                                    "default": "text/plain"
+                                },
+                                "X-Appery-Session-Token": {
+                                    "type": "string",
+                                    "default": "4ff6e65a-b305-4d61-8842-8cb91aa260a8"
+                                }
+                            }
+                        }
+                    }
+                },
+                "response": {
+                    "type": "object",
+                    "properties": {
+                        "body": {
+                            "type": "object",
+                            "properties": {
+                                "$": {
+                                    "type": "object",
+                                    "properties": {
+                                        "requestParams": {
+                                            "type": "string"
+                                        },
+                                        "requestBody": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "headers": {
+                            "type": "object",
+                            "properties": {}
+                        }
+                    }
+                }
+            }
+        },
         "InsertOrders_service": {
             "type": "object",
             "properties": {
@@ -6839,87 +7458,6 @@ define(['require'], function(require) {
                                             "type": "string"
                                         },
                                         "requestParams": {
-                                            "type": "string"
-                                        }
-                                    }
-                                }
-                            }
-                        },
-                        "headers": {
-                            "type": "object",
-                            "properties": {}
-                        }
-                    }
-                }
-            }
-        },
-        "update_Profile_Mobile_service": {
-            "type": "object",
-            "properties": {
-                "url": {
-                    "type": "string",
-                    "default": "https://api.appery.io/rest/1/code/f45c74ed-0dec-4471-a980-32b37df7f2de/exec"
-                },
-                "method": {
-                    "type": "string",
-                    "default": "post"
-                },
-                "request": {
-                    "type": "object",
-                    "properties": {
-                        "body": {
-                            "type": "object",
-                            "properties": {
-                                "data": {
-                                    "type": "data"
-                                }
-                            }
-                        },
-                        "query": {
-                            "type": "object",
-                            "properties": {
-                                "changeField": {
-                                    "type": "string",
-                                    "default": "9999999999"
-                                },
-                                "username": {
-                                    "type": "string",
-                                    "default": "john"
-                                },
-                                "profile_id": {
-                                    "type": "string",
-                                    "default": "5e337992b56b5d0a94db6aa5"
-                                }
-                            }
-                        },
-                        "headers": {
-                            "type": "object",
-                            "properties": {
-                                "Content-Type": {
-                                    "type": "string",
-                                    "default": "text/plain"
-                                },
-                                "X-Appery-Session-Token": {
-                                    "type": "string",
-                                    "default": "4ff6e65a-b305-4d61-8842-8cb91aa260a8"
-                                }
-                            }
-                        }
-                    }
-                },
-                "response": {
-                    "type": "object",
-                    "properties": {
-                        "body": {
-                            "type": "object",
-                            "properties": {
-                                "$": {
-                                    "type": "object",
-                                    "properties": {
-                                        "requestParams": {
-                                            "type": "string"
-                                        },
-                                        "requestBody": {
                                             "type": "string"
                                         }
                                     }

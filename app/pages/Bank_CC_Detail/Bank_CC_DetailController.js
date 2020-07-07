@@ -131,7 +131,7 @@ define(['require', 'app'],
                 var ThisCreditCard = $scope.RequestID2.Gl_Vars.request_id;
                 console.log("Delete - sq_CCOF", $scope.RequestID2.Gl_Vars.request_id);
                 if (ThisCreditCard == sqCCOF_Default) {
-                    alert(' This is your default Credit Card');
+                    alert(' This is your default Credit Card. Nothing has changed');
                     Apperyio.navigateTo("Bank", {});
                 } else {
                     var requestData = {};
@@ -154,28 +154,17 @@ define(['require', 'app'],
                         /*|service_bookmark|bookmark|8B83C27C-2417-A2F1-EA34-CBC4CED0104C||8686|*/
                         function(success) { // success callback
                             /*|button_mapping|onsuccess|8B83C27C-2417-A2F1-EA34-CBC4CED0104C||3849|*/
-                            alert(' You have sucessfully changed your default Credit Card.  You will need to log back in');
-                            var requestData = {};
-                            var sessionToken = token;
-                            console.log(sessionToken)
-                            requestData = (function mapping7038($scope) {
-                                var requestData = {};
-                                requestData.headers = {};
-                                var user_scope = $scope.user;
-                                requestData.headers['X-Appery-Session-Token'] = token;
-                                return requestData;
-                                /*CLICK TO EDIT MAPPING*/
-                            })($scope);
-                            // read more about using rest services: https://links.appery.io/ve-snippet-rest
-                            Apperyio.get("phoneapp_logout_service")(requestData).then(
-                                function(success) { // success callback
-                                    /*CLICK TO EDIT MAPPING*/
-                                    Apperyio.navigateTo("Login", {});
-                                },
-                                function(error) { // callback to handle request error
-                                },
-                                function(notify) { // notify callback, can fire few times
-                                });
+                            alert(' You have sucessfully changed your default Credit Card.');
+                            userData.current.sqCCOF = ThisCreditCard;
+                            //Apperyio.navigateTo("Buyer_Requests_See", {}); 
+                            // inject the 'dataStorage' service
+                            var data = Apperyio.get("dataStorage");
+                            // user1 is a variable in the page1 scope 
+                            // set it to reference the 'dataStorage' service
+                            $scope.RequestID1.Gl_Vars = data;
+                            $scope.RequestID1.Gl_Vars.whereami = "Bank";
+                            //console.log(_id);
+                            Apperyio.navigateTo("PassThru", {});
                         },
                         function(error) { // callback to handle request error
                         },
