@@ -37,14 +37,18 @@ define(['require', 'app'],
                 var Buyer_username = AllData.username;
                 var token = AllData.session;
                 var inactive = AllData.InActive;
+                var active = AllData.Active;
+                var textVer = AllData.TextVer;
+                var emailVer = AllData.EmailVer;
                 //xxxxxxxxxxxx
                 //Get User  
                 console.log(username);
                 console.log(AllData);
                 console.log(token);
                 console.log("Inactive", inactive);
-                console.log("len", inactive.length);
-                if (inactive.length > 1) {
+                console.log("Active", active);
+                //console.log("len",inactive.length);
+                if (active === false) {
                     alert('Your Account has been inactivated due to ' + inactive + '. Please contact customer service to resolve.');
                     var requestData = {};
                     var sessionToken = $scope.user.session;
@@ -98,6 +102,57 @@ define(['require', 'app'],
                         },
                         function(notify) { // notify callback, can fire few times
                         });
+                    //Check for packages to Ship
+                    var requestData = {};
+                    requestData = (function mapping8056($scope) {
+                        var requestData = {};
+                        requestData.params = {};
+                        var Seller_username_scope = $scope.Seller_username;
+                        requestData.params.username = username;
+                        requestData.headers = {};
+                        var token_scope = $scope.token;
+                        requestData.headers['X-Appery-Session-Token'] = token;
+                        console.log("token", token);
+                        console.log("Sellerundercount", username);
+                        return requestData;
+                        /*CLICK TO EDIT MAPPING*/
+                    })($scope);
+                    // read more about using rest services: https://links.appery.io/ve-snippet-rest
+                    Apperyio.get("Buyer_Home_Shipped_service")(requestData).then(
+                        function(success) { // success callback
+                            (function mapping2821(success, $scope) {
+                                var unshippedCount_scope = $scope.unshippedCount;
+                                unshippedCount_scope = success.data[0].count;
+                                $scope.unshippedCount = unshippedCount_scope;
+                                console.log("Count", $scope.unshippedCount);
+                                // $scope.count2 = unshippedCount_scope;
+                                // console.log("Count2",$scope.count2);
+                                //Below this is whether the items are shipped or not
+                                if ($scope.unshippedCount === 0) {
+                                    $scope.dsblBtn = true;
+                                    $scope.showBtn = false;
+                                    $scope.wordBtn = "There are NO items that are shippping";
+                                } else {
+                                    $scope.dsblBtn = false;
+                                    $scope.showBtn = true;
+                                    $scope.wordBtn = $scope.unshippedCount + " shipped items";
+                                    $scope.badgeCnt = $scope.unshippedCount;
+                                }
+                                //$scope.dsblBtn = false;
+                                console.log("showBtn", $scope.showBtn);
+                                /*CLICK TO EDIT MAPPING*/
+                            })(success, $scope);
+                        },
+                        function(error) { // callback to handle request error
+                        },
+                        function(notify) { // notify callback, can fire few times
+                        });
+                    //see if email and/or phone has be verified
+                    if (textVer === false || emailVer === false) {
+                        $scope.wordBtn1 = "You need to VERIFY your info";
+                        $scope.showBtn1 = true;
+                        $scope.badgeCnt1 = 1;
+                    } else {}
                 }
             };
             /**

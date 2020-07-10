@@ -7,7 +7,6 @@
         </title>
         <!-- App manifest -->
         <link rel="manifest" href="manifest.json" crossOrigin="use-credentials">
-        <link rel="apple-touch-icon" sizes="48x48" href="files/images/a48_48.png">
         <link rel="apple-touch-icon" sizes="72x72" href="files/images/apple-touch-icon-72x72.png">
         <link rel="apple-touch-icon" sizes="96x96" href="files/images/a96_96.png">
         <link rel="apple-touch-icon" sizes="144x144" href="files/images/apple-touch-icon-144x144.png">
@@ -34,7 +33,7 @@
         <!-- Uncomment this script when not using service worker -->
         <!-- <script>        
         var require = {
-        urlArgs : window.navigator.userAgent.match(/Windows Phone/i) ? undefined : "bust=1594157167"
+        urlArgs : window.navigator.userAgent.match(/Windows Phone/i) ? undefined : "bust=1594408048"
         };
         </script>
         -->
@@ -46,7 +45,7 @@
         <div ng-controller="indexController" ng-cloak ng-init="init()">
             <ion-side-menus>
                 <ion-side-menu-content>
-                    <ion-header-bar data-aio-id="header" class="bar bar-royal" ng-show="visionStatus.header">
+                    <ion-header-bar data-aio-id="header" class="bar bar-light" ng-show="visionStatus.header">
                         <div class="buttons">
                             <button class="button button-icon button-block icon ion-navicon-round" menu-toggle="">
                             </button>
@@ -61,7 +60,7 @@
                     </ion-header-bar>
                     <div ng-view data-aio-id="ng-view" hasHeader hasFooter class="">
                     </div>
-                    <ion-footer-bar data-aio-id="footer" class="bar bar-balanced bar-footer" ng-show="visionStatus.footer">
+                    <ion-footer-bar data-aio-id="footer" class="bar bar-royal bar-footer" ng-show="visionStatus.footer">
                         <div class="buttons">
                         </div>
                         <h1 class="title">
@@ -80,27 +79,27 @@
                     ng-click="sPendingOffers()">
                         Pending Offers
                     </button>
-                    <button class="button button-balanced button-block icon-left ion-ios-grid-view-outline"
+                    <button class="button button-positive button-block icon-left ion-ios-grid-view-outline"
                     menu-close="" ng-click="sRequestsSee()">
                         My Requests
                     </button>
-                    <button class="button button-energized button-block icon-left ion-wrench" menu-close=""
+                    <button class="button button-calm button-block icon-left ion-wrench" menu-close=""
                     ng-click="inprocess()">
                         Orders In Process
                     </button>
-                    <button class="button button-assertive button-block icon-left ion-checkmark-round"
+                    <button class="button button-positive button-block icon-left ion-checkmark-round"
                     menu-close="" ng-click="completed()">
                         Completed Orders
                     </button>
-                    <button class="button button-royal button-block icon-left ion-person" menu-close=""
+                    <button class="button button-calm button-block icon-left ion-person" menu-close=""
                     ng-click="gotoProfile()">
                         Profile
                     </button>
-                    <button class="button button-calm button-block icon-left ion-cash" menu-close=""
+                    <button class="button button-positive button-block icon-left ion-cash" menu-close=""
                     ng-click="gotoBank()">
                         Bank
                     </button>
-                    <button class="button button-balanced button-block icon-left ion-help" menu-close=""
+                    <button class="button button-calm button-block icon-left ion-help" menu-close=""
                     ng-click="gotoHelp()">
                         Help
                     </button>
@@ -108,7 +107,7 @@
                     ng-click="gotoInfo()">
                         Info / Contact
                     </button>
-                    <button class="button button-dark button-block icon-left ion-checkmark-round" menu-close=""
+                    <button class="button button-calm button-block icon-left ion-checkmark-round" menu-close=""
                     ng-click="gotoVerify()">
                         Verify Email &amp; Phone
                     </button>

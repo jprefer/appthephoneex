@@ -1,9 +1,13 @@
 <div show-header="true" show-footer="true" show-top-tabs="true" show-tabs="true"
 ng-controller="Buyer_Accept_Offer" ng-cloak ng-init="init()" active-screen="Accept / Decline Offer"
-class="CSS_BG_LightBlue aio-empty-screen padding overflow-scroll">
-    <button class="button button-calm button-block button-small">
-        Your Request ID: {{fk_Request_id1.substring(20)}}
-    </button>
+class="aio-empty-screen padding overflow-scroll">
+    <div class="list">
+        <div class="item-divider item Buyer-Header">
+            <p>
+            </p>
+            Your Request ID: {{fk_Request_id1.substring(20)}}
+        </div>
+    </div>
     <p>
         {{manufacturer1}} - {{Product1}} {{Carrier1}}
     </p>
@@ -45,19 +49,22 @@ class="CSS_BG_LightBlue aio-empty-screen padding overflow-scroll">
         <div>
             <div class="row">
                 <div class="col">
-                    <button class="button button-assertive button-block icon-left ion-hammer" ng-click="RejectOffer()">
-                        Reject Offer
+                    <button class="ion-item-border button button-assertive button-block icon-left ion-hammer"
+                    ng-click="RejectOffer()">
+                        Reject
                     </button>
                 </div>
                 <div class="col">
-                    <button class="button button-balanced button-block icon-left ion-cash" ng-click="demo()">
-                        Accept Offer
+                    <button class="ion-item-border button button-balanced button-block icon-left ion-cash"
+                    ng-click="demo()">
+                        Accept
                     </button>
                 </div>
             </div>
         </div>
     </div>
-    <button class="button button-calm button-block icon-left ion-arrow-left-c" ng-click="gotoBuyerHome()">
+    <button class="ion-item-border button button-royal button-block icon-left ion-arrow-left-c"
+    ng-click="gotoBuyerHome()">
         Do Nothing - Go Back
     </button>
 </div>

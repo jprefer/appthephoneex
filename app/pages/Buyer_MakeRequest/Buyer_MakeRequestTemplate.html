@@ -1,9 +1,13 @@
 <div show-header="true" show-footer="true" show-top-tabs="true" show-tabs="true"
 ng-controller="Buyer_MakeRequest" ng-cloak ng-init="init()" active-screen="Make A Request"
-class="CSS_BG_LightBlue aio-empty-screen padding overflow-scroll">
-    <button class="button button-calm button-block">
-        Make Selections for Request
-    </button>
+class="aio-empty-screen padding overflow-scroll">
+    <div class="list">
+        <div class="item-divider item Buyer-Header">
+            <p>
+            </p>
+            Make Selections for Request
+        </div>
+    </div>
     <div data-tap-disabled="true" class="item item-input item-select ">
         <div class="input-label">
             Manufacturer
@@ -256,10 +260,12 @@ class="CSS_BG_LightBlue aio-empty-screen padding overflow-scroll">
             Your Notes: {{Notes}}
         </p>
     </div>
-    <button class="button button-calm button-block icon-left ion-paper-airplane" ng-click="MakeData()">
+    <button class="ion-item-border button button-calm button-block icon-left ion-paper-airplane"
+    ng-click="MakeData()">
         Send Request
     </button>
-    <button class="button button-royal button-block icon-left ion-arrow-left-c" ng-click="gotoBuyerHome()">
+    <button class="ion-item-border button button-royal button-block icon-left ion-arrow-left-c"
+    ng-click="gotoBuyerHome()">
         Cancel - Go Back
     </button>
 </div>

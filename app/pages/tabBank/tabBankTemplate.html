@@ -1,5 +1,12 @@
 <div show-header="true" show-footer="true" show-top-tabs="true" show-tabs="true"
-ng-controller="tabBank" ng-cloak ng-init="init()" active-screen="Bank" class="CSS_BG_LightPurple aio-empty-screen padding overflow-scroll">
+ng-controller="tabBank" ng-cloak ng-init="init()" active-screen="Bank" class="aio-empty-screen padding overflow-scroll">
+    <div class="list">
+        <div class="item-divider item Tab-Header">
+            <p>
+            </p>
+            Mobile E-Commerce Done Better
+        </div>
+    </div>
     <div class="card">
         <div class="item-divider item">
             Payment Type
@@ -13,15 +20,15 @@ ng-controller="tabBank" ng-cloak ng-init="init()" active-screen="Bank" class="CS
             <div>
                 <div class="row">
                     <div class="col">
-                        <button class="button button-calm button-block button-small" ng-click="changetoCC()"
+                        <button class="ion-item-border button button-calm button-block button-small" ng-click="changetoCC()"
                         ng-show="btn1Show">
                             {{btn1Text}}
                         </button>
-                        <button class="button button-energized button-block button-small" ng-click="changetoEscrow()"
-                        ng-show="btn2Show">
+                        <button class="ion-item-border button button-energized button-block button-small"
+                        ng-click="changetoEscrow()" ng-show="btn2Show">
                             {{btn2Text}}
                         </button>
-                        <button class="button button-balanced button-block" ng-show="btn4Show">
+                        <button class="ion-item-border button button-balanced button-block" ng-show="btn4Show">
                             {{btn4Text}}
                         </button>
                     </div>
@@ -33,7 +40,7 @@ ng-controller="tabBank" ng-cloak ng-init="init()" active-screen="Bank" class="CS
                         <p>
                             {{lblText3}}
                         </p>
-                        <button class="button button-royal button-block button-small" ng-click="escrowInstruct()"
+                        <button class="ion-item-border button button-royal button-block button-small" ng-click="escrowInstruct()"
                         ng-show="btn3Show">
                             {{btn3Text}}
                         </button>
@@ -43,10 +50,10 @@ ng-controller="tabBank" ng-cloak ng-init="init()" active-screen="Bank" class="CS
         </div>
     </form>
     <div class="card">
-        <div class="item-divider item CSS_BG_LightPurple">
+        <div class="item-divider item">
             Default Credit Card
         </div>
-        <div class="item CSS_BG_LightPurple">
+        <div class="item">
             <p>
                 {{default_cardBrand}} xxx xxx xxx {{default_last4}}
             </p>
@@ -218,19 +225,19 @@ ng-controller="tabBank" ng-cloak ng-init="init()" active-screen="Bank" class="CS
             Expiration date can be any MONTH / YEAR &nbsp;in the future
         </p>
     </div>
-    <button class="button button-balanced button-block" ng-click="gotoSquareCCOF()">
+    <button class="ion-item-border button button-balanced button-block" ng-click="gotoSquareCCOF()">
         Enter New Credit Card
     </button>
     <p class="positive">
         Click on the credit card you want to delete or make default
     </p>
     <div class="card">
-        <div class="item-divider item CSS_BG_LightPurple">
+        <div class="item-divider item">
             Cards on File
         </div>
-        <div class="item CSS_BG_LightPurple">
+        <div class="item">
             <div class="list">
-                <a href="javascript:void(0)" class="item-icon-left item CSS_BG_LightPurple" ng-click="ChangeCard(item.id,item.card_brand,item.last_4,item.exp_month,item.exp_year)"
+                <a href="javascript:void(0)" class="item-icon-left item" ng-click="ChangeCard(item.id,item.card_brand,item.last_4,item.exp_month,item.exp_year)"
                 ng-repeat="item in list">
                 <i class="icon ion-card "></i>
                 <h2>{{item.card_brand}} xxxxxxx{{item.last_4}}</h2>
@@ -258,4 +265,8 @@ ng-controller="tabBank" ng-cloak ng-init="init()" active-screen="Bank" class="CS
             </div>
         </div>
     </div>
+    <button class="ion-item-border button button-royal button-block icon-left ion-arrow-left-c"
+    ng-click="gotoPage()">
+        Go Back
+    </button>
 </div>

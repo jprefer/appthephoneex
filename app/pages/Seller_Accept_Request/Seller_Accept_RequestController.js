@@ -248,7 +248,7 @@ define(['require', 'app'],
                             });
                     },
                     function(error) { // callback to handle request error
-                        alert('Please Enter a Price');
+                        alert('Please Enter a Price (example: 99.99)');
                         Apperyio.navigateTo("Seller_Accept_Request", {});
                     },
                     function(notify) { // notify callback, can fire few times

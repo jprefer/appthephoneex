@@ -1,6 +1,17 @@
 <div show-header="true" show-footer="true" show-top-tabs="true" show-tabs="true"
 ng-controller="Buyer_InProcess" ng-cloak ng-init="init()" active-screen="In Process"
-class="CSS_BG_LightBlue aio-empty-screen padding overflow-scroll">
+class="aio-empty-screen padding overflow-scroll">
+    <div class="list">
+        <div class="item-divider item Buyer-Header" ng-click="gotoBuyerInProcess()">
+            <p>
+            </p>
+            Mobile E-Commerce Done Better
+        </div>
+    </div>
+    <button class="ion-item-border button button-royal button-block icon-left ion-arrow-left-c"
+    ng-click="gotoBuyerHome()">
+        Go Back
+    </button>
     <div>
         <br>
         <font size="4">
@@ -25,15 +36,12 @@ class="CSS_BG_LightBlue aio-empty-screen padding overflow-scroll">
         </center>
         <br>
         <center>
-            <font color="#FEC82E">
-                (Click On Shipment to Proceed)
-            </font>
+            (Click On Shipment to Proceed)
         </center>
         <br>
     </div>
     <div class="list">
-        <a href="javascript:void(0)" class="item CSS_BG_LightBlue" ng-click="showDetail(item._id)"
-        ng-repeat="item in list">
+        <a href="javascript:void(0)" class="item" ng-click="showDetail(item._id)" ng-repeat="item in list">
         <h2>Order: {{item.BuyingPrice|currency}} --&gt; {{item. Manu}} {{item. Prod}} </h2>
         <p>{{item.Mem}} / {{item.Colour}} / {{item. ChoiceCarrier}} /  Order ID: {{item._id.substring(20)}}</p>
         Quan:{{item.Quan}} / Grade: {{item.Cond}}  / Shipped: {{item. ShipDate.$date.substring(0,10)}}

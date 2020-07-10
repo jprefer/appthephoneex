@@ -1,9 +1,13 @@
 <div show-header="true" show-footer="true" show-top-tabs="true" show-tabs="true"
 ng-controller="Seller_Accept_Request" ng-cloak ng-init="init()" active-screen="Make Offer for Request"
-class="CSS_BG_LightGold aio-empty-screen padding overflow-scroll">
-    <button class="button button-energized button-block button-small">
-        Bid Request ID: {{miniID}}
-    </button>
+class="aio-empty-screen padding overflow-scroll">
+    <div class="list">
+        <div class="item-divider item Seller-Header">
+            <p>
+            </p>
+            Bid Request ID: {{miniID}}
+        </div>
+    </div>
     <div>
         <b>
             <center>
@@ -33,7 +37,7 @@ class="CSS_BG_LightGold aio-empty-screen padding overflow-scroll">
     <div class="list">
         <div>
             <div class="row">
-                <div class="col">
+                <div class="col col-33">
                     <p>
                         Enter The Grade (Condtion):
                     </p>
@@ -41,7 +45,7 @@ class="CSS_BG_LightGold aio-empty-screen padding overflow-scroll">
                 <div class="col">
                     <div data-tap-disabled="true" class="item item-input item-select ">
                         <div class="input-label">
-                            Pick
+                            Grade
                         </div>
                         <select ng-init="Condition1=&quot;A&quot;" ng-model="Condition1">
                             <option value="A">
@@ -75,7 +79,7 @@ class="CSS_BG_LightGold aio-empty-screen padding overflow-scroll">
             <div class="col">
                 <form name="myForm">
                     <div class="item item-input">
-                        <input type="text" placeholder="Offer - 0.00" value="" ng-required="true" name="bidamount1"
+                        <input type="text" placeholder="Offer - 00.00" value="" ng-required="true" name="bidamount1"
                         ng-model="BidAmount">
                     </div>
                 </form>
@@ -85,13 +89,14 @@ class="CSS_BG_LightGold aio-empty-screen padding overflow-scroll">
     <div>
         <div class="row row-top">
             <div class="col">
-                <button class="button button-royal button-block icon-left ion-arrow-left-c" ng-click="gotoPage()">
+                <button class="ion-item-border button button-royal button-block icon-left ion-arrow-left-c"
+                ng-click="gotoPage()">
                     Go Back
                 </button>
             </div>
             <div class="col">
-                <button class="button button-balanced button-block icon-left ion-cash" ng-click="PlaceOffer()"
-                ng-disabled="myForm.bidamount1.$error.required">
+                <button class="ion-item-border button button-balanced button-block icon-left ion-cash"
+                ng-click="PlaceOffer()" ng-disabled="myForm.bidamount1.$error.required">
                     Place Offer
                 </button>
             </div>

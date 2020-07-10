@@ -85,6 +85,7 @@ define(['require', 'app'],
                     function(error) { // callback to handle request error
                         var userData = Apperyio.get("dataStorage");
                         userData.message = error.data.message;
+                        console.log(error.data.message)
                         var modalOptions = { // About Ionic Modal: https://devcenter.appery.io/documentation/angularjs/screens/#Modal_screen
                             animation: 'slide-in-up', // The animation to show & hide with
                             focusFirstInput: false, // Whether to autofocus the first input of the modal when shown

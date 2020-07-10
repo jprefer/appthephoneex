@@ -1,16 +1,16 @@
 /**
- * Module initializes rest service phoneapp_logout_service
+ * Module initializes rest service Buyer_Home_Shipped_service
  */
 define(['require'], function(require) {
     return [{
         type: 'service',
-        name: 'phoneapp_logout_service',
-        deps: ['Apperyio', 'REST', phoneapp_logout_serviceImpl]
+        name: 'Buyer_Home_Shipped_service',
+        deps: ['Apperyio', 'REST', Buyer_Home_Shipped_serviceImpl]
     }];
     /**
-     * @function phoneapp_logout_serviceImpl
+     * @function Buyer_Home_Shipped_serviceImpl
      */
-    function phoneapp_logout_serviceImpl(Apperyio, REST) {
+    function Buyer_Home_Shipped_serviceImpl(Apperyio, REST) {
         var REST = new REST();
         /**
          * REST options. Initial values of "headers", "params", "data" and "echo" store are stored in models.js.
@@ -29,14 +29,15 @@ define(['require'], function(require) {
          * @property {string} serviceName                     - Service name
          */
         this.config = {
-            url: "https://api.appery.io/rest/1/db/logout",
-            method: "get",
-            headers: Apperyio.EntityAPI("phoneapp_logout_service.request.headers"),
-            params: Apperyio.EntityAPI("phoneapp_logout_service.request.query"),
+            url: "https://api.appery.io/rest/1/code/d678a912-5b9e-4510-ae72-5d335f5b1ade/exec",
+            method: "post",
+            headers: Apperyio.EntityAPI("Buyer_Home_Shipped_service.request.headers"),
+            params: Apperyio.EntityAPI("Buyer_Home_Shipped_service.request.query"),
+            data: Apperyio.EntityAPI("Buyer_Home_Shipped_service.request.body", undefined, true, true) || "",
             aio_config: {
-                requestType: "",
+                requestType: "data",
                 responseType: "json",
-                serviceName: "phoneapp_logout_service"
+                serviceName: "Buyer_Home_Shipped_service"
             }
         };
         this.inst = REST.setDefaults(this.config);

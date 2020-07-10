@@ -20,38 +20,62 @@ class="aio-empty-screen padding overflow-scroll">
     <img width="" height="20%" src="files/images/a_00dpiLogoCropped.png" class="img-default img-responsive"
     alt="Image error">
     <div class="card">
-        <div class="item-divider item">
+        <div class="item-divider item ion-item-border-LogoOrange">
             Login
         </div>
         <div class="item">
-            <div class="item item-input">
-                <input type="text" placeholder="Username" value="" ng-model=" user.username">
-            </div>
-            <div class="item item-input">
-                <input type="password" placeholder="Password" value="" ng-model="user.password">
-            </div>
-            <button class="button button-calm button-block" ng-click=" login()">
-                Login
-            </button>
+            <form name="loginForm">
+                <div class="list">
+                    <div class="item item-input">
+                        <input type="text" placeholder="Username" value="" ng-required="true" name="username1"
+                        ng-model=" user.username">
+                    </div>
+                    <div class="item item-input">
+                        <input type="password" placeholder="Password" value="" ng-required="true" name="password1"
+                        ng-model="user.password">
+                    </div>
+                    <div>
+                        <div class="row">
+                            <div class="col col-20">
+                            </div>
+                            <div class="col">
+                                <button class="ion-item-border button button-calm button-block" ng-click=" login()"
+                                ng-disabled="loginForm.username1.$error.required||loginForm.password1.$error.required">
+                                    Login
+                                </button>
+                            </div>
+                            <div class="col col-20">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
-    <div class="card">
-        <div class="item-divider item">
-            New User?
-        </div>
-        <div class="item">
-            <div>
-                <div class="row">
-                    <div class="col">
-                        <button class="button button-energized button-block button-small" navigate-to="Register">
-                            New? -Register
+    <div>
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                    <div class="item-image item ion-item-border-LogoGreen">
+                        New User?
+                    </div>
+                    <div class="item">
+                        <button class="ion-item-border button button-energized button-block button-small"
+                        navigate-to="Register">
+                            Register
                         </button>
                     </div>
-                    <div class="col col-10">
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="item-image item ion-item-border-LogoBlue">
+                        ? Password
                     </div>
-                    <div class="col">
-                        <button class="button button-royal button-block button-small" navigate-to="ForgotPassword">
-                            Forgot Password
+                    <div class="item">
+                        <button class="ion-item-border button button-royal button-block button-small icon-left ion-help"
+                        navigate-to="ForgotPassword">
+                            Password
                         </button>
                     </div>
                 </div>
@@ -59,6 +83,6 @@ class="aio-empty-screen padding overflow-scroll">
         </div>
     </div>
     <div>
-        Copyright 2020 - The Phone Ex // Version 1.28
+        Copyright 2020 - The Phone Ex // Version 1.30
     </div>
 </div>

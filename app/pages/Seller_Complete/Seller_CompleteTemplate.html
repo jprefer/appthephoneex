@@ -1,6 +1,17 @@
 <div show-header="true" show-footer="true" show-top-tabs="true" show-tabs="true"
 ng-controller="Seller_Complete" ng-cloak ng-init="init()" active-screen="Complete"
-class="CSS_BG_LightGold aio-empty-screen padding overflow-scroll">
+class="aio-empty-screen padding overflow-scroll">
+    <div class="list">
+        <div class="item-divider item Seller-Header" ng-click="gotoSellerComplete()">
+            <p>
+            </p>
+            Mobile E-Commerce Done Better
+        </div>
+    </div>
+    <button class="ion-item-border button button-royal button-block icon-left ion-arrow-left-c"
+    ng-click="gotoSellerHome()">
+        Go Back
+    </button>
     <div>
         <br>
         <font size="4">
@@ -16,8 +27,7 @@ class="CSS_BG_LightGold aio-empty-screen padding overflow-scroll">
         <br>
     </div>
     <div class="list">
-        <a href="javascript:void(0)" class="item CSS_BG_LightGold" ng-click="showDetail(item._id)"
-        ng-repeat="item in list">
+        <a href="javascript:void(0)" class="item" ng-click="showDetail(item._id)" ng-repeat="item in list">
         <h2>Order: {{item.Price|currency}} --&gt; {{item. Manu}} {{item. Prod}} </h2>
         <p>Accepted: {{item.AcceptDate.$date.substring(0,10)}} </p>
         Quan:{{item.Quan}}  / Order ID: {{item._id.substring(20)}}

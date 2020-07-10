@@ -178,7 +178,9 @@ define(['require', 'app'],
                             //$scope.ShipDate1 = ShipDate1_scope;
                             if ($scope.Tracking1 == null) {
                                 $scope.ShipDate1 = "Not Shipped Yet";
+                                alert('This item has not been shipped yet.  You can not accept it until you receive it')
                             } else {
+                                alert('Once you receive your order, you can accept the shipment here.  Be sure that your have received the order and are satisfied with it before accepting! ')
                                 $scope.ShipDate1 = new Date(ShipDate1_scope.$date);
                                 var ChangetoString3 = String($scope.ShipDate1);
                                 $scope.ShipDate1 = ChangetoString3
@@ -243,29 +245,12 @@ define(['require', 'app'],
                     /*|service_bookmark|bookmark|C5292A6D-40A0-15FB-1B23-1D09BE8635D1||6366|*/
                     function(success) { // success callback
                         /*|button_mapping|onsuccess|C5292A6D-40A0-15FB-1B23-1D09BE8635D1||5392|*/
+                        alert('You have accepted the order and have given the seller a rating of: ' + $scope.Rating1)
                     },
                     function(error) { // callback to handle request error
-                        Apperyio.navigateTo("Login", {});
+                        //Apperyio.navigateTo("Login", {});
                     },
                     function(notify) { // notify callback, can fire few times
-                    });
-                var modalOptions = { // About Ionic Modal: https://links.appery.io/ve-snippet-modal-ionic
-                    animation: 'slide-in-up', // The animation to show & hide with
-                    focusFirstInput: false, // Whether to autofocus the first input of the modal when shown
-                    backdropClickToClose: true, // Whether to close the modal on clicking the backdrop
-                    hardwareBackButtonClose: true // Whether the modal can be closed using the hardware back button on Android and similar devices
-                };
-                Apperyio.get('Modals').loadModal("Modal_Seller_Enter_Tracking").then(
-                    function(modalInstance) {
-                        modalInstance.open(modalOptions).then(function(modal) {
-                            modal.scope.modal = modal;
-                            modal.scope.result = "You have You Have Accepted the Order :";
-                            modal.scope.result1 = $scope.Rating1;
-                            modal.show();
-                        });
-                    },
-                    function(error) {
-                        console.log(error);
                     });
                 Apperyio.navigateTo("Buyer_Home", {});
             };

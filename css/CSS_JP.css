@@ -1,12 +1,89 @@
 body .CSS_BG_DarkBlue{ 
-background-color:#FFFFFF; 
+background-color:#0950F1; 
 } 
 body .CSS_BG_LightBlue{ 
-background-color:#FFFFFF; 
+background-color:#33C4FF; 
 } 
 body .CSS_BG_LightGold{ 
-background-color:#FFFFFF; 
+background-color:#F1EA09; 
 } 
 body .CSS_BG_LightPurple{ 
-background-color:#FFFFFF; 
+background-color:#B909F1; 
 } 
+body .CSS_BG_Red{ 
+background-color:#FF0000; 
+} 
+body .CSS_BG_Lime{ 
+background-color:#33F109; 
+} 
+body .CSS_BG_LogoBlue{ 
+background-color:#1CACDA; 
+}
+body .CSS_BG_LogoGreen{ 
+background-color:#B1CF42; 
+}
+body .CSS_BG_LogoOrange{ 
+background-color:#F39330; 
+}
+.ion-item-borderPurple {
+border-radius: 20px !important;
+padding-left: 10px;
+padding-right: 10px;
+padding-bottom: 5px;
+padding-top: 5px;
+background: #886EE7;
+}
+.ion-item-borderGreen {
+border-radius: 20px !important;
+padding-left: 10px;
+padding-right: 10px;
+padding-bottom: 5px;
+padding-top: 5px;
+background: #3DCB64;
+}
+.ion-item-border {
+border-radius: 20px !important;
+padding-left: 10px;
+padding-right: 10px;
+padding-bottom: 5px;
+padding-top: 5px;
+}
+.Buyer-Header {
+  text-align: center;
+  background-color:#1CACDA;
+  color: white
+}
+.Seller-Header {
+  text-align: center;
+  background-color:#F39330;
+  color: white
+}
+.Tab-Header {
+  text-align: center;
+  background-color:#B1CF42;
+  color: white
+}
+.ion-item-border-LogoBlue {
+border-radius: 20px !important;
+padding-left: 10px;
+padding-right: 10px;
+padding-bottom: 5px;
+padding-top: 5px;
+background: #1CACDA;
+}
+.ion-item-border-LogoGreen {
+border-radius: 20px !important;
+padding-left: 10px;
+padding-right: 10px;
+padding-bottom: 5px;
+padding-top: 5px;
+background: #B1CF42;
+}
+.ion-item-border-LogoOrange {
+border-radius: 20px !important;
+padding-left: 10px;
+padding-right: 10px;
+padding-bottom: 5px;
+padding-top: 5px;
+background: #F39330;
+}

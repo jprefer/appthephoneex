@@ -1,40 +1,44 @@
 <div show-header="true" show-footer="true" show-top-tabs="true" show-tabs="true"
 ng-controller="Buyer_InProcess_Detail" ng-cloak ng-init="init()" active-screen="Accept Shipment"
-class="CSS_BG_LightBlue aio-empty-screen padding overflow-scroll">
-    <button class="button button-calm button-block button-small">
-        ORDER ID: {{_id1.substring(20)}}
-    </button>
+class="aio-empty-screen padding overflow-scroll">
+    <div class="list">
+        <div class="item Buyer-Header">
+            <p>
+            </p>
+            ORDER ID: {{_id1.substring(20)}}
+        </div>
+    </div>
     <div class="list">
         <p>
-            Please Rate Seller and Accept Shipment
+            Please rate seller and accept shipment
         </p>
         <div>
             <div class="row">
-                <div class="col">
+                <div class="col col-33">
                     <p>
-                        Rate the Seller
+                        Rate the Seller (5 is the best)
                     </p>
                 </div>
                 <div class="col">
-                    <div data-tap-disabled="true" class="item item-input item-select CSS_BG_LightBlue">
+                    <div data-tap-disabled="true" class="item item-input item-select ">
                         <div class="input-label">
-                            Pick
+                            Rating
                         </div>
-                        <select ng-init="Rating1=&quot;*****&quot;" ng-model="Rating1">
-                            <option value="*****">
-                                *****
+                        <select ng-init="Rating1=&quot;5&quot;" ng-model="Rating1">
+                            <option value="5">
+                                5
                             </option>
-                            <option value="****">
-                                ****
+                            <option value="4">
+                                4
                             </option>
-                            <option value="***">
-                                ***
+                            <option value="3">
+                                3
                             </option>
-                            <option value="**">
-                                **
+                            <option value="2">
+                                2
                             </option>
-                            <option value="*">
-                                *
+                            <option value="1">
+                                1
                             </option>
                         </select>
                     </div>
@@ -44,13 +48,9 @@ class="CSS_BG_LightBlue aio-empty-screen padding overflow-scroll">
         <div>
             <div class="row">
                 <div class="col col-33">
-                    <button class="button button-assertive button-block icon-left ion-sad-outline" ng-click="Return()"
-                    ng-disabled="dsblBtn">
-                        Return
-                    </button>
                 </div>
                 <div class="col">
-                    <button class="button button-balanced button-block icon-left ion-happy-outline"
+                    <button class="ion-item-border button button-balanced button-block icon-left ion-happy-outline"
                     ng-click="Accept()" ng-disabled="dsblBtn">
                         Accept
                     </button>
@@ -58,7 +58,8 @@ class="CSS_BG_LightBlue aio-empty-screen padding overflow-scroll">
             </div>
         </div>
     </div>
-    <button class="button button-royal button-block icon-left ion-arrow-left-c" ng-click="GoBack()">
+    <button class="ion-item-border button button-royal button-block icon-left ion-arrow-left-c"
+    ng-click="GoBack()">
         Go Back
     </button>
     <div>
@@ -128,6 +129,22 @@ class="CSS_BG_LightBlue aio-empty-screen padding overflow-scroll">
     <div>
         <div class="row">
             <div class="col">
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="row">
+            <div class="col col-25">
+                <button class="ion-item-border button button-assertive button-block" ng-click="Return()"
+                ng-disabled="dsblBtn">
+                    Return
+                </button>
+            </div>
+            <div class="col">
+                <p>
+                    Request a return if you are not satisfied with your order. A member of our team
+                    will get back to you with instructions.
+                </p>
             </div>
         </div>
     </div>

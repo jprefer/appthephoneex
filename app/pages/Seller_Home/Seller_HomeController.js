@@ -40,9 +40,13 @@ define(['require', 'app'],
                 var Seller_username = AllData.username;
                 var token = AllData.session;
                 var inactive = AllData.InActive;
+                var active = AllData.Active;
+                var textVer = AllData.TextVer;
+                var emailVer = AllData.EmailVer;
                 //Get User  
                 console.log("SellerUser:", Seller_username);
-                if (inactive !== null) {
+                console.log("Active:", active);
+                if (active === false) {
                     alert('Your Account has been inactivated due to ' + inactive + '. Please contact customer service to resolve.');
                     var requestData = {};
                     var sessionToken = $scope.user.session;
@@ -55,7 +59,7 @@ define(['require', 'app'],
                         return requestData;
                         /*CLICK TO EDIT MAPPING*/
                     })($scope);
-                    // read more about using rest services: https://links.appery.io/ve-snippet-rest
+                    //read more about using rest services: https://links.appery.io/ve-snippet-rest
                     Apperyio.get("phoneapp_logout_service")(requestData).then(
                         function(success) { // success callback
                             /*CLICK TO EDIT MAPPING*/
@@ -142,6 +146,12 @@ define(['require', 'app'],
                         },
                         function(notify) { // notify callback, can fire few times
                         });
+                    //see if email and/or phone has be verified
+                    if (textVer === false || emailVer === false) {
+                        $scope.wordBtn1 = "You need to VERIFY your info";
+                        $scope.showBtn1 = true;
+                        $scope.badgeCnt1 = 1;
+                    } else {}
                 }
             };
             /**

@@ -1657,6 +1657,79 @@ define(['require'], function(require) {
                 }
             }
         },
+        "Buyer_Home_Shipped_service": {
+            "type": "object",
+            "properties": {
+                "url": {
+                    "type": "string",
+                    "default": "https://api.appery.io/rest/1/code/d678a912-5b9e-4510-ae72-5d335f5b1ade/exec"
+                },
+                "method": {
+                    "type": "string",
+                    "default": "post"
+                },
+                "request": {
+                    "type": "object",
+                    "properties": {
+                        "body": {
+                            "type": "object",
+                            "properties": {
+                                "data": {
+                                    "type": "data"
+                                }
+                            }
+                        },
+                        "query": {
+                            "type": "object",
+                            "properties": {
+                                "username": {
+                                    "type": "string",
+                                    "default": "john"
+                                }
+                            }
+                        },
+                        "headers": {
+                            "type": "object",
+                            "properties": {
+                                "X-Appery-Session-Token": {
+                                    "type": "string",
+                                    "default": "3ee6df93-e570-4c1f-85a6-f46fa816fc2e"
+                                },
+                                "Content-Type": {
+                                    "type": "string",
+                                    "default": "text/plain"
+                                }
+                            }
+                        }
+                    }
+                },
+                "response": {
+                    "type": "object",
+                    "properties": {
+                        "body": {
+                            "type": "object",
+                            "properties": {
+                                "$": {
+                                    "type": "object",
+                                    "properties": {
+                                        "requestParams": {
+                                            "type": "string"
+                                        },
+                                        "requestBody": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "headers": {
+                            "type": "object",
+                            "properties": {}
+                        }
+                    }
+                }
+            }
+        },
         "test_service": {
             "type": "object",
             "properties": {

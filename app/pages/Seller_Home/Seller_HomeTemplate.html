@@ -1,7 +1,26 @@
 <div show-header="true" show-footer="true" show-top-tabs="true" show-tabs="true"
-ng-controller="Seller_Home" ng-cloak ng-init="init()" active-screen="Home" class="CSS_BG_LightGold aio-empty-screen padding overflow-scroll">
+ng-controller="Seller_Home" ng-cloak ng-init="init()" active-screen="Home" class="aio-empty-screen padding overflow-scroll">
     <div class="list">
-        <div class="item-divider item" ng-click="gotoSellerAccepted()" ng-show="showBtn">
+        <div class="item-divider item Seller-Header" ng-click="gotoSellerHome()">
+            <p>
+            </p>
+            Mobile E-Commerce Done Better
+        </div>
+    </div>
+    <div class="list">
+        <div class="item-divider item ion-item-border-LogoOrange" ng-click="gotoVerify()"
+        ng-show="showBtn1">
+            <h2>
+                {{wordBtn1}}
+            </h2>
+            <p>
+            </p>
+            <span class="badge badge-assertive">
+                {{badgeCnt1}}
+            </span>
+        </div>
+        <div class="item-divider item ion-item-border-LogoOrange" ng-click="gotoSellerAccepted()"
+        ng-show="showBtn">
             <h2>
                 {{wordBtn}}
             </h2>
@@ -33,14 +52,15 @@ ng-controller="Seller_Home" ng-cloak ng-init="init()" active-screen="Home" class
                 </div>
             </div>
             <div class="col">
-                <button class="button button-positive button-block button-small" ng-click="gotoFilter()">
+                <button class="ion-item-border button button-positive button-block button-small"
+                ng-click="gotoFilter()">
                     Filter
                 </button>
             </div>
         </div>
     </div>
     <div class="list">
-        <a href="javascript:void(0)" class="item CSS_BG_LightGold" ng-checked="" ng-click="showDetail(item._id)"
+        <a href="javascript:void(0)" class="item" ng-checked="" ng-click="showDetail(item._id)"
         ng-repeat="item in list">
         <h2>{{item. manufacturer}} {{item. Product}} / {{item.Carrier}}/Quan:{{item.Quantity}} </h2>
         <p>{{item.Memory}} / {{item.Color}} /Shipping: {{item.Shipping}}</p>

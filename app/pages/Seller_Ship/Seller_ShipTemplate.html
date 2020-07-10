@@ -1,8 +1,12 @@
 <div show-header="true" show-footer="true" show-top-tabs="true" show-tabs="true"
-ng-controller="Seller_Ship" ng-cloak ng-init="init()" active-screen="Shipping" class="CSS_BG_LightGold aio-empty-screen padding overflow-scroll">
-    <button class="button button-energized button-block button-small">
-        ORDER ID: {{_id1.substring(20)}}
-    </button>
+ng-controller="Seller_Ship" ng-cloak ng-init="init()" active-screen="Shipping" class="aio-empty-screen padding overflow-scroll">
+    <div class="list">
+        <div class="item-divider item Seller-Header">
+            <p>
+            </p>
+            ORDER ID: {{_id1.substring(20)}}
+        </div>
+    </div>
     <div class="list">
         <p>
             Enter The Shipping Details Below
@@ -15,7 +19,7 @@ ng-controller="Seller_Ship" ng-cloak ng-init="init()" active-screen="Shipping" c
                     </p>
                 </div>
                 <div class="col">
-                    <div data-tap-disabled="true" class="item item-input item-select CSS_BG_LightGold">
+                    <div data-tap-disabled="true" class="item item-input item-select ">
                         <div class="input-label">
                             Pick
                         </div>
@@ -54,12 +58,13 @@ ng-controller="Seller_Ship" ng-cloak ng-init="init()" active-screen="Shipping" c
         <div>
             <div class="row">
                 <div class="col">
-                    <button class="button button-royal button-block icon-left ion-arrow-left-c" ng-click="GoBack()">
+                    <button class="ion-item-border button button-royal button-block icon-left ion-arrow-left-c"
+                    ng-click="GoBack()">
                         Go Back
                     </button>
                 </div>
                 <div class="col">
-                    <button class="button button-balanced button-block icon-left ion-checkmark-round"
+                    <button class="ion-item-border button button-balanced button-block icon-left ion-checkmark-round"
                     ng-click="MarkShipped()" ng-disabled="myForm.tracking2.$error.required">
                         Mark Shipped
                     </button>

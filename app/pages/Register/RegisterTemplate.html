@@ -1,9 +1,14 @@
 <div show-header="false" show-footer="true" show-top-tabs="true" show-tabs="true"
-ng-controller="Register" ng-cloak ng-init="init()" active-screen="Register" class="CSS_BG_LightPurple aio-empty-screen padding overflow-scroll">
-    <button class="button button-energized button-block">
-        User Registration
-    </button>
-    <button class="button button-royal button-block icon-left ion-arrow-left-c" ng-click="gotologin()">
+ng-controller="Register" ng-cloak ng-init="init()" active-screen="Register" class="aio-empty-screen padding overflow-scroll">
+    <div class="list">
+        <div class="item-divider item Tab-Header">
+            <p>
+            </p>
+            User Registration
+        </div>
+    </div>
+    <button class="ion-item-border button button-royal button-block icon-left ion-arrow-left-c"
+    ng-click="gotologin()">
         Back to Login Screen
     </button>
     <form name="loginForm">
@@ -120,6 +125,27 @@ ng-controller="Register" ng-cloak ng-init="init()" active-screen="Register" clas
                 </i>
                 <input type="text" placeholder="Act Code - (Sellers Only)" value="" ng-model="user.ActCode">
             </div>
+            <div>
+                <div class="row">
+                    <div class="col">
+                        <ion-checkbox ng-required="true" name="terms" ng-model="Terms">
+                            I Accept
+                        </ion-checkbox>
+                    </div>
+                    <div class="col">
+                        <div>
+                            <p>
+                                I have read and accepted the
+                                <a title="Privacy Policy" href="https://thephoneex.com/privacy-policy.html" target="_blank"
+                                rel="noopener">privacy policy</a>
+                                and the
+                                <a title="Terms & Condtions" href="https://thephoneex.com/terms-conditions.html"
+                                target="_blank" rel="noopener">terms & condtions</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </form>
     <div>
@@ -207,8 +233,8 @@ ng-controller="Register" ng-cloak ng-init="init()" active-screen="Register" clas
         <br>
     </div>
     <div class="card">
-        <div class="item-divider item CSS_BG_LightPurple">
-            <div class="CSS_BG_LightPurple">
+        <div class="item-divider item">
+            <div>
                 <font size="4">
                     <center>
                         <b>
@@ -221,7 +247,8 @@ ng-controller="Register" ng-cloak ng-init="init()" active-screen="Register" clas
             </div>
         </div>
     </div>
-    <button class="button button-positive button-block" ng-click="register()" ng-disabled="loginForm.uname.$error.required||!loginForm.password1.$valid||!loginForm.password2.$valid||loginForm.email1.$error.required||loginForm.email1.$error.email||loginForm.comp.$error.required||loginForm.firstname.$error.required||loginForm.lastname.$error.required||loginForm.mobile.$error.required||!loginForm.mobile.$valid||loginForm.phone.$error.required||!loginForm.phone.$valid||oginForm.address.$error.required||loginForm.city.$error.required||loginForm.state.$error.required||loginForm.zip.$error.required||loginForm.country.$error.required||loginForm.resale.$error.required||!loginForm.uname.$valid">
+    <button class="ion-item-border button button-positive button-block" ng-click="register()"
+    ng-disabled="loginForm.uname.$error.required||!loginForm.password1.$valid||!loginForm.password2.$valid||loginForm.email1.$error.required||loginForm.email1.$error.email||loginForm.comp.$error.required||loginForm.firstname.$error.required||loginForm.lastname.$error.required||loginForm.mobile.$error.required||!loginForm.mobile.$valid||loginForm.phone.$error.required||!loginForm.phone.$valid||oginForm.address.$error.required||loginForm.city.$error.required||loginForm.state.$error.required||loginForm.zip.$error.required||loginForm.country.$error.required||loginForm.resale.$error.required||!loginForm.uname.$valid||!Terms">
         Register
     </button>
     <p ng-show="loginForm.uname.$error.required" class="assertive">
@@ -274,5 +301,8 @@ ng-controller="Register" ng-cloak ng-init="init()" active-screen="Register" clas
     </p>
     <p ng-show="loginForm.resale.$error.required" class="assertive">
         Resale Number Required
+    </p>
+    <p ng-show="!Terms" class="assertive">
+        Accept Terms and Condtions
     </p>
 </div>

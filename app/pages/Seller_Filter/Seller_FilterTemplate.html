@@ -1,6 +1,14 @@
 <div show-header="true" show-footer="true" show-top-tabs="true" show-tabs="true"
 ng-controller="Seller_Filter" ng-cloak ng-init="init()" active-screen="Filter" class="aio-empty-screen padding overflow-scroll">
-    <button class="button button-royal button-block icon-left ion-arrow-left-c" ng-click="gotoSellerHome()">
+    <div class="list">
+        <div class="item Seller-Header">
+            <p>
+            </p>
+            Mobile E-Commerce Done Better
+        </div>
+    </div>
+    <button class="ion-item-border button button-royal button-block icon-left ion-arrow-left-c"
+    ng-click="gotoSellerHome()">
         Go Back
     </button>
     <div data-tap-disabled="true" class="item item-input item-select ">
@@ -43,7 +51,8 @@ ng-controller="Seller_Filter" ng-cloak ng-init="init()" active-screen="Filter" c
             </div>
         </div>
     </div>
-    <button class="button button-energized button-block" ng-click="toFilter()" ng-disabled="btnDisabled">
+    <button class="ion-item-border button button-energized button-block" ng-click="toFilter()"
+    ng-disabled="btnDisabled">
         Filter
     </button>
 </div>

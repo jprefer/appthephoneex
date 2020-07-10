@@ -1,10 +1,15 @@
 <div show-header="true" show-footer="true" show-top-tabs="true" show-tabs="true"
 ng-controller="Seller_Offers_Detail" ng-cloak ng-init="init()" active-screen="My Current Offers - Detail"
-class="CSS_BG_LightGold aio-empty-screen padding overflow-scroll">
-    <button class="button button-energized button-block button-small">
-        Offer ID: {{Offer_id1.substring(20)}}
-    </button>
-    <button class="button button-royal button-block icon-left ion-arrow-left-c" ng-click="GoBack()">
+class="aio-empty-screen padding overflow-scroll">
+    <div class="list">
+        <div class="item-divider item Seller-Header">
+            <p>
+            </p>
+            Offer ID: {{Offer_id1.substring(20)}}
+        </div>
+    </div>
+    <button class="ion-item-border button button-royal button-block icon-left ion-arrow-left-c"
+    ng-click="GoBack()">
         Go Back
     </button>
     <div>

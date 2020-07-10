@@ -275,22 +275,7 @@ define(['require', 'app'],
                         }
                     },
                     function(error) { // callback to handle request error
-                        var modalOptions = { // About Ionic Modal: https://devcenter.appery.io/documentation/angularjs/screens/#Modal_screen
-                            animation: 'slide-in-up', // The animation to show & hide with
-                            focusFirstInput: false, // Whether to autofocus the first input of the modal when shown
-                            backdropClickToClose: true, // Whether to close the modal on clicking the backdrop
-                            hardwareBackButtonClose: true // Whether the modal can be closed using the hardware back button on Android and similar devices
-                        };
-                        Apperyio.get('Modals').loadModal("MessagePopup_WrongUserNamePass").then(
-                            function(modalInstance) {
-                                modalInstance.open(modalOptions).then(function(modal) {
-                                    modal.scope.modal = modal;
-                                    modal.show();
-                                });
-                            },
-                            function(error) {
-                                console.log(error);
-                            });
+                        alert(' Sorry - Wrong username / password combination - Please try again')
                     },
                     function(notify) { // notify callback, can fire few times
                     });
