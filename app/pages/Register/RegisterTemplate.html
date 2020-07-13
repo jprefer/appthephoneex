@@ -125,23 +125,33 @@ ng-controller="Register" ng-cloak ng-init="init()" active-screen="Register" clas
                 </i>
                 <input type="text" placeholder="Act Code - (Sellers Only)" value="" ng-model="user.ActCode">
             </div>
-            <div>
-                <div class="row">
-                    <div class="col">
-                        <ion-checkbox ng-required="true" name="terms" ng-model="Terms">
-                            I Accept
-                        </ion-checkbox>
-                    </div>
-                    <div class="col">
-                        <div>
-                            <p>
-                                I have read and accepted the
-                                <a title="Privacy Policy" href="https://thephoneex.com/privacy-policy.html" target="_blank"
-                                rel="noopener">privacy policy</a>
-                                and the
-                                <a title="Terms & Condtions" href="https://thephoneex.com/terms-conditions.html"
-                                target="_blank" rel="noopener">terms & condtions</a>
-                            </p>
+        </div>
+        <div class="card">
+            <div class="item">
+                <div>
+                    <div class="row">
+                        <div class="col">
+                            <div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <button class="ion-item-border button button-calm button-block button-small" ng-click="externalPP()">
+                                                        Privacy Policy
+                                                    </button>
+                                                    <button class="ion-item-border button button-calm button-block button-small" ng-click="externalTC()">
+                                                        Terms &amp; Condtions
+                                                    </button>
+                                                    <ion-checkbox ng-required="true" name="terms" ng-model="Terms">
+                                                        I Accept All Terms
+                                                    </ion-checkbox>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

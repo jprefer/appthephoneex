@@ -65,8 +65,13 @@ define(['require', 'app'],
                         //The next lines are added to get the deviceid and register push notifications
                         //Thenext line was added to get user
                         $scope.timeZone = "GMT-04:00";
+                        //document.addEventListener("push-notification", function(event) {alert(event.detail.message);});
+                        //added newto go Home
                         document.addEventListener("push-notification", function(event) {
                             alert(event.detail.message);
+                            //Apperyio.navigateTo("Buyer_Ins", {'reloadPage': true}); 
+                            Apperyio.navigateTo("Buyer_Ins");
+                            alert('Go to your Home screen and click refresh to see your alerts');
                         });
                         var requestData = {};
                         /*|button_mapping|onbeforesend|2433A3E7-057D-1695-F2C7-EA3E86BFACE9||8899|*/

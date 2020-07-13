@@ -112,5 +112,17 @@ define(['require', 'app'],
             $scope.gotologin = function() {
                 Apperyio.navigateTo("Login", {});
             };
+            /**
+             * @function externalPP
+             */
+            $scope.externalPP = function() {
+                window.open('https://thephoneex.com/privacy-policy.html', '_blank', 'location=yes');
+            };
+            /**
+             * @function externalTC
+             */
+            $scope.externalTC = function() {
+                window.open('https://thephoneex.com/terms-conditions.html', '_blank', 'location=yes');
+            };
         }
     });

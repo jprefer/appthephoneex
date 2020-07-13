@@ -9,5 +9,14 @@ define(['require', 'app'],
         function InfoController($scope, Apperyio) {
             // user controller variables
             // user controller functions
+            /**
+             * @function init
+             */
+            $scope.init = function() {
+                var builturl = modal.scope.result1
+                var $sce = Apperyio.get("$sce");
+                $scope.builturl = $sce.trustAsResourceUrl(builturl);
+                console.log("builturl", builturl);
+            };
         }
     });
