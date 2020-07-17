@@ -1,5 +1,5 @@
 <div show-header="true" show-footer="true" show-top-tabs="true" show-tabs="true"
-ng-controller="Seller_Home" ng-cloak ng-init="init()" active-screen="Home" class="aio-empty-screen padding overflow-scroll">
+ng-controller="Seller_Home" ng-cloak ng-init="init()" active-screen="Home" class="bg-01 aio-empty-screen padding overflow-scroll">
     <div class="list">
         <div class="item-icon-left item-divider item Seller-Header" ng-click="gotoSellerHome()">
             <i class="icon ion-refresh ">
@@ -21,7 +21,7 @@ ng-controller="Seller_Home" ng-cloak ng-init="init()" active-screen="Home" class
                 {{badgeCnt1}}
             </span>
         </div>
-        <div class="item-divider item ion-item-border-LogoOrange" ng-click="gotoSellerAccepted()"
+        <div class="item-divider item ion-item-border-LogoOrange" ng-click="stSellerAccepted()"
         ng-show="showBtn">
             <h2>
                 {{wordBtn}}
@@ -54,8 +54,7 @@ ng-controller="Seller_Home" ng-cloak ng-init="init()" active-screen="Home" class
                 </div>
             </div>
             <div class="col">
-                <button class="ion-item-border button button-positive button-block button-small"
-                ng-click="gotoFilter()">
+                <button class="ion-item-border button button-dark button-block button-small" ng-click="gotoFilter()">
                     Filter
                 </button>
             </div>

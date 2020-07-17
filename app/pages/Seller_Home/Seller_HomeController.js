@@ -174,13 +174,13 @@ define(['require', 'app'],
              */
             $scope.gotoFilter = function() {
                 // inject the 'dataStorage' service
-                var data = Apperyio.get("dataStorage");
+                //var data = Apperyio.get("dataStorage");
                 // user1 is a variable in the page1 scope 
                 // set it to reference the 'dataStorage' service
-                $scope.RequestID1.Gl_Vars = data;
-                $scope.RequestID1.Gl_Vars.whereami = "Seller_Filter";
+                // $scope.RequestID1.Gl_Vars = data;
+                // $scope.RequestID1.Gl_Vars.whereami = "Seller_Filter";
                 //console.log(_id);
-                Apperyio.navigateTo("PassThru", {});
+                Apperyio.navigateTo("Seller_Filter", {});
             };
         }
     });

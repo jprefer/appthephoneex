@@ -174,7 +174,7 @@ define(['require', 'app'],
              * @function gotoBuyer_Test
              */
             $scope.gotoBuyer_Test = function() {
-                Apperyio.navigateTo("Test", {});
+                Apperyio.navigateTo("Screen1", {});
             };
             /**
              * @function reload

@@ -43,5 +43,29 @@ define(['require', 'app'],
             $scope.termsCondtions = function() {
                 window.open('https://thephoneex.com/terms-conditions.html', '_blank', 'location=yes');
             };
+            /**
+             * @function test
+             */
+            $scope.test = function() {
+                var userData = Apperyio.get("dataStorage");
+                var AllData = userData.current;
+                var turn = AllData.UserType;
+                alert('this is a test');
+                if (turn == "B") {
+                    // inject the 'dataStorage' service
+                    var data = Apperyio.get("dataStorage");
+                    $scope.RequestID1.Gl_Vars = data;
+                    $scope.RequestID1.Gl_Vars.whereami = "Buyer_Home";
+                    //console.log(_id);
+                    Apperyio.navigateTo("PassThru", {});
+                } else {
+                    // inject the 'dataStorage' service
+                    var data = Apperyio.get("dataStorage");
+                    $scope.RequestID1.Gl_Vars = data;
+                    $scope.RequestID1.Gl_Vars.whereami = "Seller_Home";
+                    //console.log(_id);
+                    Apperyio.navigateTo("PassThru", {});
+                }
+            };
         }
     });

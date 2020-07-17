@@ -9,7 +9,10 @@ background-color:#F1EA09;
 } 
 body .CSS_BG_LightPurple{ 
 background-color:#B909F1; 
-} 
+}
+body .CSS_BG_DarkPurple{ 
+background-color:#886EE7; 
+}
 body .CSS_BG_Red{ 
 background-color:#FF0000; 
 } 
@@ -25,6 +28,9 @@ background-color:#B1CF42;
 body .CSS_BG_LogoOrange{ 
 background-color:#F39330; 
 }
+body .CSS_BG_White{ 
+background-color:#FFFFFF ; 
+} 
 .ion-item-borderPurple {
 border-radius: 20px !important;
 padding-left: 10px;
@@ -86,4 +92,34 @@ padding-right: 10px;
 padding-bottom: 5px;
 padding-top: 5px;
 background: #F39330;
+}
+.subdued {
+        padding-right: 10px;
+        color: #888;
+        text-decoration: none;
+    }
+    .card-item-with-buttons {
+        display: flex;
+        padding: 0;
+    }
+    .card-item-with-buttons .button {
+        flex-basis: 0;
+        flex-grow: 1;
+        flex-shrink: 1;
+        font-size: 10px;
+        text-align: center;
+    }
+    .card-item-with-buttons .button.icon-left:before {
+        float: none;
+    }
+    
+.bg-01 {
+    background: url(https://app.thephoneex.com/background_02.jpg);
+       background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    margin: auto;
+  
+    
 }

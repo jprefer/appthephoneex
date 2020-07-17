@@ -156,10 +156,10 @@ define(['require'], function(require) {
      * @property {string} when["/sq_iFrame.html"].c  - Controller for /sq_iFrame.html URL
      * @property {string} when["/sq_iFrame.html"].t  - Template for /sq_iFrame.html URL
      * @property {string[]} when["/sq_iFrame.html"].d  - Dependencies for /sq_iFrame.html URL
-     * @property {object} when["/Buyer_Pay.html"]    - Routing configuration for /Buyer_Pay.html URL
-     * @property {string} when["/Buyer_Pay.html"].c  - Controller for /Buyer_Pay.html URL
-     * @property {string} when["/Buyer_Pay.html"].t  - Template for /Buyer_Pay.html URL
-     * @property {string[]} when["/Buyer_Pay.html"].d  - Dependencies for /Buyer_Pay.html URL
+     * @property {object} when["/Screen1.html"]    - Routing configuration for /Screen1.html URL
+     * @property {string} when["/Screen1.html"].c  - Controller for /Screen1.html URL
+     * @property {string} when["/Screen1.html"].t  - Template for /Screen1.html URL
+     * @property {string[]} when["/Screen1.html"].d  - Dependencies for /Screen1.html URL
      * @property {object} when["/Bank_CC_Detail.html"]    - Routing configuration for /Bank_CC_Detail.html URL
      * @property {string} when["/Bank_CC_Detail.html"].c  - Controller for /Bank_CC_Detail.html URL
      * @property {string} when["/Bank_CC_Detail.html"].t  - Template for /Bank_CC_Detail.html URL
@@ -223,7 +223,7 @@ define(['require'], function(require) {
      * @property {string} route_names.["Seller_Ins"]  - "Seller_Ins" is an alias for "/Seller_Ins.html" routing
      * @property {string} route_names.["ForgotPassword"]  - "ForgotPassword" is an alias for "/ForgotPassword.html" routing
      * @property {string} route_names.["sq_iFrame"]  - "sq_iFrame" is an alias for "/sq_iFrame.html" routing
-     * @property {string} route_names.["Screen1"]  - "Screen1" is an alias for "/Buyer_Pay.html" routing
+     * @property {string} route_names.["Screen1"]  - "Screen1" is an alias for "/Screen1.html" routing
      * @property {string} route_names.["Bank_CC_Detail"]  - "Bank_CC_Detail" is an alias for "/Bank_CC_Detail.html" routing
      * @property {string} route_names.["tabSBank"]  - "tabSBank" is an alias for "/tabSBank.html" routing
      * @property {string} route_names.["tab_Help"]  - "tab_Help" is an alias for "/tab_Help.html" routing
@@ -396,6 +396,11 @@ define(['require'], function(require) {
                 t: '$sq_iFrame/sq_iFrameTemplate.html',
                 d: []
             },
+            '/Screen1.html': {
+                c: '$Screen1/Screen1Controller',
+                t: '$Screen1/Screen1Template.html',
+                d: []
+            },
             '/Bank_CC_Detail.html': {
                 c: '$Bank_CC_Detail/Bank_CC_DetailController',
                 t: '$Bank_CC_Detail/Bank_CC_DetailTemplate.html',
@@ -454,7 +459,7 @@ define(['require'], function(require) {
             'Seller_Ins': '/Seller_Ins.html',
             'ForgotPassword': '/ForgotPassword.html',
             'sq_iFrame': '/sq_iFrame.html',
-            'Screen1': '/Buyer_Pay.html',
+            'Screen1': '/Screen1.html',
             'Bank_CC_Detail': '/Bank_CC_Detail.html',
             'tabSBank': '/tabSBank.html',
             'tab_Help': '/tab_Help.html',

@@ -33,7 +33,7 @@
         <!-- Uncomment this script when not using service worker -->
         <!-- <script>        
         var require = {
-        urlArgs : window.navigator.userAgent.match(/Windows Phone/i) ? undefined : "bust=1594676927"
+        urlArgs : window.navigator.userAgent.match(/Windows Phone/i) ? undefined : "bust=1595007971"
         };
         </script>
         -->
@@ -45,7 +45,7 @@
         <div ng-controller="indexController" ng-cloak ng-init="init()">
             <ion-side-menus>
                 <ion-side-menu-content>
-                    <ion-header-bar data-aio-id="header" class="bar bar-light" ng-show="visionStatus.header">
+                    <ion-header-bar data-aio-id="header" class="bar bar-positive" ng-show="visionStatus.header">
                         <div class="buttons">
                             <button class="button button-icon button-block icon ion-navicon-round" menu-toggle="">
                             </button>
@@ -62,6 +62,8 @@
                     </div>
                     <ion-footer-bar data-aio-id="footer" class="bar bar-royal bar-footer" ng-show="visionStatus.footer">
                         <div class="buttons">
+                            <button class="button button-icon button-block icon ion-arrow-left-c" back-button="">
+                            </button>
                         </div>
                         <h1 class="title">
                             PhoneEx
@@ -71,6 +73,18 @@
                     </ion-footer-bar>
                 </ion-side-menu-content>
                 <ion-side-menu side='left' width='275'>
+                    <div>
+                        <div class="row">
+                            <div class="col">
+                            </div>
+                            <div class="col">
+                            </div>
+                        </div>
+                    </div>
+                    <button class="button button-calm button-block icon-left ion-home" menu-close=""
+                    ng-click="gotoPage()">
+                        Home
+                    </button>
                     <button class="button button-positive button-block icon-left ion-compose" menu-close=""
                     ng-click="sMakeRequest()">
                         Make A Request

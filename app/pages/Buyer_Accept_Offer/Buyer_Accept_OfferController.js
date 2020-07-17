@@ -319,23 +319,7 @@ define(['require', 'app'],
                     /*|service_bookmark|bookmark|411E9C43-4BDD-FED0-6DF8-95B0552070DE||5921|*/
                     function(success) { // success callback
                         /*|button_mapping|onsuccess|411E9C43-4BDD-FED0-6DF8-95B0552070DE||8259|*/
-                        var modalOptions = { // About Ionic Modal: https://links.appery.io/ve-snippet-modal-ionic
-                            animation: 'slide-in-up', // The animation to show & hide with
-                            focusFirstInput: false, // Whether to autofocus the first input of the modal when shown
-                            backdropClickToClose: true, // Whether to close the modal on clicking the backdrop
-                            hardwareBackButtonClose: true // Whether the modal can be closed using the hardware back button on Android and similar devices
-                        };
-                        Apperyio.get('Modals').loadModal("Info").then(
-                            function(modalInstance) {
-                                modalInstance.open(modalOptions).then(function(modal) {
-                                    modal.scope.modal = modal;
-                                    modal.scope.result = "You Have Successfully Rejected the Offer";
-                                    modal.show();
-                                });
-                            },
-                            function(error) {
-                                console.log(error);
-                            });
+                        alert('You Have Successfully Rejected the Offer')
                     },
                     function(error) { // callback to handle request error
                         //Apperyio.navigateTo("Login", {});
@@ -509,8 +493,9 @@ define(['require', 'app'],
                 switch (defaultPayMethod) {
                     case "creditcard":
                         console.log("They are using Credit Card");
-                        if (sqCCOF === null) {
-                            alert('Please enter a valid credit card');
+                        console.log("CCOF", sqCCOF);
+                        if (sqCCOF === "none") {
+                            alert('Please set a DEFAULT credit card');
                             Apperyio.navigateTo("Bank", {});
                             break;
                         } else {
@@ -610,7 +595,7 @@ define(['require', 'app'],
                                     var sqDelayuntil = ($scope.list.BODY.payment.delayed_until);
                                     //console.log("avs_status",avs_status);
                                     // console.log("httpCode",$scope.list.HTTP_RESPONSE_CODE)
-                                    alert('success - Your Receipt Number is:' + sqReceiptnum);
+                                    alert('success - Your Receipt ID is:' + sqReceiptnum);
                                     requestData = (function mapping4647($scope) {
                                         var requestData = {};
                                         requestData.params = {};

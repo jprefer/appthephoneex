@@ -1,6 +1,6 @@
 <div show-header="true" show-footer="true" show-top-tabs="true" show-tabs="true"
 ng-controller="Buyer_Accept_Offer" ng-cloak ng-init="init()" active-screen="Accept / Decline Offer"
-class="aio-empty-screen padding overflow-scroll">
+class="bg-01 aio-empty-screen padding overflow-scroll">
     <div class="list">
         <div class="item-divider item Buyer-Header">
             <p>
@@ -37,12 +37,12 @@ class="aio-empty-screen padding overflow-scroll">
         <div class="item item-input">
             <input type="text" placeholder="Enter Any Other Notes Here" value="" ng-model="BuyNotes2">
         </div>
-        <p class="assertive">
+        <p class="CSS_BG_White assertive">
             Warning: Once you press the &quot;Accept Offer&quot; button, your default payment
             method will be immediately charged. This will also include a transaction fee of {{transFee*BuyerPrice1|currency}}.
             The total that your default payment method will be charged is: {{(transFee*BuyerPrice1)+BuyerPrice1|currency}}
         </p>
-        <p class="positive">
+        <p class="dark">
             Interested in lower transaction fees? Check out our other payment types in the &quot;Bank&quot;
             section
         </p>
@@ -62,9 +62,18 @@ class="aio-empty-screen padding overflow-scroll">
                 </div>
             </div>
         </div>
+        <div>
+            <div class="row">
+                <div class="col col-25">
+                </div>
+                <div class="col">
+                    <button class="ion-item-border button button-energized button-block" ng-click="gotoBuyerHome()">
+                        Do Nothing
+                    </button>
+                </div>
+                <div class="col col-25">
+                </div>
+            </div>
+        </div>
     </div>
-    <button class="ion-item-border button button-royal button-block icon-left ion-arrow-left-c"
-    ng-click="gotoBuyerHome()">
-        Do Nothing - Go Back
-    </button>
 </div>

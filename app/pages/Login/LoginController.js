@@ -65,13 +65,28 @@ define(['require', 'app'],
                         //The next lines are added to get the deviceid and register push notifications
                         //Thenext line was added to get user
                         $scope.timeZone = "GMT-04:00";
+                        //orig below line
                         //document.addEventListener("push-notification", function(event) {alert(event.detail.message);});
                         //added newto go Home
                         document.addEventListener("push-notification", function(event) {
                             alert(event.detail.message);
-                            //Apperyio.navigateTo("Buyer_Ins", {'reloadPage': true}); 
-                            Apperyio.navigateTo("Buyer_Ins");
-                            alert('Go to your Home screen and click refresh to see your alerts');
+                            //Apperyio.navigateTo("Buyer_Ins");
+                            //alert('Go to your Home screen and click refresh to see your alerts');
+                            if (turn == "B") {
+                                // inject the 'dataStorage' service
+                                var data = Apperyio.get("dataStorage");
+                                $scope.RequestID1.Gl_Vars = data;
+                                $scope.RequestID1.Gl_Vars.whereami = "Buyer_Home";
+                                //console.log(_id);
+                                Apperyio.navigateTo("PassThru", {});
+                            } else {
+                                // inject the 'dataStorage' service
+                                var data = Apperyio.get("dataStorage");
+                                $scope.RequestID1.Gl_Vars = data;
+                                $scope.RequestID1.Gl_Vars.whereami = "Seller_Home";
+                                //console.log(_id);
+                                Apperyio.navigateTo("PassThru", {});
+                            }
                         });
                         var requestData = {};
                         /*|button_mapping|onbeforesend|2433A3E7-057D-1695-F2C7-EA3E86BFACE9||8899|*/
@@ -84,7 +99,7 @@ define(['require', 'app'],
                                     _.set(main_scope, 'devID1', success.deviceID);
                                     _.set(main_scope, 'object_id1', success._id);
                                     $scope.main = main_scope;
-                                    alert("Login Success. \n" + "Device ID: " + $scope.main.devID1 + "   ObjectID:" + $scope.main.object_id1 + " User:" + $scope.main.username1);
+                                    //alert("Login Success. \n"+"Device ID: "+ $scope.main.devID1 + "   ObjectID:" + $scope.main.object_id1 + " User:" + $scope.main.username1);
                                     /*|button_mapping|onsuccess|2433A3E7-057D-1695-F2C7-EA3E86BFACE9||1555|*/
                                     // here is the part where it marries device and user
                                     var requestData = {};

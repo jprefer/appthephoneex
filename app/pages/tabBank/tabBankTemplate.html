@@ -7,16 +7,11 @@ ng-controller="tabBank" ng-cloak ng-init="init()" active-screen="Bank" class="ai
             Mobile E-Commerce Done Better
         </div>
     </div>
-    <div class="card">
-        <div class="item-divider item">
-            Payment Type
-        </div>
-    </div>
     <form name="formPaymentType">
         <div class="list">
-            <p>
+            <h3>
                 {{lblText}}
-            </p>
+            </h3>
             <div>
                 <div class="row">
                     <div class="col">
@@ -28,7 +23,7 @@ ng-controller="tabBank" ng-cloak ng-init="init()" active-screen="Bank" class="ai
                         ng-click="changetoEscrow()" ng-show="btn2Show">
                             {{btn2Text}}
                         </button>
-                        <button class="ion-item-border button button-balanced button-block" ng-show="btn4Show">
+                        <button class="button button-balanced button-block" ng-show="btn4Show">
                             {{btn4Text}}
                         </button>
                     </div>
@@ -51,22 +46,9 @@ ng-controller="tabBank" ng-cloak ng-init="init()" active-screen="Bank" class="ai
     </form>
     <div class="card">
         <div class="item-divider item">
-            Default Credit Card
-        </div>
-        <div class="item">
-            <p>
-                {{default_cardBrand}} xxx xxx xxx {{default_last4}}
-            </p>
-            <p>
-                Expires: {{default_expMonth}}/{{default_expYear}}
-            </p>
+            Test Instructions
         </div>
     </div>
-    <p class="royal">
-        When you enter a new credit card, it will be the new default. Enter as many cards
-        as you see fit. If you'd like to change the default or delete a card click on the
-        card you want to change below.
-    </p>
     <div>
         <p>
             For TEST puposes - Please use any of the following Credit Card Values:
@@ -226,8 +208,26 @@ ng-controller="tabBank" ng-cloak ng-init="init()" active-screen="Bank" class="ai
         </p>
     </div>
     <button class="ion-item-border button button-balanced button-block" ng-click="gotoSquareCCOF()">
-        Enter New Credit Card
+        Enter A Credit Card
     </button>
+    <div class="card">
+        <div class="item-divider item">
+            Default Credit Card
+        </div>
+        <div class="item">
+            <p>
+                {{default_cardBrand}} xxx xxx xxx {{default_last4}}
+            </p>
+            <p>
+                Expires: {{default_expMonth}}/{{default_expYear}}
+            </p>
+        </div>
+    </div>
+    <p class="royal">
+        When you enter a new credit card, it will be the new default. Enter as many cards
+        as you see fit. If you'd like to change the default or delete a card click on the
+        card you want to change below.
+    </p>
     <p class="positive">
         Click on the credit card you want to delete or make default
     </p>
@@ -265,8 +265,8 @@ ng-controller="tabBank" ng-cloak ng-init="init()" active-screen="Bank" class="ai
             </div>
         </div>
     </div>
-    <button class="ion-item-border button button-royal button-block icon-left ion-arrow-left-c"
+    <button class="ion-item-border button button-positive button-block icon-right ion-home"
     ng-click="gotoPage()">
-        Go Back
+        HOME
     </button>
 </div>

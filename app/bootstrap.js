@@ -133,6 +133,7 @@
             '$Seller_InProcess': 'pages/Seller_InProcess',
             '$Seller_Home': 'pages/Seller_Home',
             '$Seller_Filter_Home': 'pages/Seller_Filter_Home',
+            '$Screen1': 'pages/Screen1',
             '$Seller_Ship': 'pages/Seller_Ship',
             '$Seller_Complete': 'pages/Seller_Complete',
             '$tabProfile': 'pages/tabProfile',
