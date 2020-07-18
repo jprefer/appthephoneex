@@ -1,5 +1,5 @@
 <div show-header="true" show-footer="true" show-top-tabs="true" show-tabs="true"
-ng-controller="tabProfile" ng-cloak ng-init="init()" active-screen="Profile" class="aio-empty-screen padding overflow-scroll">
+ng-controller="tabProfile" ng-cloak ng-init="init()" active-screen="Profile" class="bg-01 aio-empty-screen padding overflow-scroll">
     <div class="list">
         <div class="item-divider item Tab-Header">
             <p>
@@ -7,19 +7,22 @@ ng-controller="tabProfile" ng-cloak ng-init="init()" active-screen="Profile" cla
             Mobile E-Commerce Done Better
         </div>
     </div>
-    <div class="card">
-        <div class="item-divider item">
+    <div class="card CSS_BG_LightBlue">
+        <div class="item-divider item ion-item-border">
             User Name
         </div>
-        <div class="item">
+        <div class="item ion-item-border">
             {{user.username}}
         </div>
     </div>
-    <div class="card">
-        <div class="item-divider item">
+    <div>
+        Go to any field that you need to change and start typing. When finished, click update
+    </div>
+    <div class="card CSS_BG_LightBlue">
+        <div class="item-divider item ion-item-border">
             Email Address
         </div>
-        <div class="item">
+        <div class="item ion-item-border">
             <form name="emailForm">
                 <div class="list">
                     <div>
@@ -31,7 +34,7 @@ ng-controller="tabProfile" ng-cloak ng-init="init()" active-screen="Profile" cla
                                 </div>
                             </div>
                             <div class="col">
-                                <button class="ion-item-border button button-stable button-block button-small" ng-click="changeEmail()"
+                                <button class="ion-item-border button button-royal button-block button-small" ng-click="changeEmail()"
                                 ng-disabled="emailForm.email.$error.required||emailForm.email.$error.email">
                                     update
                                 </button>
@@ -42,11 +45,11 @@ ng-controller="tabProfile" ng-cloak ng-init="init()" active-screen="Profile" cla
             </form>
         </div>
     </div>
-    <div class="card">
-        <div class="item-divider item">
+    <div class="card CSS_BG_LightBlue">
+        <div class="item-divider item ion-item-border">
             Company
         </div>
-        <div class="item">
+        <div class="item ion-item-border">
             <form name="companyForm">
                 <div class="list">
                     <div>
@@ -58,7 +61,7 @@ ng-controller="tabProfile" ng-cloak ng-init="init()" active-screen="Profile" cla
                                 </div>
                             </div>
                             <div class="col">
-                                <button class="ion-item-border button button-stable button-block button-small" ng-click="changeCompany()"
+                                <button class="ion-item-border button button-royal button-block button-small" ng-click="changeCompany()"
                                 ng-disabled="companyForm.company.$error.required">
                                     update
                                 </button>
@@ -69,11 +72,11 @@ ng-controller="tabProfile" ng-cloak ng-init="init()" active-screen="Profile" cla
             </form>
         </div>
     </div>
-    <div class="card">
-        <div class="item-divider item">
+    <div class="card CSS_BG_LightBlue">
+        <div class="item-divider item ion-item-border">
             First Name
         </div>
-        <div class="item">
+        <div class="item ion-item-border">
             <form name="firstnameForm">
                 <div class="list">
                     <div>
@@ -85,7 +88,7 @@ ng-controller="tabProfile" ng-cloak ng-init="init()" active-screen="Profile" cla
                                 </div>
                             </div>
                             <div class="col">
-                                <button class="ion-item-border button button-stable button-block button-small" ng-click="changeFirstName()"
+                                <button class="ion-item-border button button-royal button-block button-small" ng-click="changeFirstName()"
                                 ng-disabled="firstnameForm.firstname.$error.required">
                                     update
                                 </button>
@@ -96,11 +99,11 @@ ng-controller="tabProfile" ng-cloak ng-init="init()" active-screen="Profile" cla
             </form>
         </div>
     </div>
-    <div class="card">
-        <div class="item-divider item">
+    <div class="card CSS_BG_LightBlue">
+        <div class="item-divider item ion-item-border">
             Last Name
         </div>
-        <div class="item">
+        <div class="item ion-item-border">
             <form name="lastnameForm">
                 <div class="list">
                     <div>
@@ -112,7 +115,7 @@ ng-controller="tabProfile" ng-cloak ng-init="init()" active-screen="Profile" cla
                                 </div>
                             </div>
                             <div class="col">
-                                <button class="ion-item-border button button-stable button-block button-small" ng-click="changeLastName()"
+                                <button class="ion-item-border button button-royal button-block button-small" ng-click="changeLastName()"
                                 ng-disabled="lastnameForm.lastname.$error.required">
                                     update
                                 </button>
@@ -123,11 +126,11 @@ ng-controller="tabProfile" ng-cloak ng-init="init()" active-screen="Profile" cla
             </form>
         </div>
     </div>
-    <div class="card">
-        <div class="item-divider item">
+    <div class="card CSS_BG_LightBlue">
+        <div class="item-divider item ion-item-border">
             Mobile Phone Number
         </div>
-        <div class="item">
+        <div class="item ion-item-border">
             <form name="mobilephoneForm">
                 <div class="list">
                     <div>
@@ -139,7 +142,7 @@ ng-controller="tabProfile" ng-cloak ng-init="init()" active-screen="Profile" cla
                                 </div>
                             </div>
                             <div class="col">
-                                <button class="ion-item-border button button-stable button-block button-small" ng-click="changeMobile()"
+                                <button class="ion-item-border button button-royal button-block button-small" ng-click="changeMobile()"
                                 ng-disabled="mobilephoneForm.mobile.$error.required||! mobilephoneForm.mobile.$valid">
                                     Update
                                 </button>
@@ -150,11 +153,11 @@ ng-controller="tabProfile" ng-cloak ng-init="init()" active-screen="Profile" cla
             </form>
         </div>
     </div>
-    <div class="card">
-        <div class="item-divider item">
+    <div class="card CSS_BG_LightBlue">
+        <div class="item-divider item ion-item-border">
             Business Phone Number
         </div>
-        <div class="item">
+        <div class="item ion-item-border">
             <form name="businessphoneForm">
                 <div class="list">
                     <div>
@@ -166,7 +169,7 @@ ng-controller="tabProfile" ng-cloak ng-init="init()" active-screen="Profile" cla
                                 </div>
                             </div>
                             <div class="col">
-                                <button class="ion-item-border button button-stable button-block button-small" ng-click="changeBusinessPhone()"
+                                <button class="ion-item-border button button-royal button-block button-small" ng-click="changeBusinessPhone()"
                                 ng-disabled="businessphoneForm.businessphone.$error.required||! businessphoneForm.businessphone.$valid">
                                     update
                                 </button>
@@ -177,11 +180,11 @@ ng-controller="tabProfile" ng-cloak ng-init="init()" active-screen="Profile" cla
             </form>
         </div>
     </div>
-    <div class="card">
-        <div class="item-divider item">
+    <div class="card CSS_BG_LightBlue">
+        <div class="item-divider item ion-item-border">
             Shipping Address
         </div>
-        <div class="item">
+        <div class="item ion-item-border">
             <form name="shipaddress1Form">
                 <div class="list">
                     <div>
@@ -193,7 +196,7 @@ ng-controller="tabProfile" ng-cloak ng-init="init()" active-screen="Profile" cla
                                 </div>
                             </div>
                             <div class="col">
-                                <button class="ion-item-border button button-stable button-block button-small" ng-click="changeShippingAddress1()"
+                                <button class="ion-item-border button button-royal button-block button-small" ng-click="changeShippingAddress1()"
                                 ng-disabled="shipaddress1Form. shippingaddress1.$error.required">
                                     update
                                 </button>
@@ -204,12 +207,12 @@ ng-controller="tabProfile" ng-cloak ng-init="init()" active-screen="Profile" cla
             </form>
         </div>
     </div>
-    <div class="card">
-        <div class="item-divider item">
+    <div class="card CSS_BG_LightBlue">
+        <div class="item-divider item ion-item-border">
             Unit / Suite
         </div>
-        <div class="item">
-            <form name="shipaddress2Form">
+        <div class="item ion-item-border">
+            <form name="shipaddress2Form" class="ion-item-border">
                 <div class="list">
                     <div>
                         <div class="row">
@@ -220,7 +223,7 @@ ng-controller="tabProfile" ng-cloak ng-init="init()" active-screen="Profile" cla
                                 </div>
                             </div>
                             <div class="col">
-                                <button class="ion-item-border button button-stable button-block button-small" ng-click="changeShippingAddress2()"
+                                <button class="ion-item-border button button-royal button-block button-small" ng-click="changeShippingAddress2()"
                                 ng-disabled="shipaddress2Form. shippingaddress2.$error.required">
                                     update
                                 </button>
@@ -231,11 +234,11 @@ ng-controller="tabProfile" ng-cloak ng-init="init()" active-screen="Profile" cla
             </form>
         </div>
     </div>
-    <div class="card">
-        <div class="item-divider item">
+    <div class="card CSS_BG_LightBlue">
+        <div class="item-divider item ion-item-border">
             City
         </div>
-        <div class="item">
+        <div class="item ion-item-border">
             <form name="cityForm">
                 <div class="list">
                     <div>
@@ -247,7 +250,7 @@ ng-controller="tabProfile" ng-cloak ng-init="init()" active-screen="Profile" cla
                                 </div>
                             </div>
                             <div class="col">
-                                <button class="ion-item-border button button-stable button-block button-small" ng-click="changeCity()"
+                                <button class="ion-item-border button button-royal button-block button-small" ng-click="changeCity()"
                                 ng-disabled="cityForm. city.$error.required">
                                     update
                                 </button>
@@ -258,11 +261,11 @@ ng-controller="tabProfile" ng-cloak ng-init="init()" active-screen="Profile" cla
             </form>
         </div>
     </div>
-    <div class="card">
-        <div class="item-divider item">
+    <div class="card CSS_BG_LightBlue">
+        <div class="item-divider item ion-item-border">
             State
         </div>
-        <div class="item">
+        <div class="item ion-item-border">
             <form name="stateForm">
                 <div class="list">
                     <div>
@@ -274,7 +277,7 @@ ng-controller="tabProfile" ng-cloak ng-init="init()" active-screen="Profile" cla
                                 </div>
                             </div>
                             <div class="col">
-                                <button class="ion-item-border button button-stable button-block button-small" ng-click="changeState()"
+                                <button class="ion-item-border button button-royal button-block button-small" ng-click="changeState()"
                                 ng-disabled="stateForm. state.$error.required">
                                     update
                                 </button>
@@ -285,11 +288,11 @@ ng-controller="tabProfile" ng-cloak ng-init="init()" active-screen="Profile" cla
             </form>
         </div>
     </div>
-    <div class="card">
-        <div class="item-divider item">
+    <div class="card CSS_BG_LightBlue">
+        <div class="item-divider item ion-item-border">
             Zip Code
         </div>
-        <div class="item">
+        <div class="item ion-item-border">
             <form name="zipForm">
                 <div class="list">
                     <div>
@@ -301,7 +304,7 @@ ng-controller="tabProfile" ng-cloak ng-init="init()" active-screen="Profile" cla
                                 </div>
                             </div>
                             <div class="col">
-                                <button class="ion-item-border button button-stable button-block button-small" ng-click="changeZip()"
+                                <button class="ion-item-border button button-royal button-block button-small" ng-click="changeZip()"
                                 ng-disabled="zipForm. zip.$error.required">
                                     update
                                 </button>
@@ -312,11 +315,11 @@ ng-controller="tabProfile" ng-cloak ng-init="init()" active-screen="Profile" cla
             </form>
         </div>
     </div>
-    <div class="card">
-        <div class="item-divider item">
+    <div class="card CSS_BG_LightBlue">
+        <div class="item-divider item ion-item-border">
             State Resale Certificate Number
         </div>
-        <div class="item">
+        <div class="item ion-item-border">
             <form name="resaleForm">
                 <div class="list">
                     <div>
@@ -328,7 +331,7 @@ ng-controller="tabProfile" ng-cloak ng-init="init()" active-screen="Profile" cla
                                 </div>
                             </div>
                             <div class="col">
-                                <button class="ion-item-border button button-stable button-block button-small" ng-click="changeResale()"
+                                <button class="ion-item-border button button-royal button-block button-small" ng-click="changeResale()"
                                 ng-disabled="resaleForm. resale.$error.required">
                                     update
                                 </button>
@@ -340,7 +343,7 @@ ng-controller="tabProfile" ng-cloak ng-init="init()" active-screen="Profile" cla
         </div>
     </div>
     <div class="card">
-        <div class="item-divider item">
+        <div class="item-divider item ion-item-border">
             Change Password
         </div>
     </div>
@@ -350,7 +353,7 @@ ng-controller="tabProfile" ng-cloak ng-init="init()" active-screen="Profile" cla
                 Passwords must be at least 8 characters and contain at least one capital letter,
                 1 number, and 1 special character
             </p>
-            <div class="item item-input">
+            <div class="ion-item-border item item-input">
                 <input type="password" placeholder="Enter New Password" value="" ng-required="true"
                 ng-pattern="/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/" name="password1"
                 ng-model="newPassword">
@@ -361,7 +364,7 @@ ng-controller="tabProfile" ng-cloak ng-init="init()" active-screen="Profile" cla
             <p ng-show="passwordForm.password1.$valid" class="balanced">
                 Good Password
             </p>
-            <div class="item item-input">
+            <div class="ion-item-border item item-input">
                 <input type="password" placeholder="Repeat New Password" value="" ng-required="true"
                 ng-pattern="/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/" name="password2"
                 ng-model="newPassword2">

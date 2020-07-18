@@ -10,7 +10,7 @@ ng-controller="Seller_Home" ng-cloak ng-init="init()" active-screen="Home" class
         </div>
     </div>
     <div class="list">
-        <div class="item-divider item ion-item-border-LogoOrange" ng-click="gotoVerify()"
+        <div class="item-divider item ion-item-border-LogoPink" ng-click="gotoVerify()"
         ng-show="showBtn1">
             <h2>
                 {{wordBtn1}}
@@ -21,7 +21,7 @@ ng-controller="Seller_Home" ng-cloak ng-init="init()" active-screen="Home" class
                 {{badgeCnt1}}
             </span>
         </div>
-        <div class="item-divider item ion-item-border-LogoOrange" ng-click="stSellerAccepted()"
+        <div class="item-divider item ion-item-border-LogoPink" ng-click="stSellerAccepted()"
         ng-show="showBtn">
             <h2>
                 {{wordBtn}}
@@ -37,7 +37,7 @@ ng-controller="Seller_Home" ng-cloak ng-init="init()" active-screen="Home" class
     </div>
     <div>
         <div class="row">
-            <div class="col col-80">
+            <div class="col col-75">
                 <div>
                     <br>
                     <font size="4">
@@ -61,8 +61,8 @@ ng-controller="Seller_Home" ng-cloak ng-init="init()" active-screen="Home" class
         </div>
     </div>
     <div class="list">
-        <a href="javascript:void(0)" class="item" ng-checked="" ng-click="showDetail(item._id)"
-        ng-repeat="item in list">
+        <a href="javascript:void(0)" class="item ion-item-borderLightPurple" ng-checked=""
+        ng-click="showDetail(item._id)" ng-repeat="item in list">
         <h2>{{item. manufacturer}} {{item. Product}} / {{item.Carrier}}/Quan:{{item.Quantity}} </h2>
         <p>{{item.Memory}} / {{item.Color}} /Shipping: {{item.Shipping}}</p>
         {{item.Kitted}} / Request ID: {{item._id.substring(20)}}

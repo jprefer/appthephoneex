@@ -27,7 +27,8 @@ class="bg-01 aio-empty-screen padding overflow-scroll">
         <br>
     </div>
     <div class="list">
-        <a href="javascript:void(0)" class="item" ng-click="showDetail(item._id)" ng-repeat="item in list">
+        <a href="javascript:void(0)" class="item ion-item-borderLightPurple" ng-click="showDetail(item._id)"
+        ng-repeat="item in list">
         <h2>Order: {{item.BuyingPrice|currency}} --&gt; {{item. Manu}} {{item. Prod}} </h2>
         <p>Closed: {{item.AcceptDate.$date.substring(0,10)}} </p>
         Quan:{{item.Quan}}  / Order ID: {{item._id.substring(20)}}

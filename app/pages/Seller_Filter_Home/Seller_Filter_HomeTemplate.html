@@ -8,7 +8,7 @@ class="bg-01 aio-empty-screen padding overflow-scroll">
             Mobile E-Commerce Done Better
         </div>
     </div>
-    <p class="light">
+    <p class="positive">
         Filtered Results:
         <br>
         Manufacturer: {{RequestManu}}
@@ -32,7 +32,8 @@ class="bg-01 aio-empty-screen padding overflow-scroll">
         <br>
     </div>
     <div class="list">
-        <a href="javascript:void(0)" class="item" ng-click="showDetail(item._id)" ng-repeat="item in list">
+        <a href="javascript:void(0)" class="item ion-item-border" ng-click="showDetail(item._id)"
+        ng-repeat="item in list">
         <h2>{{item. manufacturer}} {{item. Product}} / {{item.Carrier}}/Quan:{{item.Quantity}}</h2>
         <p>{{item.Memory}} / {{item.Color}} /Shipping: {{item.Shipping}}</p>
         {{item.Kitted}} / Request ID: {{item._id.substring(20)}}

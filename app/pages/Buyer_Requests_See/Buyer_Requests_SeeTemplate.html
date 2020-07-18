@@ -23,7 +23,8 @@ class="bg-01 aio-empty-screen padding overflow-scroll">
         <div class="row">
             <div class="col">
                 <div class="list">
-                    <a href="javascript:void(0)" class="item-divider item" ng-repeat="item in list">
+                    <a href="javascript:void(0)" class="item-divider item ion-item-borderLightPurple"
+                    ng-repeat="item in list">
                     <h4>{{item. manufacturer}} {{item. Product}} / {{item.Carrier}} - Quan:{{item.Quantity}}  </h4>
                     <p>{{item.Memory}}/{{item.Color}}/Ship: {{item.Shipping}} / Kit: {{item.Kitted}}</p>
                     Requested: {{item._createdAt.$date.substring(0, 10)}}  Request ID: {{item._id.substring(20)}}

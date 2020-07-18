@@ -10,6 +10,9 @@ background-color:#F1EA09;
 body .CSS_BG_LightPurple{ 
 background-color:#B909F1; 
 }
+body .CSS_BG_LightlightPurple{ 
+background-color:#F67CFA; 
+}
 body .CSS_BG_DarkPurple{ 
 background-color:#886EE7; 
 }
@@ -39,6 +42,22 @@ padding-bottom: 5px;
 padding-top: 5px;
 background: #886EE7;
 }
+.ion-item-borderWhite {
+border-radius: 20px !important;
+padding-left: 10px;
+padding-right: 10px;
+padding-bottom: 5px;
+padding-top: 5px;
+background: #FFFFFF;
+}
+.ion-item-borderLightPurple {
+border-radius: 20px !important;
+padding-left: 10px;
+padding-right: 10px;
+padding-bottom: 5px;
+padding-top: 5px;
+background: #FFFFFF;
+}
 .ion-item-borderGreen {
 border-radius: 20px !important;
 padding-left: 10px;
@@ -54,20 +73,52 @@ padding-right: 10px;
 padding-bottom: 5px;
 padding-top: 5px;
 }
-.Buyer-Header {
+.Buyer-HeaderSquare {
   text-align: center;
   background-color:#1CACDA;
   color: white
 }
-.Seller-Header {
+.Buyer-Header {
+  border-radius: 20px !important;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 5px;
+  padding-top: 5px;
   text-align: center;
-  background-color:#F39330;
+  background-color:#1CACDA;
   color: white
 }
-.Tab-Header {
+.Seller-HeaderSquare {
+  text-align: center;
+  background-color:#FFC0CB;
+  color: white
+}
+.Seller-Header {
+  border-radius: 20px !important;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  text-align: center;
+  background-color:#FFC0CB;
+  color: white
+  
+}
+.Tab-HeaderSquare {
   text-align: center;
   background-color:#B1CF42;
   color: white
+}
+.Tab-Header {
+  border-radius: 20px !important;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  text-align: center;
+  background-color:#B1CF42;
+  color: white
+  
 }
 .ion-item-border-LogoBlue {
 border-radius: 20px !important;
@@ -92,6 +143,14 @@ padding-right: 10px;
 padding-bottom: 5px;
 padding-top: 5px;
 background: #F39330;
+}
+.ion-item-border-LogoPink {
+border-radius: 20px !important;
+padding-left: 10px;
+padding-right: 10px;
+padding-bottom: 5px;
+padding-top: 5px;
+background: #FFC0CB;
 }
 .subdued {
         padding-right: 10px;

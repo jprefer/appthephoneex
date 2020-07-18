@@ -1,5 +1,5 @@
 <div show-header="true" show-footer="true" show-top-tabs="true" show-tabs="true"
-ng-controller="tabBank" ng-cloak ng-init="init()" active-screen="Bank" class="aio-empty-screen padding overflow-scroll">
+ng-controller="tabBank" ng-cloak ng-init="init()" active-screen="Bank" class="bg-01 aio-empty-screen padding overflow-scroll">
     <div class="list">
         <div class="item-divider item Tab-Header">
             <p>
@@ -35,7 +35,7 @@ ng-controller="tabBank" ng-cloak ng-init="init()" active-screen="Bank" class="ai
                         <p>
                             {{lblText3}}
                         </p>
-                        <button class="ion-item-border button button-royal button-block button-small" ng-click="escrowInstruct()"
+                        <button class="ion-item-border button button-dark button-block button-small" ng-click="escrowInstruct()"
                         ng-show="btn3Show">
                             {{btn3Text}}
                         </button>
@@ -211,10 +211,10 @@ ng-controller="tabBank" ng-cloak ng-init="init()" active-screen="Bank" class="ai
         Enter A Credit Card
     </button>
     <div class="card">
-        <div class="item-divider item">
+        <div class="item-divider item ion-item-border">
             Default Credit Card
         </div>
-        <div class="item">
+        <div class="item ion-item-border">
             <p>
                 {{default_cardBrand}} xxx xxx xxx {{default_last4}}
             </p>
@@ -223,38 +223,39 @@ ng-controller="tabBank" ng-cloak ng-init="init()" active-screen="Bank" class="ai
             </p>
         </div>
     </div>
-    <p class="royal">
+    <p class="dark">
         When you enter a new credit card, it will be the new default. Enter as many cards
         as you see fit. If you'd like to change the default or delete a card click on the
         card you want to change below.
     </p>
-    <p class="positive">
+    <p class="dark">
         Click on the credit card you want to delete or make default
     </p>
-    <div class="card">
-        <div class="item-divider item">
+    <div class="card bg-01">
+        <div class="item-icon-left item ion-item-border">
             Cards on File
         </div>
-        <div class="item">
+        <div class="item bg-01">
             <div class="list">
-                <a href="javascript:void(0)" class="item-icon-left item" ng-click="ChangeCard(item.id,item.card_brand,item.last_4,item.exp_month,item.exp_year)"
+                <a href="javascript:void(0)" class="item-icon-right item ion-item-borderLightPurple"
+                ng-click="ChangeCard(item.id,item.card_brand,item.last_4,item.exp_month,item.exp_year)"
                 ng-repeat="item in list">
-                <i class="icon ion-card "></i>
                 <h2>{{item.card_brand}} xxxxxxx{{item.last_4}}</h2>
                 <p></p>
                 Expiration: {{item.exp_month}}/{{item.exp_year}}
+                <i class="icon ion-card "></i>
                 </a>
             </div>
         </div>
     </div>
     <div class="card">
-        <div class="item-divider item" ng-show="eDetailShow">
+        <div class="item-divider item ion-item-border" ng-show="eDetailShow">
             Escrow Details
         </div>
-        <div class="item">
+        <div class="item bg-01">
             <div class="list">
-                <a href="javascript:void(0)" class="item-divider item" ng-click="showDetail(item1.OrderId)"
-                ng-repeat="item1 in list1">
+                <a href="javascript:void(0)" class="item-divider item ion-item-borderLightPurple"
+                ng-click="showDetail(item1.OrderId)" ng-repeat="item1 in list1">
                 <h2>Start: {{item1. StartingAmt |currency}}</h2>
                 <p>{{item1.TransType}}: {{item1.TransactionAmt|currency}}    {{item1.OrderId.substring(20)}}</p>
                 End: {{item1. EndingAmt|currency}} 

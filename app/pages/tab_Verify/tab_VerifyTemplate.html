@@ -1,5 +1,5 @@
 <div show-header="true" show-footer="true" show-top-tabs="true" show-tabs="true"
-ng-controller="tab_Verify" ng-cloak ng-init="init()" active-screen="Verify" class="aio-empty-screen padding overflow-scroll">
+ng-controller="tab_Verify" ng-cloak ng-init="init()" active-screen="Verify" class="bg-01 aio-empty-screen padding overflow-scroll">
     <div class="list">
         <div class="item-divider item Tab-Header">
             <p>
@@ -12,7 +12,7 @@ ng-controller="tab_Verify" ng-cloak ng-init="init()" active-screen="Verify" clas
     </button>
     <div>
         <div class="row">
-            <div class="col">
+            <div class="col col-67">
                 <form name="textForm">
                     <div class="list">
                         <p name="Mobile" class="dark">
@@ -22,10 +22,10 @@ ng-controller="tab_Verify" ng-cloak ng-init="init()" active-screen="Verify" clas
                 </form>
             </div>
             <div class="col">
-                <p ng-show="mobileV" class="balanced">
+                <p ng-show="mobileV" class="ion-item-borderWhite balanced">
                     Verified
                 </p>
-                <p ng-show="!mobileV" class="assertive">
+                <p ng-show="!mobileV" class="ion-item-borderWhite assertive">
                     Unverified
                 </p>
             </div>
@@ -48,7 +48,7 @@ ng-controller="tab_Verify" ng-cloak ng-init="init()" active-screen="Verify" clas
             <div class="col">
                 <form name="textcodeForm">
                     <div class="list">
-                        <div class="item item-input">
+                        <div class="ion-item-border item item-input">
                             <input type="text" placeholder="Enter Code Here" value="" ng-required="true" ng-minlength="6"
                             name="textcode" ng-model="TextCode" ng-maxlength="6">
                         </div>
@@ -76,7 +76,7 @@ ng-controller="tab_Verify" ng-cloak ng-init="init()" active-screen="Verify" clas
     </button>
     <div>
         <div class="row">
-            <div class="col">
+            <div class="col col-67">
                 <form name="emailForm">
                     <div class="list">
                         <p class="dark">
@@ -86,10 +86,10 @@ ng-controller="tab_Verify" ng-cloak ng-init="init()" active-screen="Verify" clas
                 </form>
             </div>
             <div class="col">
-                <p ng-show="emailV" class="balanced">
+                <p ng-show="emailV" class="ion-item-borderWhite balanced">
                     Verified
                 </p>
-                <p ng-show="!emailV" class="assertive">
+                <p ng-show="!emailV" class="ion-item-borderWhite assertive">
                     Unverified
                 </p>
             </div>
@@ -112,7 +112,7 @@ ng-controller="tab_Verify" ng-cloak ng-init="init()" active-screen="Verify" clas
             <div class="col">
                 <form name="mailcodeForm">
                     <div class="list">
-                        <div class="item item-input">
+                        <div class="ion-item-border item item-input">
                             <input type="text" placeholder="Enter Code Here" value="" ng-required="true" ng-minlength="6"
                             name="mailcode" ng-model="MailCode" ng-maxlength="6">
                         </div>
@@ -138,9 +138,5 @@ ng-controller="tab_Verify" ng-cloak ng-init="init()" active-screen="Verify" clas
     <button class="ion-item-border button button-balanced button-block icon-right ion-arrow-right-c"
     ng-click="gotoBank()">
         Next Step - Bank Setup
-    </button>
-    <button class="ion-item-border button button-royal button-block icon-left ion-arrow-left-c"
-    ng-click="gotoPage()">
-        Go Back
     </button>
 </div>
