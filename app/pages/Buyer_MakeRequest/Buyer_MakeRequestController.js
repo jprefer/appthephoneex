@@ -125,10 +125,11 @@ define(['require', 'app'],
                 var userData = Apperyio.get("dataStorage");
                 var AllData = userData.current;
                 var buyer = AllData.username;
-                var session = AllData.session
-                var bMail = AllData.email
-                var bCell = AllData.MobilePhone
+                var session = AllData.session;
+                var bMail = AllData.email;
+                var bCell = AllData.MobilePhone;
                 var token = AllData.session;
+                var user_id = AllData.user_id;
                 //Get User     
                 console.log(token);
                 RequestManu = ($scope.company.CompanyName);
@@ -165,6 +166,7 @@ define(['require', 'app'],
                         var Expiratiom_scope = $scope.Expiration;
                         var Shipping_scope = $scope.Shipping;
                         var Notes_scope = $scope.Notes;
+                        var user_id_scope = $scope.user_id;
                         requestData.params.Buyer_username = buyer_scope;
                         requestData.params.manufacturer = RequestManu_scope;
                         requestData.params.Product = RequestModel_scope;
@@ -172,6 +174,7 @@ define(['require', 'app'],
                         requestData.params.Color = RequestColor_scope;
                         requestData.params.B_Requests1 = bMail;
                         requestData.params.B_Requests2 = bCell;
+                        requestData.params.B_Requests3 = user_id;
                         requestData.params.Carrier = RequestCarrier;
                         requestData.params.Kitted = RequestKitted;
                         requestData.params.Quantity = RequestQuan;

@@ -156,9 +156,10 @@ define(['require', 'app'],
                 var AllData = userData.current;
                 var username = AllData.username;
                 var Seller_username = AllData.username;
-                var session = AllData.session
-                var sMail = AllData.email
-                var sCell = AllData.MobilePhone
+                var session = AllData.session;
+                var sMail = AllData.email;
+                var sCell = AllData.MobilePhone;
+                var user_id = AllData.user_id;
                 var token = AllData.session;
                 //Get User  
                 console.log(username);
@@ -209,6 +210,7 @@ define(['require', 'app'],
                     requestData.params.Kitted = Kitted1_scope;
                     requestData.params.S_Offers1 = sMail;
                     requestData.params.S_Offers2 = sCell;
+                    requestData.params.S_Offers3 = user_id;
                     requestData.headers = {};
                     var token_scope = $scope.token;
                     requestData.headers['X-Appery-Session-Token'] = token;

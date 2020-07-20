@@ -12,6 +12,9 @@ define(['require', 'app'],
              */
             $scope.username1 = Apperyio.EntityAPI('String');
             $scope.main = Apperyio.EntityAPI('Main');
+            $scope.user_id = Apperyio.EntityAPI('String');
+            $scope.userp = Apperyio.EntityAPI('String');
+            $scope.userProfile_id = Apperyio.EntityAPI('String');
             /**
              * User controller functions
              */
@@ -31,9 +34,33 @@ define(['require', 'app'],
                 console.log(userData);
                 //The next lines are added to get the deviceid and register push notifications
                 //Thenext line was added to get user
+                //next two lines were original
+                //$scope.timeZone = "GMT-04:00";
+                //document.addEventListener("push-notification", function(event) {alert(event.detail.message);});
+                //new code here:
                 $scope.timeZone = "GMT-04:00";
+                //orig below line
+                //document.addEventListener("push-notification", function(event) {alert(event.detail.message);});
+                //added newto go Home
                 document.addEventListener("push-notification", function(event) {
                     alert(event.detail.message);
+                    //Apperyio.navigateTo("Buyer_Ins");
+                    //alert('Go to your Home screen and click refresh to see your alerts');
+                    if (turn == "B") {
+                        // inject the 'dataStorage' service
+                        var data = Apperyio.get("dataStorage");
+                        $scope.RequestID1.Gl_Vars = data;
+                        $scope.RequestID1.Gl_Vars.whereami = "Buyer_Home";
+                        //console.log(_id);
+                        Apperyio.navigateTo("PassThru", {});
+                    } else {
+                        // inject the 'dataStorage' service
+                        var data = Apperyio.get("dataStorage");
+                        $scope.RequestID1.Gl_Vars = data;
+                        $scope.RequestID1.Gl_Vars.whereami = "Seller_Home";
+                        //console.log(_id);
+                        Apperyio.navigateTo("PassThru", {});
+                    }
                 });
                 var requestData = {};
                 /*|button_mapping|onbeforesend|E66F2CF9-EFE8-065B-71B1-9FDF8075B3BE||8079|*/
@@ -70,6 +97,36 @@ define(['require', 'app'],
                                 function(notify) { // notify callback, can fire few times
                                 });
                         })(success, $scope);
+                    },
+                    function(error) { // callback to handle request error
+                    },
+                    function(notify) { // notify callback, can fire few times
+                    });
+                var requestData = {};
+                requestData = (function mapping4873($scope) {
+                    var requestData = {};
+                    requestData.params = {};
+                    var username1_scope = $scope.username1;
+                    requestData.params.username = username;
+                    console.log("username", username);
+                    return requestData;
+                    /*|button_mapping|onbeforesend|16AF4360-5080-3A4C-D40A-892FFC452EAA||4873|*/
+                })($scope);
+                // read more about using rest services: https://links.appery.io/ve-snippet-rest
+                Apperyio.get("Get_user_id_profileId_service")(requestData).then(
+                    /*|service_bookmark|bookmark|16AF4360-5080-3A4C-D40A-892FFC452EAA||5217|*/
+                    function(success) { // success callback
+                        (function mapping6029(success, $scope) {
+                            var userProfile_id_scope = $scope.userProfile_id;
+                            var user_id_scope = $scope.user_id;
+                            userProfile_id_scope = success.data.body[0].toProfile._id;
+                            user_id_scope = success.data.body[0]._id;
+                            $scope.userProfile_id = userProfile_id_scope;
+                            $scope.user_id = user_id_scope;
+                            /*|button_mapping|onsuccess|16AF4360-5080-3A4C-D40A-892FFC452EAA||6029|*/
+                        })(success, $scope);
+                        userData.current.user_id = $scope.user_id;
+                        userData.current.profile_id = $scope.userProfile_id;
                     },
                     function(error) { // callback to handle request error
                     },

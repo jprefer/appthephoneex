@@ -128,8 +128,10 @@ define(['require', 'app'],
                             var Kitted1_scope = $scope.Kitted1;
                             var S_Offers1A_scope = $scope.S_Offers1A;
                             var S_Offers2A_scope = $scope.S_Offers2A;
+                            var S_Offers3A_scope = $scope.S_Offers3A;
                             var B_Requests1A_scope = $scope.B_Requests1A;
                             var B_Requests2A_scope = $scope.B_Requests2A;
+                            var B_Requests3A_scope = $scope.B_Requests3A;
                             //The following are not show in the grid - They are for Acceptance
                             var Seller1_scope = $scope.Seller1;
                             var OfferPrice1_scope = $scope.OfferPrice1;
@@ -155,8 +157,10 @@ define(['require', 'app'],
                             Carrier1_scope = success.data[0].so_Carrier;
                             B_Requests1A_scope = success.data[0].so_B_Requests1;
                             B_Requests2A_scope = success.data[0].so_B_Requests2;
+                            B_Requests3A_scope = success.data[0].so_B_Requests3;
                             S_Offers1A_scope = success.data[0].S_Offers1;
                             S_Offers2A_scope = success.data[0].S_Offers2;
+                            S_Offers3A_scope = success.data[0].S_Offers3;
                             //Put it
                             $scope.Product1 = Product1_scope;
                             $scope._id1 = _id1_scope;
@@ -180,10 +184,14 @@ define(['require', 'app'],
                             $scope.Carrier1 = Carrier1_scope;
                             $scope.B_Requests1A = B_Requests1A_scope;
                             $scope.B_Requests2A = B_Requests2A_scope;
+                            $scope.B_Requests3A = B_Requests3A_scope;
                             $scope.S_Offers1A = S_Offers1A_scope;
                             $scope.S_Offers2A = S_Offers2A_scope;
+                            $scope.S_Offers3A = S_Offers3A_scope;
                             $scope.peritem = $scope.BuyerPrice1 / $scope.Quantity1;
                             $scope.transFee = defaultPayFee;
+                            console.log("$scope.S_Offers3A", $scope.S_Offers3A)
+                            console.log("$scope.B_Requests3A", $scope.B_Requests3A)
                             /*|button_mapping|onsuccess|F72C58AD-0CB1-F18F-161F-44E1632C9FEA||7623|*/
                         })(success, $scope);
                     },
@@ -717,8 +725,10 @@ define(['require', 'app'],
                                         requestData.params.ChoiceCarrier = $scope.Carrier1;
                                         requestData.params.B_Req1 = $scope.B_Requests1A;
                                         requestData.params.B_Req2 = $scope.B_Requests2A;
+                                        requestData.params.B_Req3 = $scope.B_Requests3A;
                                         requestData.params.S_Off1 = $scope.S_Offers1A;
                                         requestData.params.S_Off2 = $scope.S_Offers2A;
+                                        requestData.params.S_Off3 = $scope.S_Offers3A;
                                         return requestData;
                                         /*CLICK TO EDIT MAPPING*/
                                     })($scope);
@@ -902,8 +912,10 @@ define(['require', 'app'],
                                         requestData.params.ChoiceCarrier = $scope.Carrier1;
                                         requestData.params.B_Req1 = $scope.B_Requests1A;
                                         requestData.params.B_Req2 = $scope.B_Requests2A;
+                                        requestData.params.B_Req3 = $scope.B_Requests3A;
                                         requestData.params.S_Off1 = $scope.S_Offers1A;
                                         requestData.params.S_Off2 = $scope.S_Offers2A;
+                                        requestData.params.S_Off3 = $scope.S_Offers3A;
                                         requestData.params.B_Req4 = $scope.escrowAmt1;
                                         return requestData;
                                         /*CLICK TO EDIT MAPPING*/
@@ -1041,8 +1053,10 @@ define(['require', 'app'],
                             requestData.params.ChoiceCarrier = $scope.Carrier1;
                             requestData.params.B_Req1 = $scope.B_Requests1A;
                             requestData.params.B_Req2 = $scope.B_Requests2A;
+                            requestData.params.B_Req3 = $scope.B_Requests3A;
                             requestData.params.S_Off1 = $scope.S_Offers1A;
                             requestData.params.S_Off2 = $scope.S_Offers2A;
+                            requestData.params.S_Off3 = $scope.S_Offers3A;
                             return requestData;
                             /*CLICK TO EDIT MAPPING*/
                         })($scope);

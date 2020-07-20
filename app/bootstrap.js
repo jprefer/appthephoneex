@@ -128,6 +128,7 @@
             "Seller_Filtered_Home_Seller_Filtered_Requests_Model_service": "services/Seller_Filtered_Home_Seller_Filtered_Requests_Model_service",
             "Seller_Filtered_Home_Seller_Filtered_Requests_Type_service": "services/Seller_Filtered_Home_Seller_Filtered_Requests_Type_service",
             "Buyer_Home_Shipped_service": "services/Buyer_Home_Shipped_service",
+            "Get_user_id_profileId_service": "services/Get_user_id_profileId_service",
             '$Buyer_InProcess_Detail': 'pages/Buyer_InProcess_Detail',
             '$old_Buyer_Home': 'pages/old_Buyer_Home',
             '$Seller_InProcess': 'pages/Seller_InProcess',
