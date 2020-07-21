@@ -494,6 +494,7 @@ define(['require', 'app'],
                 var sqCCOF = AllData.sqCCOF;
                 var defaultPayMethod = AllData.defaultPayMethod;
                 var defaultPayFee = AllData.defaultPayFee;
+                var user_id = AllData.user_id;
                 RequestNotes2 = ($scope.BuyNotes2);
                 console.log(Buyer, CompanyName, ShipFirstName, ResaleNumber);
                 console.log("Color: ", $scope.Color1, "Memory:", $scope.Memory1);
@@ -755,6 +756,7 @@ define(['require', 'app'],
                                                         modal.scope.result6 = $scope.Quantity1;
                                                         modal.scope.result7 = $scope.BuyerPrice1;
                                                         modal.scope.result8 = $scope.Shipping1;
+                                                        modal.scope.result9 = $scope.Kitted1;
                                                         modal.show();
                                                     });
                                                 },
@@ -969,6 +971,7 @@ define(['require', 'app'],
                                                         modal.scope.result6 = $scope.Quantity1;
                                                         modal.scope.result7 = $scope.BuyerPrice1;
                                                         modal.scope.result8 = $scope.Shipping1;
+                                                        modal.scope.result9 = $scope.Kitted1;
                                                         modal.show();
                                                     });
                                                 },
@@ -1083,6 +1086,7 @@ define(['require', 'app'],
                                             modal.scope.result6 = $scope.Quantity1;
                                             modal.scope.result7 = $scope.BuyerPrice1;
                                             modal.scope.result8 = $scope.Shipping1;
+                                            modal.scope.result9 = $scope.Kitted1;
                                             modal.show();
                                         });
                                     },

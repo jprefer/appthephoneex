@@ -242,6 +242,7 @@ define(['require', 'app'],
                                     modal.scope.result6 = $scope.Quantity1;
                                     modal.scope.result8 = $scope.Shipping1;
                                     modal.scope.result7 = $scope.BidAmount;
+                                    modal.scope.result9 = $scope.Kitted1;
                                     modal.show();
                                 });
                             },
