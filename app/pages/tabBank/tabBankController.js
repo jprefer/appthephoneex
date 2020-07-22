@@ -235,7 +235,7 @@ define(['require', 'app'],
                             case "creditcard":
                                 console.log("They are using Credit Card");
                                 $scope.lblText = "Your Payment method is currently by Credit Card";
-                                $scope.lblText3 = "Save on transaction Fees? Open an Escrow Accout. You can fill it by using BTC, ACH, Wire, or a Check. Click below to email instructions:";
+                                $scope.lblText3 = "Want to save on transaction Fees? Open an Escrow Account. You can fill it by using BTC, ACH, Wire, or a Check. Click below to email instructions:";
                                 $scope.btn2Text = "Change to Escrow";
                                 $scope.btn3Text = "Click for instructions";
                                 $scope.btn1Show = false;
@@ -264,7 +264,7 @@ define(['require', 'app'],
                                 $scope.lblText = "Your Payment method is in test mode";
                                 //$scope.lblText1 = "Change to your Credit Card";
                                 //$scope.lblText2 = "Your Payment method is currently by Escrow";
-                                $scope.lblText3 = "Save on transaction Fees? Open an Escrow Accout. You can fill it by using BTC, ACH, Wire, or a Check. Click below to email instructions:";
+                                $scope.lblText3 = "Want to save on transaction Fees? Open an Escrow Account. You can fill it by using BTC, ACH, Wire, or a Check. Click below to email instructions:";
                                 $scope.btn1Text = "Change to Credit Card";
                                 $scope.btn2Text = "Change to Escrow";
                                 $scope.btn3Text = "Click for instructions";

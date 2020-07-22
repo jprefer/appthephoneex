@@ -29,10 +29,12 @@ class="bg-01 aio-empty-screen padding overflow-scroll">
     <p>
         Your offer will Expire: {{offerExpires1}} (Offer ID: {{_id1.substring(20)}})
     </p>
-    <p>
-        Total Price For Equipment: {{BuyerPrice1|currency}} (including shipping) which comes
-        out to {{peritem |currency}} per item
-    </p>
+    <h6 class="center-line">
+        This comes out to {{peritem |currency}} per item
+    </h6>
+    <h4>
+        Total Price For Equipment: {{BuyerPrice1|currency}} (including shipping)
+    </h4>
     <div class="list">
         <div class="ion-item-border item item-input">
             <input type="text" placeholder="Enter Any Other Notes Here" value="" ng-model="BuyNotes2">
@@ -43,8 +45,8 @@ class="bg-01 aio-empty-screen padding overflow-scroll">
             The total that your default payment method will be charged is: {{(transFee*BuyerPrice1)+BuyerPrice1|currency}}
         </p>
         <p class="dark">
-            Interested in lower transaction fees? Check out our other payment types in the &quot;Bank&quot;
-            section
+            Interested in lower transaction fees? Check out our other payment options in the
+            &quot;Bank&quot; section
         </p>
         <div>
             <div class="row">
@@ -59,19 +61,6 @@ class="bg-01 aio-empty-screen padding overflow-scroll">
                     ng-click="demo()">
                         Accept
                     </button>
-                </div>
-            </div>
-        </div>
-        <div>
-            <div class="row">
-                <div class="col col-25">
-                </div>
-                <div class="col">
-                    <button class="ion-item-border button button-energized button-block" ng-click="gotoBuyerHome()">
-                        Do Nothing
-                    </button>
-                </div>
-                <div class="col col-25">
                 </div>
             </div>
         </div>

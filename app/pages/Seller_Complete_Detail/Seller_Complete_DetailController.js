@@ -179,6 +179,12 @@ define(['require', 'app'],
                             var ChangetoString1 = String($scope.CloseDate1);
                             $scope.CloseDate1 = ChangetoString1
                             $scope.SellerPaid1 = SellerPaid1_scope;
+                            if ($scope.SellerPaid1 == false) {
+                                $scope.txtPaid = "You have not been paid for this transaction yet."
+                            } else {
+                                $scope.txtPaid = "You have been paid for this transaction."
+                            }
+                            //$scope.txtPaid = 
                             /*|button_mapping|onsuccess|F952B444-3CF8-14F2-4B7E-90AEB380A4EA||1982|*/
                         })(success, $scope);
                     },

@@ -325,5 +325,11 @@ define(['require', 'app'],
                     Apperyio.navigateTo("Buyer_Home", {});
                 }
             };
+            /**
+             * @function visitWebsite
+             */
+            $scope.visitWebsite = function() {
+                window.open('https://thephoneex.com', '_blank', 'location=yes');
+            };
         }
     });

@@ -180,5 +180,20 @@ define(['require', 'app'],
             $scope.GoBack = function() {
                 Apperyio.navigateTo("Seller_Offers", {});
             };
+            /**
+             * @function makeOfferNew
+             */
+            $scope.makeOfferNew = function() {
+                var oldRequestId = $scope.Request_id1;
+                console.log("oldRequestId", oldRequestId);
+                // inject the 'dataStorage' service
+                var data = Apperyio.get("dataStorage");
+                // user1 is a variable in the page1 scope 
+                // set it to reference the 'dataStorage' service
+                $scope.RequestID1.Gl_Vars = data;
+                $scope.RequestID1.Gl_Vars.request_id = oldRequestId;
+                console.log($scope.RequestID1.Gl_Vars.request_id);
+                Apperyio.navigateTo("Seller_Accept_Request");
+            };
         }
     });
