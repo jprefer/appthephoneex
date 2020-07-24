@@ -45,6 +45,7 @@ define(['require', 'app'],
             $scope.Seller1 = Apperyio.EntityAPI('String');
             $scope.S_Off1a = Apperyio.EntityAPI('String');
             $scope.S_Off2a = Apperyio.EntityAPI('String');
+            $scope.ShippedBy1 = Apperyio.EntityAPI('String');
             /**
              * User controller functions
              */
@@ -117,6 +118,7 @@ define(['require', 'app'],
                             var ShipAddress2a_scope = $scope.ShipAddress2a;
                             var Tracking1_scope = $scope.Tracking1;
                             var ShipDate1_scope = $scope.ShipDate1;
+                            var ShippedBy_scope = $scope.ShippedBy1;
                             var Seller1_scope = $scope.Seller1;
                             var S_Off1a_scope = $scope.S_Off1a;
                             var S_Off2a_scope = $scope.S_Off2a;
@@ -145,6 +147,7 @@ define(['require', 'app'],
                             ShipAddress2a_scope = success.data[0].ShipAddress2;
                             Tracking1_scope = success.data[0].Tracking;
                             ShipDate1_scope = success.data[0].ShipDate;
+                            ShippedBy1_scope = success.data[0].ShippedBy;
                             Seller1_scope = success.data[0].Seller;
                             S_Off1a_scope = success.data[0].S_Off1;
                             S_Off2a_scope = success.data[0].S_Off2;
@@ -172,6 +175,7 @@ define(['require', 'app'],
                             $scope.ShipAddress1a = ShipAddress1a_scope;
                             $scope.ShipAddress2a = ShipAddress2a_scope;
                             $scope.Tracking1 = Tracking1_scope;
+                            $scope.ShippedBy1 = ShippedBy1_scope;
                             $scope.Seller1 = Seller1_scope;
                             $scope.S_Off1a = S_Off1a_scope;
                             $scope.S_Off2a = S_Off2a_scope;
@@ -179,8 +183,10 @@ define(['require', 'app'],
                             if ($scope.Tracking1 == null) {
                                 $scope.ShipDate1 = "Not Shipped Yet";
                                 alert('This item has not been shipped yet.  You can not accept it until you receive it')
+                                $scope.dsblBtn1 = true;
                             } else {
                                 alert('Once you receive your order, you can accept the shipment here.  Be sure that your have received the order and are satisfied with it before accepting! ')
+                                $scope.dsblBtn1 = false;
                                 $scope.ShipDate1 = new Date(ShipDate1_scope.$date);
                                 var ChangetoString3 = String($scope.ShipDate1);
                                 $scope.ShipDate1 = ChangetoString3
@@ -297,6 +303,39 @@ define(['require', 'app'],
                     },
                     function(notify) { // notify callback, can fire few times
                     });
+            };
+            /**
+             * @function track
+             */
+            $scope.track = function() {
+                var tracking = ($scope.Tracking1);
+                var shippedBy = ($scope.ShippedBy1);
+                console.log("tracking", tracking);
+                console.log("shippedBy", shippedBy);
+                switch (shippedBy) {
+                    case "UPS":
+                        // UPS
+                        console.log("UPS");
+                        window.open('https://www.ups.com/track?loc=en_US&tracknum=' + tracking, '_blank', 'location=yes');
+                        break;
+                    case "USPS":
+                        // USPS
+                        console.log("USPS");
+                        window.open('https://tools.usps.com/go/TrackConfirmAction?qtc_tLabels1=' + tracking, '_blank', 'location=yes');
+                        break;
+                    case "Fedex":
+                        // Fedex
+                        console.log("Fedex");
+                        window.open('http://www.fedex.com/Tracking?tracknumbers=' + tracking, '_blank', 'location=yes');
+                        break;
+                    case "DHL":
+                        // DHL
+                        console.log("DHL");
+                        window.open('https://www.dhl.com/en/express/tracking.html?AWB=' + tracking + '&brand=DHL', '_blank', 'location=yes');
+                        break;
+                    default:
+                        // Not Found
+                }
             };
         }
     });

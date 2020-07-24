@@ -130,6 +130,18 @@ define(['require', 'app'],
                             $scope._createdAt1 = _createdAt1_scope;
                             $scope.RequestID4 = RequestID4_scope;
                             $scope.miniID = RequestID4_scope.substring(20);
+                            //added stuff here
+                            $scope.count = -1;
+                            $scope.$watch('BidAmount', function(newvalue, oldvalue) {
+                                console.log("bid", $scope.BidAmount)
+                                if (isNaN($scope.BidAmount)) {
+                                    $scope.priceperunit = 0
+                                } else {
+                                    $scope.priceperunit = Number($scope.BidAmount) / Number($scope.Quantity1)
+                                    $scope.count = $scope.count + 1;
+                                }
+                            });
+                            //added stuuf above
                             /*|button_mapping|onsuccess|40707D72-9839-CE41-614A-E5ECC1D8F358||1577|*/
                         })(success, $scope);
                     },

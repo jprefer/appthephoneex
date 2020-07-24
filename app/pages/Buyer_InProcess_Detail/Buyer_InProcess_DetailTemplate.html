@@ -8,6 +8,80 @@ class="bg-01 aio-empty-screen padding overflow-scroll">
             ORDER ID: {{_id1.substring(20)}}
         </div>
     </div>
+    <div>
+        <b>
+            <center>
+                <font size="4">
+                    Quantity: {{Quan1}}
+                </font>
+        </b>
+        </center>
+        <br>
+        <b>
+            <center>
+                {{Manu1}} - {{Prod1}} - {{ChoiceCarrier1}}
+        </b>
+        </center>
+        <br>
+        <b>
+            Tracking:
+        </b>
+        {{Tracking1}}
+        <br>
+        <b>
+            Shipped By:
+        </b>
+        {{ShippedBy1}}
+        <br>
+        <b>
+            ShipDate:
+        </b>
+        {{ShipDate1}}
+        <br>
+        <b>
+            Memory:
+        </b>
+        {{Mem1}} /
+        <b>
+            Color:
+        </b>
+        {{Colour1}}
+        <br>
+        <b>
+            Kit:
+        </b>
+        {{Kit1}}
+        <br>
+        <b>
+            Grade:
+        </b>
+        {{Cond1}}
+        <br>
+        <b>
+            Notes: (From Buyer)
+        </b>
+        - {{BuyerNote1}}
+        <br>
+        <b>
+            (From You)
+        </b>
+        - {{SellerNote1}}
+        <br>
+        <b>
+            (From Buyer)
+        </b>
+        - {{BuyerNote2a}}
+        <br>
+        You have Paid
+        <b>
+            {{BuyingPrice1|currency}}
+        </b>
+        for this transaction.
+    </div>
+    <button class="ion-item-border button button-positive button-block button-small"
+    ng-click="track()" ng-disabled="dsblBtn1">
+        Track Shipment
+    </button>
     <div class="list">
         <p>
             Please rate seller and accept shipment
@@ -57,71 +131,6 @@ class="bg-01 aio-empty-screen padding overflow-scroll">
                 </div>
             </div>
         </div>
-    </div>
-    <div>
-        <b>
-            <center>
-                <font size="4">
-                    Quantity: {{Quan1}}
-                </font>
-        </b>
-        </center>
-        <br>
-        <b>
-            <center>
-                {{Manu1}} - {{Prod1}} - {{ChoiceCarrier1}}
-        </b>
-        </center>
-        <br>
-        <b>
-            Tracking:
-        </b>
-        {{Tracking1}}
-        <br>
-        <b>
-            ShipDate:
-        </b>
-        {{ShipDate1}}
-        <br>
-        <b>
-            Memory:
-        </b>
-        {{Mem1}} /
-        <b>
-            Color:
-        </b>
-        {{Colour1}}
-        <br>
-        </b>
-        Kit:
-        </b>
-        {{Kit1}}
-        <br>
-        <b>
-            Grade:
-        </b>
-        {{Cond1}}
-        <br>
-        <b>
-            Notes: (From Buyer)
-        </b>
-        - {{BuyerNote1}}
-        <br>
-        <b>
-            (From You)
-        </b>
-        - {{SellerNote1}}
-        <br>
-        <b>
-            (From Buyer)
-        </b>
-        - {{BuyerNote2a}}
-        <br>
-        You have Paid
-        <b>
-            {{BuyingPrice1|currency}}
-        </b>
-        for this transaction.
     </div>
     <div>
         <div class="row">

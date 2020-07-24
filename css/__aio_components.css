@@ -12,14 +12,13 @@
 .aio-empty-screen:not(.has-footer):not(.has-tabs) {
 	bottom: 0;
 }
-/*
-* Appery.io component.
-*/
 .buttons .button-full,
 .buttons .button-block {
 	margin: 0;
 }
-.aio-empty-screen {
+/*
+* Appery.io component.
+*/.aio-empty-screen {
 	position: absolute;
 	left: 0;
 	right: 0;

@@ -65,7 +65,7 @@ ng-controller="Buyer_Home" ng-cloak ng-init="init()" active-screen="Home" class=
     <div class="list">
         <a href="javascript:void(0)" class="item ion-item-borderLightPurple" ng-click="showDetail(item._id)"
         ng-repeat="item in list">
-        <h2>Offer: {{item.BuyerPrice|currency}} --&gt; {{item. so_manufacturer}} {{item. so_Product}} </h2>
+        <h2> {{item.BuyerPrice|currency}} -&gt; {{item. so_manufacturer}} {{item. so_Product}} </h2>
         <p>{{item.so_Memory}} / {{item.so_Color}} / {{item.so_Carrier}} /  Offer ID: {{item._id.substring(20)}}</p>
         Quan:{{item.so_Quantity}} / Grade: {{item.so_Condition}}  / Request ID: {{item.fk_Request_id.substring(20)}}
         </a>
