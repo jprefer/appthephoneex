@@ -97,6 +97,25 @@ define(['require', 'app'],
                         },
                         function(error) { // callback to handle request error
                             //Apperyio.navigateTo("Login", {});
+                            requestData = (function mapping7038($scope) {
+                                var requestData = {};
+                                requestData.headers = {};
+                                var user_scope = $scope.user;
+                                requestData.headers['X-Appery-Session-Token'] = token;
+                                return requestData;
+                                /*CLICK TO EDIT MAPPING*/
+                            })($scope);
+                            // read more about using rest services: https://links.appery.io/ve-snippet-rest
+                            Apperyio.get("phoneapp_logout_service")(requestData).then(
+                                function(success) { // success callback
+                                    /*CLICK TO EDIT MAPPING*/
+                                    Apperyio.navigateTo("Login", {});
+                                },
+                                function(error) { // callback to handle request error
+                                    Apperyio.navigateTo("Login", {});
+                                },
+                                function(notify) { // notify callback, can fire few times
+                                });
                         },
                         function(notify) { // notify callback, can fire few times
                         });

@@ -662,6 +662,38 @@ define(['require'],
                 //console.log(_id);
                 Apperyio.navigateTo("Seller_Accepted", {});
             };
+            /**
+             * @function logout
+             */
+            $scope.logout = function() {
+                var requestData = {};
+                var userData = Apperyio.get("dataStorage");
+                var AllData = userData.current;
+                var username = AllData.username;
+                var Buyer_username = AllData.username;
+                var sessionToken = AllData.session;
+                //Get User  
+                console.log(sessionToken);
+                requestData = (function mapping7038($scope) {
+                    var requestData = {};
+                    requestData.headers = {};
+                    var user_scope = username;
+                    requestData.headers['X-Appery-Session-Token'] = sessionToken;
+                    return requestData;
+                    /*CLICK TO EDIT MAPPING*/
+                })($scope);
+                // read more about using rest services: https://links.appery.io/ve-snippet-rest
+                Apperyio.get("phoneapp_logout_service")(requestData).then(
+                    function(success) { // success callback
+                        /*CLICK TO EDIT MAPPING*/
+                        Apperyio.navigateTo("Login", {});
+                    },
+                    function(error) { // callback to handle request error
+                        Apperyio.navigateTo("Login", {});
+                    },
+                    function(notify) { // notify callback, can fire few times
+                    });
+            };
         }
         return ['$scope', 'Apperyio', controller];
     });

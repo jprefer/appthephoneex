@@ -21,6 +21,7 @@ define(['require', 'app'],
             $scope.ThisCreditCard = Apperyio.EntityAPI('String');
             $scope.sqCustID = Apperyio.EntityAPI('String');
             $scope.userProfile_id = Apperyio.EntityAPI('String');
+            $scope.username = Apperyio.EntityAPI('String');
             /**
              * User controller functions
              */
@@ -71,6 +72,7 @@ define(['require', 'app'],
                 var AllData = userData.current;
                 var sqCustID = AllData.sqCustID;
                 var sqCCOF_Default = AllData.sqCCOF;
+                var username = AllData.username;
                 var token = AllData.session;
                 //Get User  Info
                 var ThisCreditCard = $scope.RequestID2.Gl_Vars.request_id;
@@ -87,6 +89,7 @@ define(['require', 'app'],
                         var ThisCreditCard_scope = $scope.ThisCreditCard;
                         requestData.params.sqCust = sqCustID;
                         requestData.params.sqCCOF = ThisCreditCard;
+                        requestData.params.username = username;
                         requestData.headers = {};
                         var token_scope = $scope.token;
                         requestData.headers['X-Appery-Session-Token'] = token;

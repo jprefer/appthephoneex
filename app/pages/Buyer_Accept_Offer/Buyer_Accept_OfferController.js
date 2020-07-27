@@ -334,7 +334,7 @@ define(['require', 'app'],
                     },
                     function(notify) { // notify callback, can fire few times
                     });
-                Apperyio.navigateTo("Buyer_Home", {});
+                Apperyio.navigateTo("Buyer_Requests_See", {});
             };
             /**
              * @function AcceptOffer

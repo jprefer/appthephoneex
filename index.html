@@ -34,7 +34,7 @@
         <!-- Uncomment this script when not using service worker -->
         <!-- <script>        
         var require = {
-        urlArgs : window.navigator.userAgent.match(/Windows Phone/i) ? undefined : "bust=1595617700"
+        urlArgs : window.navigator.userAgent.match(/Windows Phone/i) ? undefined : "bust=1595886815"
         };
         </script>
         -->
@@ -133,6 +133,10 @@
                     <button class="button button-calm button-block icon-left ion-checkmark-round" menu-close=""
                     ng-click="gotoVerify()">
                         Verify Email &amp; Phone
+                    </button>
+                    <button class="button button-positive button-block icon-left ion-log-out" menu-close=""
+                    ng-click="logout()">
+                        Log Out
                     </button>
                 </ion-side-menu>
             </ion-side-menus>
