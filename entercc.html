@@ -116,16 +116,16 @@ const user = urlParams.get('username')
    				 if (xhr.readyState === 4 && xhr.status === 200) {
        			 var json = JSON.parse(xhr.responseText);
        			 //console.log("xhr.status", xhr.status);
-        		 console.log(xhr.responseText);
+        		 //console.log(xhr.responseText);
         		 var str =  xhr.responseText;
         		// console.log("str", str);
         		 var n = str.search('"HTTP_RESPONSE_CODE":400}');
         		 //console.log("n", n);
         		if (n < 0) {
-       			  alert('Credit Card Registration Completed - Please tap the home key in the upper right corner to continue.')
+       			  alert('Credit Card Registration Completed - Please tap the return to previous screen or the home key in the upper right corner to continue.')
        			  location.replace("https://app.thephoneex.com/payment_blank.html")
     			  }else { 
-    			    alert('Credit Card Registration Failed - Please try again - Please tap the home key in the upper right corner to continue.'); 
+    			    alert('Credit Card Registration Failed - Please try again -  Please tap the return to previous screen or the home key in the upper right corner to continue.'); 
     			    location.replace("https://app.thephoneex.com/payment_blank.html")
   				   }
         		 //console.log("Done");
