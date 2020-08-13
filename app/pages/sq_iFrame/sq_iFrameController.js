@@ -25,14 +25,14 @@ define(['require', 'app'],
                 var custID = AllData.sqCustID;
                 //xxxxxxxxxxxx
                 //Get User  
-                console.log(username);
-                console.log(AllData);
-                console.log(custID);
-                var urlstring = "https://app.thephoneex.com/payment.html";
+                //console.log(username);
+                //console.log(AllData);
+                //console.log(custID);
+                var urlstring = "https://app.thephoneex.com/entercc.html";
                 var builturl = urlstring + "?" + "username=" + username + "&custID=" + custID;
                 var $sce = Apperyio.get("$sce");
                 $scope.builturl = $sce.trustAsResourceUrl(builturl);
-                console.log(builturl);
+                //console.log(builturl);
             };
             /**
              * @function goBank

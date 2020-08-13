@@ -48,17 +48,20 @@ class="bg-01 aio-empty-screen padding overflow-scroll">
             Interested in lower transaction fees? Check out our other payment options in the
             &quot;Bank&quot; section
         </p>
+        <h3 class="assertive">
+            {{ButtonText}}
+        </h3>
         <div>
             <div class="row">
                 <div class="col">
                     <button class="ion-item-border button button-assertive button-block icon-left ion-hammer"
-                    ng-click="RejectOffer()">
+                    ng-click="RejectOffer()" ng-disabled="{{disabledBut}}">
                         Reject
                     </button>
                 </div>
                 <div class="col">
                     <button class="ion-item-border button button-balanced button-block icon-left ion-cash"
-                    ng-click="demo()">
+                    ng-click="demo()" ng-disabled="{{disabledBut}}">
                         Accept
                     </button>
                 </div>

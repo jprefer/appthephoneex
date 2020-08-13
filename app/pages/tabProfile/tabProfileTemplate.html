@@ -16,7 +16,14 @@ ng-controller="tabProfile" ng-cloak ng-init="init()" active-screen="Profile" cla
         </div>
     </div>
     <div>
-        Go to any field that you need to change and start typing. When finished, click update
+        <p style="text-align: center;">
+            Go to any field that you need to change and start typing. When finished, click update
+        </p>
+        <p style="text-align: center;">
+            <strong>
+                Note: You can only update 1 line at a time
+            </strong>
+        </p>
     </div>
     <div class="card CSS_BG_LightBlue">
         <div class="item-divider item ion-item-border">
@@ -140,6 +147,9 @@ ng-controller="tabProfile" ng-cloak ng-init="init()" active-screen="Profile" cla
                                     <input type="text" placeholder="{{user.MobilePhone.substring(2)}}" value="" ng-required="true"
                                     ng-pattern="/^[0][1-9]\d{9}$|^[1-9]\d{9}$/" name="mobile" ng-model="new_MobilePhone">
                                 </div>
+                                <ion-checkbox ng-model="texton1">
+                                    Text Me Alerts
+                                </ion-checkbox>
                             </div>
                             <div class="col">
                                 <button class="ion-item-border button button-royal button-block button-small" ng-click="changeMobile()"
@@ -151,6 +161,16 @@ ng-controller="tabProfile" ng-cloak ng-init="init()" active-screen="Profile" cla
                     </div>
                 </div>
             </form>
+            <div>
+                <p style="text-align: center;">
+                    <strong>
+                        SMS Alerts have terms & conditions.
+                    </strong>
+                </p>
+                <p style="text-align: center;">
+                    Navigate to our Terms menu for more info.
+                </p>
+            </div>
         </div>
     </div>
     <div class="card CSS_BG_LightBlue">
@@ -202,6 +222,13 @@ ng-controller="tabProfile" ng-cloak ng-init="init()" active-screen="Profile" cla
                                 </button>
                             </div>
                         </div>
+                    </div>
+                    <div>
+                        <p style="text-align: center;">
+                            <strong>
+                                Where your merchandise will be shipped
+                            </strong>
+                        </p>
                     </div>
                 </div>
             </form>
@@ -340,6 +367,11 @@ ng-controller="tabProfile" ng-cloak ng-init="init()" active-screen="Profile" cla
                     </div>
                 </div>
             </form>
+            <div>
+                <p style="text-align: center;">
+                    App is only open to retailers having a resale number.&nbsp;
+                </p>
+            </div>
         </div>
     </div>
     <div class="card">

@@ -134,7 +134,7 @@ define(['require', 'app'],
                         if (turn == "S") {
                             var myString2 = "S";
                             localStorage.setItem("localStorageString1", myString2); // set the value
-                            console.log("mystringatlogin", myString2);
+                            //console.log("mystringatlogin",myString2);
                             // read more about using rest services: https://links.appery.io/ve-snippet-rest
                             Apperyio.get("getMenu1_service")(requestData).then(
                                 function(success) { // success callback
@@ -182,8 +182,8 @@ define(['require', 'app'],
                                     })(success, $scope);
                                     var myStringArray3 = JSON.stringify($scope.tempmenu3);
                                     localStorage.setItem("localStorageStringArray3", myStringArray3); // set the value
-                                    console.log("I am on the LoginPage");
-                                    console.log("myArray3_index", myStringArray3)
+                                    //console.log("I am on the LoginPage");
+                                    //console.log("myArray3_index",myStringArray3)
                                 },
                                 function(error) { // callback to handle request error
                                 },
@@ -199,7 +199,7 @@ define(['require', 'app'],
                             //working on this part
                             var myString2 = "B";
                             localStorage.setItem("localStorageString1", myString2); // set the value
-                            console.log("mystringatlogin", myString2);
+                            //console.log("mystringatlogin",myString2);
                             // read more about using rest services: https://links.appery.io/ve-snippet-rest
                             Apperyio.get("getMenu1_service")(requestData).then(
                                 function(success) { // success callback
@@ -265,8 +265,8 @@ define(['require', 'app'],
                                     })(success, $scope);
                                     var myStringArray4 = JSON.stringify($scope.tempmenu4);
                                     localStorage.setItem("localStorageStringArray4", myStringArray4); // set the value
-                                    console.log("I am on the LoginPage");
-                                    console.log("myArray4_index", myStringArray4)
+                                    //console.log("I am on the LoginPage");
+                                    // console.log("myArray4_index",myStringArray4)
                                 },
                                 function(error) { // callback to handle request error
                                 },
@@ -310,7 +310,7 @@ define(['require', 'app'],
                 // set it to reference the 'dataStorage' service
                 $scope.main.object_id = data;
                 alert("Second Alert:" + "ObjectID: " + $scope.main.object_id1 + " / " + $scope.main.username1);
-                console.log($scope.main.object_id1);
+                //console.log($scope.main.object_id1);
                 var userData = Apperyio.get("dataStorage");
                 userData.current = success.data;
                 console.log(userData);
@@ -324,12 +324,6 @@ define(['require', 'app'],
                 } else {
                     Apperyio.navigateTo("Buyer_Home", {});
                 }
-            };
-            /**
-             * @function visitWebsite
-             */
-            $scope.visitWebsite = function() {
-                window.open('https://thephoneex.com', '_blank', 'location=yes');
             };
         }
     });

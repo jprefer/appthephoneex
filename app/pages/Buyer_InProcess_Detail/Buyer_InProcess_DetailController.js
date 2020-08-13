@@ -61,9 +61,9 @@ define(['require', 'app'],
                 // user1 is a variable in the page1 scope 
                 // set it to reference the 'dataStorage' service
                 $scope.RequestID2.Gl_Vars = data;
-                console.log($scope.RequestID2.Gl_Vars.request_id);
+                //console.log($scope.RequestID2.Gl_Vars.request_id);
                 RequestID3 = $scope.RequestID2.Gl_Vars.request_id;
-                console.log("RequestID3= ", RequestID3);
+                //console.log("RequestID3= ",RequestID3);
                 var miniID = "";
                 //Get User
                 var userData = Apperyio.get("dataStorage");
@@ -73,7 +73,7 @@ define(['require', 'app'],
                 var token = AllData.session;
                 //Get User 
                 $scope.dsblBtn = false;
-                console.log(dsblBtn);
+                //console.log(dsblBtn);
                 // Get Data from Request
                 var requestData = {};
                 requestData = (function mapping5190($scope) {
@@ -84,7 +84,7 @@ define(['require', 'app'],
                     requestData.headers = {};
                     var token_scope = $scope.token;
                     requestData.headers['X-Appery-Session-Token'] = token;
-                    console.log("token", token);
+                    //console.log("token",token);
                     return requestData;
                     /*|button_mapping|onbeforesend|F952B444-3CF8-14F2-4B7E-90AEB380A4EA||5190|*/
                 })($scope);
@@ -190,7 +190,7 @@ define(['require', 'app'],
                                 $scope.ShipDate1 = new Date(ShipDate1_scope.$date);
                                 var ChangetoString3 = String($scope.ShipDate1);
                                 $scope.ShipDate1 = ChangetoString3
-                                console.log($scope.Tracking1);
+                                // console.log($scope.Tracking1);
                             }
                             //Below this is whether the item was shipped or not
                             if ($scope.Tracking1 == null) {
@@ -199,7 +199,7 @@ define(['require', 'app'],
                                 $scope.dsblBtn = false;
                             }
                             //$scope.dsblBtn = false;
-                            console.log(dsblBtn);
+                            //console.log(dsblBtn);
                             /*|button_mapping|onsuccess|F952B444-3CF8-14F2-4B7E-90AEB380A4EA||1982|*/
                         })(success, $scope);
                     },
@@ -242,7 +242,7 @@ define(['require', 'app'],
                     requestData.headers = {};
                     var token_scope = $scope.token;
                     requestData.headers['X-Appery-Session-Token'] = token;
-                    console.log("token", token);
+                    //console.log("token",token);
                     return requestData;
                     /*|button_mapping|onbeforesend|C5292A6D-40A0-15FB-1B23-1D09BE8635D1||8267|*/
                 })($scope);
@@ -286,7 +286,7 @@ define(['require', 'app'],
                     requestData.headers = {};
                     var token_scope = $scope.token;
                     requestData.headers['X-Appery-Session-Token'] = token;
-                    console.log("token", token);
+                    // console.log("token",token);
                     return requestData;
                     /*|button_mapping|onbeforesend|9037690E-9E2B-2B07-F879-13D626904069||8621|*/
                 })($scope);
@@ -310,27 +310,27 @@ define(['require', 'app'],
             $scope.track = function() {
                 var tracking = ($scope.Tracking1);
                 var shippedBy = ($scope.ShippedBy1);
-                console.log("tracking", tracking);
-                console.log("shippedBy", shippedBy);
+                //console.log("tracking",tracking);
+                //console.log("shippedBy",shippedBy);
                 switch (shippedBy) {
                     case "UPS":
                         // UPS
-                        console.log("UPS");
+                        //console.log("UPS");
                         window.open('https://www.ups.com/track?loc=en_US&tracknum=' + tracking, '_blank', 'location=yes');
                         break;
                     case "USPS":
                         // USPS
-                        console.log("USPS");
+                        // console.log("USPS");
                         window.open('https://tools.usps.com/go/TrackConfirmAction?qtc_tLabels1=' + tracking, '_blank', 'location=yes');
                         break;
                     case "Fedex":
                         // Fedex
-                        console.log("Fedex");
+                        // console.log("Fedex");
                         window.open('http://www.fedex.com/Tracking?tracknumbers=' + tracking, '_blank', 'location=yes');
                         break;
                     case "DHL":
                         // DHL
-                        console.log("DHL");
+                        //console.log("DHL");
                         window.open('https://www.dhl.com/en/express/tracking.html?AWB=' + tracking + '&brand=DHL', '_blank', 'location=yes');
                         break;
                     default:

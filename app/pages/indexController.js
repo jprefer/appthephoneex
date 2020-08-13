@@ -673,7 +673,7 @@ define(['require'],
                 var Buyer_username = AllData.username;
                 var sessionToken = AllData.session;
                 //Get User  
-                console.log(sessionToken);
+                //console.log(sessionToken);
                 requestData = (function mapping7038($scope) {
                     var requestData = {};
                     requestData.headers = {};

@@ -31,7 +31,7 @@ define(['require', 'app'],
                 $scope.main.username1 = AllData.username;
                 var token = AllData.session;
                 //xxxxxxxxxxxx
-                console.log(userData);
+                //console.log(userData);
                 //The next lines are added to get the deviceid and register push notifications
                 //Thenext line was added to get user
                 //next two lines were original
@@ -73,7 +73,7 @@ define(['require', 'app'],
                             _.set(main_scope, 'devID1', success.deviceID);
                             _.set(main_scope, 'object_id1', success._id);
                             $scope.main = main_scope;
-                            alert("Login Success. \n" + "Device ID: " + $scope.main.devID1 + "   ObjectID:" + $scope.main.object_id1 + " User:" + $scope.main.username1);
+                            //alert("Login Success. \n"+"Device ID: "+ $scope.main.devID1 + "   ObjectID:" + $scope.main.object_id1 + " User:" + $scope.main.username1);
                             /*|button_mapping|onsuccess|E66F2CF9-EFE8-065B-71B1-9FDF8075B3BE||4691|*/
                             // here is the part where it marries device and user
                             var requestData = {};
@@ -108,7 +108,7 @@ define(['require', 'app'],
                     requestData.params = {};
                     var username1_scope = $scope.username1;
                     requestData.params.username = username;
-                    console.log("username", username);
+                    //console.log("username",username);
                     return requestData;
                     /*|button_mapping|onbeforesend|16AF4360-5080-3A4C-D40A-892FFC452EAA||4873|*/
                 })($scope);
@@ -152,7 +152,7 @@ define(['require', 'app'],
                     //working on this part
                     var myString2 = "B";
                     localStorage.setItem("localStorageString1", myString2); // set the value
-                    console.log("mystringatlogin", myString2);
+                    //console.log("mystringatlogin",myString2);
                     // read more about using rest services: https://links.appery.io/ve-snippet-rest
                     Apperyio.get("getMenu1_service")(requestData).then(
                         function(success) { // success callback
@@ -218,8 +218,8 @@ define(['require', 'app'],
                             })(success, $scope);
                             var myStringArray4 = JSON.stringify($scope.tempmenu4);
                             localStorage.setItem("localStorageStringArray4", myStringArray4); // set the value
-                            console.log("I am on the indexPage");
-                            console.log("myArray4_index", myStringArray4)
+                            //console.log("I am on the indexPage");
+                            // console.log("myArray4_index",myStringArray4)
                         },
                         function(error) { // callback to handle request error
                         },

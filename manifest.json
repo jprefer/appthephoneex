@@ -11,6 +11,12 @@
     "icons": [
 
             {
+                "src": "files/images/FaviconLogo.png",
+                "type": "image/png",
+                "sizes": "48x48"
+            }     
+            ,
+            {
                 "src": "files/images/apple-touch-icon-72x72.png",
                 "type": "image/png",
                 "sizes": "72x72"

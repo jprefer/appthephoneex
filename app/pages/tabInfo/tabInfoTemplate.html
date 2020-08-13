@@ -7,18 +7,50 @@ ng-controller="tabInfo" ng-cloak ng-init="init()" active-screen="Info" class="bg
             Mobile E-Commerce Done Better
         </div>
     </div>
-    <div>
+    <div name="commentForm">
     </div>
-    <button class="ion-item-border button button-calm button-block" ng-click="contactUs()">
-        Contact Us
-    </button>
+    <div>
+        <div class="row">
+            <div class="col">
+            </div>
+            <div class="col">
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="row">
+            <div class="col">
+            </div>
+            <div class="col">
+            </div>
+        </div>
+    </div>
+    <form name="commentForm">
+        <div class="list">
+            <div>
+                <div class="row">
+                    <div class="col">
+                        <label class="item item-input">
+                            <textarea placeholder="Enter Message to us" ng-required="true" name="comment1" ng-model="comments"></textarea>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="row">
+                    <div class="col">
+                    </div>
+                    <div class="col">
+                        <button class="ion-item-border button button-balanced button-block" ng-click="sendComment()"
+                        ng-disabled="commentForm.comment1.$error.required">
+                            Send
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
     <button class="ion-item-border button button-positive button-block" ng-click="privacyPolicy()">
-        Privacy Policy
-    </button>
-    <button class="ion-item-border button button-calm button-block" ng-click="termsCondtions()">
-        Terms &amp; Condtions
-    </button>
-    <button class="ion-item-border button button-positive button-block" ng-click="ourWebsite()">
-        Our Website
+        Privacy Policy / Terms
     </button>
 </div>

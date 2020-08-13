@@ -50,7 +50,7 @@ define(['require', 'app'],
                             /*|button_mapping|onsuccess|D7EBDC93-1C71-FAAC-17CC-D9208DA0FD91||4921|*/
                         })(success, $scope);
                         alert($scope.requestMessage);
-                        console.log("requestMessage", $scope.requestMessage);
+                        // console.log("requestMessage",$scope.requestMessage);
                     },
                     function(error) { // callback to handle request error
                     },
@@ -85,7 +85,7 @@ define(['require', 'app'],
                             /*|button_mapping|onsuccess|39798178-81FD-617A-D820-31223F0753FE||5560|*/
                         })(success, $scope);
                         alert($scope.reponseMessage);
-                        console.log("requestMessage", $scope.reponseMessage);
+                        //console.log("requestMessage",$scope.reponseMessage);
                     },
                     function(error) { // callback to handle request error
                     },

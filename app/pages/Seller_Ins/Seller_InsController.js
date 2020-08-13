@@ -23,7 +23,7 @@ define(['require', 'app'],
              * @function gotoVerify
              */
             $scope.gotoVerify = function() {
-                Apperyio.navigateTo("tab_Verify", {
+                Apperyio.navigateTo("Seller_Home", {
                     'reloadPage': true
                 });
             };

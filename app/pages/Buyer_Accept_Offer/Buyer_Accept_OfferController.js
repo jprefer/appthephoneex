@@ -76,9 +76,9 @@ define(['require', 'app'],
                 // user1 is a variable in the page1 scope 
                 // set it to reference the 'dataStorage' service
                 $scope.RequestID2.Gl_Vars = data;
-                console.log($scope.RequestID2.Gl_Vars.request_id);
+                //console.log($scope.RequestID2.Gl_Vars.request_id);
                 RequestID3 = $scope.RequestID2.Gl_Vars.request_id;
-                console.log("RequestID3= ", RequestID3);
+                //console.log("RequestID3= ",RequestID3);
                 var miniID = "";
                 //Get User  
                 var userData = Apperyio.get("dataStorage");
@@ -88,10 +88,23 @@ define(['require', 'app'],
                 var token = AllData.session;
                 var defaultPayMethod = AllData.defaultPayMethod;
                 var defaultPayFee = AllData.defaultPayFee;
+                var address1 = AllData.ShippingAddress1;
+                var address2 = AllData.ShippingAddress2;
+                var city = AllData.City;
+                var state = AllData.State;
+                var zip = AllData.Zip;
+                var phone = AllData.MobilePhone;
+                if (phone == " " || zip == " " || state == " " || city == " " || address1 == " ") {
+                    $scope.ButtonText = "You need to complete your shipping and / or mobile phone information under your PROFILE - so we can ship your product";
+                    $scope.disabledBut = true;
+                } else {
+                    $scope.ButtonText = "";
+                    $scope.disabledBut = false;
+                }
                 //Get User  
-                console.log(username);
-                console.log(AllData);
-                console.log(token);
+                //console.log(username);
+                //console.log(AllData);
+                //console.log(token);
                 // Get Data from Request
                 var requestData = {};
                 requestData = (function mapping5835($scope) {
@@ -102,7 +115,7 @@ define(['require', 'app'],
                     requestData.headers = {};
                     var token_scope = $scope.token;
                     requestData.headers['X-Appery-Session-Token'] = token;
-                    console.log("token", token);
+                    //console.log("token",token);
                     return requestData;
                     /*|button_mapping|onbeforesend|F72C58AD-0CB1-F18F-161F-44E1632C9FEA||5835|*/
                 })($scope);
@@ -190,8 +203,8 @@ define(['require', 'app'],
                             $scope.S_Offers3A = S_Offers3A_scope;
                             $scope.peritem = $scope.BuyerPrice1 / $scope.Quantity1;
                             $scope.transFee = defaultPayFee;
-                            console.log("$scope.S_Offers3A", $scope.S_Offers3A)
-                            console.log("$scope.B_Requests3A", $scope.B_Requests3A)
+                            // console.log("$scope.S_Offers3A",$scope.S_Offers3A)
+                            // console.log("$scope.B_Requests3A",$scope.B_Requests3A)
                             /*|button_mapping|onsuccess|F72C58AD-0CB1-F18F-161F-44E1632C9FEA||7623|*/
                         })(success, $scope);
                     },
@@ -219,7 +232,7 @@ define(['require', 'app'],
                 var username = AllData.username;
                 var Seller_username = AllData.username;
                 //Get User  
-                console.log(username);
+                //console.log(username);
                 var requestData = {};
                 requestData = (function mapping3480($scope) {
                     var requestData = {};
@@ -289,7 +302,7 @@ define(['require', 'app'],
                                 });
                             },
                             function(error) {
-                                console.log(error);
+                                // console.log(error);
                             });
                     },
                     function(error) { // callback to handle request error
@@ -318,7 +331,7 @@ define(['require', 'app'],
                     requestData.headers = {};
                     var token_scope = $scope.token;
                     requestData.headers['X-Appery-Session-Token'] = token;
-                    console.log("token", token);
+                    //console.log("token",token);
                     return requestData;
                     /*|button_mapping|onbeforesend|411E9C43-4BDD-FED0-6DF8-95B0552070DE||6941|*/
                 })($scope);
@@ -364,15 +377,15 @@ define(['require', 'app'],
                 var defaultPayMethod = AllData.defaultPayMethod;
                 var defaultPayFee = AllData.defaultPayFee;
                 RequestNotes2 = ($scope.BuyNotes2);
-                console.log(Buyer, CompanyName, ShipFirstName, ResaleNumber);
-                console.log("Color: ", $scope.Color1, "Memory:", $scope.Memory1);
+                //console.log(Buyer, CompanyName, ShipFirstName, ResaleNumber);
+                //console.log("Color: ", $scope.Color1, "Memory:", $scope.Memory1);
                 var requestData = {};
                 requestData = (function mapping6990($scope) {
                     var requestData = {};
                     requestData.headers = {};
                     var token_scope = $scope.token;
                     requestData.headers['X-Appery-Session-Token'] = token;
-                    console.log("token", token);
+                    //console.log("token",token);
                     //below orig
                     requestData.params = {};
                     requestData.params.Buyer = Buyer;
@@ -456,9 +469,9 @@ define(['require', 'app'],
                                         });
                                     },
                                     function(error) {
-                                        console.log(error);
+                                        //console.log(error);
                                     });
-                                console.log(error);
+                                //console.log(error);
                             });
                     },
                     function(error) { // callback to handle request error
@@ -496,13 +509,13 @@ define(['require', 'app'],
                 var defaultPayFee = AllData.defaultPayFee;
                 var user_id = AllData.user_id;
                 RequestNotes2 = ($scope.BuyNotes2);
-                console.log(Buyer, CompanyName, ShipFirstName, ResaleNumber);
-                console.log("Color: ", $scope.Color1, "Memory:", $scope.Memory1);
+                //console.log(Buyer, CompanyName, ShipFirstName, ResaleNumber);
+                //console.log("Color: ", $scope.Color1, "Memory:", $scope.Memory1);
                 //Check Type of payment
                 switch (defaultPayMethod) {
                     case "creditcard":
-                        console.log("They are using Credit Card");
-                        console.log("CCOF", sqCCOF);
+                        //console.log("They are using Credit Card");
+                        //console.log("CCOF", sqCCOF);
                         if (sqCCOF === "none") {
                             alert('Please set a DEFAULT credit card');
                             Apperyio.navigateTo("Bank", {});
@@ -511,8 +524,8 @@ define(['require', 'app'],
                         }
                         var idempotKey = Math.random().toString(36).slice(-12);
                         //For Live Traffic uncomment below
-                        //var sourceID = sqCCOF;
-                        var sourceID = "ccof:customer-card-id-ok";
+                        var sourceID = sqCCOF;
+                        //var sourceID = "ccof:customer-card-id-ok";
                         var acceptPartial = false;
                         var autoComplete = true;
                         var customerID = sqCustID;
@@ -543,12 +556,12 @@ define(['require', 'app'],
                             _.set(requestData.data, 'statement_description_identifier', statementIdent);
                             _.set(requestData.data, 'amount_money.amount', amount);
                             _.set(requestData.data, 'amount_money.currency', currency);
-                            console.log("amount", amount);
+                            //console.log("amount", amount);
                             return requestData;
                             /*|button_mapping|onbeforesend|10BEC4FD-D8C5-005B-59D3-38DB22A92C48||9109|*/
                         })($scope);
                         // read more about using rest services: https://links.appery.io/ve-snippet-rest
-                        Apperyio.get("Square_payments_Pay_using_ccof_post")(requestData).then(
+                        Apperyio.get("Square_payments_Pay_using_ccof_prod_post")(requestData).then(
                             /*|service_bookmark|bookmark|10BEC4FD-D8C5-005B-59D3-38DB22A92C48||2703|*/
                             function(success) { // success callback
                                 (function mapping5916(success, $scope) {
@@ -562,7 +575,7 @@ define(['require', 'app'],
                                     /*|button_mapping|onsuccess|10BEC4FD-D8C5-005B-59D3-38DB22A92C48||5916|*/
                                 })(success, $scope);
                                 var sqReponseCode = ($scope.list.HTTP_RESPONSE_CODE);
-                                console.log("Details", $scope.list.BODY);
+                                //console.log("Details",$scope.list.BODY);
                                 if (sqReponseCode == 200) {
                                     //console.log("Amount",$scope.list.BODY.payment.amount_money.amount);
                                     var requestData = {};
@@ -642,7 +655,7 @@ define(['require', 'app'],
                                         requestData.headers = {};
                                         var token_scope = $scope.token;
                                         requestData.headers['X-Appery-Session-Token'] = token;
-                                        console.log("token", token);
+                                        //console.log("token",token);
                                         return requestData;
                                         /*|button_mapping|onbeforesend|07E1728F-48BB-A68C-0744-B2009AFE9210||4647|*/
                                     })($scope);
@@ -680,9 +693,9 @@ define(['require', 'app'],
                                     var defaultPayMethod = AllData.defaultPayMethod;
                                     var defaultPayFee = AllData.defaultPayFee;
                                     RequestNotes2 = ($scope.BuyNotes2);
-                                    console.log(Buyer, CompanyName, ShipFirstName, ResaleNumber);
-                                    console.log("Color: ", $scope.Color1, "Memory:", $scope.Memory1);
-                                    console.log("LastSqPAymentID: ", sqPaymentid);
+                                    //console.log(Buyer, CompanyName, ShipFirstName, ResaleNumber);
+                                    //console.log("Color: ", $scope.Color1, "Memory:", $scope.Memory1);
+                                    //console.log("LastSqPAymentID: ", sqPaymentid);
                                     var requestData = {};
                                     requestData = (function mapping6990($scope) {
                                         var requestData = {};
@@ -776,9 +789,9 @@ define(['require', 'app'],
                                                             });
                                                         },
                                                         function(error) {
-                                                            console.log(error);
+                                                            //console.log(error);
                                                         });
-                                                    console.log(error);
+                                                    //console.log(error);
                                                 });
                                         },
                                         function(error) { // callback to handle request error
@@ -794,12 +807,12 @@ define(['require', 'app'],
                                     //Get User  Info
                                     var Buyer = AllData.username;
                                     var token = AllData.session;
-                                    console.log("Details", $scope.list.BODY);
-                                    console.log($scope.list);
+                                    //console.log("Details",$scope.list.BODY);
+                                    //console.log($scope.list);
                                     var sqErrorcategory = ($scope.list.BODY.errors[0].category);
                                     var sqErrorccode = ($scope.list.BODY.errors[0].code);
                                     var sqErrordetail = ($scope.list.BODY.errors[0].detail);
-                                    console.log("Detailsof error", sqErrorcategory);
+                                    //console.log("Detailsof error",sqErrorcategory);
                                     alert('Sorry - Transaction Failed: Error Code: ' + sqErrordetail);
                                     var requestData = {};
                                     requestData = (function mapping6666($scope) {
@@ -818,7 +831,7 @@ define(['require', 'app'],
                                         requestData.headers = {};
                                         var token_scope = $scope.token;
                                         requestData.headers['X-Appery-Session-Token'] = token;
-                                        console.log("token", token);
+                                        //console.log("token",token);
                                         return requestData;
                                         /*|button_mapping|onbeforesend|885449E9-6453-511D-38CE-64BF2F23E7DE||6666|*/
                                     })($scope);
@@ -841,7 +854,7 @@ define(['require', 'app'],
                             });
                         break;
                     case "escrow":
-                        console.log("They are using Escrow");
+                        //console.log("They are using Escrow");
                         //see if there is enough money in escrow
                         var requestData = {};
                         requestData = (function mapping7614($scope) {
@@ -852,7 +865,7 @@ define(['require', 'app'],
                             requestData.headers = {};
                             var token_scope = $scope.token;
                             requestData.headers['X-Appery-Session-Token'] = token;
-                            console.log("token", token);
+                            //console.log("token",token);
                             return requestData;
                             /*|button_mapping|onbeforesend|88E60CDF-BC98-536D-076C-82375D827222||7614|*/
                         })($scope);
@@ -866,8 +879,8 @@ define(['require', 'app'],
                                     $scope.escrowAmt1 = escrowAmt1_scope;
                                     /*|button_mapping|onsuccess|88E60CDF-BC98-536D-076C-82375D827222||2451|*/
                                 })(success, $scope);
-                                console.log("EscrowAmt", $scope.escrowAmt1)
-                                console.log("PurchaseAmt", $scope.BuyerPrice1)
+                                //console.log("EscrowAmt",$scope.escrowAmt1)
+                                //console.log("PurchaseAmt",$scope.BuyerPrice1)
                                 if ($scope.escrowAmt1 < $scope.BuyerPrice1) {
                                     alert('Please add funds to your Escrow Account or change payment type to credit card')
                                     Apperyio.navigateTo("Bank", {});
@@ -878,7 +891,7 @@ define(['require', 'app'],
                                         requestData.headers = {};
                                         var token_scope = $scope.token;
                                         requestData.headers['X-Appery-Session-Token'] = token;
-                                        console.log("token", token);
+                                        //console.log("token",token);
                                         //below orig
                                         requestData.params = {};
                                         requestData.params.Buyer = Buyer;
@@ -936,8 +949,8 @@ define(['require', 'app'],
                                                 requestData.headers = {};
                                                 var token_scope = $scope.token;
                                                 requestData.headers['X-Appery-Session-Token'] = token;
-                                                console.log("token", token);
-                                                console.log("escrowAmt1_scope", escrowAmt1_scope);
+                                                //console.log("token",token);
+                                                //console.log("escrowAmt1_scope",escrowAmt1_scope);
                                                 return requestData;
                                                 /*|button_mapping|onbeforesend|C0CA0B1C-86FD-D566-CA06-36EF3A20C282||4242|*/
                                             })($scope);
@@ -993,7 +1006,7 @@ define(['require', 'app'],
                                                         function(error) {
                                                             console.log(error);
                                                         });
-                                                    console.log(error);
+                                                    //console.log(error);
                                                 });
                                         },
                                         function(error) { // callback to handle request error
@@ -1010,31 +1023,31 @@ define(['require', 'app'],
                             });
                         break;
                     case "bitpay":
-                        console.log("They are using bitpay");
+                        //console.log("They are using bitpay");
                         break;
                     case "test":
-                        console.log("They are using test");
+                        //console.log("They are using test");
                         var requestData = {};
                         requestData = (function mapping6990($scope) {
                             var requestData = {};
                             requestData.headers = {};
                             var token_scope = $scope.token;
                             requestData.headers['X-Appery-Session-Token'] = token;
-                            console.log("token", token);
+                            //console.log("token",token);
                             //below orig
                             requestData.params = {};
-                            requestData.params.Buyer = Buyer;
-                            requestData.params.CompanyName = CompanyName;
-                            requestData.params.ShipFirstName = ShipFirstName;
-                            requestData.params.ShipLastName = ShipLastName;
-                            requestData.params.ShipAddress1 = ShipAddress1;
-                            requestData.params.ShipAddress2 = ShipAddress2;
-                            requestData.params.ShipCity = ShipCity;
-                            requestData.params.ShipState = ShipState;
-                            requestData.params.ShipZip = ShipZip;
-                            requestData.params.Country = Country;
-                            requestData.params.ResaleNumber = ResaleNumber;
-                            requestData.params.ShipPhone = ShipPhone;
+                            requestData.params.Buyer = "TESTING";
+                            requestData.params.CompanyName = "DO NOT SHIP";
+                            requestData.params.ShipFirstName = "TESTING";
+                            requestData.params.ShipLastName = "DO NOT SHIP";
+                            requestData.params.ShipAddress1 = "TESTING";
+                            requestData.params.ShipAddress2 = "DO NOT SHIP";
+                            requestData.params.ShipCity = "TESTING";
+                            requestData.params.ShipState = "DO NOT SHIP";
+                            requestData.params.ShipZip = "TESTING";
+                            requestData.params.Country = "DO NOT SHIP";
+                            requestData.params.ResaleNumber = "TESTING";
+                            requestData.params.ShipPhone = "DO NOT SHIP";
                             requestData.params.Manu = $scope.manufacturer1;
                             requestData.params.Prod = $scope.Product1;
                             requestData.params.Mem = $scope.Memory1;
@@ -1106,9 +1119,9 @@ define(['require', 'app'],
                                                 });
                                             },
                                             function(error) {
-                                                console.log(error);
+                                                //console.log(error);
                                             });
-                                        console.log(error);
+                                        //console.log(error);
                                     });
                             },
                             function(error) { // callback to handle request error
@@ -1118,7 +1131,7 @@ define(['require', 'app'],
                         Apperyio.navigateTo("Buyer_InProcess", {});
                         break;
                     case "suspend":
-                        console.log("Account Suspended through payment");
+                        //console.log("Account Suspended through payment");
                         alert('Your account has an issue. Please contact customer service')
                         Apperyio.navigateTo("Buyer_Home", {});
                         break;

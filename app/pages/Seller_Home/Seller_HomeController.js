@@ -44,13 +44,13 @@ define(['require', 'app'],
                 var textVer = AllData.TextVer;
                 var emailVer = AllData.EmailVer;
                 //Get User  
-                console.log("SellerUser:", Seller_username);
-                console.log("Active:", active);
+                //console.log("SellerUser:",Seller_username);
+                //console.log("Active:",active);
                 if (active === false) {
                     alert('Your Account has been inactivated due to ' + inactive + '. Please contact customer service to resolve.');
                     var requestData = {};
                     var sessionToken = $scope.user.session;
-                    console.log(sessionToken);
+                    //console.log(sessionToken);
                     requestData = (function mapping7038($scope) {
                         var requestData = {};
                         requestData.headers = {};
@@ -80,7 +80,7 @@ define(['require', 'app'],
                         requestData.headers = {};
                         var token_scope = $scope.token;
                         requestData.headers['X-Appery-Session-Token'] = token;
-                        console.log("token", token);
+                        //console.log("token",token);
                         return requestData;
                         /*|button_mapping|onbeforesend|18190B81-E92A-513F-EB9A-826B12BB512A||6269|*/
                     })($scope);
@@ -129,8 +129,8 @@ define(['require', 'app'],
                         requestData.headers = {};
                         var token_scope = $scope.token;
                         requestData.headers['X-Appery-Session-Token'] = token;
-                        console.log("token", token);
-                        console.log("Sellerundercount", Seller_username);
+                        //console.log("token",token);
+                        //console.log("Sellerundercount",Seller_username);
                         return requestData;
                         /*|button_mapping|onbeforesend|74ACF7FD-6A4B-49C1-D279-461019F09F73||8056|*/
                     })($scope);
@@ -142,7 +142,7 @@ define(['require', 'app'],
                                 var unshippedCount_scope = $scope.unshippedCount;
                                 unshippedCount_scope = success.data[0].count;
                                 $scope.unshippedCount = unshippedCount_scope;
-                                console.log("Count", $scope.unshippedCount);
+                                // console.log("Count",$scope.unshippedCount);
                                 // $scope.count2 = unshippedCount_scope;
                                 // console.log("Count2",$scope.count2);
                                 //Below this is whether the items are shipped or not
@@ -157,7 +157,7 @@ define(['require', 'app'],
                                     $scope.badgeCnt = $scope.unshippedCount;
                                 }
                                 //$scope.dsblBtn = false;
-                                console.log("showBtn", $scope.showBtn);
+                                //console.log("showBtn",$scope.showBtn);
                                 /*|button_mapping|onsuccess|74ACF7FD-6A4B-49C1-D279-461019F09F73||2821|*/
                             })(success, $scope);
                         },
@@ -184,8 +184,8 @@ define(['require', 'app'],
                 // set it to reference the 'dataStorage' service
                 $scope.RequestID1.Gl_Vars = data;
                 $scope.RequestID1.Gl_Vars.request_id = _id
-                console.log(_id);
-                console.log($scope.RequestID1.Gl_Vars.request_id);
+                //console.log(_id);
+                //console.log($scope.RequestID1.Gl_Vars.request_id);
                 Apperyio.navigateTo("Seller_Accept_Request");
             };
             /**

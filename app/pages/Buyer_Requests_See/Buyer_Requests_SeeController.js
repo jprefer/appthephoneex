@@ -32,7 +32,7 @@ define(['require', 'app'],
                 var Buyer_username = AllData.username;
                 var token = AllData.session;
                 //Get User  
-                console.log(username);
+                //console.log(username);
                 var requestData = {};
                 requestData = (function mapping2090($scope) {
                     var requestData = {};
@@ -42,7 +42,7 @@ define(['require', 'app'],
                     requestData.headers = {};
                     var token_scope = $scope.token;
                     requestData.headers['X-Appery-Session-Token'] = token;
-                    console.log("token", token);
+                    //console.log("token",token);
                     return requestData;
                     /*|button_mapping|onbeforesend|FA977C92-879A-9940-C8AC-2B60851F32D0||2090|*/
                 })($scope);

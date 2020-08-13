@@ -32,7 +32,7 @@ define(['require', 'app'],
                 var Buyer_username = AllData.username;
                 var token = AllData.session;
                 //Get User  
-                console.log(username);
+                //console.log(username);
                 var requestData = {};
                 requestData = (function mapping3663($scope) {
                     //var requestData = {};
@@ -46,7 +46,7 @@ define(['require', 'app'],
                     requestData.headers = {};
                     var token_scope = $scope.token;
                     requestData.headers['X-Appery-Session-Token'] = token;
-                    console.log("token", token);
+                    //console.log("token",token);
                     return requestData;
                     /*|button_mapping|onbeforesend|1FFF3864-D79D-CBE9-50BA-C37E5B785742||3663|*/
                 })($scope);
@@ -58,7 +58,7 @@ define(['require', 'app'],
                             var list_scope = $scope.list;
                             list_scope = success.data;
                             $scope.list = list_scope;
-                            console.log($scope.list)
+                            // console.log($scope.list)
                             /*|button_mapping|onsuccess|1FFF3864-D79D-CBE9-50BA-C37E5B785742||1376|*/
                         })(success, $scope);
                     },
@@ -78,9 +78,9 @@ define(['require', 'app'],
                 // user1 is a variable in the page1 scope 
                 // set it to reference the 'dataStorage' service
                 $scope.RequestID1.Gl_Vars = data;
-                $scope.RequestID1.Gl_Vars.request_id = _id
-                console.log(_id);
-                console.log($scope.RequestID1.Gl_Vars.request_id);
+                $scope.RequestID1.Gl_Vars.request_id = _id;
+                //console.log(_id);
+                //console.log($scope.RequestID1.Gl_Vars.request_id);
                 Apperyio.navigateTo("Buyer_InProcess_Detail");
             };
         }

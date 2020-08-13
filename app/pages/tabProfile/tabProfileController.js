@@ -28,6 +28,7 @@ define(['require', 'app'],
             $scope.new_city1 = Apperyio.EntityAPI('String');
             $scope.new_resalenumber1 = Apperyio.EntityAPI('String');
             $scope.new_zip1 = Apperyio.EntityAPI('String');
+            $scope.texton1 = Apperyio.EntityAPI('String');
             /**
              * User controller functions
              */
@@ -38,6 +39,9 @@ define(['require', 'app'],
                 //On load screen logic
                 var userData = Apperyio.get("dataStorage");
                 $scope.user = userData.current;
+                var isChecked = userData.current.TextOn;
+                console.log(isChecked);
+                $scope.texton1 = isChecked;
             };
             /**
              * @function lo
@@ -45,7 +49,7 @@ define(['require', 'app'],
             $scope.lo = function() {
                 var requestData = {};
                 var sessionToken = $scope.user.session;
-                console.log(sessionToken);
+                //console.log(sessionToken);
                 requestData = (function mapping7038($scope) {
                     var requestData = {};
                     requestData.headers = {};
@@ -78,7 +82,7 @@ define(['require', 'app'],
                 var token = AllData.session;
                 var profile_id = AllData.profile_id;
                 var new_email1 = $scope.new_email;
-                console.log(new_email1);
+                // console.log(new_email1);
                 //get user data
                 var requestData = {};
                 requestData = (function mapping4906($scope) {
@@ -90,7 +94,7 @@ define(['require', 'app'],
                     requestData.headers = {};
                     var token_scope = $scope.token;
                     requestData.headers['X-Appery-Session-Token'] = token;
-                    console.log("token", token);
+                    //console.log("token",token);
                     return requestData;
                     /*|button_mapping|onbeforesend|FBD35E48-B62B-B724-C2F2-E142D81C0C0A||4906|*/
                 })($scope);
@@ -121,7 +125,7 @@ define(['require', 'app'],
                 var token = AllData.session;
                 var profile_id = AllData.profile_id;
                 var new_mobile1 = $scope.new_MobilePhone;
-                console.log(new_mobile1);
+                //console.log(new_mobile1);
                 //get user data
                 var requestData = {};
                 requestData = (function mapping5170($scope) {
@@ -133,10 +137,11 @@ define(['require', 'app'],
                     requestData.params.changeField = new_mobile1;
                     requestData.params.profile_id = profile_id;
                     requestData.params.username = username;
+                    requestData.params.textOn = $scope.texton1
                     requestData.headers = {};
                     var token_scope = $scope.token;
                     requestData.headers['X-Appery-Session-Token'] = token;
-                    console.log("token", token);
+                    //console.log("token",token);
                     return requestData;
                     /*|button_mapping|onbeforesend|7270039F-DFBC-407B-0E12-99211DF8DD10||5170|*/
                 })($scope);
@@ -148,6 +153,7 @@ define(['require', 'app'],
                         alert('You have successfully changed your Mobile Number.  Please remember to verify your mobile number.');
                         userData.current.MobilePhone = "+1" + new_mobile1;
                         userData.current.TextVer = false;
+                        userData.current.TextOn = $scope.texton1;
                     },
                     function(error) { // callback to handle request error
                         alert('An error has occured. Please try again Later');
@@ -166,7 +172,7 @@ define(['require', 'app'],
                 var username = AllData.username;
                 var token = AllData.session;
                 var new_password1 = $scope.newPassword;
-                console.log("Password", new_password1);
+                //console.log("Password",new_password1);
                 //get user data
                 var requestData = {};
                 requestData = (function mapping1486($scope) {
@@ -179,7 +185,7 @@ define(['require', 'app'],
                     requestData.headers = {};
                     var token_scope = $scope.token;
                     requestData.headers['X-Appery-Session-Token'] = token;
-                    console.log("token", token);
+                    //console.log("token",token);
                     return requestData;
                     /*|button_mapping|onbeforesend|4407D359-6BC7-B677-ED99-C0727B646280||1486|*/
                 })($scope);
@@ -209,7 +215,7 @@ define(['require', 'app'],
                 var token = AllData.session;
                 var profile_id = AllData.profile_id;
                 var new_company1 = $scope.new_Company;
-                console.log(new_company1);
+                //console.log(new_company1);
                 //get user data
                 var requestData = {};
                 requestData = (function mapping8530($scope) {
@@ -222,7 +228,7 @@ define(['require', 'app'],
                     requestData.headers = {};
                     var token_scope = $scope.token;
                     requestData.headers['X-Appery-Session-Token'] = token;
-                    console.log("token", token);
+                    // console.log("token",token);
                     return requestData;
                     /*|button_mapping|onbeforesend|57BC03D7-0C2F-BACA-4562-297B4AF69C2D||8530|*/
                 })($scope);
@@ -253,7 +259,7 @@ define(['require', 'app'],
                 var token = AllData.session;
                 var profile_id = AllData.profile_id;
                 var new_businessphone1 = $scope.New_BusinessPhone;
-                console.log(new_businessphone1);
+                // console.log(new_businessphone1);
                 //get user data
                 var requestData = {};
                 requestData = (function mapping8530($scope) {
@@ -266,7 +272,7 @@ define(['require', 'app'],
                     requestData.headers = {};
                     var token_scope = $scope.token;
                     requestData.headers['X-Appery-Session-Token'] = token;
-                    console.log("token", token);
+                    //console.log("token",token);
                     return requestData;
                     /*CLICK TO EDIT MAPPING*/
                 })($scope);
@@ -295,7 +301,7 @@ define(['require', 'app'],
                 var token = AllData.session;
                 var profile_id = AllData.profile_id;
                 var new_shippingaddress1a = $scope.New_ShippingAddress1;
-                console.log(new_shippingaddress1a);
+                // console.log(new_shippingaddress1a);
                 //get user data
                 var requestData = {};
                 requestData = (function mapping8530($scope) {
@@ -308,7 +314,7 @@ define(['require', 'app'],
                     requestData.headers = {};
                     var token_scope = $scope.token;
                     requestData.headers['X-Appery-Session-Token'] = token;
-                    console.log("token", token);
+                    //console.log("token",token);
                     return requestData;
                     /*CLICK TO EDIT MAPPING*/
                 })($scope);
@@ -337,7 +343,7 @@ define(['require', 'app'],
                 var token = AllData.session;
                 var profile_id = AllData.profile_id;
                 var new_shippingaddress2a = $scope.New_ShippingAddress2;
-                console.log(new_shippingaddress2a);
+                // console.log(new_shippingaddress2a);
                 //get user data
                 var requestData = {};
                 requestData = (function mapping8530($scope) {
@@ -350,7 +356,7 @@ define(['require', 'app'],
                     requestData.headers = {};
                     var token_scope = $scope.token;
                     requestData.headers['X-Appery-Session-Token'] = token;
-                    console.log("token", token);
+                    // console.log("token",token);
                     return requestData;
                     /*CLICK TO EDIT MAPPING*/
                 })($scope);
@@ -379,7 +385,7 @@ define(['require', 'app'],
                 var token = AllData.session;
                 var profile_id = AllData.profile_id;
                 var new_firstname1 = $scope.new_FirstName;
-                console.log(new_firstname1);
+                //console.log(new_firstname1);
                 //get user data
                 var requestData = {};
                 requestData = (function mapping8530($scope) {
@@ -392,7 +398,7 @@ define(['require', 'app'],
                     requestData.headers = {};
                     var token_scope = $scope.token;
                     requestData.headers['X-Appery-Session-Token'] = token;
-                    console.log("token", token);
+                    // console.log("token",token);
                     return requestData;
                     /*CLICK TO EDIT MAPPING*/
                 })($scope);
@@ -421,7 +427,7 @@ define(['require', 'app'],
                 var token = AllData.session;
                 var profile_id = AllData.profile_id;
                 var new_lastname1 = $scope.new_LastName;
-                console.log(new_lastname1);
+                //console.log(new_lastname1);
                 //get user data
                 var requestData = {};
                 requestData = (function mapping8530($scope) {
@@ -434,7 +440,7 @@ define(['require', 'app'],
                     requestData.headers = {};
                     var token_scope = $scope.token;
                     requestData.headers['X-Appery-Session-Token'] = token;
-                    console.log("token", token);
+                    //console.log("token",token);
                     return requestData;
                     /*CLICK TO EDIT MAPPING*/
                 })($scope);
@@ -463,7 +469,7 @@ define(['require', 'app'],
                 var token = AllData.session;
                 var profile_id = AllData.profile_id;
                 var new_state1 = $scope.New_State;
-                console.log(new_state1);
+                //console.log(new_state1);
                 //get user data
                 var requestData = {};
                 requestData = (function mapping8530($scope) {
@@ -476,7 +482,7 @@ define(['require', 'app'],
                     requestData.headers = {};
                     var token_scope = $scope.token;
                     requestData.headers['X-Appery-Session-Token'] = token;
-                    console.log("token", token);
+                    //console.log("token",token);
                     return requestData;
                     /*CLICK TO EDIT MAPPING*/
                 })($scope);
@@ -505,7 +511,7 @@ define(['require', 'app'],
                 var token = AllData.session;
                 var profile_id = AllData.profile_id;
                 var new_city1 = $scope.New_City;
-                console.log(new_city1);
+                //console.log(new_city1);
                 //get user data
                 var requestData = {};
                 requestData = (function mapping8530($scope) {
@@ -518,7 +524,7 @@ define(['require', 'app'],
                     requestData.headers = {};
                     var token_scope = $scope.token;
                     requestData.headers['X-Appery-Session-Token'] = token;
-                    console.log("token", token);
+                    //console.log("token",token);
                     return requestData;
                     /*CLICK TO EDIT MAPPING*/
                 })($scope);
@@ -547,7 +553,7 @@ define(['require', 'app'],
                 var token = AllData.session;
                 var profile_id = AllData.profile_id;
                 var new_resalenumber1 = $scope.New_Resale;
-                console.log(new_resalenumber1);
+                //console.log(new_resalenumber1);
                 //get user data
                 var requestData = {};
                 requestData = (function mapping8530($scope) {
@@ -560,7 +566,7 @@ define(['require', 'app'],
                     requestData.headers = {};
                     var token_scope = $scope.token;
                     requestData.headers['X-Appery-Session-Token'] = token;
-                    console.log("token", token);
+                    //console.log("token",token);
                     return requestData;
                     /*CLICK TO EDIT MAPPING*/
                 })($scope);
@@ -589,7 +595,7 @@ define(['require', 'app'],
                 var token = AllData.session;
                 var profile_id = AllData.profile_id;
                 var new_zip1 = $scope.New_Zip;
-                console.log(new_zip1);
+                //console.log(new_zip1);
                 //get user data
                 var requestData = {};
                 requestData = (function mapping8530($scope) {
@@ -602,7 +608,7 @@ define(['require', 'app'],
                     requestData.headers = {};
                     var token_scope = $scope.token;
                     requestData.headers['X-Appery-Session-Token'] = token;
-                    console.log("token", token);
+                    //console.log("token",token);
                     return requestData;
                     /*CLICK TO EDIT MAPPING*/
                 })($scope);

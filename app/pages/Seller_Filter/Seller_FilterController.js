@@ -30,19 +30,19 @@ define(['require', 'app'],
                 var currentArray1 = [];
                 currentArray1 = JSON.parse(myStringArray1);
                 //var myVar = localStorage.getItem(myVar); // get the value
-                console.log("lowermenu", currentArray1);
+                //console.log("lowermenu", currentArray1);
                 //menu2 Recall
                 var myStringArray2 = localStorage.getItem("localStorageStringArray2");
                 var currentArray2 = [];
                 currentArray2 = JSON.parse(myStringArray2);
                 //var myVar = localStorage.getItem(myVar); // get the value
-                console.log("lowermenu2", currentArray2);
+                //console.log("lowermenu2", currentArray2);
                 //menu3 Recall
                 var myStringArray3 = localStorage.getItem("localStorageStringArray3");
                 var currentArray3 = [];
                 currentArray3 = JSON.parse(myStringArray3);
                 //var myVar = localStorage.getItem(myVar); // get the value
-                console.log("lowermenu3", currentArray3);
+                //console.log("lowermenu3", currentArray3);
                 var pass = {};
                 $scope.company = {};
                 $scope.type = {};
@@ -93,13 +93,13 @@ define(['require', 'app'],
                 var RequestType = "noChoice";
                 var RequestModel = "noChoice";
                 //Get User     
-                console.log(token);
+                //console.log(token);
                 RequestManu = ($scope.company.CompanyName);
                 RequestType = ($scope.type.TypeName);
                 RequestModel = ($scope.model.ModelName);
-                console.log("RequestManu", RequestManu);
-                console.log("RequestType", RequestType);
-                console.log("RequestModel", RequestModel);
+                //console.log("RequestManu",RequestManu);
+                //console.log("RequestType",RequestType);
+                //console.log("RequestModel",RequestModel);
                 if (RequestManu === undefined) {
                     RequestManu = "noChoice";
                 } else {}
@@ -122,10 +122,10 @@ define(['require', 'app'],
                 $scope.RequestID1.Gl_Vars.request_id3 = RequestType;
                 $scope.RequestID1.Gl_Vars.request_id4 = RequestModel;
                 //console.log(id);
-                console.log($scope.RequestID1.Gl_Vars.request_id);
-                console.log($scope.RequestID1.Gl_Vars.request_id2);
-                console.log($scope.RequestID1.Gl_Vars.request_id3);
-                console.log($scope.RequestID1.Gl_Vars.request_id4);
+                //console.log($scope.RequestID1.Gl_Vars.request_id);
+                //console.log($scope.RequestID1.Gl_Vars.request_id2);
+                //console.log($scope.RequestID1.Gl_Vars.request_id3);
+                //console.log($scope.RequestID1.Gl_Vars.request_id4);
                 Apperyio.navigateTo("Seller_Filter_Home");
             };
         }

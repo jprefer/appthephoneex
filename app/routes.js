@@ -396,11 +396,6 @@ define(['require'], function(require) {
                 t: '$sq_iFrame/sq_iFrameTemplate.html',
                 d: []
             },
-            '/Screen1.html': {
-                c: '$Screen1/Screen1Controller',
-                t: '$Screen1/Screen1Template.html',
-                d: []
-            },
             '/Bank_CC_Detail.html': {
                 c: '$Bank_CC_Detail/Bank_CC_DetailController',
                 t: '$Bank_CC_Detail/Bank_CC_DetailTemplate.html',

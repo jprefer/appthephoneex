@@ -792,6 +792,206 @@ define(['require'], function(require) {
                 }
             }
         },
+        "get_CCOF_fromDataBase_service": {
+            "type": "object",
+            "properties": {
+                "url": {
+                    "type": "string",
+                    "default": "https://api.appery.io/rest/1/code/f62b4757-504f-4e2f-925e-04b8f2a295fe/exec"
+                },
+                "method": {
+                    "type": "string",
+                    "default": "post"
+                },
+                "request": {
+                    "type": "object",
+                    "properties": {
+                        "body": {
+                            "type": "object",
+                            "properties": {
+                                "data": {
+                                    "type": "data",
+                                    "default": "sqCCOF"
+                                }
+                            }
+                        },
+                        "query": {
+                            "type": "object",
+                            "properties": {
+                                "user_profile_id": {
+                                    "type": "string",
+                                    "default": "5f286a19ceb78b0db16cc6d3"
+                                }
+                            }
+                        },
+                        "headers": {
+                            "type": "object",
+                            "properties": {
+                                "Content-Type": {
+                                    "type": "string",
+                                    "default": "text/plain"
+                                },
+                                "X-Appery-Session-Token": {
+                                    "type": "string",
+                                    "default": "38bf7075-c17a-420d-90eb-dd52a778862b"
+                                }
+                            }
+                        }
+                    }
+                },
+                "response": {
+                    "type": "object",
+                    "properties": {
+                        "body": {
+                            "type": "object",
+                            "properties": {
+                                "$": {
+                                    "type": "object",
+                                    "properties": {
+                                        "ShippingAddress1": {
+                                            "type": "string",
+                                            "default": "123 Main Street"
+                                        },
+                                        "country": {
+                                            "type": "string",
+                                            "default": "US"
+                                        },
+                                        "_updatedAt": {
+                                            "type": "object",
+                                            "properties": {
+                                                "$date": {
+                                                    "type": "string",
+                                                    "default": "2020-08-03T19:59:45.615Z"
+                                                }
+                                            }
+                                        },
+                                        "email": {
+                                            "type": "string",
+                                            "default": "jprefer@gmail.com"
+                                        },
+                                        "defaultPayMethod": {
+                                            "type": "string",
+                                            "default": "creditcard"
+                                        },
+                                        "username": {
+                                            "type": "string",
+                                            "default": "johnprefer6"
+                                        },
+                                        "_id": {
+                                            "type": "string",
+                                            "default": "5f286a19ceb78b0db16cc6d3"
+                                        },
+                                        "acl": {
+                                            "type": "object",
+                                            "properties": {
+                                                "5f286a19ceb78b0db16cc6d0": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "read": {
+                                                            "type": "boolean",
+                                                            "default": true
+                                                        },
+                                                        "write": {
+                                                            "type": "boolean",
+                                                            "default": true
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "EmailVer": {
+                                            "type": "boolean",
+                                            "default": false
+                                        },
+                                        "MobilePhone": {
+                                            "type": "string",
+                                            "default": "+15616998998"
+                                        },
+                                        "TextOn": {
+                                            "type": "boolean",
+                                            "default": true
+                                        },
+                                        "LastName": {
+                                            "type": "string",
+                                            "default": "IIIII"
+                                        },
+                                        "_createdAt": {
+                                            "type": "object",
+                                            "properties": {
+                                                "$date": {
+                                                    "type": "string",
+                                                    "default": "2020-08-03T19:48:41.261Z"
+                                                }
+                                            }
+                                        },
+                                        "defaultPayFee": {
+                                            "type": "number",
+                                            "default": 0.03
+                                        },
+                                        "sqCustID": {
+                                            "type": "string",
+                                            "default": "1TD9BEKBEWYWV9CZ72S4Z506D4"
+                                        },
+                                        "TextVer": {
+                                            "type": "boolean",
+                                            "default": false
+                                        },
+                                        "City": {
+                                            "type": "string",
+                                            "default": "Miami Beach"
+                                        },
+                                        "ResaleNumber": {
+                                            "type": "string",
+                                            "default": "FL12312321"
+                                        },
+                                        "UserType": {
+                                            "type": "string",
+                                            "default": "B"
+                                        },
+                                        "Zip": {
+                                            "type": "string",
+                                            "default": "11420"
+                                        },
+                                        "Active": {
+                                            "type": "boolean",
+                                            "default": true
+                                        },
+                                        "BusinessPhone": {
+                                            "type": "string",
+                                            "default": " "
+                                        },
+                                        "Company": {
+                                            "type": "string",
+                                            "default": "Sct"
+                                        },
+                                        "State": {
+                                            "type": "string",
+                                            "default": "NY"
+                                        },
+                                        "ShippingAddress2": {
+                                            "type": "string",
+                                            "default": "450"
+                                        },
+                                        "sqCCOF": {
+                                            "type": "string",
+                                            "default": "ccof:o6zEPeA2q81QrdKC4GB"
+                                        },
+                                        "FirstName": {
+                                            "type": "string",
+                                            "default": "HHHH"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "headers": {
+                            "type": "object",
+                            "properties": {}
+                        }
+                    }
+                }
+            }
+        },
         "BuyerBank_UpdateAvailable_service": {
             "type": "object",
             "properties": {
@@ -2338,13 +2538,13 @@ define(['require'], function(require) {
                         "query": {
                             "type": "object",
                             "properties": {
-                                "userProfile_id": {
-                                    "type": "string",
-                                    "default": "5e337992b56b5d0a94db6aa5"
-                                },
                                 "NewCCOF": {
                                     "type": "string",
-                                    "default": "ccof:gswHEkoebx824wXQ3GB"
+                                    "default": "dcof:4CPCXSgs1lPqLCqB4GB"
+                                },
+                                "userProfile_id": {
+                                    "type": "string",
+                                    "default": "5f2087966b513f0f3844c432"
                                 }
                             }
                         },
@@ -2354,6 +2554,10 @@ define(['require'], function(require) {
                                 "Content-Type": {
                                     "type": "string",
                                     "default": "text/plain"
+                                },
+                                "X-Appery-Session-Token": {
+                                    "type": "string",
+                                    "default": "6d1a2e48-6f6d-4212-9859-b04e601bebd4"
                                 }
                             }
                         }
@@ -7457,6 +7661,87 @@ define(['require'], function(require) {
                 }
             }
         },
+        "enterComment_service": {
+            "type": "object",
+            "properties": {
+                "url": {
+                    "type": "string",
+                    "default": "https://api.appery.io/rest/1/code/16f35b90-e18e-4f91-995d-37431293b5dd/exec"
+                },
+                "method": {
+                    "type": "string",
+                    "default": "post"
+                },
+                "request": {
+                    "type": "object",
+                    "properties": {
+                        "body": {
+                            "type": "object",
+                            "properties": {
+                                "data": {
+                                    "type": "data"
+                                }
+                            }
+                        },
+                        "query": {
+                            "type": "object",
+                            "properties": {
+                                "comment": {
+                                    "type": "string",
+                                    "default": "Testing the comment section"
+                                },
+                                "email": {
+                                    "type": "string",
+                                    "default": "jprefer@gmail.com"
+                                },
+                                "username": {
+                                    "type": "string",
+                                    "default": "john"
+                                }
+                            }
+                        },
+                        "headers": {
+                            "type": "object",
+                            "properties": {
+                                "X-Appery-Session-Token": {
+                                    "type": "string",
+                                    "default": "2b777136-7ce0-42fe-b115-a3ac34b00bd7"
+                                },
+                                "Content-Type": {
+                                    "type": "string",
+                                    "default": "text/plain"
+                                }
+                            }
+                        }
+                    }
+                },
+                "response": {
+                    "type": "object",
+                    "properties": {
+                        "body": {
+                            "type": "object",
+                            "properties": {
+                                "$": {
+                                    "type": "object",
+                                    "properties": {
+                                        "requestBody": {
+                                            "type": "string"
+                                        },
+                                        "requestParams": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "headers": {
+                            "type": "object",
+                            "properties": {}
+                        }
+                    }
+                }
+            }
+        },
         "update_Profile_Mobile_service": {
             "type": "object",
             "properties": {
@@ -7482,6 +7767,10 @@ define(['require'], function(require) {
                         "query": {
                             "type": "object",
                             "properties": {
+                                "textOn": {
+                                    "type": "string",
+                                    "default": "true"
+                                },
                                 "changeField": {
                                     "type": "string",
                                     "default": "9999999999"
@@ -7505,7 +7794,7 @@ define(['require'], function(require) {
                                 },
                                 "X-Appery-Session-Token": {
                                     "type": "string",
-                                    "default": "4ff6e65a-b305-4d61-8842-8cb91aa260a8"
+                                    "default": "2b777136-7ce0-42fe-b115-a3ac34b00bd7"
                                 }
                             }
                         }

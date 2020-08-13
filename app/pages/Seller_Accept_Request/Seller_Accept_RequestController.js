@@ -47,9 +47,9 @@ define(['require', 'app'],
                 // user1 is a variable in the page1 scope 
                 // set it to reference the 'dataStorage' service
                 $scope.RequestID2.Gl_Vars = data;
-                console.log($scope.RequestID2.Gl_Vars.request_id);
+                //console.log($scope.RequestID2.Gl_Vars.request_id);
                 RequestID3 = $scope.RequestID2.Gl_Vars.request_id;
-                console.log("RequestID3= ", RequestID3);
+                //console.log("RequestID3= ",RequestID3);
                 var miniID;
                 //$scope.BidAmount = 999.99
                 //Get User
@@ -69,7 +69,7 @@ define(['require', 'app'],
                     requestData.headers = {};
                     var token_scope = $scope.token;
                     requestData.headers['X-Appery-Session-Token'] = token;
-                    console.log("token", token);
+                    // console.log("token",token);
                     return requestData;
                     /*|button_mapping|onbeforesend|40707D72-9839-CE41-614A-E5ECC1D8F358||6403|*/
                 })($scope);
@@ -133,7 +133,7 @@ define(['require', 'app'],
                             //added stuff here
                             $scope.count = -1;
                             $scope.$watch('BidAmount', function(newvalue, oldvalue) {
-                                console.log("bid", $scope.BidAmount)
+                                //console.log("bid",$scope.BidAmount)
                                 if (isNaN($scope.BidAmount)) {
                                     $scope.priceperunit = 0
                                 } else {
@@ -173,8 +173,14 @@ define(['require', 'app'],
                 var sCell = AllData.MobilePhone;
                 var user_id = AllData.user_id;
                 var token = AllData.session;
+                var goTxt = AllData.TextOn;
                 //Get User  
-                console.log(username);
+                if (goTxt === false) {
+                    sCell = "noText";
+                } else {
+                    sCell = AllData.MobilePhone;
+                }
+                //console.log(username);
                 var requestData = {};
                 requestData = (function mapping3480($scope) {
                     var requestData = {};
@@ -226,7 +232,7 @@ define(['require', 'app'],
                     requestData.headers = {};
                     var token_scope = $scope.token;
                     requestData.headers['X-Appery-Session-Token'] = token;
-                    console.log("token", token);
+                    // console.log("token",token);
                     return requestData;
                     /*|button_mapping|onbeforesend|061FD875-61E6-1D52-3B68-23238C2E995D||3480|*/
                 })($scope);
@@ -259,7 +265,7 @@ define(['require', 'app'],
                                 });
                             },
                             function(error) {
-                                console.log(error);
+                                //console.log(error);
                             });
                     },
                     function(error) { // callback to handle request error

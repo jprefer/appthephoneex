@@ -33,18 +33,18 @@ define(['require', 'app'],
                 var username1 = AllData.username;
                 var token = AllData.session;
                 //Get User  
-                console.log("UserName:", username1);
+                //console.log("UserName:",username1);
                 var requestData = {};
                 requestData = (function mapping4817($scope) {
                     var requestData = {};
                     requestData.params = {};
                     var username1_scope = username1;
                     requestData.params.username = username1_scope;
-                    console.log(username1_scope);
+                    //console.log(username1_scope);
                     requestData.headers = {};
                     var token_scope = $scope.token;
                     requestData.headers['X-Appery-Session-Token'] = token;
-                    console.log("token", token);
+                    // console.log("token",token);
                     return requestData;
                     /*|button_mapping|onbeforesend|AC0255D2-AA14-57BC-1A9E-35623C94024F||4817|*/
                 })($scope);
@@ -76,8 +76,8 @@ define(['require', 'app'],
                 // set it to reference the 'dataStorage' service
                 $scope.RequestID1.Gl_Vars = data;
                 $scope.RequestID1.Gl_Vars.request_id = _id;
-                console.log(_id);
-                console.log($scope.RequestID1.Gl_Vars.request_id);
+                //console.log(_id);
+                //console.log($scope.RequestID1.Gl_Vars.request_id);
                 Apperyio.navigateTo("Seller_Offers_Detail");
             };
         }

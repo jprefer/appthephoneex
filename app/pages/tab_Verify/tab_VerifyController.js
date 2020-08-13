@@ -36,7 +36,7 @@ define(['require', 'app'],
                 var emailV = AllData.EmailVer;
                 var token = AllData.session;
                 //Get User  
-                console.log("emailV", emailV);
+                //console.log("emailV", emailV);
                 var textstatus = "";
                 $scope.mobile = mobile;
                 $scope.mobileV = mobileV;
@@ -62,8 +62,8 @@ define(['require', 'app'],
                     requestData.headers = {};
                     var token_scope = $scope.token;
                     requestData.headers['X-Appery-Session-Token'] = token;
-                    console.log("token", token);
-                    console.log("mobile", mobile);
+                    //console.log("token",token);
+                    //console.log("mobile",mobile);
                     return requestData;
                     /*|button_mapping|onbeforesend|12C245A4-2132-0FD7-A535-E0158B7049F5||4763|*/
                 })($scope);
@@ -99,9 +99,9 @@ define(['require', 'app'],
                     requestData.headers = {};
                     var token_scope = $scope.token;
                     requestData.headers['X-Appery-Session-Token'] = token;
-                    console.log("token", token);
-                    console.log("email", Email);
-                    console.log("emailscope", Email_scope);
+                    //console.log("token",token);
+                    //console.log("email",Email);
+                    // console.log("emailscope",Email_scope);
                     return requestData;
                     /*|button_mapping|onbeforesend|8A258E15-84FB-CA7F-6CF9-E94DE9244A68||9506|*/
                 })($scope);
@@ -139,8 +139,8 @@ define(['require', 'app'],
                     requestData.headers = {};
                     var token_scope = $scope.token;
                     requestData.headers['X-Appery-Session-Token'] = token;
-                    console.log("token", token);
-                    console.log("mobile_scope", mobile);
+                    //console.log("token",token);
+                    //console.log("mobile_scope",mobile);
                     return requestData;
                     /*|button_mapping|onbeforesend|68F6FF9F-109A-C1F5-113B-0617B6365F75||7688|*/
                 })($scope);
@@ -154,7 +154,7 @@ define(['require', 'app'],
                             $scope.TextStatus = TextStatus_scope;
                             /*|button_mapping|onsuccess|68F6FF9F-109A-C1F5-113B-0617B6365F75||7489|*/
                         })(success, $scope);
-                        console.log("TextStatus", $scope.TextStatus);
+                        //console.log("TextStatus",$scope.TextStatus);
                         if ($scope.TextStatus == "approved") {
                             alert(mobile + " has been Verified - Thank you");
                             userData.current.TextVer = true;
@@ -168,8 +168,8 @@ define(['require', 'app'],
                                 requestData.headers = {};
                                 var token_scope = $scope.token;
                                 requestData.headers['X-Appery-Session-Token'] = token;
-                                console.log("token", token);
-                                console.log("mobile_scope", mobile);
+                                //console.log("token",token);
+                                // console.log("mobile_scope",mobile);
                                 return requestData;
                                 /*|button_mapping|onbeforesend|C4A2AE28-D93D-03FF-6D57-CA975B7D6994||3626|*/
                             })($scope);
@@ -213,8 +213,8 @@ define(['require', 'app'],
                     requestData.headers = {};
                     var token_scope = $scope.token;
                     requestData.headers['X-Appery-Session-Token'] = token;
-                    console.log("token", token);
-                    console.log("Email_scope", Email_scope);
+                    // console.log("token",token);
+                    //console.log("Email_scope",Email_scope);
                     return requestData;
                     /*|button_mapping|onbeforesend|AF76A573-677A-7BC9-354D-377CD74C973B||6750|*/
                 })($scope);
@@ -228,7 +228,7 @@ define(['require', 'app'],
                             $scope.MailStatus = MailStatus_scope;
                             /*|button_mapping|onsuccess|AF76A573-677A-7BC9-354D-377CD74C973B||4186|*/
                         })(success, $scope);
-                        console.log("MailStatus", $scope.MailStatus);
+                        //console.log("MailStatus",$scope.MailStatus);
                         if ($scope.MailStatus == "approved") {
                             alert(Email + " has been Verified - Thank you");
                             $scope.emailV = true;
@@ -242,7 +242,7 @@ define(['require', 'app'],
                                 requestData.headers = {};
                                 var token_scope = $scope.token;
                                 requestData.headers['X-Appery-Session-Token'] = token;
-                                console.log("token", token);
+                                //console.log("token",token);
                                 return requestData;
                                 /*|button_mapping|onbeforesend|8E0D9081-4685-B279-4118-D8245840F917||5466|*/
                             })($scope);

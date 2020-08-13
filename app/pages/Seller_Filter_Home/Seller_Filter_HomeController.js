@@ -36,22 +36,22 @@ define(['require', 'app'],
                 // set it to reference the 'dataStorage' service
                 $scope.RequestID2.Gl_Vars = data;
                 $scope.token = $scope.RequestID2.Gl_Vars.request_id;
-                console.log("token", $scope.token);
+                //console.log("token",$scope.token);
                 $scope.RequestManu = $scope.RequestID2.Gl_Vars.request_id2;
-                console.log("RequestManu", $scope.RequestManu);
+                //console.log("RequestManu",$scope.RequestManu);
                 $scope.RequestType = $scope.RequestID2.Gl_Vars.request_id3;
-                console.log("RequestType", $scope.RequestType);
+                //console.log("RequestType",$scope.RequestType);
                 $scope.RequestModel = $scope.RequestID2.Gl_Vars.request_id4;
-                console.log("RequestModel", $scope.RequestModel);
+                //console.log("RequestModel",$scope.RequestModel);
                 var RequestManu = $scope.RequestManu;
                 var RequestType = $scope.RequestType;
                 var RequestModel = $scope.RequestModel;
                 if ($scope.RequestManu == "noChoice" && $scope.RequestType == "noChoice" && $scope.RequestModel == "noChoice") {
-                    console.log("All 3 Empty");
+                    //console.log("All 3 Empty");
                     Apperyio.navigateTo("Seller_Home", {});
                 } else {
                     if ($scope.RequestManu !== "noChoice" && $scope.RequestType !== "noChoice" && $scope.RequestModel == "noChoice") {
-                        console.log("Last Empty");
+                        //console.log("Last Empty"); 
                         var requestData = {};
                         requestData = (function mapping2448($scope) {
                             var requestData = {};
@@ -67,7 +67,7 @@ define(['require', 'app'],
                             requestData.headers = {};
                             var token_scope = $scope.token;
                             requestData.headers['X-Appery-Session-Token'] = token;
-                            console.log("token", token);
+                            //console.log("token",token);
                             return requestData;
                             /*CLICK TO EDIT MAPPING*/
                         })($scope);
@@ -78,7 +78,7 @@ define(['require', 'app'],
                                     var list_scope = $scope.list;
                                     list_scope = success.data;
                                     $scope.list = list_scope;
-                                    console.log($scope.list)
+                                    //console.log($scope.list)
                                     /*CLICK TO EDIT MAPPING*/
                                 })(success, $scope);
                             },
@@ -88,7 +88,7 @@ define(['require', 'app'],
                             });
                     } else {
                         if ($scope.RequestManu !== "noChoice" && $scope.RequestType == "noChoice" && $scope.RequestModel == "noChoice") {
-                            console.log("Last 2 Empty");
+                            //console.log("Last 2 Empty");
                             var requestData = {};
                             requestData = (function mapping2448($scope) {
                                 var requestData = {};
@@ -104,7 +104,7 @@ define(['require', 'app'],
                                 requestData.headers = {};
                                 var token_scope = $scope.token;
                                 requestData.headers['X-Appery-Session-Token'] = token;
-                                console.log("token", token);
+                                //console.log("token",token);
                                 return requestData;
                                 /*CLICK TO EDIT MAPPING*/
                             })($scope);
@@ -115,7 +115,7 @@ define(['require', 'app'],
                                         var list_scope = $scope.list;
                                         list_scope = success.data;
                                         $scope.list = list_scope;
-                                        console.log($scope.list)
+                                        //console.log($scope.list)
                                         /*CLICK TO EDIT MAPPING*/
                                     })(success, $scope);
                                 },
@@ -124,7 +124,7 @@ define(['require', 'app'],
                                 function(notify) { // notify callback, can fire few times
                                 });
                         } else {
-                            console.log("All Full");
+                            //console.log("All Full"); 
                             var requestData = {};
                             requestData = (function mapping2448($scope) {
                                 var requestData = {};
@@ -140,7 +140,7 @@ define(['require', 'app'],
                                 requestData.headers = {};
                                 var token_scope = $scope.token;
                                 requestData.headers['X-Appery-Session-Token'] = token;
-                                console.log("token", token);
+                                //console.log("token",token);
                                 return requestData;
                                 /*|button_mapping|onbeforesend|133E214D-BB95-B97E-00C5-C2DFC6B197C4||2448|*/
                             })($scope);
@@ -152,7 +152,7 @@ define(['require', 'app'],
                                         var list_scope = $scope.list;
                                         list_scope = success.data;
                                         $scope.list = list_scope;
-                                        console.log($scope.list);
+                                        //console.log($scope.list);
                                         /*|button_mapping|onsuccess|133E214D-BB95-B97E-00C5-C2DFC6B197C4||4781|*/
                                     })(success, $scope);
                                 },
@@ -176,8 +176,8 @@ define(['require', 'app'],
                 // set it to reference the 'dataStorage' service
                 $scope.RequestID1.Gl_Vars = data;
                 $scope.RequestID1.Gl_Vars.request_id = _id
-                console.log(_id);
-                console.log($scope.RequestID1.Gl_Vars.request_id);
+                //console.log(_id);
+                //console.log($scope.RequestID1.Gl_Vars.request_id);
                 Apperyio.navigateTo("Seller_Accept_Request");
             };
         }

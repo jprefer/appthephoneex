@@ -28,7 +28,7 @@ define(['require', 'app'],
                 $scope.main.username1 = AllData.username;
                 var token = AllData.session;
                 //xxxxxxxxxxxx
-                console.log(userData);
+                //console.log(userData);
             };
             /**
              * @function gotoInstructions

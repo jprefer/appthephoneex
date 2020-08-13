@@ -56,9 +56,9 @@ define(['require', 'app'],
                 // user1 is a variable in the page1 scope 
                 // set it to reference the 'dataStorage' service
                 $scope.RequestID2.Gl_Vars = data;
-                console.log($scope.RequestID2.Gl_Vars.request_id);
+                //console.log($scope.RequestID2.Gl_Vars.request_id);
                 RequestID3 = $scope.RequestID2.Gl_Vars.request_id;
-                console.log("RequestID3= ", RequestID3);
+                //console.log("RequestID3= ",RequestID3);
                 var miniID = "";
                 //Get User
                 var userData = Apperyio.get("dataStorage");
@@ -77,7 +77,7 @@ define(['require', 'app'],
                     requestData.headers = {};
                     var token_scope = $scope.token;
                     requestData.headers['X-Appery-Session-Token'] = token;
-                    console.log("token", token);
+                    //console.log("token",token);
                     return requestData;
                     /*|button_mapping|onbeforesend|F952B444-3CF8-14F2-4B7E-90AEB380A4EA||5190|*/
                 })($scope);
@@ -185,14 +185,14 @@ define(['require', 'app'],
              */
             $scope.makeOfferNew = function() {
                 var oldRequestId = $scope.Request_id1;
-                console.log("oldRequestId", oldRequestId);
+                //console.log("oldRequestId",oldRequestId);
                 // inject the 'dataStorage' service
                 var data = Apperyio.get("dataStorage");
                 // user1 is a variable in the page1 scope 
                 // set it to reference the 'dataStorage' service
                 $scope.RequestID1.Gl_Vars = data;
                 $scope.RequestID1.Gl_Vars.request_id = oldRequestId;
-                console.log($scope.RequestID1.Gl_Vars.request_id);
+                //console.log($scope.RequestID1.Gl_Vars.request_id);
                 Apperyio.navigateTo("Seller_Accept_Request");
             };
         }

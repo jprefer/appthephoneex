@@ -42,17 +42,17 @@ define(['require', 'app'],
                 var emailVer = AllData.EmailVer;
                 //xxxxxxxxxxxx
                 //Get User  
-                console.log(username);
+                //console.log(username);
                 console.log(AllData);
-                console.log(token);
-                console.log("Inactive", inactive);
-                console.log("Active", active);
+                //console.log(token);
+                //console.log("Inactive",inactive);
+                //console.log("Active",active);
                 //console.log("len",inactive.length);
                 if (active === false) {
                     alert('Your Account has been inactivated due to ' + inactive + '. Please contact customer service to resolve.');
                     var requestData = {};
                     var sessionToken = $scope.user.session;
-                    console.log(sessionToken);
+                    //console.log(sessionToken);
                     requestData = (function mapping7038($scope) {
                         var requestData = {};
                         requestData.headers = {};
@@ -81,7 +81,7 @@ define(['require', 'app'],
                         requestData.headers = {};
                         var token_scope = $scope.token;
                         requestData.headers['X-Appery-Session-Token'] = token;
-                        console.log("token", token);
+                        //console.log("token",token);
                         return requestData;
                         /*|button_mapping|onbeforesend|214D4B44-2CB9-E04C-0C76-E5BF1F8E43B9||2289|*/
                     })($scope);
@@ -93,7 +93,7 @@ define(['require', 'app'],
                                 var list_scope = $scope.list;
                                 list_scope = success.data;
                                 $scope.list = list_scope;
-                                console.log($scope.list)
+                                //console.log($scope.list)
                                 /*|button_mapping|onsuccess|214D4B44-2CB9-E04C-0C76-E5BF1F8E43B9||6258|*/
                             })(success, $scope);
                         },
@@ -131,8 +131,8 @@ define(['require', 'app'],
                         requestData.headers = {};
                         var token_scope = $scope.token;
                         requestData.headers['X-Appery-Session-Token'] = token;
-                        console.log("token", token);
-                        console.log("Sellerundercount", username);
+                        //console.log("token",token);
+                        //console.log("Sellerundercount",username);
                         return requestData;
                         /*CLICK TO EDIT MAPPING*/
                     })($scope);
@@ -143,7 +143,7 @@ define(['require', 'app'],
                                 var unshippedCount_scope = $scope.unshippedCount;
                                 unshippedCount_scope = success.data[0].count;
                                 $scope.unshippedCount = unshippedCount_scope;
-                                console.log("Count", $scope.unshippedCount);
+                                //console.log("Count",$scope.unshippedCount);
                                 // $scope.count2 = unshippedCount_scope;
                                 // console.log("Count2",$scope.count2);
                                 //Below this is whether the items are shipped or not
@@ -158,7 +158,7 @@ define(['require', 'app'],
                                     $scope.badgeCnt = $scope.unshippedCount;
                                 }
                                 //$scope.dsblBtn = false;
-                                console.log("showBtn", $scope.showBtn);
+                                //console.log("showBtn",$scope.showBtn);
                                 /*CLICK TO EDIT MAPPING*/
                             })(success, $scope);
                         },
@@ -185,15 +185,9 @@ define(['require', 'app'],
                 // set it to reference the 'dataStorage' service
                 $scope.RequestID1.Gl_Vars = data;
                 $scope.RequestID1.Gl_Vars.request_id = _id
-                console.log(_id);
-                console.log($scope.RequestID1.Gl_Vars.request_id);
+                //console.log(_id);
+                //console.log($scope.RequestID1.Gl_Vars.request_id);
                 Apperyio.navigateTo("Buyer_Accept_Offer");
-            };
-            /**
-             * @function gotoBuyer_Test
-             */
-            $scope.gotoBuyer_Test = function() {
-                Apperyio.navigateTo("Screen1", {});
             };
             /**
              * @function reload

@@ -130,8 +130,14 @@ define(['require', 'app'],
                 var bCell = AllData.MobilePhone;
                 var token = AllData.session;
                 var user_id = AllData.user_id;
+                var goTxt = AllData.TextOn;
+                if (goTxt === false) {
+                    bCell = "noText";
+                } else {
+                    bCell = AllData.MobilePhone;
+                }
                 //Get User     
-                console.log(token);
+                //console.log(token);
                 RequestManu = ($scope.company.CompanyName);
                 RequestType = ($scope.type.TypeName);
                 RequestModel = ($scope.model.ModelName);
@@ -143,7 +149,7 @@ define(['require', 'app'],
                 RequestExpiration = ($scope.Expiration);
                 RequestShipping = ($scope.Shipping);
                 RequestNotes = ($scope.Notes);
-                console.log($scope.finish.FinishName);
+                //console.log($scope.finish.FinishName);
                 if ($scope.finish.FinishName === undefined) {
                     alert('Please Choose a Color');
                     Apperyio.navigateTo("Buyer_MakeRequest", {});
@@ -185,8 +191,8 @@ define(['require', 'app'],
                         requestData.headers = {};
                         var token_scope = $scope.token;
                         requestData.headers['X-Appery-Session-Token'] = token;
-                        console.log("token", token);
-                        console.log("Finish", RequestColor_scope);
+                        //console.log("token",token);
+                        //console.log("Finish",RequestColor_scope);
                         return requestData;
                         /*|button_mapping|onbeforesend|139F3B73-66FE-AFE3-C4CB-F974C80270D0||4338|*/
                     })($scope);
@@ -234,9 +240,9 @@ define(['require', 'app'],
                                             });
                                         },
                                         function(error) {
-                                            console.log(error);
+                                            //console.log(error);
                                         });
-                                    console.log(error);
+                                    //console.log(error);
                                 });
                         },
                         function(error) { // callback to handle request error

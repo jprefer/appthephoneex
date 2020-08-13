@@ -33,6 +33,7 @@ define(['require', 'app'],
             $scope.list1 = Apperyio.EntityAPI('List1');
             $scope.item1 = Apperyio.EntityAPI('String');
             $scope.userEmail = Apperyio.EntityAPI('String');
+            $scope.database_CCOF = Apperyio.EntityAPI('String');
             /**
              * User controller functions
              */
@@ -54,15 +55,45 @@ define(['require', 'app'],
                 var sq_CCOF = AllData.sqCCOF;
                 var sq_CustID = AllData.sqCustID;
                 var paymentType = AllData.defaultPayMethod;
+                var profileID = AllData.profile_id;
                 //xxxxxxxxxxxx
                 //Get User  
-                console.log(username);
-                console.log(AllData);
-                console.log(token);
-                console.log("FromApp", custID);
-                console.log("PaymentType", paymentType);
+                //console.log(username);
+                //console.log(AllData);
+                //console.log(token);
+                //console.log("FromApp",custID);
+                //console.log("PaymentType",paymentType);
                 //On load screen logic
                 //PaymentType Init Stuff
+                var requestData = {};
+                requestData = (function mapping4987($scope) {
+                    var requestData = {};
+                    requestData.params = {};
+                    var profileID_scope = $scope.profileID;
+                    requestData.params.user_profile_id = profileID;
+                    requestData.headers = {};
+                    var token_scope = $scope.token;
+                    requestData.headers['X-Appery-Session-Token'] = token;
+                    return requestData;
+                    /*|button_mapping|onbeforesend|4BDA5A8A-51E6-A9B6-5AC6-F54E2A94B9EC||4987|*/
+                })($scope);
+                // read more about using rest services: https://links.appery.io/ve-snippet-rest
+                Apperyio.get("get_CCOF_fromDataBase_service")(requestData).then(
+                    /*|service_bookmark|bookmark|4BDA5A8A-51E6-A9B6-5AC6-F54E2A94B9EC||6948|*/
+                    function(success) { // success callback
+                        (function mapping9031(success, $scope) {
+                            var database_CCOF_scope = $scope.database_CCOF;
+                            database_CCOF_scope = success.data.sqCCOF;
+                            $scope.database_CCOF = database_CCOF_scope;
+                            /*|button_mapping|onsuccess|4BDA5A8A-51E6-A9B6-5AC6-F54E2A94B9EC||9031|*/
+                        })(success, $scope);
+                        console.log("$scope.database_CCOF", $scope.database_CCOF);
+                        userData.current.sqCCOF = $scope.database_CCOF;
+                    },
+                    function(error) { // callback to handle request error
+                    },
+                    function(notify) { // notify callback, can fire few times
+                    });
                 var requestData = {};
                 requestData = (function mapping7417($scope) {
                     var requestData = {};
@@ -74,12 +105,12 @@ define(['require', 'app'],
                     requestData.headers = {};
                     var token_scope = $scope.token;
                     requestData.headers['X-Appery-Session-Token'] = token;
-                    console.log("token", token);
+                    //console.log("token",token);
                     return requestData;
                     /*|button_mapping|onbeforesend|EA379165-8F56-5FD9-DBBC-F7A649357FB0||7417|*/
                 })($scope);
                 // read more about using rest services: https://links.appery.io/ve-snippet-rest
-                Apperyio.get("sq_defaultCC_service")(requestData).then(
+                Apperyio.get("sq_defaultCC_prod_service")(requestData).then(
                     /*|service_bookmark|bookmark|EA379165-8F56-5FD9-DBBC-F7A649357FB0||8952|*/
                     function(success) { // success callback
                         (function mapping1977(success, $scope) {
@@ -124,12 +155,12 @@ define(['require', 'app'],
                     requestData.headers = {};
                     var token_scope = $scope.token;
                     requestData.headers['X-Appery-Session-Token'] = token;
-                    console.log("token", token);
+                    //console.log("token",token);
                     return requestData;
                     /*|button_mapping|onbeforesend|5D800C55-E9CC-60B3-ABF8-8A94BFC57A28||6101|*/
                 })($scope);
                 // read more about using rest services: https://links.appery.io/ve-snippet-rest
-                Apperyio.get("sq_RetrieveCustomer_CCOF_service")(requestData).then(
+                Apperyio.get("sq_RetrieveCustomer_CCOF_prod_service")(requestData).then(
                     /*|service_bookmark|bookmark|5D800C55-E9CC-60B3-ABF8-8A94BFC57A28||6167|*/
                     function(success) { // success callback
                         (function mapping7423(success, $scope) {
@@ -138,7 +169,7 @@ define(['require', 'app'],
                                 _.set(list_scope, '[' + i + ']', success.data[i]);
                             }
                             $scope.list = list_scope;
-                            console.log($scope.list);
+                            //console.log($scope.list);
                             /*|button_mapping|onsuccess|5D800C55-E9CC-60B3-ABF8-8A94BFC57A28||7423|*/
                         })(success, $scope);
                     },
@@ -155,8 +186,8 @@ define(['require', 'app'],
                     requestData.headers = {};
                     var token_scope = $scope.token;
                     requestData.headers['X-Appery-Session-Token'] = token;
-                    console.log("token", token);
-                    console.log("Whois", username)
+                    // console.log("token",token);
+                    // console.log("Whois",username)
                     return requestData;
                     /*|button_mapping|onbeforesend|EA30F1E7-F0B1-2714-2C74-543F9B63DF64||2118|*/
                 })($scope);
@@ -168,11 +199,11 @@ define(['require', 'app'],
                             var escrowAmt_scope = $scope.escrowAmt;
                             escrowAmt_scope = success.data[0].EscrowAmt;
                             $scope.escrowAmt = escrowAmt_scope;
-                            console.log("amt:", $scope.escrowAmt);
+                            //console.log("amt:",$scope.escrowAmt);
                             // When there is  escrow Account
                             switch (paymentType) {
                                 case "creditcard":
-                                    console.log("They are using Credit Card");
+                                    //console.log("They are using Credit Card");
                                     $scope.lblText = "Your Payment method is currently by Credit Card";
                                     $scope.lblText3 = "If you want to use BTC, ACH, Wire, or a Check to fill your Escrow Account, click below to email instructions:";
                                     $scope.btn2Text = "Change to Escrow";
@@ -185,7 +216,7 @@ define(['require', 'app'],
                                     $scope.eDetailShow = true;
                                     break;
                                 case "escrow":
-                                    console.log("They are using escrow");
+                                    //console.log("They are using escrow");
                                     $scope.lblText = "Your Payment method is currently by Escrow";
                                     //$scope.lblText1 = "Change to your Credit Card";
                                     //$scope.lblText2 = "Your Payment method is currently by Escrow";
@@ -201,7 +232,7 @@ define(['require', 'app'],
                                     $scope.eDetailShow = true;
                                     break;
                                 case "test":
-                                    console.log("They are using test");
+                                    //console.log("They are using test");
                                     $scope.lblText = "Your Payment method is in test mode";
                                     //$scope.lblText1 = "Change to your Credit Card";
                                     //$scope.lblText2 = "Your Payment method is currently by Escrow";
@@ -210,14 +241,14 @@ define(['require', 'app'],
                                     $scope.btn2Text = "Change to Escrow";
                                     $scope.btn3Text = "Click for instructions";
                                     $scope.btn4Text = "Escrow: $" + $scope.escrowAmt.toFixed(2) + " Scroll down for details";
-                                    $scope.btn2Show = true;
-                                    $scope.btn1Show = true;
-                                    $scope.btn3Show = true;
-                                    $scope.btn4Show = true;
-                                    $scope.eDetailShow = true;
+                                    $scope.btn2Show = false;
+                                    $scope.btn1Show = false;
+                                    $scope.btn3Show = false;
+                                    $scope.btn4Show = false;
+                                    $scope.eDetailShow = false;
                                     break;
                                 case "suspend":
-                                    console.log("They are using suspended");
+                                    //console.log("They are using suspended");
                                     $scope.lblText = "Your account has a problem. Please contact customer service";
                                     $scope.btn2Show = false;
                                     $scope.btn1Show = false;
@@ -233,7 +264,7 @@ define(['require', 'app'],
                         // When there is no escrow Account
                         switch (paymentType) {
                             case "creditcard":
-                                console.log("They are using Credit Card");
+                                // console.log("They are using Credit Card");
                                 $scope.lblText = "Your Payment method is currently by Credit Card";
                                 $scope.lblText3 = "Want to save on transaction Fees? Open an Escrow Account. You can fill it by using BTC, ACH, Wire, or a Check. Click below to email instructions:";
                                 $scope.btn2Text = "Change to Escrow";
@@ -245,7 +276,7 @@ define(['require', 'app'],
                                 $scope.eDetailShow = false;
                                 break;
                             case "escrow":
-                                console.log("They are using escrow");
+                                //console.log("They are using escrow");
                                 $scope.lblText = "There is a problem with your escrow account. Please contact customer service";
                                 //$scope.lblText1 = "Change to your Credit Card";
                                 //$scope.lblText2 = "Your Payment method is currently by Escrow";
@@ -260,7 +291,7 @@ define(['require', 'app'],
                                 $scope.eDetailShow = false;
                                 break;
                             case "test":
-                                console.log("They are using test");
+                                //console.log("They are using test");
                                 $scope.lblText = "Your Payment method is in test mode";
                                 //$scope.lblText1 = "Change to your Credit Card";
                                 //$scope.lblText2 = "Your Payment method is currently by Escrow";
@@ -275,7 +306,7 @@ define(['require', 'app'],
                                 $scope.eDetailShow = false;
                                 break;
                             case "suspend":
-                                console.log("They are using suspended");
+                                //console.log("They are using suspended");
                                 $scope.lblText = "Your account has a problem. Please contact customer service";
                                 $scope.btn2Show = false;
                                 $scope.btn1Show = false;
@@ -296,7 +327,7 @@ define(['require', 'app'],
                     requestData.headers = {};
                     var token_scope = $scope.token;
                     requestData.headers['X-Appery-Session-Token'] = token;
-                    console.log("token", token);
+                    //console.log("token",token);
                     return requestData;
                     /*|button_mapping|onbeforesend|A32FB606-F01E-0A4D-9460-7F6C9DA362A1||8870|*/
                 })($scope);
@@ -308,7 +339,7 @@ define(['require', 'app'],
                         var list_scope = $scope.list1;
                         list1_scope = success.data;
                         $scope.list1 = list1_scope;
-                        console.log("list1", $scope.list1)
+                        //console.log("list1",$scope.list1)
                     },
                     function(error) { // callback to handle request error
                     },
@@ -340,12 +371,12 @@ define(['require', 'app'],
                 $scope.RequestID1.Gl_Vars.request_id3 = last_4;
                 $scope.RequestID1.Gl_Vars.request_id4 = exp_month;
                 $scope.RequestID1.Gl_Vars.request_id5 = exp_year;
-                console.log(id);
-                console.log($scope.RequestID1.Gl_Vars.request_id);
-                console.log($scope.RequestID1.Gl_Vars.request_id2);
-                console.log($scope.RequestID1.Gl_Vars.request_id3);
-                console.log($scope.RequestID1.Gl_Vars.request_id4);
-                console.log($scope.RequestID1.Gl_Vars.request_id5);
+                //console.log(id);
+                //console.log($scope.RequestID1.Gl_Vars.request_id);
+                //console.log($scope.RequestID1.Gl_Vars.request_id2);
+                //console.log($scope.RequestID1.Gl_Vars.request_id3);
+                //console.log($scope.RequestID1.Gl_Vars.request_id4);
+                //console.log($scope.RequestID1.Gl_Vars.request_id5);
                 Apperyio.navigateTo("Bank_CC_Detail");
             };
             /**
@@ -361,9 +392,9 @@ define(['require', 'app'],
                 var profileID = AllData.profile_id;
                 //xxxxxxxxxxxx
                 //Get User  
-                console.log(AllData);
-                console.log(token);
-                console.log("PaymentType", paymentType);
+                //console.log(AllData);
+                //console.log(token);
+                //console.log("PaymentType",paymentType);
                 var paymentType1 = paymentType
                 var requestData = {};
                 requestData = (function mapping6094($scope) {
@@ -376,7 +407,7 @@ define(['require', 'app'],
                     requestData.headers = {};
                     var token_scope = $scope.token;
                     requestData.headers['X-Appery-Session-Token'] = token;
-                    console.log("token", token);
+                    //console.log("token",token);
                     return requestData;
                     /*|button_mapping|onbeforesend|B141CB25-6D96-2EAD-3633-64FE1096F7BB||6094|*/
                 })($scope);
@@ -416,9 +447,9 @@ define(['require', 'app'],
                 var profileID = AllData.profile_id
                 //xxxxxxxxxxxx
                 //Get User  
-                console.log(AllData);
-                console.log(token);
-                console.log("PaymentType", paymentType);
+                //console.log(AllData);
+                //console.log(token);
+                //console.log("PaymentType",paymentType);
                 var paymentType1 = paymentType
                 var requestData = {};
                 requestData = (function mapping6094($scope) {
@@ -431,7 +462,7 @@ define(['require', 'app'],
                     requestData.headers = {};
                     var token_scope = $scope.token;
                     requestData.headers['X-Appery-Session-Token'] = token;
-                    console.log("token", token);
+                    //console.log("token",token);
                     return requestData;
                     /*CLICK TO EDIT MAPPING*/
                 })($scope);
@@ -491,7 +522,7 @@ define(['require', 'app'],
                     requestData.headers = {};
                     var token_scope = $scope.token;
                     requestData.headers['X-Appery-Session-Token'] = token;
-                    console.log("token", token);
+                    //console.log("token",token);
                     return requestData;
                     /*|button_mapping|onbeforesend|E000459D-6112-B893-632D-6AD5A827E17F||9037|*/
                 })($scope);
