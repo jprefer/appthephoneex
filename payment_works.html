@@ -141,7 +141,7 @@ console.log(user);
        // Don't submit the form until SqPaymentForm returns with a nonce
        event.preventDefault();
        // Request a nonce from the SqPaymentForm object
-       console.log("sq-card-number",paymentForm.cardNumber)
+       console.log("sq-card-number",paymentForm.CARD_NUMBER)
        paymentForm.requestCardNonce();
      }
 
