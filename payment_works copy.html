@@ -6,7 +6,7 @@
 <script>
 const queryString = window.location.search;
 console.log(queryString);
-// ?username=john&custID=22MME8KK0S6PZDVNWYSJ7VW0SM
+// ?username=john&custID=123123123
 
 const urlParams = new URLSearchParams(queryString);
 
@@ -141,7 +141,6 @@ console.log(user);
        // Don't submit the form until SqPaymentForm returns with a nonce
        event.preventDefault();
        // Request a nonce from the SqPaymentForm object
-       console.log("sq-card-number",sq-card-number)
        paymentForm.requestCardNonce();
      }
 
