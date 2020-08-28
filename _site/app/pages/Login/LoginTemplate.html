@@ -1,0 +1,88 @@
+<div show-header="false" show-footer="false" show-top-tabs="false" show-tabs="false"
+ng-controller="Login" ng-cloak ng-init="init()" active-screen="Welcome To Phone Ex"
+class="bg-01 aio-empty-screen padding overflow-scroll">
+    <div>
+        <div class="row">
+            <div class="col">
+            </div>
+            <div class="col">
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="row">
+            <div class="col">
+            </div>
+            <div class="col">
+            </div>
+        </div>
+    </div>
+    <img width="" height="20%" src="files/images/a_400dpiLogo.png" class="img-default img-responsive"
+    alt="Image error">
+    <div class="card">
+        <div class="item-divider item CSS_BG_LogoOrange">
+            Login
+        </div>
+        <div class="item">
+            <form name="loginForm">
+                <div class="list">
+                    <div class="item item-input">
+                        <input type="text" placeholder="Username" value="" ng-required="true" name="username1"
+                        ng-model=" user.username">
+                    </div>
+                    <div class="item item-input">
+                        <input type="password" placeholder="Password" value="" ng-required="true" name="password1"
+                        ng-model="user.password">
+                    </div>
+                    <div>
+                        <div class="row">
+                            <div class="col col-20">
+                            </div>
+                            <div class="col">
+                                <button class="ion-item-border button button-calm button-block" ng-click=" login()"
+                                ng-disabled="loginForm.username1.$error.required||loginForm.password1.$error.required">
+                                    Login
+                                </button>
+                            </div>
+                            <div class="col col-20">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div>
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                    <div class="item-image item CSS_BG_LogoGreen">
+                        New User?
+                    </div>
+                    <div class="item">
+                        <button class="ion-item-border button button-energized button-block button-small"
+                        navigate-to="Register">
+                            Register
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="item-image item CSS_BG_LogoBlue">
+                        Forgot
+                    </div>
+                    <div class="item">
+                        <button class="ion-item-border button button-royal button-block button-small icon-right ion-help"
+                        navigate-to="ForgotPassword">
+                            Password
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        Copyright 2020 - The Phone Ex // Version 1.1 Build 1.55
+    </div>
+</div>

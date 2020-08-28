@@ -1,0 +1,154 @@
+<div show-header="true" show-footer="true" show-top-tabs="true" show-tabs="true"
+ng-controller="tab_Verify" ng-cloak ng-init="init()" active-screen="Verify" class="bg-01 aio-empty-screen padding overflow-scroll">
+    <div>
+        <div class="row">
+            <div class="col">
+            </div>
+            <div class="col">
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="row">
+            <div class="col">
+            </div>
+            <div class="col">
+            </div>
+        </div>
+    </div>
+    <div class="list">
+        <div class="item-divider item Tab-Header">
+            <p>
+            </p>
+            Mobile E-Commerce Done Better
+        </div>
+    </div>
+    <button class="button button-dark button-block icon-left ion-checkmark-round">
+        Verify your Mobile Number
+    </button>
+    <div>
+        <div class="row">
+            <div class="col col-67">
+                <form name="textForm">
+                    <div class="list">
+                        <p name="Mobile" class="dark">
+                            {{mobile}}
+                        </p>
+                    </div>
+                </form>
+            </div>
+            <div class="col">
+                <p ng-show="mobileV" class="ion-item-borderWhite balanced">
+                    Verified
+                </p>
+                <p ng-show="!mobileV" class="ion-item-borderWhite assertive">
+                    Unverified
+                </p>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="row">
+            <div class="col">
+                <button class="ion-item-border button button-energized button-block" ng-click="RequestCodeMobile()"
+                ng-disabled="mobileV">
+                    Request Code
+                </button>
+            </div>
+            <div class="col">
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="row">
+            <div class="col">
+                <form name="textcodeForm">
+                    <div class="list">
+                        <div class="ion-item-border item item-input">
+                            <input type="text" placeholder="Enter Code Here" value="" ng-required="true" ng-minlength="6"
+                            name="textcode" ng-model="TextCode" ng-maxlength="6">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col">
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="row">
+            <div class="col">
+                <button class="ion-item-border button button-calm button-block" ng-click="VerifyCodeText()"
+                ng-disabled="textcodeForm. textcode.$error.required||textcodeForm. textcode.$error.minlength|| mobileV||textcodeForm. textcode.$error.maxlength">
+                    Verify Code
+                </button>
+            </div>
+            <div class="col">
+            </div>
+        </div>
+    </div>
+    <button class="button button-dark button-block icon-left ion-checkmark-round">
+        Verify your Email Address
+    </button>
+    <div>
+        <div class="row">
+            <div class="col col-67">
+                <form name="emailForm">
+                    <div class="list">
+                        <p class="dark">
+                            {{email}}
+                        </p>
+                    </div>
+                </form>
+            </div>
+            <div class="col">
+                <p ng-show="emailV" class="ion-item-borderWhite balanced">
+                    Verified
+                </p>
+                <p ng-show="!emailV" class="ion-item-borderWhite assertive">
+                    Unverified
+                </p>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="row">
+            <div class="col">
+                <button class="ion-item-border button button-energized button-block" ng-click="RequestCodeEmail()"
+                ng-disabled="emailV">
+                    Request Code
+                </button>
+            </div>
+            <div class="col">
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="row">
+            <div class="col">
+                <form name="mailcodeForm">
+                    <div class="list">
+                        <div class="ion-item-border item item-input">
+                            <input type="text" placeholder="Enter Code Here" value="" ng-required="true" ng-minlength="6"
+                            name="mailcode" ng-model="MailCode" ng-maxlength="6">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col">
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="row">
+            <div class="col">
+                <button class="ion-item-border button button-calm button-block" ng-click="VerifyCodeEmail()"
+                ng-disabled="mailcodeForm. mailcode.$error.required||mailcodeForm. mailcode.$error.minlength|| emailV||mailcodeForm. mailcode.$error.maxlength">
+                    Verify Code
+                </button>
+            </div>
+            <div class="col">
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,56 @@
+<div show-header="true" show-footer="true" show-top-tabs="true" show-tabs="true"
+ng-controller="tabInfo" ng-cloak ng-init="init()" active-screen="Info" class="bg-01 aio-empty-screen padding overflow-scroll">
+    <div class="list">
+        <div class="item-divider item Tab-Header">
+            <p>
+            </p>
+            Mobile E-Commerce Done Better
+        </div>
+    </div>
+    <div name="commentForm">
+    </div>
+    <div>
+        <div class="row">
+            <div class="col">
+            </div>
+            <div class="col">
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="row">
+            <div class="col">
+            </div>
+            <div class="col">
+            </div>
+        </div>
+    </div>
+    <form name="commentForm">
+        <div class="list">
+            <div>
+                <div class="row">
+                    <div class="col">
+                        <label class="item item-input">
+                            <textarea placeholder="Enter Message to us" ng-required="true" name="comment1" ng-model="comments"></textarea>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="row">
+                    <div class="col">
+                    </div>
+                    <div class="col">
+                        <button class="ion-item-border button button-balanced button-block" ng-click="sendComment()"
+                        ng-disabled="commentForm.comment1.$error.required">
+                            Send
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <button class="ion-item-border button button-positive button-block" ng-click="privacyPolicy()">
+        Privacy Policy / Terms
+    </button>
+</div>

@@ -1,0 +1,73 @@
+<div show-header="true" show-footer="true" show-top-tabs="true" show-tabs="true"
+ng-controller="Buyer_Home" ng-cloak ng-init="init()" active-screen="Home" class="bg-01 aio-empty-screen padding overflow-scroll">
+    <div class="list">
+        <div class="item-icon-left item-divider item Buyer-Header" ng-click="gotoBuyerHome()">
+            <i class="icon ion-refresh ">
+            </i>
+            <p>
+            </p>
+            Mobile E-Commerce Done Better
+        </div>
+    </div>
+    <div class="list">
+        <div class="item-divider item ion-item-border-LogoBlue" ng-click="gotoVerify()"
+        ng-show="showBtn1">
+            <h2>
+                {{wordBtn1}}
+            </h2>
+            <p>
+            </p>
+            <span class="badge badge-assertive">
+                {{badgeCnt1}}
+            </span>
+        </div>
+        <div class="item-divider item ion-item-border-LogoBlue" ng-click="stBuyerInProcess()"
+        ng-show="showBtn">
+            <h2>
+                {{wordBtn}}
+            </h2>
+            <p>
+                Items have been shipped
+            </p>
+            Click here to view and accept when received
+            <span class="badge badge-assertive">
+                {{badgeCnt}}
+            </span>
+        </div>
+    </div>
+    <button class="ion-item-border button button-dark button-block" ng-click="gotoBuyerMakeRequest()">
+        Make a Request
+    </button>
+    <div>
+        <div class="row">
+            <div class="col">
+                <div>
+                    <font size="4">
+                        <center>
+                            <b>
+                                Offers For Items That Were Requested
+                            </b>
+                        </center>
+                    </font>
+                    <center>
+                        Remember - You may Get Multiple Offers For Each Request
+                    </center>
+                    <center>
+                        <font color="#1CACDA">
+                            (Click Below To Accept or Decline)
+                        </font>
+                    </center>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="list">
+        <a href="javascript:void(0)" class="item ion-item-borderLightPurple" ng-click="showDetail(item._id)"
+        ng-repeat="item in list">
+        <h2> {{item.BuyerPrice|currency}} -&gt; {{item. so_manufacturer}} {{item. so_Product}} </h2>
+        <p>{{item.so_Memory}} / {{item.so_Color}} / {{item.so_Carrier}} /  Offer ID: {{item._id.substring(20)}}</p>
+        Quan:{{item.so_Quantity}} / Grade: {{item.so_Condition}}  / Request ID: {{item.fk_Request_id.substring(20)}}
+        </a>
+    </div>
+</div>

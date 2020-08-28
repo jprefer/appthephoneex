@@ -1,0 +1,215 @@
+body .CSS_BG_DarkBlue{ 
+background-color:#0950F1; 
+} 
+body .CSS_BG_LightBlue{ 
+background-color:#33C4FF; 
+} 
+body .CSS_BG_LightGold{ 
+background-color:#F1EA09; 
+} 
+body .CSS_BG_LightPurple{ 
+background-color:#B909F1; 
+}
+body .CSS_BG_LightlightPurple{ 
+background-color:#F67CFA; 
+}
+body .CSS_BG_DarkPurple{ 
+background-color:#886EE7; 
+}
+body .CSS_BG_Red{ 
+background-color:#FF0000; 
+} 
+body .CSS_BG_Lime{ 
+background-color:#33F109; 
+} 
+body .CSS_BG_LogoBlue{ 
+background-color:#1CACDA; 
+}
+body .CSS_BG_LogoGreen{ 
+background-color:#B1CF42; 
+}
+body .CSS_BG_LogoOrange{ 
+background-color:#F39330; 
+}
+body .CSS_BG_White{ 
+background-color:#FFFFFF ; 
+} 
+.ion-item-borderPurple {
+border-radius: 20px !important;
+padding-left: 10px;
+padding-right: 10px;
+padding-bottom: 5px;
+padding-top: 5px;
+background: #886EE7;
+}
+.ion-item-borderWhite {
+border-radius: 20px !important;
+padding-left: 10px;
+padding-right: 10px;
+padding-bottom: 5px;
+padding-top: 5px;
+background: #FFFFFF;
+}
+.ion-item-borderLightPurple {
+border-radius: 20px !important;
+padding-left: 10px;
+padding-right: 10px;
+padding-bottom: 5px;
+padding-top: 5px;
+background: #FFFFFF;
+}
+.ion-item-borderGreen {
+border-radius: 20px !important;
+padding-left: 10px;
+padding-right: 10px;
+padding-bottom: 5px;
+padding-top: 5px;
+background: #3DCB64;
+}
+.ion-item-border {
+border-radius: 20px !important;
+padding-left: 10px;
+padding-right: 10px;
+padding-bottom: 5px;
+padding-top: 5px;
+}
+.Buyer-HeaderSquare {
+  text-align: center;
+  background-color:#1CACDA;
+  color: white
+}
+.Buyer-Header {
+  border-radius: 20px !important;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  text-align: center;
+  background-color:#1CACDA;
+  color: white
+}
+.Seller-HeaderSquare {
+  text-align: center;
+  background-color:#FFC0CB;
+  color: white
+}
+.Seller-Header {
+  border-radius: 20px !important;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  text-align: center;
+  background-color:#FFC0CB;
+  color: white
+  
+}
+.Tab-HeaderSquare {
+  text-align: center;
+  background-color:#B1CF42;
+  color: white
+}
+.Tab-Header {
+  border-radius: 20px !important;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  text-align: center;
+  background-color:#B1CF42;
+  color: white
+  
+}
+.ion-item-border-LogoBlue {
+border-radius: 20px !important;
+padding-left: 10px;
+padding-right: 10px;
+padding-bottom: 5px;
+padding-top: 5px;
+background: #1CACDA;
+}
+.ion-item-border-LogoGreen {
+border-radius: 20px !important;
+padding-left: 10px;
+padding-right: 10px;
+padding-bottom: 5px;
+padding-top: 5px;
+background: #B1CF42;
+}
+.ion-item-border-LogoOrange {
+border-radius: 20px !important;
+padding-left: 10px;
+padding-right: 10px;
+padding-bottom: 5px;
+padding-top: 5px;
+background: #F39330;
+}
+.ion-item-border-LogoPink {
+border-radius: 20px !important;
+padding-left: 10px;
+padding-right: 10px;
+padding-bottom: 5px;
+padding-top: 5px;
+background: #FFC0CB;
+}
+.subdued {
+        padding-right: 10px;
+        color: #888;
+        text-decoration: none;
+    }
+    .card-item-with-buttons {
+        display: flex;
+        padding: 0;
+    }
+    .card-item-with-buttons .button {
+        flex-basis: 0;
+        flex-grow: 1;
+        flex-shrink: 1;
+        font-size: 10px;
+        text-align: center;
+    }
+    .card-item-with-buttons .button.icon-left:before {
+        float: none;
+    }
+    
+.bg-01 {
+    background: url(https://app.thephoneex.com/background_02.jpg);
+       background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    margin: auto;
+  
+    
+}
+
+.center-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.center {
+  margin: auto;
+  width: 80%;
+  padding: 10px;
+}
+.center-line {
+  margin: auto;
+  width: 90%;
+  padding: 10px;
+  border: 3px solid green;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.ion-item-border-right {
+   
+    border-radius: 20px !important;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    text-align: right;
+}

@@ -1,0 +1,54 @@
+<div show-header="true" show-footer="true" show-top-tabs="true" show-tabs="true"
+ng-controller="Seller_Filter" ng-cloak ng-init="init()" active-screen="Filter" class="bg-01 aio-empty-screen padding overflow-scroll">
+    <div class="list">
+        <div class="item Seller-Header">
+            <p>
+            </p>
+            Mobile E-Commerce Done Better
+        </div>
+    </div>
+    <div data-tap-disabled="true" class="item item-input item-select ion-item-border">
+        <div class="input-label">
+            Manufacturer
+        </div>
+        <select ng-options="company as company.CompanyName for company in companies" ng-model="company">
+            <option>
+                Option
+            </option>
+        </select>
+    </div>
+    <div data-tap-disabled="true" class="item item-input item-select ion-item-border">
+        <div class="input-label">
+            Type
+        </div>
+        <select ng-options="type as type.TypeName for type in types" ng-disabled="types.length == 0"
+        ng-model="type">
+            <option>
+                Option
+            </option>
+        </select>
+    </div>
+    <div data-tap-disabled="true" class="item item-input item-select ion-item-border">
+        <div class="input-label">
+            Product
+        </div>
+        <select ng-options="model as model.ModelName for model in models" ng-disabled="cities.length == 0"
+        ng-model="model">
+            <option>
+                Option
+            </option>
+        </select>
+    </div>
+    <div>
+        <div class="row">
+            <div class="col">
+            </div>
+            <div class="col">
+            </div>
+        </div>
+    </div>
+    <button class="ion-item-border button button-energized button-block" ng-click="toFilter()"
+    ng-disabled="btnDisabled">
+        Filter
+    </button>
+</div>

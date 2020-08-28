@@ -1,0 +1,93 @@
+<div show-header="true" show-footer="true" show-top-tabs="true" show-tabs="true"
+ng-controller="Seller_Complete_Detail" ng-cloak ng-init="init()" active-screen="Complete Detail"
+class="bg-01 aio-empty-screen padding overflow-scroll">
+    <div class="list">
+        <div class="item Seller-Header">
+            <p>
+            </p>
+            ORDER ID: {{_id1.substring(20)}}
+        </div>
+    </div>
+    <div>
+        <b>
+            <center>
+                <font size="4">
+                    Quantity: {{item.Quan}}
+                </font>
+        </b>
+        </center>
+        <br>
+        <b>
+            <center>
+                {{Manu1}} - {{Prod1}} - {{ChoiceCarrier1}}
+        </b>
+        </center>
+        <br>
+        <b>
+            Memory:
+        </b>
+        {{Mem1}} /
+        <b>
+            Color:
+        </b>
+        {{Colour1}} /
+        <b>
+            Kit:
+        </b>
+        {{Kit1}}
+        <br>
+        <b>
+            Grade:
+        </b>
+        {{Cond1}}
+        <br>
+        <b>
+            Notes:
+        </b>
+        <br>
+        <b>
+            (Buyer Request Note)
+        </b>
+        - {{BuyerNote1}}
+        <br>
+        <b>
+            (Your Note) -
+        </b>
+        {{SellerNote1}}
+        <br>
+        <b>
+            (Buyer Accept Note)
+        </b>
+        - {{BuyerNote2a}}
+        <br>
+        You (will) receive(d):
+        <b>
+            {{SellingPrice1|currency}}
+        </b>
+        for this transaction. This includes a Seller Fee of
+        <b>
+            {{Price1 - SellingPrice1|currency}}
+        </b>
+        <br>
+        <b>
+            {{txtPaid}}
+        </b>
+    </div>
+    <div>
+        <b>
+            Ship Date:
+        </b>
+        {{ShipDate1}}
+        <br>
+        <b>
+            Receive Date:
+        </b>
+        {{RxDate1}}
+        <br>
+        <b>
+            Accepted Date:
+        </b>
+        {{CloseDate1}}
+        <br>
+    </div>
+</div>

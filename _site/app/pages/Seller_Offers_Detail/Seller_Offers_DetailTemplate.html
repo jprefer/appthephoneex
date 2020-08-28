@@ -1,0 +1,70 @@
+<div show-header="true" show-footer="true" show-top-tabs="true" show-tabs="true"
+ng-controller="Seller_Offers_Detail" ng-cloak ng-init="init()" active-screen="My Current Offers - Detail"
+class="bg-01 aio-empty-screen padding overflow-scroll">
+    <div class="list">
+        <div class="item-divider item Seller-Header">
+            <p>
+            </p>
+            Offer ID: {{Offer_id1.substring(20)}}
+        </div>
+    </div>
+    <div>
+        <b>
+            <center>
+                <font size="4">
+                    Quantity: {{Quan1}}
+                </font>
+        </b>
+        </center>
+        <br>
+        <b>
+            <center>
+                {{Manu1}} - {{Prod1}} - {{ChoiceCarrier1}}
+        </b>
+        </center>
+        <br>
+        <b>
+            Memory:
+        </b>
+        {{Mem1}} /
+        <b>
+            Color:
+        </b>
+        {{Colour1}} /
+        <b>
+            Kit:
+        </b>
+        {{Kit1}}
+        <br>
+        <b>
+            Grade:
+        </b>
+        {{Cond1}}
+        <br>
+        <b>
+            Notes: (From Buyer)
+        </b>
+        - {{BuyerNote1}}
+        <br>
+        <b>
+            (Your Notes) -
+        </b>
+        {{SellerNote1}}
+        <br>
+        You would Receive
+        <b>
+            {{SellingPrice1|currency}}
+        </b>
+        for this transaction. This includes a Seller Fee of
+        <b>
+            {{Price1 - SellingPrice1|currency}}
+        </b>
+    </div>
+    <h5>
+        If you would like to make another offer on this Request because you can offer a
+        different GRADE at a different price, Click below
+    </h5>
+    <button class="ion-item-border button button-balanced button-block" ng-click="makeOfferNew()">
+        Make another offer
+    </button>
+</div>

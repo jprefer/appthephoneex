@@ -1,0 +1,41 @@
+<div show-header="true" show-footer="true" show-top-tabs="true" show-tabs="true"
+ng-controller="Seller_Offers" ng-cloak ng-init="init()" active-screen="My Current Offers"
+class="bg-01 aio-empty-screen padding overflow-scroll">
+    <div class="list">
+        <div class="item-icon-left item-divider item Seller-Header" ng-click="gotoSellerOffers()">
+            <i class="icon ion-refresh ">
+            </i>
+            <p>
+            </p>
+            Mobile E-Commerce Done Better
+        </div>
+    </div>
+    <div>
+        <div class="row">
+            <div class="col">
+                <div>
+                    <br>
+                    <font size="4">
+                        <center>
+                            <b>
+                                Offers that are currently under consideration with Buyers
+                            </b>
+                        </center>
+                    </font>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p>
+        If you would like to make another offer on a Request because you can offer a different
+        GRADE at a different price, Click on one of the offers below.
+    </p>
+    <div class="list">
+        <a href="javascript:void(0)" class="item ion-item-borderLightPurple" ng-click="showDetail(item._id)"
+        ng-repeat="item in list">
+        <h2>Offer: {{item.OfferPrice|currency}} --&gt; {{item. so_manufacturer}} {{item. so_Product}} </h2>
+        <p>{{item.so_Memory}} / {{item.so_Color}} / {{item.so_Carrier}} /  Offer ID: {{item._id.substring(20)}}</p>
+        Quan:{{item.so_Quantity}} / Grade: {{item.so_Condition}}  / Request ID: {{item.fk_Request_id.substring(20)}}
+        </a>
+    </div>
+</div>

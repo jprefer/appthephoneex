@@ -1,0 +1,71 @@
+<div show-header="true" show-footer="true" show-top-tabs="true" show-tabs="true"
+ng-controller="Seller_Home" ng-cloak ng-init="init()" active-screen="Home" class="bg-01 aio-empty-screen padding overflow-scroll">
+    <div class="list">
+        <div class="item-icon-left item-divider item Seller-Header" ng-click="gotoSellerHome()">
+            <i class="icon ion-refresh ">
+            </i>
+            <p>
+            </p>
+            Mobile E-Commerce Done Better
+        </div>
+    </div>
+    <div class="list">
+        <div class="item-divider item ion-item-border-LogoPink" ng-click="gotoVerify()"
+        ng-show="showBtn1">
+            <h2>
+                {{wordBtn1}}
+            </h2>
+            <p>
+            </p>
+            <span class="badge badge-assertive">
+                {{badgeCnt1}}
+            </span>
+        </div>
+        <div class="item-divider item ion-item-border-LogoPink" ng-click="stSellerAccepted()"
+        ng-show="showBtn">
+            <h2>
+                {{wordBtn}}
+            </h2>
+            <p>
+                Click here to resolve
+            </p>
+            Items need to ship
+            <span class="badge badge-assertive">
+                {{badgeCnt}}
+            </span>
+        </div>
+    </div>
+    <div>
+        <div class="row">
+            <div class="col col-75">
+                <div>
+                    <br>
+                    <font size="4">
+                        <center>
+                            <b>
+                                Requests From Buyers
+                            </b>
+                        </center>
+                    </font>
+                    <center>
+                        (Click Below To See Details And To Make An Offer)
+                    </center>
+                    <br>
+                </div>
+            </div>
+            <div class="col">
+                <button class="ion-item-border button button-dark button-block button-small" ng-click="gotoFilter()">
+                    Filter
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="list">
+        <a href="javascript:void(0)" class="item ion-item-borderLightPurple" ng-checked=""
+        ng-click="showDetail(item._id)" ng-repeat="item in list">
+        <h2>{{item. manufacturer}} {{item. Product}} / {{item.Carrier}}/Quan:{{item.Quantity}} </h2>
+        <p>{{item.Memory}} / {{item.Color}} /Shipping: {{item.Shipping}}</p>
+        {{item.Kitted}} / Request ID: {{item._id.substring(20)}}
+        </a>
+    </div>
+</div>

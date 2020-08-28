@@ -1,0 +1,70 @@
+<div show-header="true" show-footer="true" show-top-tabs="true" show-tabs="true"
+ng-controller="Seller_InProcess_Detail" ng-cloak ng-init="init()" active-screen="Currently Shipping"
+class="bg-01 aio-empty-screen padding overflow-scroll">
+    <div class="list">
+        <div class="item-divider item Seller-Header">
+            <p>
+            </p>
+            ORDER ID: {{_id1.substring(20)}}
+        </div>
+    </div>
+    <div>
+        <b>
+            <center>
+                <font size="4">
+                    Quantity: {{Quan1}}
+                </font>
+        </b>
+        </center>
+        <br>
+        <b>
+            <center>
+                {{Manu1}} - {{Prod1}} - {{ChoiceCarrier1}}
+        </b>
+        </center>
+        <br>
+        Memory: {{Mem1}} / Color: {{Colour1}} / {{Kit1}}
+        <br>
+        Grade: {{Cond1}}
+        <br>
+        Notes:
+        <br>
+        (Buyer's Request Note) - {{BuyerNote1}}
+        <br>
+        (Your Note) - {{SellerNote1}}
+        <br>
+        (Buyer's Accept Note) - {{BuyerNote2a}}
+        <br>
+        You will Receive {{SellingPrice1|currency}} for this transaction. This includes
+        a Seller Fee of {{Price1 - SellingPrice1|currency}}
+    </div>
+    <div>
+        <div class="row">
+            <div class="col">
+                <div>
+                    <b>
+                        <center>
+                            <font size="4">
+                                Shipping Information
+                            </font>
+                    </b>
+                    </center>
+                    <br>
+                </div>
+                <div>
+                    Shipped To: {{CompanyName1}}
+                    <br>
+                    Att: {{ShipFirstName1}} {{ShipLastName1}}
+                    <br>
+                    Shipped By: {{ShippedBy}}
+                    <br>
+                    Tracking: {{Tracking}}
+                    <br>
+                    Ship Date: {{ShipDate1}}
+                    <br>
+                    ( Shipping Method: {{Shipping1}})
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

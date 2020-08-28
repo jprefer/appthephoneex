@@ -1,0 +1,417 @@
+<div show-header="true" show-footer="true" show-top-tabs="true" show-tabs="true"
+ng-controller="tabProfile" ng-cloak ng-init="init()" active-screen="Profile" class="bg-01 aio-empty-screen padding overflow-scroll">
+    <div class="list">
+        <div class="item-divider item Tab-Header">
+            <p>
+            </p>
+            Mobile E-Commerce Done Better
+        </div>
+    </div>
+    <div class="card CSS_BG_LightBlue">
+        <div class="item-divider item ion-item-border">
+            User Name
+        </div>
+        <div class="item ion-item-border">
+            {{user.username}}
+        </div>
+    </div>
+    <div>
+        <p style="text-align: center;">
+            Go to any field that you need to change and start typing. When finished, click update
+        </p>
+        <p style="text-align: center;">
+            <strong>
+                Note: You can only update 1 line at a time
+            </strong>
+        </p>
+    </div>
+    <div class="card CSS_BG_LightBlue">
+        <div class="item-divider item ion-item-border">
+            Email Address
+        </div>
+        <div class="item ion-item-border">
+            <form name="emailForm">
+                <div class="list">
+                    <div>
+                        <div class="row">
+                            <div class="col col-75">
+                                <div class="item item-input">
+                                    <input type="email" placeholder="{{user.email}}" value="" ng-required="true" name="email"
+                                    ng-model="new_email">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <button class="ion-item-border button button-royal button-block button-small" ng-click="changeEmail()"
+                                ng-disabled="emailForm.email.$error.required||emailForm.email.$error.email">
+                                    update
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="card CSS_BG_LightBlue">
+        <div class="item-divider item ion-item-border">
+            Company
+        </div>
+        <div class="item ion-item-border">
+            <form name="companyForm">
+                <div class="list">
+                    <div>
+                        <div class="row">
+                            <div class="col col-75">
+                                <div class="item item-input">
+                                    <input type="text" placeholder="{{user.Company}}" value="" ng-required="true" name="company"
+                                    ng-model="new_Company">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <button class="ion-item-border button button-royal button-block button-small" ng-click="changeCompany()"
+                                ng-disabled="companyForm.company.$error.required">
+                                    update
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="card CSS_BG_LightBlue">
+        <div class="item-divider item ion-item-border">
+            First Name
+        </div>
+        <div class="item ion-item-border">
+            <form name="firstnameForm">
+                <div class="list">
+                    <div>
+                        <div class="row">
+                            <div class="col col-75">
+                                <div class="item item-input">
+                                    <input type="text" placeholder="{{user.FirstName}}" value="" ng-required="true"
+                                    name="firstname" ng-model="new_FirstName">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <button class="ion-item-border button button-royal button-block button-small" ng-click="changeFirstName()"
+                                ng-disabled="firstnameForm.firstname.$error.required">
+                                    update
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="card CSS_BG_LightBlue">
+        <div class="item-divider item ion-item-border">
+            Last Name
+        </div>
+        <div class="item ion-item-border">
+            <form name="lastnameForm">
+                <div class="list">
+                    <div>
+                        <div class="row">
+                            <div class="col col-75">
+                                <div class="item item-input">
+                                    <input type="text" placeholder="{{user.LastName}}" value="" ng-required="true" name="lastname"
+                                    ng-model="new_LastName">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <button class="ion-item-border button button-royal button-block button-small" ng-click="changeLastName()"
+                                ng-disabled="lastnameForm.lastname.$error.required">
+                                    update
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="card CSS_BG_LightBlue">
+        <div class="item-divider item ion-item-border">
+            Mobile Phone Number
+        </div>
+        <div class="item ion-item-border">
+            <form name="mobilephoneForm">
+                <div class="list">
+                    <div>
+                        <div class="row">
+                            <div class="col col-75">
+                                <div class="item item-input">
+                                    <input type="text" placeholder="{{user.MobilePhone.substring(2)}}" value="" ng-required="true"
+                                    ng-pattern="/^[0][1-9]\d{9}$|^[1-9]\d{9}$/" name="mobile" ng-model="new_MobilePhone">
+                                </div>
+                                <ion-checkbox ng-model="texton1">
+                                    Text Me Alerts
+                                </ion-checkbox>
+                            </div>
+                            <div class="col">
+                                <button class="ion-item-border button button-royal button-block button-small" ng-click="changeMobile()"
+                                ng-disabled="mobilephoneForm.mobile.$error.required||! mobilephoneForm.mobile.$valid">
+                                    Update
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div>
+                <p style="text-align: center;">
+                    <strong>
+                        SMS Alerts have terms & conditions.
+                    </strong>
+                </p>
+                <p style="text-align: center;">
+                    Navigate to our Terms menu for more info.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="card CSS_BG_LightBlue">
+        <div class="item-divider item ion-item-border">
+            Business Phone Number
+        </div>
+        <div class="item ion-item-border">
+            <form name="businessphoneForm">
+                <div class="list">
+                    <div>
+                        <div class="row">
+                            <div class="col col-75">
+                                <div class="item item-input">
+                                    <input type="text" placeholder="{{user. BusinessPhone}}" value="" ng-required="true"
+                                    ng-pattern="/^[0][1-9]\d{9}$|^[1-9]\d{9}$/" name="businessphone" ng-model="New_BusinessPhone">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <button class="ion-item-border button button-royal button-block button-small" ng-click="changeBusinessPhone()"
+                                ng-disabled="businessphoneForm.businessphone.$error.required||! businessphoneForm.businessphone.$valid">
+                                    update
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="card CSS_BG_LightBlue">
+        <div class="item-divider item ion-item-border">
+            Shipping Address
+        </div>
+        <div class="item ion-item-border">
+            <form name="shipaddress1Form">
+                <div class="list">
+                    <div>
+                        <div class="row">
+                            <div class="col col-75">
+                                <div class="item item-input">
+                                    <input type="text" placeholder="{{user. ShippingAddress1}}" value="" ng-required="true"
+                                    name="shippingaddress1" ng-model="New_ShippingAddress1">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <button class="ion-item-border button button-royal button-block button-small" ng-click="changeShippingAddress1()"
+                                ng-disabled="shipaddress1Form. shippingaddress1.$error.required">
+                                    update
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <p style="text-align: center;">
+                            <strong>
+                                Where your merchandise will be shipped
+                            </strong>
+                        </p>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="card CSS_BG_LightBlue">
+        <div class="item-divider item ion-item-border">
+            Unit / Suite
+        </div>
+        <div class="item ion-item-border">
+            <form name="shipaddress2Form" class="ion-item-border">
+                <div class="list">
+                    <div>
+                        <div class="row">
+                            <div class="col col-75">
+                                <div class="item item-input">
+                                    <input type="text" placeholder="{{user. ShippingAddress2}}" value="" ng-required="true"
+                                    name="shippingaddress2" ng-model="New_ShippingAddress2">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <button class="ion-item-border button button-royal button-block button-small" ng-click="changeShippingAddress2()"
+                                ng-disabled="shipaddress2Form. shippingaddress2.$error.required">
+                                    update
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="card CSS_BG_LightBlue">
+        <div class="item-divider item ion-item-border">
+            City
+        </div>
+        <div class="item ion-item-border">
+            <form name="cityForm">
+                <div class="list">
+                    <div>
+                        <div class="row">
+                            <div class="col col-75">
+                                <div class="item item-input">
+                                    <input type="text" placeholder="{{user.City}}" value="" ng-required="true" name="city"
+                                    ng-model="New_City">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <button class="ion-item-border button button-royal button-block button-small" ng-click="changeCity()"
+                                ng-disabled="cityForm. city.$error.required">
+                                    update
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="card CSS_BG_LightBlue">
+        <div class="item-divider item ion-item-border">
+            State
+        </div>
+        <div class="item ion-item-border">
+            <form name="stateForm">
+                <div class="list">
+                    <div>
+                        <div class="row">
+                            <div class="col col-75">
+                                <div class="item item-input">
+                                    <input type="text" placeholder="{{user.State}}" value="" ng-required="true" name="state"
+                                    ng-model="New_State">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <button class="ion-item-border button button-royal button-block button-small" ng-click="changeState()"
+                                ng-disabled="stateForm. state.$error.required">
+                                    update
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="card CSS_BG_LightBlue">
+        <div class="item-divider item ion-item-border">
+            Zip Code
+        </div>
+        <div class="item ion-item-border">
+            <form name="zipForm">
+                <div class="list">
+                    <div>
+                        <div class="row">
+                            <div class="col col-75">
+                                <div class="item item-input">
+                                    <input type="text" placeholder="{{user.Zip}}" value="" ng-required="true" name="zip"
+                                    ng-model="New_Zip">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <button class="ion-item-border button button-royal button-block button-small" ng-click="changeZip()"
+                                ng-disabled="zipForm. zip.$error.required">
+                                    update
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="card CSS_BG_LightBlue">
+        <div class="item-divider item ion-item-border">
+            State Resale Certificate Number
+        </div>
+        <div class="item ion-item-border">
+            <form name="resaleForm">
+                <div class="list">
+                    <div>
+                        <div class="row">
+                            <div class="col col-75">
+                                <div class="item item-input">
+                                    <input type="text" placeholder="{{user. ResaleNumber}}" value="" ng-required="true"
+                                    name="resale" ng-model="New_Resale">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <button class="ion-item-border button button-royal button-block button-small" ng-click="changeResale()"
+                                ng-disabled="resaleForm. resale.$error.required">
+                                    update
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div>
+                <p style="text-align: center;">
+                    App is only open to retailers having a resale number.&nbsp;
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="item-divider item ion-item-border">
+            Change Password
+        </div>
+    </div>
+    <form name="passwordForm">
+        <div class="list">
+            <p class="assertive">
+                Passwords must be at least 8 characters and contain at least one capital letter,
+                1 number, and 1 special character
+            </p>
+            <div class="ion-item-border item item-input">
+                <input type="password" placeholder="Enter New Password" value="" ng-required="true"
+                ng-pattern="/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/" name="password1"
+                ng-model="newPassword">
+            </div>
+            <p ng-show="! passwordForm.password1.$valid" class="assertive">
+                Password is not following the above rules
+            </p>
+            <p ng-show="passwordForm.password1.$valid" class="balanced">
+                Good Password
+            </p>
+            <div class="ion-item-border item item-input">
+                <input type="password" placeholder="Repeat New Password" value="" ng-required="true"
+                ng-pattern="/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/" name="password2"
+                ng-model="newPassword2">
+            </div>
+            <p ng-show="newPassword != newPassword2" class="assertive">
+                Passwords do not match
+            </p>
+        </div>
+        <button class="ion-item-border button button-balanced button-block icon-left ion-unlocked"
+        ng-click="changePassword()" ng-disabled="newPassword != newPassword2||passwordForm. password1.$error.required||! passwordForm.password1.$valid">
+            Change Password
+        </button>
+    </form>
+    <button class="ion-item-border button button-assertive button-block icon-left ion-person"
+    ng-click="lo()">
+        Log Out
+    </button>
+</div>

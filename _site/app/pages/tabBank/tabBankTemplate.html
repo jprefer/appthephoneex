@@ -1,0 +1,110 @@
+<div show-header="true" show-footer="true" show-top-tabs="true" show-tabs="true"
+ng-controller="tabBank" ng-cloak ng-init="init()" active-screen="Bank" class="bg-01 aio-empty-screen padding overflow-scroll">
+    <div class="list">
+        <div class="item-divider item Tab-Header">
+            <p>
+            </p>
+            Mobile E-Commerce Done Better
+        </div>
+    </div>
+    <form name="formPaymentType">
+        <div class="list">
+            <h3>
+                {{lblText}}
+            </h3>
+            <div>
+                <div class="row">
+                    <div class="col">
+                        <button class="ion-item-border button button-calm button-block button-small" ng-click="changetoCC()"
+                        ng-show="btn1Show">
+                            {{btn1Text}}
+                        </button>
+                        <button class="ion-item-border button button-energized button-block button-small"
+                        ng-click="changetoEscrow()" ng-show="btn2Show">
+                            {{btn2Text}}
+                        </button>
+                        <button class="button button-balanced button-block" ng-show="btn4Show">
+                            {{btn4Text}}
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="row">
+                    <div class="col">
+                        <p>
+                            {{lblText3}}
+                        </p>
+                        <button class="ion-item-border button button-dark button-block button-small" ng-click="escrowInstruct()"
+                        ng-show="btn3Show">
+                            {{btn3Text}}
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <button class="ion-item-border button button-balanced button-block" ng-click="gotoSquareCCOF()">
+        Enter A Credit Card
+    </button>
+    <div class="card">
+        <div class="item-divider item ion-item-border">
+            Default Credit Card
+        </div>
+        <div class="item ion-item-border">
+            <p>
+                {{default_cardBrand}} xxx xxx xxx {{default_last4}}
+            </p>
+            <p>
+                Expires: {{default_expMonth}}/{{default_expYear}}
+            </p>
+        </div>
+    </div>
+    <p class="dark">
+        When you enter a new credit card, it will be the new default. Enter as many cards
+        as you see fit. If you'd like to change the default or delete a card click on the
+        card you want to change below.
+    </p>
+    <p class="dark">
+        Click on the credit card you want to delete or make default
+    </p>
+    <div class="card bg-01">
+        <div class="item-icon-left item ion-item-border">
+            Cards on File
+        </div>
+        <div class="item bg-01">
+            <div class="list">
+                <a href="javascript:void(0)" class="item-icon-right item ion-item-borderLightPurple"
+                ng-click="ChangeCard(item.id,item.card_brand,item.last_4,item.exp_month,item.exp_year)"
+                ng-repeat="item in list">
+                <h2>{{item.card_brand}} xxxxxxx{{item.last_4}}</h2>
+                <p></p>
+                Expiration: {{item.exp_month}}/{{item.exp_year}}
+                <i class="icon ion-card "></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="item-divider item ion-item-border" ng-show="eDetailShow">
+            Escrow Details
+        </div>
+        <div class="item bg-01">
+            <div class="list">
+                <a href="javascript:void(0)" class="item-divider item ion-item-borderLightPurple"
+                ng-click="showDetail(item1.OrderId)" ng-repeat="item1 in list1">
+                <h2>Start: {{item1. StartingAmt |currency}}</h2>
+                <p>{{item1.TransType}}: {{item1.TransactionAmt|currency}}    {{item1.OrderId.substring(20)}}</p>
+                End: {{item1. EndingAmt|currency}} 
+                <span class="item-note">
+                {{item1._createdAt.$date.substring(0,10)}}
+                </span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <button class="ion-item-border button button-positive button-block icon-right ion-home"
+    ng-click="gotoPage()">
+        HOME
+    </button>
+</div>

@@ -1,0 +1,46 @@
+<div show-header="true" show-footer="true" show-top-tabs="true" show-tabs="true"
+ng-controller="Seller_Accepted" ng-cloak ng-init="init()" active-screen="Accepted Offers"
+class="bg-01 aio-empty-screen padding overflow-scroll">
+    <div class="list">
+        <div class="item-icon-left item-divider item Seller-Header" ng-click="gotoSellerAccepted()">
+            <i class="icon ion-refresh ">
+            </i>
+            <p>
+            </p>
+            Mobile E-Commerce Done Better
+        </div>
+    </div>
+    <div>
+        <br>
+        <font size="4">
+            <center>
+                <b>
+                    A Buyer Has Accepted Your Offer
+                </b>
+            </center>
+        </font>
+        <font size="4">
+            <center>
+                <b>
+                    <center>
+                        <font color="Red">
+                            SHIP IMMEDIATELY
+                        </font>
+                    </center>
+                </b>
+            </center>
+        </font>
+        <center>
+            (Click To See Details And Enter Shipping Information)
+        </center>
+        <br>
+    </div>
+    <div class="list">
+        <a href="javascript:void(0)" class="item ion-item-borderLightPurple" ng-click="showDetail(item._id)"
+        ng-repeat="item in list">
+        <h2>Order: {{item.Price|currency}} --&gt; {{item. Manu}} {{item. Prod}} </h2>
+        <p>{{item.Mem}} / {{item.Colour}} / {{item. ChoiceCarrier}} /  Order ID: {{item._id.substring(20)}}</p>
+        Quan:{{item.Quan}} / Grade: {{item.Cond}}  / Offer ID: {{item. Offer_id.substring(20)}}
+        </a>
+    </div>
+</div>

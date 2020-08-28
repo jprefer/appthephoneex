@@ -1,0 +1,145 @@
+<div show-header="true" show-footer="true" show-top-tabs="true" show-tabs="true"
+ng-controller="Seller_Ship" ng-cloak ng-init="init()" active-screen="Shipping" class="bg-01 aio-empty-screen padding overflow-scroll">
+    <div class="list">
+        <div class="item-divider item Seller-Header">
+            <p>
+            </p>
+            ORDER ID: {{_id1.substring(20)}}
+        </div>
+    </div>
+    <div class="list">
+        <p>
+            Enter The Shipping Details Below
+        </p>
+        <div>
+            <div class="row">
+                <div class="col">
+                    <p>
+                        Ship By
+                    </p>
+                </div>
+                <div class="col">
+                    <div data-tap-disabled="true" class="item item-input item-select ion-item-border-right">
+                        <div class="input-label">
+                            Pick
+                        </div>
+                        <select ng-init="ShippedBy1=&quot;UPS&quot;" ng-model="ShippedBy1">
+                            <option value="USPS">
+                                USPS
+                            </option>
+                            <option value="Fedex">
+                                Fedex
+                            </option>
+                            <option value="UPS">
+                                UPS
+                            </option>
+                            <option value="DHL">
+                                DHL
+                            </option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="row">
+                <div class="col">
+                    <p>
+                        Tracking Number
+                    </p>
+                </div>
+                <div class="col">
+                    <form name="myForm">
+                        <div class="ion-item-border item item-input">
+                            <input type="text" placeholder="Tracking #" value="" ng-required="true" name="tracking2"
+                            ng-model="Tracking1">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="row">
+                <div class="col">
+                    <button class="ion-item-border button button-dark button-block" ng-click="GoBack()">
+                        Cancel
+                    </button>
+                </div>
+                <div class="col">
+                    <button class="ion-item-border button button-balanced button-block icon-left ion-checkmark-round"
+                    ng-click="MarkShipped()" ng-disabled="myForm.tracking2.$error.required">
+                        Mark Shipped
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <b>
+            <center>
+                <font size="4">
+                    Quantity: {{Quan1}}
+                </font>
+        </b>
+        </center>
+        <br>
+        <b>
+            <center>
+                {{Manu1}} - {{Prod1}} - {{ChoiceCarrier1}}
+        </b>
+        </center>
+        <br>
+        Memory: {{Mem1}} / Color: {{Colour1}} / {{Kit1}}
+        <br>
+        Grade: {{Cond1}}
+        <br>
+        Notes:
+        <br>
+        <b>
+            (Buyer Request Note)
+        </b>
+        - {{BuyerNote1}}
+        <br>
+        <b>
+            (Your Note)
+        </b>
+        - {{SellerNote1}}
+        <br>
+        <b>
+            (Buyer Accept Note)
+        </b>
+        - {{BuyerNote2a}}
+        <br>
+        You will Receive {{SellingPrice1|currency}} for this transaction. This includes
+        a Seller Fee of {{Price1 - SellingPrice1|currency}}
+    </div>
+    <div>
+        <div class="row">
+            <div class="col">
+                <div>
+                    <b>
+                        <center>
+                            <font size="4">
+                                Shipping Information
+                            </font>
+                    </b>
+                    </center>
+                    <br>
+                </div>
+                <div>
+                    {{CompanyName1}}
+                    <br>
+                    Att: {{ShipFirstName1}} {{ShipLastName1}}
+                    <br>
+                    {{ShipAddress1a}}
+                    <br>
+                    {{ShipAddress2a}}
+                    <br>
+                    {{ShipCity1}}, {{ShipState1}} {{ShipZip1}}
+                    <br>
+                    ( Shipping Method: {{Shipping1}})
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
