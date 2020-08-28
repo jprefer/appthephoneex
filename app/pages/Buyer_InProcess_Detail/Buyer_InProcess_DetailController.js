@@ -94,6 +94,8 @@ define(['require', 'app'],
                     function(success) { // success callback
                         (function mapping1982(success, $scope) {
                             var BuyerNote1_scope = $scope.BuyerNote1;
+                            var BuyerNote2a_scope = $scope.BuyerNote2a;
+                            var SellerNote1_scope = $scope.SellerNote1;
                             var Colour1_scope = $scope.Colour1;
                             var Prod1_scope = $scope.Prod1;
                             var CompanyName1_scope = $scope.CompanyName1;
@@ -123,6 +125,8 @@ define(['require', 'app'],
                             var S_Off1a_scope = $scope.S_Off1a;
                             var S_Off2a_scope = $scope.S_Off2a;
                             BuyerNote1_scope = success.data[0].BuyerNote;
+                            BuyerNote2a_scope = success.data[0].BuyerNote2;
+                            SellerNote1_scope = success.data[0].SellerNote;
                             Colour1_scope = success.data[0].Colour;
                             Prod1_scope = success.data[0].Prod;
                             CompanyName1_scope = success.data[0].CompanyName;
@@ -152,6 +156,8 @@ define(['require', 'app'],
                             S_Off1a_scope = success.data[0].S_Off1;
                             S_Off2a_scope = success.data[0].S_Off2;
                             $scope.BuyerNote1 = BuyerNote1_scope;
+                            $scope.BuyerNote2a = BuyerNote2a_scope;
+                            $scope.SellerNote1 = SellerNote1_scope;
                             $scope.Colour1 = Colour1_scope;
                             $scope.Prod1 = Prod1_scope;
                             $scope.CompanyName1 = CompanyName1_scope;

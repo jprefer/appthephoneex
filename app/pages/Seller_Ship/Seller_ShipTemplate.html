@@ -93,11 +93,22 @@ ng-controller="Seller_Ship" ng-cloak ng-init="init()" active-screen="Shipping" c
         <br>
         Grade: {{Cond1}}
         <br>
-        Notes: (From Buyer) - {{BuyerNote1}}
+        Notes:
         <br>
-        (From You) - {{SellerNote1}}
+        <b>
+            (Buyer Request Note)
+        </b>
+        - {{BuyerNote1}}
         <br>
-        (From Buyer) - {{BuyerNote2a}}
+        <b>
+            (Your Note)
+        </b>
+        - {{SellerNote1}}
+        <br>
+        <b>
+            (Buyer Accept Note)
+        </b>
+        - {{BuyerNote2a}}
         <br>
         You will Receive {{SellingPrice1|currency}} for this transaction. This includes
         a Seller Fee of {{Price1 - SellingPrice1|currency}}
@@ -126,9 +137,7 @@ ng-controller="Seller_Ship" ng-cloak ng-init="init()" active-screen="Shipping" c
                     <br>
                     {{ShipCity1}}, {{ShipState1}} {{ShipZip1}}
                     <br>
-                    <font color="#FEC82E">
-                        ( Shipping Method: {{Shipping1}})
-                    </font>
+                    ( Shipping Method: {{Shipping1}})
                 </div>
             </div>
         </div>

@@ -530,38 +530,41 @@ define(['require', 'app'],
                         var autoComplete = true;
                         var customerID = sqCustID;
                         var referenceID = $scope.fk_Request_id1;
-                        var statementIdent = "PhoneEx-Req:" + $scope.fk_Request_id1.substring(20);
+                        var statementIdent = "Req:" + $scope.fk_Request_id1.substring(20);
                         var currency = "USD";
                         var tempamt = ($scope.BuyerPrice1 + ($scope.BuyerPrice1 * defaultPayFee)) * 100;
                         var amount = Number(tempamt.toFixed(0));
                         var requestData = {};
                         requestData = (function mapping9109($scope) {
                             var requestData = {};
-                            requestData.data = {};
-                            //var idempotKey_scope = $scope.idempotKey;
-                            //var sourceID_scope = $scope.sourceID;
-                            //var acceptPartial_scope = $scope.acceptPartial;
-                            // var autoComplete_scope = $scope.autoComplete;
-                            //var customerID_scope = $scope.customerID;
-                            //var referenceID_scope = $scope.referenceID;
-                            //var statementIdent_scope = $scope.statementIdent;
-                            //var amount_scope = $scope.amount;
-                            //var currency_scope = $scope.currency;
-                            _.set(requestData.data, 'idempotency_key', idempotKey);
-                            _.set(requestData.data, 'source_id', sourceID);
-                            _.set(requestData.data, 'accept_partial_authorization', acceptPartial);
-                            _.set(requestData.data, 'autocomplete', autoComplete);
-                            _.set(requestData.data, 'customer_id', customerID);
-                            _.set(requestData.data, 'reference_id', referenceID);
-                            _.set(requestData.data, 'statement_description_identifier', statementIdent);
-                            _.set(requestData.data, 'amount_money.amount', amount);
-                            _.set(requestData.data, 'amount_money.currency', currency);
-                            //console.log("amount", amount);
+                            requestData.params = {};
+                            var idempotKey_scope = $scope.idempotKey;
+                            var sourceID_scope = $scope.sourceID;
+                            var acceptPartial_scope = $scope.acceptPartial;
+                            var autoComplete_scope = $scope.autoComplete;
+                            var customerID_scope = $scope.customerID;
+                            var referenceID_scope = $scope.referenceID;
+                            var statementIdent_scope = $scope.statementIdent;
+                            var amount_scope = $scope.amount;
+                            var currency_scope = $scope.currency;
+                            requestData.params.idempotKey = idempotKey;
+                            requestData.params.sourceID = sourceID;
+                            requestData.params.acceptPartial = acceptPartial;
+                            requestData.params.autoComplete = autoComplete;
+                            requestData.params.customerID = customerID;
+                            requestData.params.referenceID = referenceID;
+                            requestData.params.statementIdent = statementIdent;
+                            requestData.params.amount = amount;
+                            requestData.params.currency = currency;
+                            requestData.headers = {};
+                            var user_scope = $scope.user;
+                            requestData.headers['X-Appery-Session-Token'] = token;
+                            //console.log(requestData);
                             return requestData;
                             /*|button_mapping|onbeforesend|10BEC4FD-D8C5-005B-59D3-38DB22A92C48||9109|*/
                         })($scope);
                         // read more about using rest services: https://links.appery.io/ve-snippet-rest
-                        Apperyio.get("Square_payments_Pay_using_ccof_prod_post")(requestData).then(
+                        Apperyio.get("SquarePayment_usingAPIExpress_service")(requestData).then(
                             /*|service_bookmark|bookmark|10BEC4FD-D8C5-005B-59D3-38DB22A92C48||2703|*/
                             function(success) { // success callback
                                 (function mapping5916(success, $scope) {

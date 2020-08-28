@@ -1664,6 +1664,110 @@ define(['require'], function(require) {
                 }
             }
         },
+        "SquarePayment_usingAPIExpress_service": {
+            "type": "object",
+            "properties": {
+                "url": {
+                    "type": "string",
+                    "default": "https://api.appery.io/rest/1/code/4fa9e35e-dcb4-48df-9cfd-3cd08677ad64/exec"
+                },
+                "method": {
+                    "type": "string",
+                    "default": "post"
+                },
+                "request": {
+                    "type": "object",
+                    "properties": {
+                        "body": {
+                            "type": "object",
+                            "properties": {
+                                "data": {
+                                    "type": "data"
+                                }
+                            }
+                        },
+                        "query": {
+                            "type": "object",
+                            "properties": {
+                                "autoComplete": {
+                                    "type": "string",
+                                    "default": "true"
+                                },
+                                "referenceID": {
+                                    "type": "string",
+                                    "default": "requestID"
+                                },
+                                "currency": {
+                                    "type": "string",
+                                    "default": "USD"
+                                },
+                                "statementIdent": {
+                                    "type": "string",
+                                    "default": "PhoneEx-Req:005"
+                                },
+                                "amount": {
+                                    "type": "string",
+                                    "default": "42"
+                                },
+                                "acceptPartial": {
+                                    "type": "string",
+                                    "default": "false"
+                                },
+                                "sourceID": {
+                                    "type": "string",
+                                    "default": "ccof:customer-card-id-ok"
+                                },
+                                "idempotKey": {
+                                    "type": "string",
+                                    "default": "121212121f"
+                                },
+                                "customerID": {
+                                    "type": "string",
+                                    "default": "81V7MDGV3CZ0377J23TB9RTCXG"
+                                }
+                            }
+                        },
+                        "headers": {
+                            "type": "object",
+                            "properties": {
+                                "Content-Type": {
+                                    "type": "string",
+                                    "default": "text/plain"
+                                },
+                                "X-Appery-Session-Token": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                },
+                "response": {
+                    "type": "object",
+                    "properties": {
+                        "body": {
+                            "type": "object",
+                            "properties": {
+                                "$": {
+                                    "type": "object",
+                                    "properties": {
+                                        "requestParams": {
+                                            "type": "string"
+                                        },
+                                        "requestBody": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "headers": {
+                            "type": "object",
+                            "properties": {}
+                        }
+                    }
+                }
+            }
+        },
         "phoneapp_logout_service": {
             "type": "object",
             "properties": {
