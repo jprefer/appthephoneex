@@ -174,7 +174,7 @@ This is the customer id: -->
             </div>
            
             <label for="ccnum">Credit card number</label>
-            <input type="text" id="ccnum" name="cardNumber" placeholder="1111-2222-3333-4444">
+            <input type="text" id="ccnum" name="cardNumber"  pattern="[0-9]{13,16}" placeholder="1111-2222-3333-4444">
             
             <div class="row">
               <div class="col-50">
@@ -217,11 +217,11 @@ This is the customer id: -->
               <br><br><br><br>
               <div class="col-50">
                 <label for="cvv">CVV</label>
-                <input type="text" id="CVV" name="CVV" placeholder="352">
+                <input type="text" id="CVV" name="CVV" pattern="[0-9]{3,4}" placeholder="352">
               </div>
               <div class="col-50">
                 <label for="zip">Biling Zip Code</label>
-                <input type="text" id="zip" name="zip" placeholder="12345">
+                <input type="text" id="zip" name="zip" pattern="[0-9]{5}" placeholder="12345">
               </div>
             </div>
           </div>
